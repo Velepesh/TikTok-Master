@@ -1,17 +1,39 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int _tikTokValue;
+    readonly private int _maxTikTokValue = 100;
     
     private int _currentTikTokValue;
+    private Animator _animator;
+    public int CurrentTikTokValue => _currentTikTokValue;
+    public int HalfTikTokValue => _maxTikTokValue / 2;
 
     public event UnityAction<int, int> TikTokValueChanged;
+    public event UnityAction PlayerHit;
+    public event UnityAction PlayerStoped;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void ReportOfChangeTikTokValue()
     {
-        TikTokValueChanged?.Invoke(_currentTikTokValue, _tikTokValue);
+        TikTokValueChanged?.Invoke(_currentTikTokValue, _maxTikTokValue);
+    }
+
+    public void IncreaseTikTokValue(int value)
+    {
+        _currentTikTokValue += value;
+        ReportOfChangeTikTokValue();
+
+        if (_currentTikTokValue >= _maxTikTokValue)
+        {
+            _currentTikTokValue = _maxTikTokValue;
+        }
     }
 
     public void DecreaseTikTokValue(int value)
@@ -22,18 +44,27 @@ public class Player : MonoBehaviour
         if (_currentTikTokValue <= 0)
         {
             _currentTikTokValue = 0;
-            //Lose
         }
     }
 
-    public void IncreaseTikTokValue(int value)
+    public void Hit()
     {
-        _currentTikTokValue += value;
-        ReportOfChangeTikTokValue();
+        PlayerHit?.Invoke();
 
-        if (_currentTikTokValue >= _tikTokValue)
-        {
-            _currentTikTokValue = _tikTokValue;
-        }
+        PlayerStoped?.Invoke();
+    } 
+    
+    public void SelectedWrongCorridor()
+    {
+        _animator.SetTrigger(AnimatorPlayerController.States.Turn);
+
+        PlayerStoped?.Invoke();
+    }
+
+    public void Win()
+    {
+        _animator.SetTrigger(AnimatorPlayerController.States.Dance);
+
+        PlayerStoped?.Invoke();
     }
 }

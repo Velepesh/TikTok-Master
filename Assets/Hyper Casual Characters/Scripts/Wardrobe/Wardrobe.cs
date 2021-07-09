@@ -4,7 +4,8 @@ using UnityEditor;
 
 public class Wardrobe : MonoBehaviour
 {
-    Dictionary<string, Transform> modelBones;
+    private Dictionary<string, Transform> modelBones;
+
     public void Wear(GameObject sourcePart, GameObject targetModel)
     {
         modelBones = new Dictionary<string, Transform>();
@@ -36,9 +37,9 @@ public class Wardrobe : MonoBehaviour
         {
             modelBones.Add(transform.name, transform);
         }
+
         foreach (Transform child in transform)
         {
-
             AddAvatarBones(child);
         }
     }
@@ -49,7 +50,7 @@ public class Wardrobe : MonoBehaviour
 
         foreach (Transform child in source.transform)
         {
-            Object.Destroy(child.gameObject);
+            Destroy(child.gameObject);
         }
 
         return source;
