@@ -7,6 +7,7 @@ using UnityEngine;
 public class Ragdoll : MonoBehaviour
 {
     [SerializeField] private Rigidbody[] _rigidbodies;
+    [SerializeField] private Collider[] _colliders;
 
     private Animator _animator;
 
@@ -14,6 +15,7 @@ public class Ragdoll : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
 
+        ToggleCollidersStates(false);
         ToggleRigidbodiesStates(true);
     }
 
@@ -26,6 +28,7 @@ public class Ragdoll : MonoBehaviour
     {
         _animator.enabled = false;
 
+        ToggleCollidersStates(true);
         ToggleRigidbodiesStates(false);
     }
 
@@ -34,6 +37,14 @@ public class Ragdoll : MonoBehaviour
         for (int i = 0; i < _rigidbodies.Length; i++)
         {
             _rigidbodies[i].isKinematic = isKinematic;
+        }
+    }
+
+    protected void ToggleCollidersStates(bool isActive)
+    {
+        for (int i = 0; i < _colliders.Length; i++)
+        {
+            _colliders[i].enabled = isActive;
         }
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
@@ -52,8 +53,27 @@ public class Player : MonoBehaviour
         PlayerHit?.Invoke();
 
         PlayerStoped?.Invoke();
-    } 
-    
+    }
+
+    public void Fall()
+    {
+        _animator.SetTrigger(AnimatorPlayerController.States.Fell);
+
+        StartCoroutine(Wait());
+      
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1.3f);
+        PlayerStoped?.Invoke();
+    }
+
+    public void Slide()
+    {
+        _animator.SetTrigger(AnimatorPlayerController.States.Slide);
+    }
+
     public void SelectedWrongCorridor()
     {
         _animator.SetTrigger(AnimatorPlayerController.States.Turn);

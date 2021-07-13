@@ -1,35 +1,41 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-[RequireComponent(typeof(Player), typeof(CharacterController), typeof(Animator))]
+[RequireComponent(typeof(Player), typeof(Rigidbody), typeof(Animator))]
 public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _swipeSpeed;
+    [SerializeField] private float _slidingSpeed;
     [SerializeField] private float _leftBorder;
     [SerializeField] private float _rightBorder;
-    [SerializeField] private float _maxRotationAngle;
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private float _groundDistance;
     [SerializeField] private LayerMask _groundMask;
 
     readonly private float _gravity = -9.81f;
+
     private Player _player; 
     private Rigidbody _rigidbody;
     private Animator _animator;
-    private CharacterController _characterController;
+    //private CharacterController _characterController;
     private float? _lastMousePositionX;
     private Vector3 _velocity;
-    private bool _isGrounded;
-    private bool _isPlayerAlive;//œŒ“ŒÃ ”ƒ¿À»“‹!!!
+    //private bool _isGrounded;
+    private bool _isPlayerAlive;
+    private bool _isSlidingRun;
+
+    public event UnityAction<bool> PlayerSlidingRun;
+
     private void Awake()
     {
         _player = GetComponent<Player>();
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
-        _characterController = GetComponent<CharacterController>();
+        //_characterController = GetComponent<CharacterController>();
 
         _isPlayerAlive = true;
     }
@@ -44,53 +50,21 @@ public class PlayerMover : MonoBehaviour
         _player.PlayerStoped -= OnPlayerStoped;
     }
 
-    //private void FixedUpdate()
-    //{
-    //    float xmove = Input.GetAxis("Horizontal") * _speed;
-    //    float zmove = Input.GetAxis("Vertical") * _speed;
-
-
-
-    //    _rigidbody.velocity = new Vector3(xmove, 0, zmove);
-    //}
-    private void Update()
+    private void FixedUpdate()
     {
-        _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
-        //Move();
-
-        float move = 0;
-        float maxMove = 0.3f;
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    _lastMousePositionX = Input.mousePosition.x;
-        //}
-        //}
-        //else if (Input.GetMouseButton(0))
-        //{
-        //    float currentX = Input.mousePosition.x;
-        //   // move = (currentX - _lastMousePositionX) / Screen.width * 3.4f * 2f;
-        //    _lastMousePositionX = currentX;
-        //}
-
-        if (move != 0)
-        {
-            if (move > 0)
-            {
-                move = Mathf.Min(move, maxMove);
-            }
-            else
-            {
-                move = Mathf.Max(move, -maxMove);
-            }
-        }
-
-        transform.position += Vector3.right * move + Vector3.forward * _speed * Time.deltaTime;
-
+        // Move();
         Swipe();
 
-        _velocity.y += _gravity * Time.deltaTime;
-        _characterController.Move(_velocity * Time.deltaTime);
+        _velocity.z = _speed;
+        Debug.Log(IsGrounded());
+
+        if (IsGrounded() == false)
+            _velocity.y += _gravity * Time.fixedDeltaTime;
+        else if (_velocity.y < 0f)
+            _velocity.y = 0f;
+
+
+        _rigidbody.velocity = _velocity;
     }
 
     private void OnPlayerStoped()
@@ -99,13 +73,7 @@ public class PlayerMover : MonoBehaviour
 
         _isPlayerAlive = false;
     }
-
-    private void Move()
-    {
-        _characterController.Move(transform.forward * _speed * Time.deltaTime);
-    }
-
-    private void Swipe()//‚˚ÎÂÚ‡ÂÚ Á‡ „‡ÌËˆ˚
+    private void Swipe()//–≤—ã–ª–µ—Ç–∞–µ—Ç –∑–∞ –≥—Ä–∞–Ω–∏—Ü—ã
     {
         if (_isPlayerAlive)
         {
@@ -138,12 +106,12 @@ public class PlayerMover : MonoBehaviour
     {
         if (transform.position.x > _leftBorder)
         {
-            SetSwipePositiom();
+            SetSwipePosition();
         }
         else
         {
             transform.position = new Vector3(_leftBorder, transform.position.y, transform.position.z);
-            //transform.rotation = Quaternion.Euler(Vector3.zero);//ËÒÔ‡‚ËÚ¸ ‰Û·ÎËÓ‚‡ÌËÂ ÍÓ‰‡
+            //transform.rotation = Quaternion.Euler(Vector3.zero);//–∏—Å–ø—Ä–∞–≤–∏—Ç—å –¥—É–±–ª–∏—Ä–æ–≤–∞–Ω–∏–µ –∫–æ–¥–∞
         }
     }
 
@@ -151,7 +119,7 @@ public class PlayerMover : MonoBehaviour
     {
         if (transform.position.x < _rightBorder)
         {
-            SetSwipePositiom();
+            SetSwipePosition();
         }
         else
         {
@@ -159,23 +127,51 @@ public class PlayerMover : MonoBehaviour
            // transform.rotation = Quaternion.Euler(Vector3.zero);
         }
     }
-    private void SetSwipePositiom()
+    private void SetSwipePosition()
     {
-        float difference = Input.mousePosition.x - _lastMousePositionX.Value;
+        float currentX = Input.mousePosition.x;
+        float difference = currentX - _lastMousePositionX.Value;
+        float newPositionX = 0f;
 
-        float newPositionX = transform.position.x + difference * _swipeSpeed * Time.deltaTime;
+        if (_isSlidingRun)
+        {
+            newPositionX = transform.position.x + difference;
 
-        transform.position = new Vector3(newPositionX, transform.position.y, transform.position.z);
-        _lastMousePositionX = Input.mousePosition.x;
+            Vector3 movement = new Vector3(newPositionX, transform.position.y, transform.position.z).normalized;
+            Debug.Log(newPositionX);
+            _rigidbody.AddForce(new Vector3(movement.x * _slidingSpeed, movement.y, movement.z), ForceMode.VelocityChange);
+        }
+        else
+        {
+            newPositionX = transform.position.x + difference * _swipeSpeed * Time.fixedDeltaTime;
+
+            transform.position = new Vector3(newPositionX, transform.position.y, transform.position.z);
+        }
+       
+        _lastMousePositionX = currentX;
     }
 
     public void Jump()
     {
-        if(_isGrounded && _velocity.y < 0f)
+        if(IsGrounded())
         {
             _velocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
 
             _animator.SetTrigger(AnimatorPlayerController.States.Jump);
         }
-    }  
+    }
+
+    public void ChangeToSlidingRun(bool isSliding)
+    {
+        _animator.SetBool(AnimatorPlayerController.States.IsSlidingRun, isSliding);
+
+        _isSlidingRun = isSliding;
+
+        PlayerSlidingRun?.Invoke(isSliding);
+    }
+
+    private bool IsGrounded()
+    {
+       return Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
+    }
 }

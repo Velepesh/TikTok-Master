@@ -1,26 +1,36 @@
 using UnityEngine;
+using System.Collections;
 
+[RequireComponent(typeof(Animator))]
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Player _target;
-    [SerializeField] private Vector3 _offset;
-    [SerializeField] private float _smoothSpeed;
-
-    private Vector3 _velocity = Vector3.zero;
+    [SerializeField] private float _waitingTime;
+    
+    private Vector3 _offset;
+    private Animator _animator;
     private void Start()
     {
+        _animator = GetComponent<Animator>();
+
         _offset = transform.position - _target.transform.position;
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        // transform.LookAt(_target.transform.position);
-
         Vector3 newPosition = _target.transform.position + _offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, newPosition, _smoothSpeed);
-        transform.position = smoothedPosition;
-        //Vector3 newPosition = _target.transform.position + _offset;
-        //Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, newPosition, ref _velocity, _smoothSpeed);
-        //transform.position = smoothedPosition;
+        transform.position = newPosition;
+    }
+
+    public void RotateAfterFinish()
+    {
+        StartCoroutine(Rotate(_waitingTime));
+    }
+
+    private IEnumerator Rotate(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        _animator.SetTrigger(AnimatorCameraController.States.Rotate);
     }
 }
