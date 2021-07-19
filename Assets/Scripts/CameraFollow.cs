@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
     
     private Vector3 _offset;
     private Animator _animator;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -16,13 +17,13 @@ public class CameraFollow : MonoBehaviour
         _offset = transform.position - _target.transform.position;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         Vector3 newPosition = _target.transform.position + _offset;
         transform.position = newPosition;
     }
 
-    public void RotateAfterFinish()
+    public void RotateAfterPlayerFinish()
     {
         StartCoroutine(Rotate(_waitingTime));
     }

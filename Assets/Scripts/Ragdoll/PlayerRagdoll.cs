@@ -14,11 +14,16 @@ public class PlayerRagdoll : Ragdoll
 
     private void OnEnable()
     {
-        _player.PlayerHit += OnCharacterHit;
+        _player.PlayerHit += OnPlayerHit;
     }
 
     private void OnDisable()
     {
-        _player.PlayerHit -= OnCharacterHit;
+        _player.PlayerHit -= OnPlayerHit;
+    }
+
+    private void OnPlayerHit()
+    {
+        Hit();
     }
 }

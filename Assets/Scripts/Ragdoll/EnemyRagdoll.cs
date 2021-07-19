@@ -14,11 +14,16 @@ public class EnemyRagdoll : Ragdoll
 
     private void OnEnable()
     {
-        _enemy.EnemyHit += OnCharacterHit;
+        _enemy.EnemyHit += OnEnemyHit;
     }
 
     private void OnDisable()
     {
-        _enemy.EnemyHit -= OnCharacterHit;
+        _enemy.EnemyHit -= OnEnemyHit;
+    }
+
+    private void OnEnemyHit()
+    {
+        Hit();
     }
 }

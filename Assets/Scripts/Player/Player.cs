@@ -6,6 +6,7 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
     readonly private int _maxTikTokValue = 100;
+    readonly private float _waitingTime = 1.2f;
     
     private int _currentTikTokValue;
     private Animator _animator;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     public event UnityAction<int, int> TikTokValueChanged;
     public event UnityAction PlayerHit;
     public event UnityAction PlayerStoped;
+    public event UnityAction PlayerRotated;
 
     private void Start()
     {
@@ -29,23 +31,25 @@ public class Player : MonoBehaviour
     public void IncreaseTikTokValue(int value)
     {
         _currentTikTokValue += value;
-        ReportOfChangeTikTokValue();
 
         if (_currentTikTokValue >= _maxTikTokValue)
         {
             _currentTikTokValue = _maxTikTokValue;
         }
+        
+        ReportOfChangeTikTokValue();
     }
 
     public void DecreaseTikTokValue(int value)
     {
         _currentTikTokValue -= value;
-        ReportOfChangeTikTokValue();
-
+       
         if (_currentTikTokValue <= 0)
         {
             _currentTikTokValue = 0;
         }
+
+        ReportOfChangeTikTokValue();
     }
 
     public void Hit()
@@ -57,15 +61,15 @@ public class Player : MonoBehaviour
 
     public void Fall()
     {
-        _animator.SetTrigger(AnimatorPlayerController.States.Fell);
+        _animator.SetTrigger(AnimatorPlayerController.States.Fall);
 
         StartCoroutine(Wait());
-      
     }
 
     private IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(_waitingTime);
+
         PlayerStoped?.Invoke();
     }
 
@@ -78,6 +82,7 @@ public class Player : MonoBehaviour
     {
         _animator.SetTrigger(AnimatorPlayerController.States.Turn);
 
+        PlayerRotated?.Invoke();
         PlayerStoped?.Invoke();
     }
 
@@ -85,6 +90,7 @@ public class Player : MonoBehaviour
     {
         _animator.SetTrigger(AnimatorPlayerController.States.Dance);
 
+        PlayerRotated?.Invoke();
         PlayerStoped?.Invoke();
     }
 }

@@ -10,7 +10,7 @@ public static class AnimatorPlayerController
         public const string Jump = nameof(Jump);
         public const string Dance = nameof(Dance);
         public const string IsSlidingRun = nameof(IsSlidingRun);
-        public const string Fell = nameof(Fell);
+        public const string Fall = nameof(Fall);
         public const string Slide = nameof(Slide);
     }
 }

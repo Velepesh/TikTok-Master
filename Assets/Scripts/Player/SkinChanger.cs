@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Player))]
 public class SkinChanger : MonoBehaviour
@@ -9,7 +10,6 @@ public class SkinChanger : MonoBehaviour
     [SerializeField] private List<GameObject> _pants;
     [SerializeField] private List<GameObject> _tops;
     [SerializeField] private List<GameObject> _hairs;
-    [SerializeField] private ParticleSystem _changeEffect;
 
     private Player _player;
     private int _topIndex = 0;
@@ -21,6 +21,8 @@ public class SkinChanger : MonoBehaviour
     private GameObject _currentBoots;
     private GameObject _currentHair;
     private float _previousValue;
+
+    public event UnityAction SkinChanged;
 
     private void Awake()
     {
@@ -147,12 +149,7 @@ public class SkinChanger : MonoBehaviour
         currentItem = item;
         currentItem.SetActive(true);
 
-        PlaySkinChangeEffect();
-    }
-
-    private void PlaySkinChangeEffect()
-    {
-        _changeEffect.Play();
+        SkinChanged?.Invoke();
     }
 
     private void GetNextIndex(int vector, ref int currentIndex, List<GameObject> items)

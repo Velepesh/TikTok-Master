@@ -19,7 +19,7 @@ public class Ragdoll : MonoBehaviour
         ToggleRigidbodiesStates(true);
     }
 
-    protected void OnCharacterHit()
+    protected void Hit()
     {
         MakePhysical();
     }
@@ -32,7 +32,7 @@ public class Ragdoll : MonoBehaviour
         ToggleRigidbodiesStates(false);
     }
 
-    protected void ToggleRigidbodiesStates(bool isKinematic)
+    private void ToggleRigidbodiesStates(bool isKinematic)
     {
         for (int i = 0; i < _rigidbodies.Length; i++)
         {
@@ -40,7 +40,7 @@ public class Ragdoll : MonoBehaviour
         }
     }
 
-    protected void ToggleCollidersStates(bool isActive)
+    private void ToggleCollidersStates(bool isActive)
     {
         for (int i = 0; i < _colliders.Length; i++)
         {
