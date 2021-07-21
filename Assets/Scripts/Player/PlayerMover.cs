@@ -30,11 +30,13 @@ public class PlayerMover : MonoBehaviour
     private void OnValidate()
     {
         _speed = Mathf.Clamp(_speed, 0f, float.MaxValue);
+        _rotationSpeed = Mathf.Clamp(_rotationSpeed, 0f, float.MaxValue);
         _jumpHeight = Mathf.Clamp(_jumpHeight, 0f, float.MaxValue);
         _swipeSpeed = Mathf.Clamp(_swipeSpeed, 0f, float.MaxValue);
         _slidingSpeed = Mathf.Clamp(_slidingSpeed, 0f, float.MaxValue);
         _groundDistance = Mathf.Clamp(_groundDistance, 0f, float.MaxValue);
     }
+
     private void Awake()
     {
         _player = GetComponent<Player>();
@@ -166,7 +168,7 @@ public class PlayerMover : MonoBehaviour
     {
         var currentRotation = transform.rotation;
 
-        var targetRotation = Quaternion.Euler(new Vector3(0, Mathf.Atan2(positionX, _velocity.y) * 90 / Mathf.PI, 0));
+        var targetRotation = Quaternion.Euler(new Vector3(0, Mathf.Atan2(positionX, _velocity.y) * 60 / Mathf.PI, 0));
 
         transform.rotation = Quaternion.Lerp(currentRotation, targetRotation, Time.fixedDeltaTime * _rotationSpeed);
     }
