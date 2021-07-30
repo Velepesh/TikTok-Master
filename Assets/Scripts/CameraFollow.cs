@@ -5,6 +5,7 @@ using System.Collections;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Player _target;
+    [SerializeField] private float _smoothedSpeed;
     [SerializeField] private float _waitingTime;
     
     private Vector3 _offset;
@@ -20,6 +21,7 @@ public class CameraFollow : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 newPosition = _target.transform.position + _offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, newPosition, _smoothedSpeed);
         transform.position = newPosition;
     }
 

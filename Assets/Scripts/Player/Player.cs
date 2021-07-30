@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private Animator _animator;
     public int CurrentTikTokValue => _currentTikTokValue;
     public int HalfTikTokValue => _maxTikTokValue / 2;
+    public int MaxTikTokValue => _maxTikTokValue;
 
     public event UnityAction<int, int> TikTokValueChanged;
     public event UnityAction PlayerHit;
@@ -28,23 +29,16 @@ public class Player : MonoBehaviour
         TikTokValueChanged?.Invoke(_currentTikTokValue, _maxTikTokValue);
     }
 
-    public void IncreaseTikTokValue(int value)
+    public void ChangeTikTokValue(int value)
     {
-        _currentTikTokValue += value;
+        _currentTikTokValue = value;
 
-        if (_currentTikTokValue >= _maxTikTokValue)
+        if (_currentTikTokValue > _maxTikTokValue)
         {
             _currentTikTokValue = _maxTikTokValue;
         }
-        
-        ReportOfChangeTikTokValue();
-    }
 
-    public void DecreaseTikTokValue(int value)
-    {
-        _currentTikTokValue -= value;
-       
-        if (_currentTikTokValue <= 0)
+        if (_currentTikTokValue < 0)
         {
             _currentTikTokValue = 0;
         }

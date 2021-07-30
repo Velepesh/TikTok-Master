@@ -8,7 +8,7 @@ class RedСorridor : Сorridor
     {
         if (other.TryGetComponent(out Player player))
         {
-            if (player.HalfTikTokValue > player.CurrentTikTokValue)
+            if (player.MaxTikTokValue > player.CurrentTikTokValue)
             {
                 player.SelectedWrongCorridor();
             }

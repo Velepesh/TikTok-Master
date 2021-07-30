@@ -1,0 +1,5 @@
+enum TurnType
+{
+    Right,
+    Left
+}

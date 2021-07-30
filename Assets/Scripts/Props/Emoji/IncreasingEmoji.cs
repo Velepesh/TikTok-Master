@@ -8,7 +8,7 @@ class IncreasingEmoji : Emoji
     {
         if (other.TryGetComponent(out Player player))
         {
-            player.IncreaseTikTokValue(Value);
+            player.ChangeTikTokValue(Value);
 
             GameObject go = Instantiate(DestroyEffect.gameObject, gameObject.transform.position + Offset, Quaternion.identity) as GameObject;
 

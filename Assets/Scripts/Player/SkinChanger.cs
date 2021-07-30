@@ -1,164 +1,48 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
 
-[RequireComponent(typeof(Player))]
-public class SkinChanger : MonoBehaviour
+class SkinChanger : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _boots;
-    [SerializeField] private List<GameObject> _pants;
-    [SerializeField] private List<GameObject> _tops;
-    [SerializeField] private List<GameObject> _hairs;
+    [SerializeField] private List<Skin> _skins;
 
-    private Player _player;
-    private int _topIndex = 0;
-    private int _pantsIndex = 0;
-    private int _bootsIndex = 0;
-    private int _hairIndex = 0;
-    private GameObject _currentTop;
-    private GameObject _currentPants;
-    private GameObject _currentBoots;
-    private GameObject _currentHair;
-    private float _previousValue;
+    private Skin _currentSkin;
 
     public event UnityAction SkinChanged;
 
     private void Awake()
     {
-        _player = GetComponent<Player>();
-        
-        _previousValue = 0;
-        
-        Wear();
+        TryWear();
     }
 
-    private void OnEnable()
+    public void ChangeSkin(SkinType newSkinType)
     {
-        _player.TikTokValueChanged += OnTikTokValueChanged;
-    }
+        var newSkin = GetSkin(newSkinType);
+        _currentSkin.gameObject.SetActive(false);
 
-    private void OnDisable()
-    {
-        _player.TikTokValueChanged -= OnTikTokValueChanged;
-    }
-
-    private void OnTikTokValueChanged(int currentTikTokValue, int maxTikTokValue)
-    {
-        int vector = 0;
-
-        if (currentTikTokValue > _previousValue)
-            vector = 1;
-        else
-            vector = -1;
-
-        ChangePlayerSkin(currentTikTokValue, vector);
-
-        _previousValue = currentTikTokValue;
-    }
-
-    private void ChangePlayerSkin(int currentValue, int vector)
-    {
-        if(vector > 0)
-        {
-            if (currentValue >= (int)SkinType.HAIR && _previousValue < (int)SkinType.HAIR)
-            {
-                ChangeHair(vector);
-            }
-
-            if (currentValue >= (int)SkinType.TOP && _previousValue < (int)SkinType.TOP)
-            {
-                ChangeTop(vector);
-            }
-
-            if (currentValue >= (int)SkinType.PANTS && _previousValue < (int)SkinType.PANTS)
-            {
-                ChangePants(vector);
-            }
-
-            if (currentValue >= (int)SkinType.BOOTS && _previousValue < (int)SkinType.BOOTS)
-            {
-                ChangeBoots(vector);
-            }
-        }
-        else
-        {
-            if (currentValue < (int)SkinType.HAIR && _previousValue >= (int)SkinType.HAIR)
-            {
-                ChangeHair(vector);
-            }
-
-            if (currentValue < (int)SkinType.TOP && _previousValue >= (int)SkinType.TOP)
-            {
-                ChangeTop(vector);
-            }
-
-            if (currentValue < (int)SkinType.PANTS && _previousValue >= (int)SkinType.PANTS)
-            {
-                ChangePants(vector);
-            }
-
-            if (currentValue < (int)SkinType.BOOTS && _previousValue >= (int)SkinType.BOOTS)
-            {
-                ChangeBoots(vector);
-            }
-        }
-    }
-
-    private void Wear()
-    {
-        _currentTop = _tops[0];
-        _currentPants = _pants[0];
-        _currentBoots = _boots[0];
-        _currentHair = _hairs[0];
-    }
-
-    private void ChangeTop(int vector)
-    {
-        GetNextIndex(vector, ref _topIndex, _tops);
-
-        ChangeSkin(ref _currentTop, _tops[_topIndex]);
-    }
-
-    private void ChangePants(int vector)
-    {
-        GetNextIndex(vector, ref _pantsIndex, _pants);
-
-        ChangeSkin(ref _currentPants, _pants[_pantsIndex]);
-    }
-
-    private void ChangeBoots(int vector)
-    {
-        GetNextIndex(vector, ref _bootsIndex, _boots);
-
-        ChangeSkin(ref _currentBoots, _boots[_bootsIndex]);
-    }
-
-    private void ChangeHair(int vector)
-    {
-        GetNextIndex(vector, ref _hairIndex, _hairs);
-
-        ChangeSkin(ref _currentHair, _hairs[_hairIndex]);
-    }
-
-    private void ChangeSkin(ref GameObject currentItem, GameObject newItem)
-    {
-        var item = newItem;
-        currentItem.SetActive(false);
-
-        currentItem = item;
-        currentItem.SetActive(true);
+        _currentSkin = newSkin;
+        _currentSkin.gameObject.SetActive(true);
 
         SkinChanged?.Invoke();
     }
 
-    private void GetNextIndex(int vector, ref int currentIndex, List<GameObject> items)
+    private Skin GetSkin(SkinType type)
     {
-        var index = currentIndex + vector;
+        var variants = _skins.Where(skin => skin.SkinType == type);
 
-        currentIndex = index >= items.Count ? 0 : index;
+        if(variants.Count() == 0)
+            throw new ArgumentOutOfRangeException(nameof(type));
 
-        if (currentIndex < 0)
-            currentIndex = index < 0 ? items.Count - 1 : index;
+        return variants.First();
+    }
+
+    private void TryWear()
+    {
+        if (_skins.Count == 0)
+            throw new ArgumentOutOfRangeException(nameof(_skins));
+
+        _currentSkin = GetSkin(SkinType.Green);
     }
 }

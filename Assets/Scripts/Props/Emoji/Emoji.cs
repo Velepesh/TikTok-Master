@@ -4,6 +4,7 @@ using UnityEngine;
 
 abstract class Emoji : MonoBehaviour
 {
+    [SerializeField] protected SkinType SkinType;
     [SerializeField] protected int Value;
     [SerializeField] protected float Time;
     [SerializeField] protected ParticleSystem DestroyEffect;

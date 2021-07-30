@@ -8,7 +8,7 @@ class Table : Props
     {
         if (other.TryGetComponent(out PlayerMover playerMover))
         {
-            playerMover.Jump();
+            playerMover.JumpShort();
         }
     }
 }

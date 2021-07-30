@@ -1,0 +1,2575 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.10f1 (297d780c91bc) revision 2719096'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19042.1110; Version 2009; 64bit' Language: 'ru' Physical Memory: 16196 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+D:/Repos/TikTok Master
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+61474
+Successfully changed project path to: D:/Repos/TikTok Master
+D:/Repos/TikTok Master
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 117.40 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.10f1 (297d780c91bc)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Repos/TikTok Master/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f11)
+    Vendor:   
+    VRAM:     5980 MB
+    Driver:   27.21.14.6231
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56800
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001891 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 104.38 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.803 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006395 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 108.66 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.229 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.32 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3851 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 300.1 MB.
+System memory in use after: 300.2 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 4547.
+Total: 2.775600 ms (FindLiveObjects: 0.369700 ms CreateObjectMapping: 0.211400 ms MarkObjects: 1.996500 ms  DeleteObjects: 0.197300 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(d172f896b208f21469c7e06fcbed820a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(d172f896b208f21469c7e06fcbed820a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '809551b000eba4bb1c0310efe05d6842') in 0.015456 seconds
+  Import took 0.158378 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006235 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.27 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.122 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.62 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 267.5 MB.
+System memory in use after: 267.7 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4550.
+Total: 3.165900 ms (FindLiveObjects: 0.349600 ms CreateObjectMapping: 0.193800 ms MarkObjects: 2.468800 ms  DeleteObjects: 0.152300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006676 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.33 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.053 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.23 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 267.6 MB.
+System memory in use after: 267.7 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4553.
+Total: 2.580100 ms (FindLiveObjects: 0.340700 ms CreateObjectMapping: 0.212400 ms MarkObjects: 1.883800 ms  DeleteObjects: 0.142400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006487 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.042 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 267.6 MB.
+System memory in use after: 267.8 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4556.
+Total: 2.587300 ms (FindLiveObjects: 0.351500 ms CreateObjectMapping: 0.204700 ms MarkObjects: 1.882200 ms  DeleteObjects: 0.148300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 1468.367108 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Animators/Obstacle-13.controller
+  artifactKey: Guid(08a0073a0c8b9e74188cc62a391babaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Animators/Obstacle-13.controller using Guid(08a0073a0c8b9e74188cc62a391babaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d21dd6bb171e6642963281844a033fa') in 0.124247 seconds
+  Import took 0.131601 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 61.090756 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack
+  artifactKey: Guid(8a03d41016be057458e35014e59b56f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack using Guid(8a03d41016be057458e35014e59b56f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f83afb1b275f81a025f4e569ff942f4') in 0.006369 seconds
+  Import took 0.144602 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.862034 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Materials
+  artifactKey: Guid(e58343f283375b346bda69bb83c5c669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Materials using Guid(e58343f283375b346bda69bb83c5c669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef17d3f5848cb8599bbbcc8264206dba') in 0.005349 seconds
+  Import took 0.011608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.002043 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab
+  artifactKey: Guid(c4d5b9a2f6fcf2a4f8740555f5075522) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab using Guid(c4d5b9a2f6fcf2a4f8740555f5075522) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '636d4b1f810f35987deb07938132189a') in 0.005299 seconds
+  Import took 0.124309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.124553 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo
+  artifactKey: Guid(b211aa6b6b2e55b46a9e909c285f9a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo using Guid(b211aa6b6b2e55b46a9e909c285f9a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f6ffbd80cf97c9012bba6f42fd2677c') in 0.005849 seconds
+  Import took 0.011704 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.699378 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_ArmChair_01.prefab
+  artifactKey: Guid(4832303646243ef40a8e6edb264a188c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_ArmChair_01.prefab using Guid(4832303646243ef40a8e6edb264a188c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e3321e8f8dbfc06dc64ade458df7136') in 0.181358 seconds
+  Import took 0.286867 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Plant_01.prefab
+  artifactKey: Guid(53e3339e994612b428804c8ae608cf64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Plant_01.prefab using Guid(53e3339e994612b428804c8ae608cf64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94c6e063a4b3596a29a9f4bc2d2b16b4') in 0.015413 seconds
+  Import took 0.042940 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000365 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Shelf_01.prefab
+  artifactKey: Guid(2b8843d25555ee74ba4ba04c011c08fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Shelf_01.prefab using Guid(2b8843d25555ee74ba4ba04c011c08fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '674d5dfdda21e60454fe49e6a05426c2') in 0.043184 seconds
+  Import took 0.054178 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Bar_01.prefab
+  artifactKey: Guid(0f418ec38f10b964ebc04e60e58bcee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Bar_01.prefab using Guid(0f418ec38f10b964ebc04e60e58bcee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed3aa07a90a15e54c2f0c3968db00e5a') in 0.069003 seconds
+  Import took 0.075931 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Sink_01.prefab
+  artifactKey: Guid(c83405d9b5287d349ae0f251bcb84a1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Sink_01.prefab using Guid(c83405d9b5287d349ae0f251bcb84a1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0541ab363b43414b94e13a8ec00ccaa5') in 0.014169 seconds
+  Import took 0.019715 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Table_02.prefab
+  artifactKey: Guid(e1760d7ed8c9c1b4187352f7d9517044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Table_02.prefab using Guid(e1760d7ed8c9c1b4187352f7d9517044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73a95a6cd88ace3876f219381819e877') in 0.037626 seconds
+  Import took 0.043809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Sofa_02.prefab
+  artifactKey: Guid(511b5c72fc82b2444a8f0fb3cebde9bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Sofa_02.prefab using Guid(511b5c72fc82b2444a8f0fb3cebde9bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc58b300315793567e03bccb8854c013') in 0.012003 seconds
+  Import took 0.018411 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Table_01.prefab
+  artifactKey: Guid(2f91c49aa2052cd4ea349f6f8da45361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Table_01.prefab using Guid(2f91c49aa2052cd4ea349f6f8da45361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94b1091cb2f56d1bc0bd1ba28e5653bc') in 0.014090 seconds
+  Import took 0.020003 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_BeachUmbrella_01.prefab
+  artifactKey: Guid(df3257e7b7f3fa5468387041747d5947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_BeachUmbrella_01.prefab using Guid(df3257e7b7f3fa5468387041747d5947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2e8773ce43aeb3098c498a3d713991c') in 0.013104 seconds
+  Import took 0.018628 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Mirror_01.prefab
+  artifactKey: Guid(515a05886ac047041b05252d716449d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Mirror_01.prefab using Guid(515a05886ac047041b05252d716449d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efa88e48e48ed45e47fc4e294c47f0e9') in 0.013477 seconds
+  Import took 0.019584 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Stool_01.prefab
+  artifactKey: Guid(e7ee21444311ffe459448ec596a94c6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Stool_01.prefab using Guid(e7ee21444311ffe459448ec596a94c6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c03c8d9e48d44cee0867c0442b92de9') in 0.014402 seconds
+  Import took 0.084810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000366 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Bed_01.prefab
+  artifactKey: Guid(477a8fb013bf8da4188005c211f348db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Bed_01.prefab using Guid(477a8fb013bf8da4188005c211f348db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67ba132ef520d4618772757c72e5b5dc') in 0.016838 seconds
+  Import took 0.025433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_SunBed_01.prefab
+  artifactKey: Guid(e6d79c2fdd37ecb4c9bdf6a7eb338866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_SunBed_01.prefab using Guid(e6d79c2fdd37ecb4c9bdf6a7eb338866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bad63e958bf73c9da3c86de9cb5c20a') in 0.013042 seconds
+  Import took 0.048302 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Chair_01.prefab
+  artifactKey: Guid(2c43cb88d1fab5b4d80a782f99360ed9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Chair_01.prefab using Guid(2c43cb88d1fab5b4d80a782f99360ed9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '416f46361f3fce0637b41ec56a93a79f') in 0.011665 seconds
+  Import took 0.017191 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Chair_03.prefab
+  artifactKey: Guid(839d0dfc37a9ebf4c8b09cc467d42d44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Chair_03.prefab using Guid(839d0dfc37a9ebf4c8b09cc467d42d44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '830df211627ae61b7a746012cc03eb89') in 0.028013 seconds
+  Import took 0.033775 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_TableLow_01.prefab
+  artifactKey: Guid(4b7436a3d6116044fbfbe9392bd14b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_TableLow_01.prefab using Guid(4b7436a3d6116044fbfbe9392bd14b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a1f84e317d1ee13810da78f158d2e02') in 0.027630 seconds
+  Import took 0.045664 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_ArmChair_02.prefab
+  artifactKey: Guid(072c254242cea8848a2772f0b5757bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_ArmChair_02.prefab using Guid(072c254242cea8848a2772f0b5757bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b90fc89f40b696d4321683c00501c29') in 0.011809 seconds
+  Import took 0.017452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Sofa_01.prefab
+  artifactKey: Guid(9f0989e9330b33248b143a7f80047086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Sofa_01.prefab using Guid(9f0989e9330b33248b143a7f80047086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53a9cecf515b970bb446d143803cd0e4') in 0.014074 seconds
+  Import took 0.020334 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Screen_01.prefab
+  artifactKey: Guid(5cc8d7b366f5110408ca7bca7f826c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Screen_01.prefab using Guid(5cc8d7b366f5110408ca7bca7f826c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725a485c6669bfe985f314aac724b0a0') in 0.013168 seconds
+  Import took 0.019466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Chair_02.prefab
+  artifactKey: Guid(a4f0fb47016be15499600534cec48187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Bamboo/Bamboo_Chair_02.prefab using Guid(a4f0fb47016be15499600534cec48187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4e015c6c5c3aaacd8c52beac470c23c') in 0.011920 seconds
+  Import took 0.040413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.532601 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Island_01.prefab
+  artifactKey: Guid(a68dac66f7b0f92468f8cd138facfe97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Island_01.prefab using Guid(a68dac66f7b0f92468f8cd138facfe97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '954c02f41cfbfdef2512990efeac802f') in 0.010847 seconds
+  Import took 0.119848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000497 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Island_02.prefab
+  artifactKey: Guid(e2595c4f30731a54d8dde27a5d217c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Island_02.prefab using Guid(e2595c4f30731a54d8dde27a5d217c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3036cc15841ebc4f3ce62c9dddd79527') in 0.016973 seconds
+  Import took 0.042320 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007147 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Island_02.prefab
+  artifactKey: Guid(e2595c4f30731a54d8dde27a5d217c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Island_02.prefab using Guid(e2595c4f30731a54d8dde27a5d217c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3036cc15841ebc4f3ce62c9dddd79527') in 0.028902 seconds
+  Import took 0.036970 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.554305 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props
+  artifactKey: Guid(ee0c22241a5efe7488f465b89c79397c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props using Guid(ee0c22241a5efe7488f465b89c79397c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad31a7883ee215cf8ffbe20a8bdd7f57') in 0.005683 seconds
+  Import took 0.011673 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.094049 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Ball_Box_01.prefab
+  artifactKey: Guid(780f56d024e077f47aa4254b0a4d12f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Ball_Box_01.prefab using Guid(780f56d024e077f47aa4254b0a4d12f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '545452c27bcca2b88c798e479df83493') in 0.024153 seconds
+  Import took 0.140384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000500 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_03.prefab
+  artifactKey: Guid(cbd0c66fcbbbee149ba2be5e778760da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_03.prefab using Guid(cbd0c66fcbbbee149ba2be5e778760da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '628deaf4537d50a0db9f09d18d46dd67') in 0.024170 seconds
+  Import took 0.034522 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_05.prefab
+  artifactKey: Guid(6f8cc505d43ca084daf42ea1274ee112) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_05.prefab using Guid(6f8cc505d43ca084daf42ea1274ee112) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d2393b8608a2fd0424fc6aa2b0ef668') in 0.047451 seconds
+  Import took 0.067333 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Ball_Box_03.prefab
+  artifactKey: Guid(7ebbf285feca2b44e821fce149ed9027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Ball_Box_03.prefab using Guid(7ebbf285feca2b44e821fce149ed9027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ac6cb559cc4c91b6a6c31296721a311') in 0.017530 seconds
+  Import took 0.023584 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_02.prefab
+  artifactKey: Guid(b9c4c48cccb49ee45b17742600d9c018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_02.prefab using Guid(b9c4c48cccb49ee45b17742600d9c018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39535509dfb7376e2b2dcff45b24eb8b') in 0.015905 seconds
+  Import took 0.021667 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Ball_Box_02.prefab
+  artifactKey: Guid(2f250f5a05fe70646868f77f99dc83d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Ball_Box_02.prefab using Guid(2f250f5a05fe70646868f77f99dc83d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83257461e04419de352047dd8c5612f1') in 0.019412 seconds
+  Import took 0.025583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Board_03.prefab
+  artifactKey: Guid(1308248d747de9f4e8b9376715aa83bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Board_03.prefab using Guid(1308248d747de9f4e8b9376715aa83bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '886b8b61ec4f141cd60f9448251a94a7') in 0.012245 seconds
+  Import took 0.018639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_04.prefab
+  artifactKey: Guid(c4fd6a8343a57f744aeaca8c3a6538da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_04.prefab using Guid(c4fd6a8343a57f744aeaca8c3a6538da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e2c7fa8b33e5ad9b1138f12f3b329be') in 0.015133 seconds
+  Import took 0.066841 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000382 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_01.prefab
+  artifactKey: Guid(12fff98d06a54a44ba0389f2cfdff0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_01.prefab using Guid(12fff98d06a54a44ba0389f2cfdff0dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ff4d07247b109faf1dff262b93ff55e') in 0.019004 seconds
+  Import took 0.044845 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Board_02.prefab
+  artifactKey: Guid(ed17866b7cb3f2348934571530ed510b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Board_02.prefab using Guid(ed17866b7cb3f2348934571530ed510b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f083f2cdaf08f8f321a03e2347589ba') in 0.014327 seconds
+  Import took 0.035083 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Board_01.prefab
+  artifactKey: Guid(63882ca8f90e8564ca254668a88756d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Board_01.prefab using Guid(63882ca8f90e8564ca254668a88756d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c468bd79c7c3c2ba1f6e500ee2f6613') in 0.014750 seconds
+  Import took 0.045044 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000384 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_07.prefab
+  artifactKey: Guid(011ce2ee60968434fa732cfac568f206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_07.prefab using Guid(011ce2ee60968434fa732cfac568f206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '918f7fb7378f53cd409f841469c7b4ac') in 0.021576 seconds
+  Import took 0.055679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_06.prefab
+  artifactKey: Guid(d421746d902ae614fbb6bbd85b93d77c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Cloth_Rack_06.prefab using Guid(d421746d902ae614fbb6bbd85b93d77c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7b1b7c8158d87397c6a9b5b062a706a') in 0.022166 seconds
+  Import took 0.041959 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.429116 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_01.prefab
+  artifactKey: Guid(22b43b7d53b1e7e43ad1a9c14e32593c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_01.prefab using Guid(22b43b7d53b1e7e43ad1a9c14e32593c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c35ccf96d8abf1328f26b9842a9b59f8') in 0.014015 seconds
+  Import took 0.155294 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000500 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_04.prefab
+  artifactKey: Guid(0dd1de56d4ed70a418fa42a7ae7b68df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_04.prefab using Guid(0dd1de56d4ed70a418fa42a7ae7b68df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '004015437bd1f447ac899c8af6f20e97') in 0.021670 seconds
+  Import took 0.032226 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_02.prefab
+  artifactKey: Guid(a29444add6b894a499c67d82b88405cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_02.prefab using Guid(a29444add6b894a499c67d82b88405cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cf4f48c9e39947d909db785584c0349') in 0.019307 seconds
+  Import took 0.067219 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000387 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_03.prefab
+  artifactKey: Guid(aaaa54c369cac8445a4570b77207962e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_03.prefab using Guid(aaaa54c369cac8445a4570b77207962e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0c3099f5321175d05123d5bfbf89b0f') in 0.019213 seconds
+  Import took 0.027242 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.223621 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_05.prefab
+  artifactKey: Guid(208ef676efa38714a89c7d10069d37ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Pants_05.prefab using Guid(208ef676efa38714a89c7d10069d37ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d502f28baf8abad094e7e7a1c9da4b3') in 0.013878 seconds
+  Import took 0.145826 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_06.prefab
+  artifactKey: Guid(8856cb9992e29b24189912ec9c60c314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_06.prefab using Guid(8856cb9992e29b24189912ec9c60c314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea80dc17616d8e8fe2864567067666d5') in 0.021218 seconds
+  Import took 0.028884 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_03.prefab
+  artifactKey: Guid(1328aca712b8cdb48aeb43d4f9979bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_03.prefab using Guid(1328aca712b8cdb48aeb43d4f9979bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '636cd21a12141f970aa9d2f8b43b17b8') in 0.019888 seconds
+  Import took 0.025938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_02.prefab
+  artifactKey: Guid(2eb4234b2c8bdbb4fa8f8fc8b9c67fd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_02.prefab using Guid(2eb4234b2c8bdbb4fa8f8fc8b9c67fd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e6db438955d74fc97683159b536cdca') in 0.022915 seconds
+  Import took 0.077063 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000396 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_04.prefab
+  artifactKey: Guid(916ec7a197288324a8739d43840f7d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_04.prefab using Guid(916ec7a197288324a8739d43840f7d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47a7a65e75c22999277cbaedb4f49937') in 0.022153 seconds
+  Import took 0.030204 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_05.prefab
+  artifactKey: Guid(dfa6b22765152af4da11512b2d075cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_05.prefab using Guid(dfa6b22765152af4da11512b2d075cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faa4729e340e55a1673fe32494ffb46e') in 0.018534 seconds
+  Import took 0.030856 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_01.prefab
+  artifactKey: Guid(cec72889ba6ccc14c9d6c14a22f4f866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_01.prefab using Guid(cec72889ba6ccc14c9d6c14a22f4f866) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '639158c1b581a856b2407c3b1aab2c9a') in 0.017455 seconds
+  Import took 0.023689 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_07.prefab
+  artifactKey: Guid(670941662bdc83842a7e85ebe7711df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_07.prefab using Guid(670941662bdc83842a7e85ebe7711df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00441e1ed677ab53bc0623a4a6497128') in 0.018510 seconds
+  Import took 0.024518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.141305 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_08.prefab
+  artifactKey: Guid(bd023294806b4ef43bb318d651f9fa32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_08.prefab using Guid(bd023294806b4ef43bb318d651f9fa32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a9683473437d9fa028ceb090a3985bc') in 0.026632 seconds
+  Import took 0.070448 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000363 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_02.prefab
+  artifactKey: Guid(bb4e8db8bb159d646b6f011edba44812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_02.prefab using Guid(bb4e8db8bb159d646b6f011edba44812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c2002e918d0ecad2cdfae4809fec6c2') in 0.019024 seconds
+  Import took 0.037976 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_01.prefab
+  artifactKey: Guid(6bf8c7f5a15d5f841bb676fd7bd02495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_01.prefab using Guid(6bf8c7f5a15d5f841bb676fd7bd02495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da409ac595c9f153126487c2b1f2dc9d') in 0.014830 seconds
+  Import took 0.043316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_09.prefab
+  artifactKey: Guid(8e8c6b46b0b604c4f937c003d8ac929d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Towel_09.prefab using Guid(8e8c6b46b0b604c4f937c003d8ac929d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '373619c5d6b85c6efc69784b7dbb0cf1') in 0.018748 seconds
+  Import took 0.024578 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.142035 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_03.prefab
+  artifactKey: Guid(43290ec5fcc8dae4986ad309452291d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_03.prefab using Guid(43290ec5fcc8dae4986ad309452291d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1235f5adfb087466d6544d49d7a4f8b') in 0.017121 seconds
+  Import took 0.024936 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_04.prefab
+  artifactKey: Guid(75f99c102f876e7468b709fb5faea2e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_04.prefab using Guid(75f99c102f876e7468b709fb5faea2e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccad392f9e0bd9b0d7023a29ca9bdcd9') in 0.014469 seconds
+  Import took 0.019990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hanger_01.prefab
+  artifactKey: Guid(83301db8acf118e438d75afff35ee793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hanger_01.prefab using Guid(83301db8acf118e438d75afff35ee793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2618cd0b3aa91a2c13caf506f1712fc3') in 0.021025 seconds
+  Import took 0.027154 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_05.prefab
+  artifactKey: Guid(5ba09fe29ffb29a4692790624c73a560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hang_Tshirt_05.prefab using Guid(5ba09fe29ffb29a4692790624c73a560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2a7168855de08c0bef44357746ec991') in 0.020217 seconds
+  Import took 0.026381 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.267375 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hanger_02.prefab
+  artifactKey: Guid(770e0ab6c95e99343a9a7745a74516d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Hanger_02.prefab using Guid(770e0ab6c95e99343a9a7745a74516d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e03a7888e13e7933ec872477f177239') in 0.014934 seconds
+  Import took 0.022863 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_01.prefab
+  artifactKey: Guid(ecb7c9b900a04164d8a0cdfec7296972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_01.prefab using Guid(ecb7c9b900a04164d8a0cdfec7296972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb5e0e2cdb5a8798f6aaed23f0446e94') in 0.015934 seconds
+  Import took 0.040286 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/IceCream_Cart.prefab
+  artifactKey: Guid(3a901f18275488349a4a3fec55a7babf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/IceCream_Cart.prefab using Guid(3a901f18275488349a4a3fec55a7babf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '935b8b61f2026b8b8e0e9be8e9798a29') in 0.020019 seconds
+  Import took 0.026075 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Boat_01.prefab
+  artifactKey: Guid(9337d6d2c5c49e8498a3b42334011f5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Boat_01.prefab using Guid(9337d6d2c5c49e8498a3b42334011f5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0043f4cae05f7cc06e248641faf8b3e9') in 0.015941 seconds
+  Import took 0.022248 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Boat_03.prefab
+  artifactKey: Guid(a38dfcb10b480a8419dcde20507e65aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Boat_03.prefab using Guid(a38dfcb10b480a8419dcde20507e65aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8aacceac149402c1f9023f9d01eec3aa') in 0.019676 seconds
+  Import took 0.026568 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_02.prefab
+  artifactKey: Guid(fd568b898e7d6fb418e20489ead1fe00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_02.prefab using Guid(fd568b898e7d6fb418e20489ead1fe00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70390431b0782aca5ed54c20f847c30f') in 0.020259 seconds
+  Import took 0.027103 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_03.prefab
+  artifactKey: Guid(60138b4dff164f741bf115f1d5253f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_03.prefab using Guid(60138b4dff164f741bf115f1d5253f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4d005734e0904d29575e7c4e435c710') in 0.027831 seconds
+  Import took 0.047142 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Oar_01.prefab
+  artifactKey: Guid(29cab5e773b866c448fc512b24d0225e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Oar_01.prefab using Guid(29cab5e773b866c448fc512b24d0225e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86dfe3d6c576cb038e99cb40956ffbaa') in 0.015749 seconds
+  Import took 0.021948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Boat_02.prefab
+  artifactKey: Guid(9cd9f4e5a66f33f428d2c9f64445f225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Boat_02.prefab using Guid(9cd9f4e5a66f33f428d2c9f64445f225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aeff7786e37d751e62417879b5d1a69') in 0.019541 seconds
+  Import took 0.041773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_05.prefab
+  artifactKey: Guid(7606884efd4bce34c9d46fccf820bbb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_05.prefab using Guid(7606884efd4bce34c9d46fccf820bbb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c852d7d42516d612e9d428d1adf9c8b9') in 0.016721 seconds
+  Import took 0.035574 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_06.prefab
+  artifactKey: Guid(8dca328cf4a395c428a91e8e5a961477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_06.prefab using Guid(8dca328cf4a395c428a91e8e5a961477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7409c37f34a1898faf97fbfc9060af0') in 0.016258 seconds
+  Import took 0.022736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_04.prefab
+  artifactKey: Guid(f89256f711f36164bb392c91b9ef5045) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Inflatable_Bed_04.prefab using Guid(f89256f711f36164bb392c91b9ef5045) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93f0ad409a1482a7741fdbf7059e4261') in 0.016703 seconds
+  Import took 0.065923 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.411425 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Oar_02.prefab
+  artifactKey: Guid(b34d7ad4bcc06764aa55edfdf4b7ba42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Oar_02.prefab using Guid(b34d7ad4bcc06764aa55edfdf4b7ba42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c64a93bf36af63bace4a2277c7e120c9') in 0.017492 seconds
+  Import took 0.023481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Pot_Palmtree_01.prefab
+  artifactKey: Guid(fc11d6e1e00d599408da56f490c9b337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Pot_Palmtree_01.prefab using Guid(fc11d6e1e00d599408da56f490c9b337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9d40712481869114f5430d97ad8fedf') in 0.014281 seconds
+  Import took 0.019876 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Postcard_Rack_02.prefab
+  artifactKey: Guid(574360b34e1147d48a247bc70410ac57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Postcard_Rack_02.prefab using Guid(574360b34e1147d48a247bc70410ac57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43a9792cac3301a898e4414abb623560') in 0.021915 seconds
+  Import took 0.088072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000503 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/SurfBoard_02.prefab
+  artifactKey: Guid(de12b948d9395b2469ffcfb3bb21b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/SurfBoard_02.prefab using Guid(de12b948d9395b2469ffcfb3bb21b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '709c3807a24749a9aa2da5d20e5a9a69') in 0.020669 seconds
+  Import took 0.032523 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Postcard_Rack_03.prefab
+  artifactKey: Guid(b75a7659c07e4b2409abd5773a98dd47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Postcard_Rack_03.prefab using Guid(b75a7659c07e4b2409abd5773a98dd47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f577b7fe46088ea564d1ee4d66e19e4c') in 0.023663 seconds
+  Import took 0.033028 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/SurfBoard_01.prefab
+  artifactKey: Guid(fde5873d1c5b6194490c17ad7e0aaf52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/SurfBoard_01.prefab using Guid(fde5873d1c5b6194490c17ad7e0aaf52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85b9f12a9731773fa76de4a356ee68a9') in 0.028843 seconds
+  Import took 0.037039 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/RubbeRing_Stand_03.prefab
+  artifactKey: Guid(ee5a9460c1ace6a4c970901f483e42c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/RubbeRing_Stand_03.prefab using Guid(ee5a9460c1ace6a4c970901f483e42c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18abd56646c1ed3088800fb32a2a8f1a') in 0.025114 seconds
+  Import took 0.031360 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Postcard_Rack_01.prefab
+  artifactKey: Guid(df7d58653cd960a42a0fc43f9e5653ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Postcard_Rack_01.prefab using Guid(df7d58653cd960a42a0fc43f9e5653ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe13a68d1e93dae894d10e444645584c') in 0.024176 seconds
+  Import took 0.052308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/RubbeRing_Stand_01.prefab
+  artifactKey: Guid(adfc6802b8f3e564fa4a93f492c6b6d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/RubbeRing_Stand_01.prefab using Guid(adfc6802b8f3e564fa4a93f492c6b6d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4078c9b247903b9870105b32ba5f6855') in 0.019424 seconds
+  Import took 0.027259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/RubbeRing_Stand_02.prefab
+  artifactKey: Guid(56a2fd9195089d1479bddfebbd17ad76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/RubbeRing_Stand_02.prefab using Guid(56a2fd9195089d1479bddfebbd17ad76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f83529bbb6a7fdf74f451cb1bfd429bf') in 0.031660 seconds
+  Import took 0.037625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Oar_03.prefab
+  artifactKey: Guid(9d4d17721ea248246a2175eb5ebab556) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Oar_03.prefab using Guid(9d4d17721ea248246a2175eb5ebab556) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06397b9ad0c3971adf0de3c866411590') in 0.018679 seconds
+  Import took 0.034597 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Pot_Palmtree_02.prefab
+  artifactKey: Guid(5c49257958f2cb242b7cc5ba5c645696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Pot_Palmtree_02.prefab using Guid(5c49257958f2cb242b7cc5ba5c645696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd470acfd7b2ebe3394c2b003c16d9b80') in 0.012388 seconds
+  Import took 0.030113 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Oar_03.prefab
+  artifactKey: Guid(9d4d17721ea248246a2175eb5ebab556) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Oar_03.prefab using Guid(9d4d17721ea248246a2175eb5ebab556) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06397b9ad0c3971adf0de3c866411590') in 0.010677 seconds
+  Import took 0.016589 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.695306 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/SurfBoard_03.prefab
+  artifactKey: Guid(edcb0bd916b11bf42b88ee1a297c5fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/SurfBoard_03.prefab using Guid(edcb0bd916b11bf42b88ee1a297c5fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c30fb053d607a0cc0b7de57c25ac95bd') in 0.014153 seconds
+  Import took 0.041276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Toy_Rack_01.prefab
+  artifactKey: Guid(6fc2191fd69331148b699251a3a6aa26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Dock_Props/Toy_Rack_01.prefab using Guid(6fc2191fd69331148b699251a3a6aa26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96a7415b1987af62f63a14ac18a4ad89') in 0.017455 seconds
+  Import took 0.023752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.788952 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props
+  artifactKey: Guid(25cbfdd9a2df5034bbd3f7f99a5e0c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props using Guid(25cbfdd9a2df5034bbd3f7f99a5e0c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b663ddf5592576f96401a0f31c6cec0f') in 0.110456 seconds
+  Import took 0.135920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.306921 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks
+  artifactKey: Guid(271bcd5d441d0374cb8889ed130b4753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks using Guid(271bcd5d441d0374cb8889ed130b4753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2768937996784d154567414f11f140b9') in 0.005409 seconds
+  Import took 0.012144 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.070400 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_1x1.prefab
+  artifactKey: Guid(f17b7478626d51c40b9d3b4f92fc6850) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_1x1.prefab using Guid(f17b7478626d51c40b9d3b4f92fc6850) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8348628a02e94ed92214cbdb0606fa4b') in 0.048732 seconds
+  Import took 0.165406 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000454 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_1x3.prefab
+  artifactKey: Guid(be4bf1c4c4756b741ad8a1418e27e006) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_1x3.prefab using Guid(be4bf1c4c4756b741ad8a1418e27e006) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d9b31aa6495b328a7b878883385ff50') in 0.083535 seconds
+  Import took 0.116194 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000526 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Stairs.prefab
+  artifactKey: Guid(32b4147b7062ccb4789646d250fbf4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Stairs.prefab using Guid(32b4147b7062ccb4789646d250fbf4fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e991249c81e4a384fa3c8bab22627472') in 0.086596 seconds
+  Import took 0.102075 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000522 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Bridge_L.prefab
+  artifactKey: Guid(688993f6343713e4092c3d4218373c30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Bridge_L.prefab using Guid(688993f6343713e4092c3d4218373c30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14f3369cb60108cd387c1092b598251d') in 0.080107 seconds
+  Import took 0.090421 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Bridge_R.prefab
+  artifactKey: Guid(6c0cd9c53171c064cbaacc0b6275110a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Bridge_R.prefab using Guid(6c0cd9c53171c064cbaacc0b6275110a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bbb752850d074a899cabda1666383bb') in 0.092642 seconds
+  Import took 0.104094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000357 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Corner.prefab
+  artifactKey: Guid(942ac3be2bf29694d88e4ac13d788a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Corner.prefab using Guid(942ac3be2bf29694d88e4ac13d788a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb0c5ce6ec78c22a385e23ec225d3712') in 0.066064 seconds
+  Import took 0.108653 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Side.prefab
+  artifactKey: Guid(81ef2535e749f764eb2c960a0d320ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_Side.prefab using Guid(81ef2535e749f764eb2c960a0d320ba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a16e7e098bc74886a79a67442a5d65d') in 0.029813 seconds
+  Import took 0.053564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_1x2.prefab
+  artifactKey: Guid(b62f805edca6ed749b260aaa2aef556b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_1x2.prefab using Guid(b62f805edca6ed749b260aaa2aef556b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90bae773f20ac4634f6064f7c80c3dc1') in 0.069427 seconds
+  Import took 0.093210 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003526 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_1x2.prefab
+  artifactKey: Guid(b62f805edca6ed749b260aaa2aef556b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Docks/Dock_1x2.prefab using Guid(b62f805edca6ed749b260aaa2aef556b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90bae773f20ac4634f6064f7c80c3dc1') in 0.031111 seconds
+  Import took 0.037309 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.820632 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses
+  artifactKey: Guid(5b56d11ab326ae048ab9a38b827322bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses using Guid(5b56d11ab326ae048ab9a38b827322bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b73ee3e847555f229317ad24599cc120') in 0.005629 seconds
+  Import took 0.113463 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/House_Far_01.prefab
+  artifactKey: Guid(e95fc704ea79157449742075b8ab7513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/House_Far_01.prefab using Guid(e95fc704ea79157449742075b8ab7513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a58bade8fdb9c695ea6ea4a50373993d') in 0.017262 seconds
+  Import took 0.023618 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Awning_01.prefab
+  artifactKey: Guid(eb39888e528d89f47b568cccd1457766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Awning_01.prefab using Guid(eb39888e528d89f47b568cccd1457766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f768f2676d63e6fa228dd76126985217') in 0.013573 seconds
+  Import took 0.020004 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Awning_03.prefab
+  artifactKey: Guid(7fd5b68b4690a25488df055b5ca3e124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Awning_03.prefab using Guid(7fd5b68b4690a25488df055b5ca3e124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '123ee8a12179f155a6f0168553f9fd25') in 0.022613 seconds
+  Import took 0.028660 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/House_Far_02.prefab
+  artifactKey: Guid(78a0946ca6c60d34bb00e108e4f8b68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/House_Far_02.prefab using Guid(78a0946ca6c60d34bb00e108e4f8b68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61380386352c920cc88e059e02c4b5fa') in 0.014637 seconds
+  Import took 0.046355 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_01.prefab
+  artifactKey: Guid(ff1d4e2226a5b414d9c68c38fbe8e8d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_01.prefab using Guid(ff1d4e2226a5b414d9c68c38fbe8e8d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65594de537647c3b0b6ef3c6199b8762') in 0.017699 seconds
+  Import took 0.063289 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000526 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_05.prefab
+  artifactKey: Guid(c07ff75a92f49374a983396208434e27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_05.prefab using Guid(c07ff75a92f49374a983396208434e27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8d9c4178f57d0ecf67abf7402cf80ae') in 0.027150 seconds
+  Import took 0.071905 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000382 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_02.prefab
+  artifactKey: Guid(d2a7f4bf91c5dac47a4b04949b89ca8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_02.prefab using Guid(d2a7f4bf91c5dac47a4b04949b89ca8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '734f12662a85e2440edd71a8407751ff') in 0.023270 seconds
+  Import took 0.046737 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000414 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Awning_02.prefab
+  artifactKey: Guid(ee13a40866c03b847a0bba7fa49a8f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Awning_02.prefab using Guid(ee13a40866c03b847a0bba7fa49a8f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06cbc3551f3396267e04cad089fb7402') in 0.011742 seconds
+  Import took 0.038101 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_03.prefab
+  artifactKey: Guid(e5359716968ee9e498bf28211331f8e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_03.prefab using Guid(e5359716968ee9e498bf28211331f8e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d4d996ccfff61b83c71d8e778f01bd2') in 0.018607 seconds
+  Import took 0.024941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_04.prefab
+  artifactKey: Guid(d07e614d74a2f9043933def4cf2bd293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_04.prefab using Guid(d07e614d74a2f9043933def4cf2bd293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '512405fb645b76d718399f3586ab56a3') in 0.018473 seconds
+  Import took 0.033120 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002719 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_04.prefab
+  artifactKey: Guid(d07e614d74a2f9043933def4cf2bd293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Houses/Houses_04.prefab using Guid(d07e614d74a2f9043933def4cf2bd293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '512405fb645b76d718399f3586ab56a3') in 0.014276 seconds
+  Import took 0.020662 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.384076 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts
+  artifactKey: Guid(a09f4c5c5e7d3094fa2e25692b6521cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts using Guid(a09f4c5c5e7d3094fa2e25692b6521cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebc216858b377a65a4e2203f73fb0b32') in 0.005318 seconds
+  Import took 0.140562 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_05.prefab
+  artifactKey: Guid(70666685ca39c3e49916b50225cae5ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_05.prefab using Guid(70666685ca39c3e49916b50225cae5ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86b43b18c5c81e9904329c310e184d85') in 0.014870 seconds
+  Import took 0.117808 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000540 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_01.prefab
+  artifactKey: Guid(6dd298b22cad93847a516af0721a8d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_01.prefab using Guid(6dd298b22cad93847a516af0721a8d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea25ba1d7e109fdc4e153cb63676f4ea') in 0.024251 seconds
+  Import took 0.034868 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_02.prefab
+  artifactKey: Guid(8cdf8ca70bb73ac4884fe816f9e9ef05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_02.prefab using Guid(8cdf8ca70bb73ac4884fe816f9e9ef05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0f39dcdf93f258ffe59ded789f2591b') in 0.049724 seconds
+  Import took 0.055642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/HutHigh_01.prefab
+  artifactKey: Guid(01e3f1e610fcc1549aeb398e63b18cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/HutHigh_01.prefab using Guid(01e3f1e610fcc1549aeb398e63b18cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '163200086fd9144f6a7ace120fa79c77') in 0.044797 seconds
+  Import took 0.058521 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_04.prefab
+  artifactKey: Guid(70bbbddac382ac046ab8c3690256abb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_04.prefab using Guid(70bbbddac382ac046ab8c3690256abb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc8a67cced1ca0a30850542c09a93d4e') in 0.032267 seconds
+  Import took 0.052003 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_03.prefab
+  artifactKey: Guid(73964d0e760221a45a7a6fbe17cdec7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Hut_03.prefab using Guid(73964d0e760221a45a7a6fbe17cdec7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d4ade3b7666395f4ab01c78fd6877e0') in 0.015689 seconds
+  Import took 0.035157 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Restaurant_01.prefab
+  artifactKey: Guid(f851cc872822bc0499896795d07126d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Restaurant_01.prefab using Guid(f851cc872822bc0499896795d07126d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4997d4d220a27c7ca30374bb5a95b54') in 0.028242 seconds
+  Import took 0.060590 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.530579 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks
+  artifactKey: Guid(7ac129d99e8a32f48a629156a22dd20d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks using Guid(7ac129d99e8a32f48a629156a22dd20d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2aaf60a1399d3f2856af1b75ea02340') in 0.007458 seconds
+  Import took 0.119262 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000516 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_05.prefab
+  artifactKey: Guid(f21b597fb77a8eb4da7b342d3a46e97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_05.prefab using Guid(f21b597fb77a8eb4da7b342d3a46e97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93fce8eebfad9584cae4830d3e1d757b') in 0.025657 seconds
+  Import took 0.037210 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_03.prefab
+  artifactKey: Guid(9df186646b4bed54b98a1682b32bc751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_03.prefab using Guid(9df186646b4bed54b98a1682b32bc751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f616cfd57a529489ca0975cebd5db590') in 0.013777 seconds
+  Import took 0.048609 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_04.prefab
+  artifactKey: Guid(16d3f96d508ed6942a53a7e42304567d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_04.prefab using Guid(16d3f96d508ed6942a53a7e42304567d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be592c9849d99852c3d80374039f0e19') in 0.063850 seconds
+  Import took 0.079458 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_11.prefab
+  artifactKey: Guid(124e9208342692542be5c1b99405ed0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_11.prefab using Guid(124e9208342692542be5c1b99405ed0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f7567de0d95e1791aae8b2c54af7d31') in 0.029345 seconds
+  Import took 0.035025 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_02.prefab
+  artifactKey: Guid(115a44624cae53f4e8d10cc1a5b27742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_02.prefab using Guid(115a44624cae53f4e8d10cc1a5b27742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ab47749aec44d2e249d9d06d06d35e2') in 0.042916 seconds
+  Import took 0.052438 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_08.prefab
+  artifactKey: Guid(f67f8980139bab14aa37fb7cca2157e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_08.prefab using Guid(f67f8980139bab14aa37fb7cca2157e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff6a05102b628ea0026f9d219b044e45') in 0.011675 seconds
+  Import took 0.029533 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_07.prefab
+  artifactKey: Guid(b3fcd15ab9ed20f47a0e951bbd9cd849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_07.prefab using Guid(b3fcd15ab9ed20f47a0e951bbd9cd849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c18894ece66613330c143fd0a9c42219') in 0.011976 seconds
+  Import took 0.040062 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_09.prefab
+  artifactKey: Guid(1d615736ba7219a44b211a380ca23372) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_09.prefab using Guid(1d615736ba7219a44b211a380ca23372) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '602c1c6dea4984947b93d1975bd4b68c') in 0.013014 seconds
+  Import took 0.019423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_06.prefab
+  artifactKey: Guid(24c7b8d89700cc245b0c5f60d8d5053d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_06.prefab using Guid(24c7b8d89700cc245b0c5f60d8d5053d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c62cf862fbc5b0c8575b40d9a15bacfb') in 0.012587 seconds
+  Import took 0.018811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_01.prefab
+  artifactKey: Guid(e2d8be2047f8e254d9a2b5325c92bca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_01.prefab using Guid(e2d8be2047f8e254d9a2b5325c92bca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7db7c976cc4fa3bab179c06119fad22b') in 0.011674 seconds
+  Import took 0.017485 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_10.prefab
+  artifactKey: Guid(368521c3c75686a4bb3fb0e72bac0d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Planks/Plank_10.prefab using Guid(368521c3c75686a4bb3fb0e72bac0d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac91388679a489a0905e6a9a086c45d9') in 0.012974 seconds
+  Import took 0.039268 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.639447 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/BeachNet_01.prefab
+  artifactKey: Guid(6f5b99702601e6b408505810491999cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/BeachNet_01.prefab using Guid(6f5b99702601e6b408505810491999cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8df568ed94f27a232b88621da17995cf') in 0.012603 seconds
+  Import took 0.125395 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000526 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Deck_03.prefab
+  artifactKey: Guid(69f68df9c930efe4d8dc513c0857345a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Deck_03.prefab using Guid(69f68df9c930efe4d8dc513c0857345a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11821dc6ce220a0bd95a83444407f480') in 0.012065 seconds
+  Import took 0.024489 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Deck_04.prefab
+  artifactKey: Guid(8e016eeae1f6f814097e58b745ef7cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Deck_04.prefab using Guid(8e016eeae1f6f814097e58b745ef7cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42ea92f501b0a9f04048bf2ce3389ab5') in 0.013270 seconds
+  Import took 0.019918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Deck_02.prefab
+  artifactKey: Guid(772d66246185f134a8cbc2b2dd538693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Deck_02.prefab using Guid(772d66246185f134a8cbc2b2dd538693) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2ea119e570b4c93c217ad65d21deb0b') in 0.036428 seconds
+  Import took 0.056938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Boat_01.prefab
+  artifactKey: Guid(d3e42db2786f75846b8f64ecd80e475a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Boat_01.prefab using Guid(d3e42db2786f75846b8f64ecd80e475a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73a0f6383efd79a923e5a80912f2e5dc') in 0.021915 seconds
+  Import took 0.027920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Fence_01.prefab
+  artifactKey: Guid(87176c075d506204f86246f98e0bbd27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Fence_01.prefab using Guid(87176c075d506204f86246f98e0bbd27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3defe1a15748bb984ab57c5dbdb2b6c0') in 0.012715 seconds
+  Import took 0.032894 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/IceCreamBox_01.prefab
+  artifactKey: Guid(77f8ebe3a357d5f4b8b823c52fe5f117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/IceCreamBox_01.prefab using Guid(77f8ebe3a357d5f4b8b823c52fe5f117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7972226fd86cce74e0561de3a5794f95') in 0.014304 seconds
+  Import took 0.020216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Boat_02.prefab
+  artifactKey: Guid(17a39b4d4cc974c4d9514102553ad4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Boat_02.prefab using Guid(17a39b4d4cc974c4d9514102553ad4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ab5470ea03f1bcdcb80351ca8d5364b') in 0.021348 seconds
+  Import took 0.027259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Deck_01.prefab
+  artifactKey: Guid(f375cab1b88796e49b01ed281e2e4417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Deck_01.prefab using Guid(f375cab1b88796e49b01ed281e2e4417) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aabddab0e5277717da3e30c0439b3c91') in 0.012986 seconds
+  Import took 0.053766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Fence_03.prefab
+  artifactKey: Guid(0873f7ed1d1ecb04bbbcdfd8db4ed60d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Fence_03.prefab using Guid(0873f7ed1d1ecb04bbbcdfd8db4ed60d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5409699f83b2d958018e0555d7440b38') in 0.011870 seconds
+  Import took 0.017531 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Hammock_01.prefab
+  artifactKey: Guid(578a745145b891646b37ee69680dee11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Hammock_01.prefab using Guid(578a745145b891646b37ee69680dee11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9220eb3ee42fb861d336888451dc6083') in 0.015073 seconds
+  Import took 0.034202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Crate_01.prefab
+  artifactKey: Guid(2812a2aff55201d4d8208437f96fdec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Crate_01.prefab using Guid(2812a2aff55201d4d8208437f96fdec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c38a11397bfb88f93caad202ee045cb') in 0.012634 seconds
+  Import took 0.019247 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Fence_02.prefab
+  artifactKey: Guid(db1a0a6ef3e5af247b0e918760f60ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Fence_02.prefab using Guid(db1a0a6ef3e5af247b0e918760f60ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '610e7266036b2a77920ea4b263596567') in 0.012069 seconds
+  Import took 0.018656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.759483 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Lighthouse_01.prefab
+  artifactKey: Guid(124b40527b6cf2545b511bdc0f59ed78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Lighthouse_01.prefab using Guid(124b40527b6cf2545b511bdc0f59ed78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f5e7b21c0aff4392c89eb367bda57c1') in 0.012307 seconds
+  Import took 0.124920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/PalmTree_01.prefab
+  artifactKey: Guid(26e732ca9ec552f4cad0f32b258e8e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/PalmTree_01.prefab using Guid(26e732ca9ec552f4cad0f32b258e8e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4bc878c6acc01c6c3bff6a3213755af') in 0.016230 seconds
+  Import took 0.037424 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Torch_01_Unlit.prefab
+  artifactKey: Guid(96c8531abcc08ea4990c6d1e347860e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Torch_01_Unlit.prefab using Guid(96c8531abcc08ea4990c6d1e347860e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85a375fea2696abddb3069f45318e411') in 0.024448 seconds
+  Import took 0.031056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Torch_01.prefab
+  artifactKey: Guid(47cd95769f826b04989148a0cf520dc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Torch_01.prefab using Guid(47cd95769f826b04989148a0cf520dc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '421bf53f397048e09f92f5725f9f3488') in 0.013006 seconds
+  Import took 0.048763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Lighthouse_01_Lit.prefab
+  artifactKey: Guid(ae276b5e711a77c4386eb543c4b554ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Lighthouse_01_Lit.prefab using Guid(ae276b5e711a77c4386eb543c4b554ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb1bf31e20c7457dd4ba0712171ba788') in 0.043567 seconds
+  Import took 0.111528 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000505 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Torch_02_Unlit.prefab
+  artifactKey: Guid(40442d29bd679624eb065b5faf4ae1bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Torch_02_Unlit.prefab using Guid(40442d29bd679624eb065b5faf4ae1bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b6836a5f0f63f59f5c679101e7e6890') in 0.024580 seconds
+  Import took 0.066780 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000553 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/PalmTree_02.prefab
+  artifactKey: Guid(4ed2be451e9dc9845969311a51c7ba2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/PalmTree_02.prefab using Guid(4ed2be451e9dc9845969311a51c7ba2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b576a41d41991734fff69abc65217e46') in 0.021055 seconds
+  Import took 0.031928 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Torch_02.prefab
+  artifactKey: Guid(550bb7864b0e7c14aa72d915e763f2dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Torch_02.prefab using Guid(550bb7864b0e7c14aa72d915e763f2dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '629d2eb8073adeace8615ec53d5bd40d') in 0.012117 seconds
+  Import took 0.019589 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.936763 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Trash_01.prefab
+  artifactKey: Guid(389b9264a73551449909dcf6935a7815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Props/Trash_01.prefab using Guid(389b9264a73551449909dcf6935a7815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e3ad1097f08e53df4a8c1143868b702') in 0.012189 seconds
+  Import took 0.018081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.572274 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan
+  artifactKey: Guid(78baa61766652b4488f50f3e6497fbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan using Guid(78baa61766652b4488f50f3e6497fbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '763aad4be5fef33e473ae522060594b1') in 0.005679 seconds
+  Import took 0.111354 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Armchair_01.prefab
+  artifactKey: Guid(e8a51975b8f1695489c0d9dbb1ec9fb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Armchair_01.prefab using Guid(e8a51975b8f1695489c0d9dbb1ec9fb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5b02ba54fe6215d1f86be164f3e4f89') in 0.015716 seconds
+  Import took 0.040322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_01.prefab
+  artifactKey: Guid(2dad1383b9a00dc43b32cf135b2431f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_01.prefab using Guid(2dad1383b9a00dc43b32cf135b2431f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08ed1747b7d86a5be2cfb16008d72528') in 0.052570 seconds
+  Import took 0.070104 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Chair_02.prefab
+  artifactKey: Guid(8a9956f6b038a5b44811f05d4fafb605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Chair_02.prefab using Guid(8a9956f6b038a5b44811f05d4fafb605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dc2fcfc90e3fac33c3bf8a7ed7ab9a2') in 0.012009 seconds
+  Import took 0.037817 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_04_Folded.prefab
+  artifactKey: Guid(0a657829d8985cb489cd50d7ed54a79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_04_Folded.prefab using Guid(0a657829d8985cb489cd50d7ed54a79d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f6c631c542f7b3ce224bb42e3e2bfd6') in 0.017746 seconds
+  Import took 0.024646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Chair_03.prefab
+  artifactKey: Guid(5b297189a320b854682aa628b8042182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Chair_03.prefab using Guid(5b297189a320b854682aa628b8042182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a39d56acfcb233b4c5575c6129124fd') in 0.012106 seconds
+  Import took 0.019546 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_02_Folded.prefab
+  artifactKey: Guid(992aa7a62045a7b4f95f2fbcea257511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_02_Folded.prefab using Guid(992aa7a62045a7b4f95f2fbcea257511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c12020e64a4d5d46066eea8c19b45a58') in 0.018120 seconds
+  Import took 0.024849 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_03.prefab
+  artifactKey: Guid(a7727c56a9da5ad489b68fb8c7cd5d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_03.prefab using Guid(a7727c56a9da5ad489b68fb8c7cd5d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2970fc619a051edb472301d0f88817a1') in 0.019978 seconds
+  Import took 0.060964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000539 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Chair_01.prefab
+  artifactKey: Guid(3a7458930dc614d48823e1cc05a7c82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Chair_01.prefab using Guid(3a7458930dc614d48823e1cc05a7c82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62508c74fe464e801e78e61885ac52b6') in 0.016269 seconds
+  Import took 0.074447 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000523 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_01_Folded.prefab
+  artifactKey: Guid(0609f1a3f3594f2408a71853cf0fcbbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_01_Folded.prefab using Guid(0609f1a3f3594f2408a71853cf0fcbbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc27567e90c1d8138e90ec2e8e57d40a') in 0.019244 seconds
+  Import took 0.030198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_02.prefab
+  artifactKey: Guid(bab079137e7b4744aafa58a6efeb731b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_02.prefab using Guid(bab079137e7b4744aafa58a6efeb731b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f89b10daa12790538b41a92316bad1f6') in 0.018520 seconds
+  Import took 0.025135 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Chair_04.prefab
+  artifactKey: Guid(99b29fa09a4facc4faca87cace40f8c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Chair_04.prefab using Guid(99b29fa09a4facc4faca87cace40f8c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85a00d16c369aedfb7d500b2ceec2658') in 0.017754 seconds
+  Import took 0.023580 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_03_Folded.prefab
+  artifactKey: Guid(bc8d2b5366fe3184184b48c1cce05ce0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_03_Folded.prefab using Guid(bc8d2b5366fe3184184b48c1cce05ce0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b9c228d0f3b0eb4d559df8c08a23cb6') in 0.021797 seconds
+  Import took 0.094341 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_04.prefab
+  artifactKey: Guid(a017974c745197545a1446a3d42a296b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_BeachUnmbrella_04.prefab using Guid(a017974c745197545a1446a3d42a296b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '709bbf9a173fd23eb49604287d434dd0') in 0.019359 seconds
+  Import took 0.026035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.666927 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Mirror_01.prefab
+  artifactKey: Guid(d5a9b6839e46b814c83eb9b4fb4c1938) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Mirror_01.prefab using Guid(d5a9b6839e46b814c83eb9b4fb4c1938) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa0666a4a36518bfe8a3311a9324cbbb') in 0.012157 seconds
+  Import took 0.018644 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Screen_01.prefab
+  artifactKey: Guid(a1c2fe88d9149714eb69be0918cb2cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Screen_01.prefab using Guid(a1c2fe88d9149714eb69be0918cb2cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70b12b929a9fa90fb63fb3826b3b62f5') in 0.011605 seconds
+  Import took 0.017454 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_NightStand_01.prefab
+  artifactKey: Guid(55b84d5f2d21bac49ab9325ae010c4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_NightStand_01.prefab using Guid(55b84d5f2d21bac49ab9325ae010c4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '920dc876e78ca9a5652b3140d69dcab0') in 0.013237 seconds
+  Import took 0.019422 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_ScreenFolded_01.prefab
+  artifactKey: Guid(8f8635bf9f86045489368997703d2e31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_ScreenFolded_01.prefab using Guid(8f8635bf9f86045489368997703d2e31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '877eed60268b4877fe761eec9b37c6d7') in 0.012534 seconds
+  Import took 0.018711 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Sofa_02.prefab
+  artifactKey: Guid(1eb5f9cc58a679e4bb3c35027d8bcbe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Sofa_02.prefab using Guid(1eb5f9cc58a679e4bb3c35027d8bcbe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47362dcdbb369cb40b94da1d754b5d2a') in 0.011941 seconds
+  Import took 0.128157 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000498 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Sofa_01.prefab
+  artifactKey: Guid(8bac6dff3ebf1f14994c72677efc756a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Sofa_01.prefab using Guid(8bac6dff3ebf1f14994c72677efc756a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84585fa73954b718f8fd6ba73e5b6a7d') in 0.022574 seconds
+  Import took 0.032969 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Sink_01.prefab
+  artifactKey: Guid(9bad6dbd506420241987695ee76ce26a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Sink_01.prefab using Guid(9bad6dbd506420241987695ee76ce26a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4153be5a25b0d012e3b97f3ecb0f2484') in 0.013111 seconds
+  Import took 0.019221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Sunbed_01.prefab
+  artifactKey: Guid(a5e03511f3a773946b14e16c631af429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Sunbed_01.prefab using Guid(a5e03511f3a773946b14e16c631af429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '395822b2fca6fc49b795ccc9b07f1f25') in 0.012226 seconds
+  Import took 0.019300 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.355375 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Table_01.prefab
+  artifactKey: Guid(eaf326c5b45bf0540a7eb9a99008a377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Table_01.prefab using Guid(eaf326c5b45bf0540a7eb9a99008a377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5297e14bb868489a523b3f1f3ca2f8e7') in 0.011523 seconds
+  Import took 0.107295 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000515 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Table_02.prefab
+  artifactKey: Guid(eb43d04fd73824c4fb0f772e02d607b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_Table_02.prefab using Guid(eb43d04fd73824c4fb0f772e02d607b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57bef549e4617762b41460a290b1911a') in 0.022728 seconds
+  Import took 0.033459 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_TableLow_02.prefab
+  artifactKey: Guid(c09eb73475ae63940bf93a64b6b119b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_TableLow_02.prefab using Guid(c09eb73475ae63940bf93a64b6b119b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eee153d326e7afc21edfff1682a454f1') in 0.012870 seconds
+  Import took 0.018679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_TableLow_03.prefab
+  artifactKey: Guid(4a8c2330010ae8543ab56da9261e64df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_TableLow_03.prefab using Guid(4a8c2330010ae8543ab56da9261e64df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8dedde7ce32abe62bba47c66e24b693') in 0.011961 seconds
+  Import took 0.122970 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000478 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_TableLow_01.prefab
+  artifactKey: Guid(53b657bf57c724143a2c4f4a13a177ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Rattan/Rattan_TableLow_01.prefab using Guid(53b657bf57c724143a2c4f4a13a177ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f6ae3bee58bfb30b94e7a0954ea4087') in 0.017952 seconds
+  Import took 0.076922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.654798 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps
+  artifactKey: Guid(61072ba2d2320bb4cac9683bd4b97448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps using Guid(61072ba2d2320bb4cac9683bd4b97448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ba10a8cda2b3cb0096180bfd87a2ff9') in 0.005374 seconds
+  Import took 0.011439 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.098959 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_05.prefab
+  artifactKey: Guid(796cec11ce405ba44b8d626a11a7aed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_05.prefab using Guid(796cec11ce405ba44b8d626a11a7aed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89d93b0fd2e1f9a3b14439412d122464') in 0.014022 seconds
+  Import took 0.021268 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_10.prefab
+  artifactKey: Guid(1010da6fc5399144e91051d6be912c09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_10.prefab using Guid(1010da6fc5399144e91051d6be912c09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efec292f4c67793ec880d3abf83a1642') in 0.013683 seconds
+  Import took 0.139638 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000499 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_12.prefab
+  artifactKey: Guid(f3304ac18fbc95349910f8bdee93fe1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_12.prefab using Guid(f3304ac18fbc95349910f8bdee93fe1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cafb1d7eb267d5d82097d4e72df5ac1') in 0.023287 seconds
+  Import took 0.034033 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_06.prefab
+  artifactKey: Guid(7f3c640731e3708479831234685607fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_06.prefab using Guid(7f3c640731e3708479831234685607fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24e4f8752234143ce7edaa4f3b436427') in 0.014179 seconds
+  Import took 0.020185 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Bottle_03.prefab
+  artifactKey: Guid(1d12a853e5d6d3c4d9c6d820d9eaa13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Bottle_03.prefab using Guid(1d12a853e5d6d3c4d9c6d820d9eaa13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da679e60ca32fcd4719a31eab386f3d8') in 0.012717 seconds
+  Import took 0.034498 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Bottle_01.prefab
+  artifactKey: Guid(13cc99bae5c94564aa3a9852046101ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Bottle_01.prefab using Guid(13cc99bae5c94564aa3a9852046101ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44810a61306dc1c8732bb197de739e85') in 0.012830 seconds
+  Import took 0.018933 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_08.prefab
+  artifactKey: Guid(88089860b8b388145a2c0ff9f39c4168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_08.prefab using Guid(88089860b8b388145a2c0ff9f39c4168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '493418b9e535257dbd2c181d3be3e8ef') in 0.020640 seconds
+  Import took 0.027682 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_11.prefab
+  artifactKey: Guid(1684b9cb556108148acabe89abaaa8c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_11.prefab using Guid(1684b9cb556108148acabe89abaaa8c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f07879043efb9ad3a58f917459435a39') in 0.020280 seconds
+  Import took 0.044909 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Bottle_02.prefab
+  artifactKey: Guid(b7abe7a3a6f9f8c4eb1cdcefce431ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Bottle_02.prefab using Guid(b7abe7a3a6f9f8c4eb1cdcefce431ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56d8e2165b7f0e705ef267a09af0faa0') in 0.011818 seconds
+  Import took 0.018878 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Banana_01.prefab
+  artifactKey: Guid(86d0da89d8909714080b7e15070336ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Banana_01.prefab using Guid(86d0da89d8909714080b7e15070336ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee433beda25b44a866aa4309bc93977c') in 0.012295 seconds
+  Import took 0.027555 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_07.prefab
+  artifactKey: Guid(336b628eb4ed2664480cc230342253a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_07.prefab using Guid(336b628eb4ed2664480cc230342253a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dd2c594e91a5c8a37d7c4195ab42534') in 0.016663 seconds
+  Import took 0.023432 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Carambola_01.prefab
+  artifactKey: Guid(2a61db7a4e8f4d644b19e9944b69a1c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Carambola_01.prefab using Guid(2a61db7a4e8f4d644b19e9944b69a1c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55df75a2efee4c2978db811f55d55115') in 0.012232 seconds
+  Import took 0.038017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_09.prefab
+  artifactKey: Guid(1cd8a4d4c39854042863cc7e02a08d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Ball_09.prefab using Guid(1cd8a4d4c39854042863cc7e02a08d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1f015cabcdf4d0f371f4ffce3cd0500') in 0.018355 seconds
+  Import took 0.024458 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.495032 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_01.prefab
+  artifactKey: Guid(bcfc4c31ff952d4428ffeebc32a894bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_01.prefab using Guid(bcfc4c31ff952d4428ffeebc32a894bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a29d0953ca270981b482df1d693becb') in 0.011826 seconds
+  Import took 0.019642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_02.prefab
+  artifactKey: Guid(c2ea9621cc2f193479f108061e0f5626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_02.prefab using Guid(c2ea9621cc2f193479f108061e0f5626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdb5ef8b991057deac7ef2c3872da173') in 0.011609 seconds
+  Import took 0.039645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_04.prefab
+  artifactKey: Guid(45320caa01c93fb4bbe77e5d3d9efd71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_04.prefab using Guid(45320caa01c93fb4bbe77e5d3d9efd71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba6482b186062ae6317cb9312cd612e9') in 0.011459 seconds
+  Import took 0.051311 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000381 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_03.prefab
+  artifactKey: Guid(de9d21008604ee34496c72f009a05610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_03.prefab using Guid(de9d21008604ee34496c72f009a05610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beec2c89d5033759c59bab749eec0eed') in 0.019522 seconds
+  Import took 0.027712 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.220914 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_05.prefab
+  artifactKey: Guid(4da883f8ccb2dc940ba2050fefb41251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_05.prefab using Guid(4da883f8ccb2dc940ba2050fefb41251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99429fe2a3b6ac7c0d8e548df5ec612a') in 0.011707 seconds
+  Import took 0.053253 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerDecoration_02.prefab
+  artifactKey: Guid(5aa086436d3ac124b9b8420f24c7d948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerDecoration_02.prefab using Guid(5aa086436d3ac124b9b8420f24c7d948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a6443dc4a1075b4f0ee4ac71cc00500') in 0.014879 seconds
+  Import took 0.036063 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerBoat_01.prefab
+  artifactKey: Guid(42c47a23b22b2fe429fe06dde6f64cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerBoat_01.prefab using Guid(42c47a23b22b2fe429fe06dde6f64cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a83491c98e9336285db4540f3c45aa2') in 0.011864 seconds
+  Import took 0.035394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_07.prefab
+  artifactKey: Guid(56a9f780a18a7584fa968b57c2750fb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_07.prefab using Guid(56a9f780a18a7584fa968b57c2750fb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae8886f4114be245b163f863786d33a8') in 0.011647 seconds
+  Import took 0.018277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_06.prefab
+  artifactKey: Guid(9c067719579f30f49889eb7539952669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Cocktail_06.prefab using Guid(9c067719579f30f49889eb7539952669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '835a7cb6a8893a12d4cdd5d73f99166f') in 0.015689 seconds
+  Import took 0.035747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerDecoration_01.prefab
+  artifactKey: Guid(a51e516fcf80f1145b67e88c7e278e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerDecoration_01.prefab using Guid(a51e516fcf80f1145b67e88c7e278e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17c65d964caf1bdc91c038c04629de09') in 0.012119 seconds
+  Import took 0.018670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_01.prefab
+  artifactKey: Guid(0a7f3a090bdec9e4b94394028a3801ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_01.prefab using Guid(0a7f3a090bdec9e4b94394028a3801ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef0b72f0f66f8ca67fcd9d4879ec19e8') in 0.016564 seconds
+  Import took 0.022322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Coconut_01.prefab
+  artifactKey: Guid(c989b9f5bb70ddc4d9e2df3051f598fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Coconut_01.prefab using Guid(c989b9f5bb70ddc4d9e2df3051f598fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ee1fffbd8d38491dbd68110a2063381') in 0.013204 seconds
+  Import took 0.027717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.083458 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_02.prefab
+  artifactKey: Guid(6b4495afe1da30f408e22e40f888ca50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_02.prefab using Guid(6b4495afe1da30f408e22e40f888ca50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '194fd58ff93118cb24e0a7ce3d2999f3') in 0.014740 seconds
+  Import took 0.037195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000353 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_02.prefab
+  artifactKey: Guid(96c1ec815e179ef4f952babd96ca941f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_02.prefab using Guid(96c1ec815e179ef4f952babd96ca941f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '984cb3f8231f2fa76d75704615b91558') in 0.015865 seconds
+  Import took 0.023984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_05.prefab
+  artifactKey: Guid(536d5f2e6921fd241bc317af26ce2bcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_05.prefab using Guid(536d5f2e6921fd241bc317af26ce2bcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0d9a8de302b5de3d9e8287cc5df9a53') in 0.013387 seconds
+  Import took 0.033200 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_04.prefab
+  artifactKey: Guid(94bbd7c7a69641d489a6affa7ce3e5f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_04.prefab using Guid(94bbd7c7a69641d489a6affa7ce3e5f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55d40e20dee9dc06b1da40e3a8008ed3') in 0.012129 seconds
+  Import took 0.019964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_01.prefab
+  artifactKey: Guid(341a2db95f7e81d41921e5f347015fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_01.prefab using Guid(341a2db95f7e81d41921e5f347015fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '374b25c0ec27c456873e4a0d1318e014') in 0.017710 seconds
+  Import took 0.025358 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_03.prefab
+  artifactKey: Guid(ac190201c054626479bd65d4246926c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_03.prefab using Guid(ac190201c054626479bd65d4246926c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52ebaff030ac2d924a2d69ffee230f44') in 0.014073 seconds
+  Import took 0.022451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_03.prefab
+  artifactKey: Guid(db4a2cdf3bd077c43b6d1fc28559feb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_03.prefab using Guid(db4a2cdf3bd077c43b6d1fc28559feb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edd922493722102c029e21b3494e2d1d') in 0.015043 seconds
+  Import took 0.058748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_04.prefab
+  artifactKey: Guid(53c7f5bd1ba1a014bacdad06c4e9bdc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/FlowerPot_04.prefab using Guid(53c7f5bd1ba1a014bacdad06c4e9bdc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a4df7c24eae745179ccca87812fc4e') in 0.012396 seconds
+  Import took 0.019123 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.170559 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_05.prefab
+  artifactKey: Guid(6bd7adadf9ee53c40aabc73c73f89d47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_05.prefab using Guid(6bd7adadf9ee53c40aabc73c73f89d47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46d52e3697c158816a069a9745d8a687') in 0.016398 seconds
+  Import took 0.024660 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_06.prefab
+  artifactKey: Guid(3c9ab03e4031bc54c87fd36db50543e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_06.prefab using Guid(3c9ab03e4031bc54c87fd36db50543e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e01c060976439c97242ea37e7fdacdef') in 0.011957 seconds
+  Import took 0.080220 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_12.prefab
+  artifactKey: Guid(aefb5b4382dd49a4a800175e62e654a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_12.prefab using Guid(aefb5b4382dd49a4a800175e62e654a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a79094f17e0f74d09a1b56da288594d5') in 0.015638 seconds
+  Import took 0.023485 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_08.prefab
+  artifactKey: Guid(99a526bbbe3a7f947bff34377ffc01fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_08.prefab using Guid(99a526bbbe3a7f947bff34377ffc01fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd63d470fd4c2b97f0c5ef120864d62f') in 0.012714 seconds
+  Import took 0.020161 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Pear_01.prefab
+  artifactKey: Guid(51590eee452b1094b979c515e23807c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Pear_01.prefab using Guid(51590eee452b1094b979c515e23807c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecc0edfe1ee53ebe1727ebecd9fa7550') in 0.012852 seconds
+  Import took 0.031094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_11.prefab
+  artifactKey: Guid(247eba9307485b84e946c12af8be5d00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_11.prefab using Guid(247eba9307485b84e946c12af8be5d00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11d97fb44601aca29eb813f7ecbdac02') in 0.012667 seconds
+  Import took 0.019038 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_10.prefab
+  artifactKey: Guid(29c5fd1871dd84749be7387d8bc84f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_10.prefab using Guid(29c5fd1871dd84749be7387d8bc84f4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39110bf584e11158fda63b862d7df64d') in 0.011990 seconds
+  Import took 0.018047 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Mango_01.prefab
+  artifactKey: Guid(dd88c37df383c944890ea4c77897579b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/Mango_01.prefab using Guid(dd88c37df383c944890ea4c77897579b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b975cfc33dd779222e1f27e477d0f2c3') in 0.012529 seconds
+  Import took 0.019038 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_09.prefab
+  artifactKey: Guid(5817ee69c2f17e44fa7dcf9dcc010e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_09.prefab using Guid(5817ee69c2f17e44fa7dcf9dcc010e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b131bc67c51fdaa7ec9029950baadb05') in 0.018681 seconds
+  Import took 0.024847 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_13.prefab
+  artifactKey: Guid(8b234dcb9083eb34f99e75832afe8046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_13.prefab using Guid(8b234dcb9083eb34f99e75832afe8046) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04dc3ac89f21e7b10b4c016fe46fab38') in 0.019433 seconds
+  Import took 0.026225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_07.prefab
+  artifactKey: Guid(a73dda27142f0d94a9d08f1ba6b1a8a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCream_07.prefab using Guid(a73dda27142f0d94a9d08f1ba6b1a8a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12154c7838e2a759dd17e5204d2958b7') in 0.013507 seconds
+  Import took 0.038961 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000370 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCreamHolder_01.prefab
+  artifactKey: Guid(b679b225f0ab8ec42bcca22eb2f66548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/SmallProps/IceCreamHolder_01.prefab using Guid(b679b225f0ab8ec42bcca22eb2f66548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58def32269e074df5e887b2010b07a54') in 0.011675 seconds
+  Import took 0.038492 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.267846 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Water
+  artifactKey: Guid(aac82a9c7f26f0f44acd653a4c533055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Water using Guid(aac82a9c7f26f0f44acd653a4c533055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cab6890d03ea8e9d4e2087ba62a6694') in 0.090315 seconds
+  Import took 0.117767 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000382 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Water/Water_Plane.prefab
+  artifactKey: Guid(508ff121b71ed7e4d8487406b1ea5141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Water/Water_Plane.prefab using Guid(508ff121b71ed7e4d8487406b1ea5141) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '034817e42b3b0d949fa809cf37f01de4') in 0.063889 seconds
+  Import took 0.075972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Water/Plane_Shore_Corner.prefab
+  artifactKey: Guid(cf3cddccf03315d44baba24cd831a4c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Water/Plane_Shore_Corner.prefab using Guid(cf3cddccf03315d44baba24cd831a4c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a82d6ac13c1d988bd4b22b3e29e7e2') in 0.133123 seconds
+  Import took 0.140079 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Water/Plane_Shore.prefab
+  artifactKey: Guid(aaf0a1b0f10ccb6478d97c24865bd2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Water/Plane_Shore.prefab using Guid(aaf0a1b0f10ccb6478d97c24865bd2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab460f1ac8cad665b85b476262c00098') in 0.074839 seconds
+  Import took 0.083720 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006259 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.40 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.144 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.3 MB.
+System memory in use after: 274.4 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4607.
+Total: 2.641000 ms (FindLiveObjects: 0.339900 ms CreateObjectMapping: 0.186300 ms MarkObjects: 1.973800 ms  DeleteObjects: 0.140400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 5130.250734 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Animators/Obstacle-1.controller
+  artifactKey: Guid(94db03e4a33be1a43a6cfa0025628ecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Animators/Obstacle-1.controller using Guid(94db03e4a33be1a43a6cfa0025628ecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a91a29b33f48dd4066bc16aeee2fca1') in 0.041884 seconds
+  Import took 0.049868 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007305 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.133 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.3 MB.
+System memory in use after: 274.5 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4610.
+Total: 2.848500 ms (FindLiveObjects: 0.362600 ms CreateObjectMapping: 0.202500 ms MarkObjects: 2.122000 ms  DeleteObjects: 0.160400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 2093.103765 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-22.fbx
+  artifactKey: Guid(422c7777062857b40a0f35f82cbf8a37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-22.fbx using Guid(422c7777062857b40a0f35f82cbf8a37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c07701d1bebe6a96dfae6e05e66b7693') in 0.960931 seconds
+  Import took 0.969649 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-26.fbx
+  artifactKey: Guid(e22b3be4ca0c4944d86b6294263b1a13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-26.fbx using Guid(e22b3be4ca0c4944d86b6294263b1a13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '167999986c071b5b2a7aa49908bec8c6') in 0.024063 seconds
+  Import took 0.038356 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-24.fbx
+  artifactKey: Guid(892d5903261578049bfe43d781bac3eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-24.fbx using Guid(892d5903261578049bfe43d781bac3eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c9178a6bcb5457ac769647cf0f47b01') in 0.260192 seconds
+  Import took 0.281748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-27.fbx
+  artifactKey: Guid(6de0180b33a743943ae05d7c4cb2b7aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-27.fbx using Guid(6de0180b33a743943ae05d7c4cb2b7aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16348b31acf9a1aca2c0568684debfd3') in 0.012437 seconds
+  Import took 0.018046 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-25.fbx
+  artifactKey: Guid(a3a8c83d8c885974cbd4d5672a5197a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-25.fbx using Guid(a3a8c83d8c885974cbd4d5672a5197a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f3e5c2dc0d3825b8d23bbba75e4e100') in 0.014331 seconds
+  Import took 0.030869 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-23.fbx
+  artifactKey: Guid(7ae98c42d2204e642905b4b9e0b6cb06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-23.fbx using Guid(7ae98c42d2204e642905b4b9e0b6cb06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2ce01ee80168bad1f3838a56c86041f') in 0.016173 seconds
+  Import took 0.043194 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.884435 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-28.fbx
+  artifactKey: Guid(db57c2c2127569845aefad98ee63d2ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-28.fbx using Guid(db57c2c2127569845aefad98ee63d2ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5970bedaca353e96329cd6d0033f8c2c') in 0.020841 seconds
+  Import took 0.027277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Platform.fbx
+  artifactKey: Guid(98b88a3f0e5cfbd45a9a9d07aa716d7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Platform.fbx using Guid(98b88a3f0e5cfbd45a9a9d07aa716d7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a45dc1a010bc106d987ff36080ec9118') in 0.013192 seconds
+  Import took 0.018772 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-30.fbx
+  artifactKey: Guid(b032f04f161f5c045b59fcccb6cecd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-30.fbx using Guid(b032f04f161f5c045b59fcccb6cecd68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ada471d648d4ff496b89f4315b532fc') in 0.022935 seconds
+  Import took 0.129536 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000467 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-29.fbx
+  artifactKey: Guid(2ca7e5fb6cdfc4d4d9500a6fcd09e121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-29.fbx using Guid(2ca7e5fb6cdfc4d4d9500a6fcd09e121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55713f543c86b596581648f90c838245') in 0.033497 seconds
+  Import took 0.077145 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000398 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-31.fbx
+  artifactKey: Guid(5f700f4ff3d4b69408d1901a314a716e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-31.fbx using Guid(5f700f4ff3d4b69408d1901a314a716e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6bf6e4545d9a2edccc461ee994f8421') in 0.038004 seconds
+  Import took 0.074090 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 49.476774 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles
+  artifactKey: Guid(0438cb2347b814041a26724c78154fef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles using Guid(0438cb2347b814041a26724c78154fef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8580a182be96a0eaddd17eb26cb803c') in 0.005144 seconds
+  Import took 0.109773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.124837 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Prefabs
+  artifactKey: Guid(52b454572b407294384d8807a782e8f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Prefabs using Guid(52b454572b407294384d8807a782e8f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd1710832018dd566b450c3bfafc5b72') in 0.005231 seconds
+  Import took 0.113203 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Prefabs/TeslaCoil.prefab
+  artifactKey: Guid(c768a2ba063c0f640bfa66270fc3f4b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Prefabs/TeslaCoil.prefab using Guid(c768a2ba063c0f640bfa66270fc3f4b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33293c5cacec1776ac4c00e7289edf2c') in 0.010196 seconds
+  Import took 0.017056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Prefabs/Flame Thrower.prefab
+  artifactKey: Guid(be256fd7916c7ab4cb16f6a54f16259a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Prefabs/Flame Thrower.prefab using Guid(be256fd7916c7ab4cb16f6a54f16259a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f056a1a4c135bdde3955bfdede9c3102') in 0.007195 seconds
+  Import took 0.031860 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006171 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.081 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.7 MB.
+System memory in use after: 274.9 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4652.
+Total: 2.733700 ms (FindLiveObjects: 0.351600 ms CreateObjectMapping: 0.195000 ms MarkObjects: 2.041500 ms  DeleteObjects: 0.144900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 4.279329 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Prefabs/TeslaCoil.prefab
+  artifactKey: Guid(c768a2ba063c0f640bfa66270fc3f4b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Particles/Prefabs/TeslaCoil.prefab using Guid(c768a2ba063c0f640bfa66270fc3f4b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '782e998efccbdfee6305557aa95c1fef') in 0.039094 seconds
+  Import took 0.141879 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.025702 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated
+  artifactKey: Guid(d46968c093c03af469c3b70f432c9ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated using Guid(d46968c093c03af469c3b70f432c9ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66f1e3147ea200315fd978941d83e6e2') in 0.005359 seconds
+  Import took 0.011428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.084414 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Barricade.prefab
+  artifactKey: Guid(fcd7b1e84cbf9b04c8e5e24c4cca6af6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Barricade.prefab using Guid(fcd7b1e84cbf9b04c8e5e24c4cca6af6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac88fc6560aabdcd9466349a1777b662') in 0.121848 seconds
+  Import took 0.129091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Tesla Coil.prefab
+  artifactKey: Guid(de8a7f0b7a04a7e4faca000e970d2346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Tesla Coil.prefab using Guid(de8a7f0b7a04a7e4faca000e970d2346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a31da5d89cb614524b000196fbaf069f') in 0.011308 seconds
+  Import took 0.016956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Flamethrower.prefab
+  artifactKey: Guid(d476cc516ba6d8745a1317d3f7e4b598) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Flamethrower.prefab using Guid(d476cc516ba6d8745a1317d3f7e4b598) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '020bd5cefcf03061adea213b6bd012cd') in 0.111023 seconds
+  Import took 0.122436 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000395 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Obstacle.prefab
+  artifactKey: Guid(57037858ecc30074d9af416ead438060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Obstacle.prefab using Guid(57037858ecc30074d9af416ead438060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7795b01330968eb822cbce530a068d7e') in 0.013345 seconds
+  Import took 0.022013 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000971 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Decoy.prefab
+  artifactKey: Guid(85e57f319eb4b5b4ab0f5d4b3b5e4b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Decoy.prefab using Guid(85e57f319eb4b5b4ab0f5d4b3b5e4b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5d2f3e4732d8769e50571612eb003b5') in 0.013853 seconds
+  Import took 0.020497 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Box.prefab
+  artifactKey: Guid(2b82995bc2a4cd34897a6ae79451c854) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Box.prefab using Guid(2b82995bc2a4cd34897a6ae79451c854) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd6b04f0838cc897eddec31d62f9dffe') in 0.011161 seconds
+  Import took 0.016834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Wall Arrows.prefab
+  artifactKey: Guid(cfb26f2dba6dbe74198466ba93136a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Unanimated/Wall Arrows.prefab using Guid(cfb26f2dba6dbe74198466ba93136a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c227d8186b14abe735a2ea51a5c76419') in 0.014661 seconds
+  Import took 0.021315 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006458 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.46 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.173 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.66 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.8 MB.
+System memory in use after: 275.0 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4691.
+Total: 2.831900 ms (FindLiveObjects: 0.378400 ms CreateObjectMapping: 0.182600 ms MarkObjects: 2.112800 ms  DeleteObjects: 0.157400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006276 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.25 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.122 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.9 MB.
+System memory in use after: 275.0 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4694.
+Total: 3.216300 ms (FindLiveObjects: 0.350100 ms CreateObjectMapping: 0.192100 ms MarkObjects: 2.525600 ms  DeleteObjects: 0.147800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006428 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.129 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.40 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.9 MB.
+System memory in use after: 275.0 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4697.
+Total: 2.824200 ms (FindLiveObjects: 0.372800 ms CreateObjectMapping: 0.191900 ms MarkObjects: 2.102700 ms  DeleteObjects: 0.156000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006284 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.166 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.9 MB.
+System memory in use after: 275.1 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4700.
+Total: 2.745600 ms (FindLiveObjects: 0.372500 ms CreateObjectMapping: 0.194000 ms MarkObjects: 2.019000 ms  DeleteObjects: 0.159200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006789 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.336 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.36 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 274.9 MB.
+System memory in use after: 275.1 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4703.
+Total: 3.617500 ms (FindLiveObjects: 0.489000 ms CreateObjectMapping: 0.315500 ms MarkObjects: 2.577800 ms  DeleteObjects: 0.234100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 4691.544809 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Export/Kit_GroundMiddle_01.FBX
+  artifactKey: Guid(54cc0593b8bd96c44b0cd230954b5daa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Export/Kit_GroundMiddle_01.FBX using Guid(54cc0593b8bd96c44b0cd230954b5daa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6762dc5caff068f4b8f86b15eaef989f') in 0.327088 seconds
+  Import took 0.335269 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Kit/Kit_GroundMiddle_01.prefab
+  artifactKey: Guid(715f25a1a4d00af4db28adda6f65a566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Summer_Beach_Cartoon_Pack/Prefab/Huts/Kit/Kit_GroundMiddle_01.prefab using Guid(715f25a1a4d00af4db28adda6f65a566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f4618c9865eaf3795e7f2027760ef09') in 0.017329 seconds
+  Import took 0.123197 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 388.879920 seconds.
+  path: Assets/Materials/HilGroundMat.mat
+  artifactKey: Guid(6e876b3d05120c0499d0b8373838b4a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/HilGroundMat.mat using Guid(6e876b3d05120c0499d0b8373838b4a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '800e4f555c3b5c4a1fe1d2855b4edf06') in 0.039289 seconds
+  Import took 0.058692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.767601 seconds.
+  path: Assets/Materials/MountainGroundMat.mat
+  artifactKey: Guid(6e876b3d05120c0499d0b8373838b4a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/MountainGroundMat.mat using Guid(6e876b3d05120c0499d0b8373838b4a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b9c8ba8ce1a003d6a815bc132b6afdf') in 0.014795 seconds
+  Import took 0.021756 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006714 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.34 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.391 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 275.2 MB.
+System memory in use after: 275.4 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4775.
+Total: 3.574100 ms (FindLiveObjects: 0.430000 ms CreateObjectMapping: 0.223300 ms MarkObjects: 2.611600 ms  DeleteObjects: 0.308200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006268 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.33 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.142 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.23 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 275.2 MB.
+System memory in use after: 275.4 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4778.
+Total: 2.878600 ms (FindLiveObjects: 0.366100 ms CreateObjectMapping: 0.199900 ms MarkObjects: 2.142800 ms  DeleteObjects: 0.169000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006277 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.148 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 275.2 MB.
+System memory in use after: 275.4 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4781.
+Total: 3.115000 ms (FindLiveObjects: 0.425900 ms CreateObjectMapping: 0.221800 ms MarkObjects: 2.211200 ms  DeleteObjects: 0.255300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 5787.124709 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Animators/Obstacle-15.controller
+  artifactKey: Guid(6593e1f4b4d2bde49828d3db3cd81471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Animators/Obstacle-15.controller using Guid(6593e1f4b4d2bde49828d3db3cd81471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96e8b492e28270d05b1c28a35dfd071f') in 0.160704 seconds
+  Import took 0.168467 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006455 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.161 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.23 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 275.2 MB.
+System memory in use after: 275.4 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4784.
+Total: 3.035700 ms (FindLiveObjects: 0.381400 ms CreateObjectMapping: 0.201800 ms MarkObjects: 2.200100 ms  DeleteObjects: 0.251600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006344 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.264 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.44 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 275.2 MB.
+System memory in use after: 275.3 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4787.
+Total: 3.725500 ms (FindLiveObjects: 0.664800 ms CreateObjectMapping: 0.301900 ms MarkObjects: 2.550000 ms  DeleteObjects: 0.207100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006341 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.149 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3560 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 275.2 MB.
+System memory in use after: 275.3 MB.
+
+Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 4790.
+Total: 2.849800 ms (FindLiveObjects: 0.384000 ms CreateObjectMapping: 0.198200 ms MarkObjects: 2.104100 ms  DeleteObjects: 0.162700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

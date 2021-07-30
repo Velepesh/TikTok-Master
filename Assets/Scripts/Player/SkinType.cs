@@ -1,7 +1,6 @@
 enum SkinType
 {
-    BOOTS = 25,
-    PANTS = 50,
-    TOP = 75,
-    HAIR = 100
+    Green = 25,
+    Blue= 50,
+    Red = 100,
 }

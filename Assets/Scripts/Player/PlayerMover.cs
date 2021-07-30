@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Player), typeof(Rigidbody), typeof(Animator))]
-public class PlayerMover : MonoBehaviour
+class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private float _rotationSpeed;
+    [SerializeField] private float _turningSpeed;
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _swipeSpeed;
     [SerializeField] private float _slidingSpeed;
@@ -18,19 +18,26 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private LayerMask _groundMask;
 
     readonly private float _gravity = -9.81f;
+    private float _highSpeed;
 
-    private Player _player; 
+    private Player _player;
     private Rigidbody _rigidbody;
     private Animator _animator;
+    private Transform _centerPoint;
+    private float _previousRotationY;
     private float? _lastMousePositionX;
     private Vector3 _velocity;
-    private bool _isPlayerMove;
+    private bool _canSwipe;
+    private bool _isTurning;
     private bool _isSlidingRun;
+    private float _startSpeed;
+
+    public event UnityAction<bool> HighSpeedRun;
 
     private void OnValidate()
     {
         _speed = Mathf.Clamp(_speed, 0f, float.MaxValue);
-        _rotationSpeed = Mathf.Clamp(_rotationSpeed, 0f, float.MaxValue);
+        _turningSpeed = Mathf.Clamp(_turningSpeed, 0f, float.MaxValue);
         _jumpHeight = Mathf.Clamp(_jumpHeight, 0f, float.MaxValue);
         _swipeSpeed = Mathf.Clamp(_swipeSpeed, 0f, float.MaxValue);
         _slidingSpeed = Mathf.Clamp(_slidingSpeed, 0f, float.MaxValue);
@@ -43,63 +50,54 @@ public class PlayerMover : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
 
-        _isPlayerMove = true;
+        CanSwipe(true);
+        _startSpeed = _speed;
+        _highSpeed = _speed * 1.5f;
     }
 
     private void OnEnable()
     {
         _player.PlayerStoped += OnPlayerStoped;
-        _player.PlayerRotated += OnPlayerRotated;
     }
 
     private void OnDisable()
     {
         _player.PlayerStoped -= OnPlayerStoped;
-        _player.PlayerRotated -= OnPlayerRotated;
     }
 
     private void FixedUpdate()
     {
-        if (_isPlayerMove)
-        {
-            Swipe();
-        }
-       
+        _velocity = _rigidbody.transform.InverseTransformDirection(_rigidbody.velocity);
+
         Move();
 
+        if (_canSwipe)
+            Swipe();
 
-        if (IsGrounded() == false)
-            _velocity.y += _gravity * Time.fixedDeltaTime;
-        else if (_velocity.y < 0f)
-            _velocity.y = 0f;
-        
-        _rigidbody.velocity = _velocity;
+        if (_isTurning)
+            Turn();
+
+        _velocity.y += _gravity * Time.fixedDeltaTime;
+
+        _rigidbody.velocity = _rigidbody.transform.TransformDirection(_velocity);
     }
 
     private void OnPlayerStoped()
     {
-        _speed = 0f;
+        StopMoving();
 
-        _isPlayerMove = false;
-    }
-    
-    private void OnPlayerRotated()
-    {
-        StartCoroutine(Rotation());
+        CanSwipe(false);
+        HighSpeedRun?.Invoke(false);
     }
 
-    private IEnumerator Rotation()
+    private void CanSwipe(bool canSwipe)
     {
-        while(transform.rotation != Quaternion.identity)
-        {
-            var currentRotation = transform.rotation;
+        _canSwipe = canSwipe;
+    }
 
-            var targetRotation = Quaternion.identity;
+    private void ChangeBorder()
+    {
 
-            transform.rotation = Quaternion.Lerp(currentRotation, targetRotation, Time.fixedDeltaTime);
-
-            yield return null;
-        }
     }
     private void Move()
     {
@@ -115,69 +113,90 @@ public class PlayerMover : MonoBehaviour
 
         if (_lastMousePositionX != null)
         {
-            float difference = Input.mousePosition.x - _lastMousePositionX.Value;
-           
+            Vector3 position = transform.InverseTransformDirection(transform.position);
+
+            float currentX = Input.mousePosition.x;
+            float difference = currentX - _lastMousePositionX.Value;
+
             if (difference < 0f)
-                TryMoveLeft();
+                TryMoveLeft(difference, position);
             else
-                TryMoveRight();
+                TryMoveRight(difference, position);
+
+            _lastMousePositionX = currentX;
         }
     }
-    private void TryMoveLeft()
+    private void TryMoveLeft(float difference, Vector3 position)
     {
-        if (transform.position.x > _leftBorder)
-            SetSwipePosition();
-        else
-            transform.position = new Vector3(_leftBorder, transform.position.y, transform.position.z);
+        //if (position.x > _leftBorder)//граница от игрока
+        SetSwipePosition(difference, position);
+        //Debug.Log(position.x);
+        //else
+        //transform.position = new Vector3(_leftBorder, position.y, position.z);
     }
 
-    private void TryMoveRight()
+    private void TryMoveRight(float difference, Vector3 position)
     {
-        if (transform.position.x < _rightBorder)
-            SetSwipePosition();
-        else
-            transform.position = new Vector3(_rightBorder, transform.position.y, transform.position.z);
+        //if (position.x < _rightBorder)
+        SetSwipePosition(difference, position);
+        //Debug.Log(position.x);
+        // else
+        //transform.position = new Vector3(_rightBorder, position.y, position.z);
     }
-    private void SetSwipePosition()
+    private void SetSwipePosition(float difference, Vector3 position)
     {
-        float currentX = Input.mousePosition.x;
-        float difference = currentX - _lastMousePositionX.Value;
-        float newPositionX = 0f;
-
         if (_isSlidingRun)
         {
-            newPositionX = transform.position.x + difference;
+            position.x = _velocity.x + difference * _swipeSpeed * Time.fixedDeltaTime;
 
-            Vector3 movement = new Vector3(newPositionX, transform.position.y, transform.position.z).normalized;
-
-            _rigidbody.AddForce(new Vector3(movement.x * _slidingSpeed, movement.y, movement.z), ForceMode.VelocityChange);
+            _velocity.x = position.x;
         }
         else
         {
-            newPositionX = transform.position.x + difference * _swipeSpeed * Time.fixedDeltaTime;
-
-            transform.position = new Vector3(newPositionX, transform.position.y, transform.position.z);
+            position.x += difference * _swipeSpeed * Time.fixedDeltaTime;
+            transform.position = transform.TransformDirection(position);
         }
-
-        Rotate(difference);
-
-         _lastMousePositionX = currentX;
     }
 
-    private void Rotate(float positionX)
+    private bool IsGrounded()
     {
-        var currentRotation = transform.rotation;
-
-        var targetRotation = Quaternion.Euler(new Vector3(0, Mathf.Atan2(positionX, _velocity.y) * 60 / Mathf.PI, 0));
-
-        transform.rotation = Quaternion.Lerp(currentRotation, targetRotation, Time.fixedDeltaTime * _rotationSpeed);
+        return Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
     }
 
-    public void Jump()
+    private void ChangeToHighSpeed()
     {
-        if(IsGrounded())
+        _speed = _highSpeed;
+
+        HighSpeedRun?.Invoke(true);
+    }
+
+    private void StopMoving()
+    {
+        _speed = 0f;
+    }
+
+    private void Jump()
+    {
+        _rigidbody.AddForce(Vector3.up * _jumpHeight, ForceMode.Impulse);
+    }
+
+    public void ChangeToStartSpeed()
+    {
+        _speed = _startSpeed;
+
+        HighSpeedRun?.Invoke(false);
+    }
+
+    public void StopFastRun()
+    {
+        _animator.SetBool(AnimatorPlayerController.States.IsFastRun, false);
+    }
+
+    public void JumpShort()
+    {
+        if (IsGrounded())
         {
-            _velocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
+            Jump();
 
             _animator.SetTrigger(AnimatorPlayerController.States.Jump);
         }
@@ -190,8 +209,103 @@ public class PlayerMover : MonoBehaviour
         _isSlidingRun = isSliding;
     }
 
-    private bool IsGrounded()
+    public void ChangeToFastRun()
     {
-       return Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
+        ChangeToHighSpeed();
+
+        _animator.SetBool(AnimatorPlayerController.States.IsFastRun, true);
+    }
+
+    public void JumpLong()
+    {
+        if (IsGrounded())
+        {
+            Jump();
+
+            _animator.SetTrigger(AnimatorPlayerController.States.JumpOver);
+        }
+    }
+
+    private void Turn()
+    {
+        transform.RotateAround(_centerPoint.position, Vector3.up, _turningSpeed * Time.fixedDeltaTime);
+
+        float currentRotation = transform.rotation.eulerAngles.y;
+        // if (transform.rotation.eulerAngles.y >= 0f && transform.rotation.eulerAngles.y < 90f)
+        if (Mathf.Floor(currentRotation) == _targetRotationY)
+        {
+            StopTurning();
+        }
+
+        Debug.Log(Mathf.Floor(currentRotation));
+    }
+
+    readonly private float _angleStep = 90f;
+    private float _targetRotationY;
+    public void StartTurning(Transform centerPoint, TurnType type)
+    {
+        _previousRotationY = Mathf.Floor(transform.rotation.eulerAngles.y);
+        Debug.Log(_previousRotationY + " _previousRotationY");
+        _turningSpeed = GetRotationSpeed(_previousRotationY, _turningSpeed, type);
+        _centerPoint = centerPoint;
+
+        _isTurning = true;
+
+        StopMoving();
+        CanSwipe(false);
+
+        HighSpeedRun?.Invoke(true);
+    }
+
+    private float GetRotationSpeed(float previousRotationY, float turningSpeed, TurnType type)
+    {
+        if (TurnType.Left == type && turningSpeed >= 0f)
+        {
+            _targetRotationY = previousRotationY - _angleStep;
+
+            turningSpeed *= -1;
+        }
+        else if (TurnType.Right == type)
+        {
+            _targetRotationY = previousRotationY + _angleStep;
+
+            turningSpeed = Mathf.Abs(turningSpeed);
+        }
+        else
+        {
+            _targetRotationY = previousRotationY - _angleStep;
+
+            return turningSpeed;
+        }
+
+        if (_targetRotationY > 360f)
+        {
+            _targetRotationY += -360f;
+        }
+
+        if (_targetRotationY < 0f)
+        {
+            _targetRotationY += 360f;
+        }
+
+        if(_targetRotationY == 360)
+        {
+            _targetRotationY = 0;
+        }
+
+        Debug.Log(_targetRotationY + " _targetRotationY");
+
+        return turningSpeed;
+    }
+
+    public void StopTurning()
+    {
+        _isTurning = false;
+        CanSwipe(true);
+        ChangeToStartSpeed();
+
+        transform.rotation = Quaternion.Euler(new Vector3(0f, _targetRotationY, 0f));
+
+        HighSpeedRun?.Invoke(false);
     }
 }

@@ -1,0 +1,758 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.10f1 (297d780c91bc) revision 2719096'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19042.1110; Version 2009; 64bit' Language: 'ru' Physical Memory: 16196 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Repos/TikTok Master
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+61474
+Successfully changed project path to: D:/Repos/TikTok Master
+D:/Repos/TikTok Master
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 109.81 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.10f1 (297d780c91bc)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Repos/TikTok Master/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f11)
+    Vendor:   
+    VRAM:     5980 MB
+    Driver:   27.21.14.6231
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56124
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001898 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 99.39 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.014 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006363 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 101.18 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.192 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.17 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3871 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 294.9 MB.
+System memory in use after: 295.0 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 4567.
+Total: 2.703200 ms (FindLiveObjects: 0.356800 ms CreateObjectMapping: 0.185600 ms MarkObjects: 1.971700 ms  DeleteObjects: 0.188300 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/DemoScenes/DemoScenes.unity
+  artifactKey: Guid(e396ff6afd77bb144b796c5381fedf31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/DemoScenes/DemoScenes.unity using Guid(e396ff6afd77bb144b796c5381fedf31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3960ad142c167169bf9ee321a01cefc9') in 0.015847 seconds
+  Import took 0.021061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/PACKAGES
+  artifactKey: Guid(22238dbcc1f2c724ea137dd17b9d7358) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES using Guid(22238dbcc1f2c724ea137dd17b9d7358) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eced75d7677acfc5a50bffc14b533c36') in 0.004330 seconds
+  Import took 0.009099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES
+  artifactKey: Guid(0e4cfb753527ba747b3dad443f68c557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES using Guid(0e4cfb753527ba747b3dad443f68c557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63e481782902a17471091a26b42dc357') in 0.004699 seconds
+  Import took 0.009799 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles
+  artifactKey: Guid(1602db336a35d014591b3857d87bd9f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles using Guid(1602db336a35d014591b3857d87bd9f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8fae7a93f1d1cdf6e8c8fa589f16112') in 0.005090 seconds
+  Import took 0.010746 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/DemoScenes
+  artifactKey: Guid(7dd2a0837e4ef9e4dba2a500647e6b71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/DemoScenes using Guid(7dd2a0837e4ef9e4dba2a500647e6b71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea0c3be58becf5d0c7b6ecca246d6c6d') in 0.005125 seconds
+  Import took 0.011175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.176006 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials
+  artifactKey: Guid(164234a69fd49dc4d85c3beec3b36620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials using Guid(164234a69fd49dc4d85c3beec3b36620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e22e16266a9c3f2033e1af3a7614a9fb') in 0.008886 seconds
+  Import took 0.015068 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.070880 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Black.mat
+  artifactKey: Guid(4d961b50973544a41829febd5f22d8e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Black.mat using Guid(4d961b50973544a41829febd5f22d8e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a7bae1db3498f0203f51e5d561af0ce') in 0.224268 seconds
+  Import took 0.231433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Color3.mat
+  artifactKey: Guid(74398eca9e780364c9c0134d3d9adc41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Color3.mat using Guid(74398eca9e780364c9c0134d3d9adc41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6da73c0c53e9e1f1356af344ef7008fe') in 0.009097 seconds
+  Import took 0.014141 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Color2.mat
+  artifactKey: Guid(a7e6fbce49cbe824898262268a46b8a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Color2.mat using Guid(a7e6fbce49cbe824898262268a46b8a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24cba331c02151a2439dc83617f06124') in 0.009388 seconds
+  Import took 0.015418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/White.mat
+  artifactKey: Guid(8caf8e8c44645e041a7312b5a11c3ce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/White.mat using Guid(8caf8e8c44645e041a7312b5a11c3ce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87ddad1b82a9920394732ce522e7554c') in 0.023675 seconds
+  Import took 0.031193 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Glass.mat
+  artifactKey: Guid(0193bb3b2c8205c49a6625286780221a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Glass.mat using Guid(0193bb3b2c8205c49a6625286780221a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaaf51807b004bb8a97b45d5e157da3c') in 0.009413 seconds
+  Import took 0.014780 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000153 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Color1.mat
+  artifactKey: Guid(0d0b8cc8f2139874cae76a121996bbb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Materials/Color1.mat using Guid(0d0b8cc8f2139874cae76a121996bbb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ec8fb6ddcd4146f6e291678249e6e97') in 0.010486 seconds
+  Import took 0.015879 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.666697 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models
+  artifactKey: Guid(8ef44353beab80e40a84b12f7380f73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models using Guid(8ef44353beab80e40a84b12f7380f73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac12fd3bf22eefbc5890f1497a5167aa') in 0.004728 seconds
+  Import took 0.010570 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001013 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models
+  artifactKey: Guid(8ef44353beab80e40a84b12f7380f73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models using Guid(8ef44353beab80e40a84b12f7380f73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac12fd3bf22eefbc5890f1497a5167aa') in 0.001355 seconds
+  Import took 0.006937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.061541 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-1.fbx
+  artifactKey: Guid(10213bc5a764bff4aa413bcc0ca743d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-1.fbx using Guid(10213bc5a764bff4aa413bcc0ca743d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc363f0a611c9db339d0585ff28302db') in 0.191666 seconds
+  Import took 0.197277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-7.fbx
+  artifactKey: Guid(1823c26c2292d4845bcca3fab0faefe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-7.fbx using Guid(1823c26c2292d4845bcca3fab0faefe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93d49490854e4b625b0ec8cb352784f4') in 0.041796 seconds
+  Import took 0.047037 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-12.fbx
+  artifactKey: Guid(0558ec2941de94e4db043fcb0767fa61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-12.fbx using Guid(0558ec2941de94e4db043fcb0767fa61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4115d14dae58e80bf25e28ee8cafeed1') in 0.014497 seconds
+  Import took 0.019723 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-2.fbx
+  artifactKey: Guid(272963cf44d860f4ba485564b3c95190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-2.fbx using Guid(272963cf44d860f4ba485564b3c95190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e3ee42691727efd48ab29fdee7343bf') in 0.039142 seconds
+  Import took 0.044846 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-4.fbx
+  artifactKey: Guid(0254126a56147c84589ec0d79f78cfbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-4.fbx using Guid(0254126a56147c84589ec0d79f78cfbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae870c097be1d320505bc4d5f435b392') in 0.013854 seconds
+  Import took 0.019127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-21.fbx
+  artifactKey: Guid(62aa7979cf5731442b3c64ec4872c34d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-21.fbx using Guid(62aa7979cf5731442b3c64ec4872c34d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfa265c1de2fa96eea80eeec5cd4e012') in 0.018098 seconds
+  Import took 0.024234 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-11.fbx
+  artifactKey: Guid(96ea0ce53aaeb874dadb7fbd8df49ba0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-11.fbx using Guid(96ea0ce53aaeb874dadb7fbd8df49ba0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1db50268363c231b0ccf578d911b567') in 0.077285 seconds
+  Import took 0.082762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-18.fbx
+  artifactKey: Guid(a52fcffb80399d64c987a89db2be29ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-18.fbx using Guid(a52fcffb80399d64c987a89db2be29ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec2a079892980f29a8c9a02aaaf5a7fc') in 0.040946 seconds
+  Import took 0.046316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-10.fbx
+  artifactKey: Guid(d5c51d95490ba67449bf450c1f6766e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-10.fbx using Guid(d5c51d95490ba67449bf450c1f6766e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd7f78c4cd7320921c811f1336f74127') in 0.043194 seconds
+  Import took 0.048615 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-16.fbx
+  artifactKey: Guid(648d8aa6bf8b31d4c8c183cac2acc9ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-16.fbx using Guid(648d8aa6bf8b31d4c8c183cac2acc9ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0914038648f9a5e105c9a3b3590de323') in 0.099293 seconds
+  Import took 0.132720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-19.fbx
+  artifactKey: Guid(14c78d93df006874295a5d3c52aad34e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-19.fbx using Guid(14c78d93df006874295a5d3c52aad34e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89ac30aa86484212020c024abb1b790e') in 0.030781 seconds
+  Import took 0.038520 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-1.fbx
+  artifactKey: Guid(10213bc5a764bff4aa413bcc0ca743d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-1.fbx using Guid(10213bc5a764bff4aa413bcc0ca743d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc363f0a611c9db339d0585ff28302db') in 0.038995 seconds
+  Import took 0.044692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-6.fbx
+  artifactKey: Guid(6c4c78a4c9d3d5b428dbf44c6ad553ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-6.fbx using Guid(6c4c78a4c9d3d5b428dbf44c6ad553ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e8ea985c711370c7caf15113b372bcd') in 0.024513 seconds
+  Import took 0.030123 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000157 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-13.fbx
+  artifactKey: Guid(bbaee1258b3d2e5478753225434c6a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-13.fbx using Guid(bbaee1258b3d2e5478753225434c6a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '867bb1c19d15a7346c20e8e8caa3b7f6') in 0.034703 seconds
+  Import took 0.040022 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-8.fbx
+  artifactKey: Guid(907425677c2250045a8f9e1f82c5f96b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-8.fbx using Guid(907425677c2250045a8f9e1f82c5f96b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72d9a79fb95a86a9cecc293cf9d49dad') in 0.024106 seconds
+  Import took 0.029480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-14.fbx
+  artifactKey: Guid(4d1d3f4f619fdee4ca95ec16c8d663ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-14.fbx using Guid(4d1d3f4f619fdee4ca95ec16c8d663ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e19171900fb3536e83fdc510984e43c') in 0.035317 seconds
+  Import took 0.040963 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-9.fbx
+  artifactKey: Guid(4f209cddfd48c3040804868a82d3d85d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-9.fbx using Guid(4f209cddfd48c3040804868a82d3d85d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '539d8bca2300d23a7c6a074a64332d08') in 0.013971 seconds
+  Import took 0.019667 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-15.fbx
+  artifactKey: Guid(9efdf49cca747064e89ea3e7f0793e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-15.fbx using Guid(9efdf49cca747064e89ea3e7f0793e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afa58bcf5cfcc74278451cfff5c16d9d') in 0.023337 seconds
+  Import took 0.029253 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-20.fbx
+  artifactKey: Guid(890c226d9b1299e41ad65e25aa7b62b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-20.fbx using Guid(890c226d9b1299e41ad65e25aa7b62b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c30e4ad51abc920029a2884d2549b6e') in 0.014291 seconds
+  Import took 0.020019 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-5.fbx
+  artifactKey: Guid(e5b57df68cb6ef64196bbf03402b8907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-5.fbx using Guid(e5b57df68cb6ef64196bbf03402b8907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '052ec8ba29b8d21357cbbf331962e4bd') in 0.056738 seconds
+  Import took 0.062209 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-17.fbx
+  artifactKey: Guid(d4827d7a0075e0c48a560f143eff7b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-17.fbx using Guid(d4827d7a0075e0c48a560f143eff7b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '477da772e5e4f8f4ebaf9bed452afaa9') in 0.038773 seconds
+  Import took 0.063760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-3.fbx
+  artifactKey: Guid(8ee572fb70b2ffc478e4ccf8c7ec76ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Models/Obstacle-3.fbx using Guid(8ee572fb70b2ffc478e4ccf8c7ec76ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dcbc09f48cf76332447e1184466ab3e') in 0.043423 seconds
+  Import took 0.050289 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.732223 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs
+  artifactKey: Guid(d56e5f291d07bf74088ca5652cf6ceae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs using Guid(d56e5f291d07bf74088ca5652cf6ceae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '897c8f25f933daf6fe8c1dd6b7332074') in 0.004808 seconds
+  Import took 0.026189 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.665546 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated
+  artifactKey: Guid(e2cda5c363a88ff45833703e79924064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated using Guid(e2cda5c363a88ff45833703e79924064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec0001190226b41e321065919b4a9c53') in 0.004873 seconds
+  Import took 0.011164 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.081305 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Crossbow.prefab
+  artifactKey: Guid(ec2150dbcf6a885448de99636deb7eb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Crossbow.prefab using Guid(ec2150dbcf6a885448de99636deb7eb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d19e51fad8177b1a24b1ad0a1bfab2d') in 0.023805 seconds
+  Import took 0.030503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Sticks With Spikes.prefab
+  artifactKey: Guid(7ff7298d264e3ed4fa12981805828b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Sticks With Spikes.prefab using Guid(7ff7298d264e3ed4fa12981805828b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a614f1b17d53c0e79770e5a5d407957') in 0.011028 seconds
+  Import took 0.016431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Patrol Saw.prefab
+  artifactKey: Guid(703b3d19bec5d3a488c04ee354498559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Patrol Saw.prefab using Guid(703b3d19bec5d3a488c04ee354498559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6468033a367545a59a3747feae3e56f2') in 0.013608 seconds
+  Import took 0.019338 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Rolling Barrel.prefab
+  artifactKey: Guid(55bee225c69d53344a920b8f3c52df1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Rolling Barrel.prefab using Guid(55bee225c69d53344a920b8f3c52df1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b49dab615cc8bc7ed4b550bcb397e217') in 0.019443 seconds
+  Import took 0.025592 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Sticks.prefab
+  artifactKey: Guid(610433117ac2e6144b9f4952faf42c34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Sticks.prefab using Guid(610433117ac2e6144b9f4952faf42c34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2754af061b856a9fbe810e41a4a17aaf') in 0.019442 seconds
+  Import took 0.026031 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Pillars.prefab
+  artifactKey: Guid(86e2dd5306fb4d4449dbea8863b3152c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Pillars.prefab using Guid(86e2dd5306fb4d4449dbea8863b3152c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39551dee3b91c79374176407e25a1888') in 0.011632 seconds
+  Import took 0.017650 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Sticks With Spikes(Vertical).prefab
+  artifactKey: Guid(d3c9c73f6fdc4cc4ebb78eed0f70d971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Sticks With Spikes(Vertical).prefab using Guid(d3c9c73f6fdc4cc4ebb78eed0f70d971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54726a49fdf674f6b48b7dbcf9a8720e') in 0.012584 seconds
+  Import took 0.019169 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spikey Overhead Trap.prefab
+  artifactKey: Guid(479c10f45dc785546bd10c2230d2d175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spikey Overhead Trap.prefab using Guid(479c10f45dc785546bd10c2230d2d175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab4805a0e1b5e6c699d6b3812f6396ce') in 0.011537 seconds
+  Import took 0.017897 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Door.prefab
+  artifactKey: Guid(1139a20c3f036e6448ce456217b4c02b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Door.prefab using Guid(1139a20c3f036e6448ce456217b4c02b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af0f79a31bc926d4099df2312224d771') in 0.012827 seconds
+  Import took 0.019269 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Fan.prefab
+  artifactKey: Guid(afa842a592c21834db9c427c1f8b01c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Fan.prefab using Guid(afa842a592c21834db9c427c1f8b01c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3d50c1f46242894b23e9c5b9372097f') in 0.015872 seconds
+  Import took 0.022146 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Moving Grinder.prefab
+  artifactKey: Guid(1ef26c3e869e92b49a76b5b75a577d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Moving Grinder.prefab using Guid(1ef26c3e869e92b49a76b5b75a577d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84a882f69081559ca9236f110204ce50') in 0.016679 seconds
+  Import took 0.022608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Hammer.prefab
+  artifactKey: Guid(4335b8a30175dc048878fc9f72a7ed0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Hammer.prefab using Guid(4335b8a30175dc048878fc9f72a7ed0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15e574c6e857700b3196fae2e8f6a080') in 0.016263 seconds
+  Import took 0.022430 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spikey Overhead Trap-2.prefab
+  artifactKey: Guid(4547c84b7faa45443803348f6f9710d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spikey Overhead Trap-2.prefab using Guid(4547c84b7faa45443803348f6f9710d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '535acf4e7c218cbee809d9ca766d5ddd') in 0.017733 seconds
+  Import took 0.023782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spikey Horizontal Trap.prefab
+  artifactKey: Guid(d675536efc056dd43b530cd35f29491f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spikey Horizontal Trap.prefab using Guid(d675536efc056dd43b530cd35f29491f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30670cc334b91088bd39a615a9433d00') in 0.015740 seconds
+  Import took 0.021467 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Overhead Trap.prefab
+  artifactKey: Guid(708cf58c0fb7019489d5060c77af8ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Overhead Trap.prefab using Guid(708cf58c0fb7019489d5060c77af8ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98562b47ef8a68cb6908fdc2ca56f3a5') in 0.013773 seconds
+  Import took 0.020702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Floor Scrotcher.prefab
+  artifactKey: Guid(270286066ec00114cb4227a553338448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Floor Scrotcher.prefab using Guid(270286066ec00114cb4227a553338448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f32af1fee50335ff7c30f9af443c87cf') in 0.010588 seconds
+  Import took 0.016934 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Rolling Grinder.prefab
+  artifactKey: Guid(b6c82e23e4423464c9cc0560d67a4e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Rolling Grinder.prefab using Guid(b6c82e23e4423464c9cc0560d67a4e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd6ac1fd6bab8b1d14e55b42f149ab0b') in 0.012827 seconds
+  Import took 0.019289 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spikey Sticks Trap.prefab
+  artifactKey: Guid(f6a9d45f5760fb1489edb8a46fb0875a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spikey Sticks Trap.prefab using Guid(f6a9d45f5760fb1489edb8a46fb0875a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2233fdfbabbde33f9fc960dac8ba7bd9') in 0.011522 seconds
+  Import took 0.017233 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Saws.prefab
+  artifactKey: Guid(324185d0c885f0a4dbbc267e87512ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spinning Saws.prefab using Guid(324185d0c885f0a4dbbc267e87512ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92bd2be209b3795e513dbbf31e38d50d') in 0.012157 seconds
+  Import took 0.018047 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Pushing Pillar.prefab
+  artifactKey: Guid(21db819a0bfa2af4192554f7f51d9c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Pushing Pillar.prefab using Guid(21db819a0bfa2af4192554f7f51d9c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06f0b9bbe17cec3d0943dfd9ccc082a3') in 0.012306 seconds
+  Import took 0.018112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Saw.prefab
+  artifactKey: Guid(0e01a685c569ccf45b0d76098832e1ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Saw.prefab using Guid(0e01a685c569ccf45b0d76098832e1ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88e4f90fb74689dd9849a70708be97bf') in 0.011963 seconds
+  Import took 0.017624 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.709238 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spring Trap.prefab
+  artifactKey: Guid(3e360c4c980f470469f49d78a2349507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spring Trap.prefab using Guid(3e360c4c980f470469f49d78a2349507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65198912c3b8d6c76841890a5898ace2') in 0.010687 seconds
+  Import took 0.016763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Swinging Hammers.prefab
+  artifactKey: Guid(6e1c8a4cbcbd7a3459263dbb7a3ae0ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Swinging Hammers.prefab using Guid(6e1c8a4cbcbd7a3459263dbb7a3ae0ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27503cc52b12246c68680caebca4a43b') in 0.011659 seconds
+  Import took 0.017555 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spring Trap.prefab
+  artifactKey: Guid(3e360c4c980f470469f49d78a2349507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Spring Trap.prefab using Guid(3e360c4c980f470469f49d78a2349507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65198912c3b8d6c76841890a5898ace2') in 0.010615 seconds
+  Import took 0.016423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Swing-Axe.prefab
+  artifactKey: Guid(e236d8cef42d03c4e9cb0b1ed5bb6f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Swing-Axe.prefab using Guid(e236d8cef42d03c4e9cb0b1ed5bb6f6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fadf72d37549592ec987240396cf2a36') in 0.011845 seconds
+  Import took 0.017661 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Swing-Mace.prefab
+  artifactKey: Guid(35be201f299149f47b600b4daa1ab423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PACKAGES/TRAPS AND OBSTACLES/Traps-Obstacles/Prefabs/Animated/Swing-Mace.prefab using Guid(35be201f299149f47b600b4daa1ab423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d71a830e3728d102cbedbf769edf073') in 0.011478 seconds
+  Import took 0.017233 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.993077 seconds.
+  path: Assets/tripolygon/VermilionDemoPack
+  artifactKey: Guid(6e15d7515baab1f4ba20f5cabc513a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/tripolygon/VermilionDemoPack using Guid(6e15d7515baab1f4ba20f5cabc513a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f306a795f818e8fff4e6632fd1a1e8ec') in 0.032815 seconds
+  Import took 0.041736 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006135 seconds.
+Begin MonoManager ReloadAssembly
+Error: Could not load signature of PathCreation.Examples.PathSceneTool:get_path due to: Could not load file or assembly 'PathCreator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies. assembly:PathCreator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null type:<unknown type> member:(null) signature:<none>
+
+..\mono\metadata\custom-attrs.c:1273: Could not load type PathCreation.PathCreator, PathCreator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null while decoding custom attribute: (null) assembly:<unknown assembly> type:PathCreation.PathCreator, PathCreator, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null member:(null) signature:<none>
+
+Crash!!!
+SymInit: Symbol-SearchPath: 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Mono;.;D:\Repos\TikTok Master;C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor;C:\Windows;C:\Windows\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 534, UserName: 'shepe'
+OS-Version: 10.0.0
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\Unity.exe:Unity.exe (00007FF67F400000), size: 134766592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.3.10.32120
+C:\Windows\SYSTEM32\ntdll.dll:ntdll.dll (00007FFAAE730000), size: 2052096 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Windows\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFAAE450000), size: 774144 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFAAC310000), size: 2920448 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Windows\System32\CRYPT32.dll:CRYPT32.dll (00007FFAAC000000), size: 1437696 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\Windows\System32\ucrtbase.dll:ucrtbase.dll (00007FFAABF00000), size: 1048576 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.789
+C:\Windows\System32\USER32.dll:USER32.dll (00007FFAAD050000), size: 1703936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\System32\win32u.dll:win32u.dll (00007FFAABE70000), size: 139264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Windows\System32\GDI32.dll:GDI32.dll (00007FFAAC910000), size: 172032 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\libfbxsdk.dll:libfbxsdk.dll (00007FFA55EE0000), size: 10215424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.2.0.0
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\OpenImageDenoise.dll:OpenImageDenoise.dll (00007FFA335A0000), size: 43806720 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\optix.6.0.0.dll:optix.6.0.0.dll (00007FFAA5150000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.0.0.0
+C:\Windows\System32\gdi32full.dll:gdi32full.dll (00007FFAAC690000), size: 1093632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Windows\System32\msvcp_win.dll:msvcp_win.dll (00007FFAAC270000), size: 643072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.789
+C:\Windows\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFAAC7A0000), size: 704512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1052
+C:\Windows\System32\msvcrt.dll:msvcrt.dll (00007FFAAD1F0000), size: 647168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.19041.546
+C:\Windows\System32\sechost.dll:sechost.dll (00007FFAAE3B0000), size: 634880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\System32\RPCRT4.dll:RPCRT4.dll (00007FFAAD340000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\umbraoptimizer64.dll:umbraoptimizer64.dll (00007FFA98080000), size: 1306624 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\System32\SHELL32.dll:SHELL32.dll (00007FFAADA50000), size: 7598080 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\System32\WS2_32.dll:WS2_32.dll (00007FFAAD570000), size: 438272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\FreeImage.dll:FreeImage.dll (0000000180000000), size: 6414336 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.18.0.0
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\ispc_texcomp.dll:ispc_texcomp.dll (00007FFA8AEA0000), size: 1609728 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\System32\WLDAP32.dll:WLDAP32.dll (00007FFAAE230000), size: 352256 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFAAE1C0000), size: 348160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\System32\Normaliz.dll:Normaliz.dll (00007FFAAD470000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\ole32.dll:ole32.dll (00007FFAAC940000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\System32\combase.dll:combase.dll (00007FFAACA70000), size: 3493888 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\WinPixEventRuntime.dll:WinPixEventRuntime.dll (00007FFAA6100000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.0.1812.6001
+C:\Windows\System32\IMM32.dll:IMM32.dll (00007FFAAE190000), size: 196608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFAAD5E0000), size: 4624384 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\tbb.dll:tbb.dll (00007FFA98010000), size: 413696 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2017.0.2016.1004
+C:\Windows\System32\cfgmgr32.dll:cfgmgr32.dll (00007FFAAC220000), size: 319488 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\bcrypt.dll:bcrypt.dll (00007FFAAC1F0000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFAA5A30000), size: 110592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.29.30037.0
+C:\Windows\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFAACF80000), size: 839680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.985
+C:\Windows\System32\WINTRUST.dll:WINTRUST.dll (00007FFAABEA0000), size: 393216 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Windows\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFA89690000), size: 1200128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\SYSTEM32\GLU32.dll:GLU32.dll (00007FFAA2FA0000), size: 180224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFA814B0000), size: 577536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.29.30037.0
+C:\Windows\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFAAB2E0000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\MSVCP120.dll:MSVCP120.dll (00007FFA97F60000), size: 679936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 12.0.40660.0
+C:\Windows\SYSTEM32\MSVCR120.dll:MSVCR120.dll (00007FFA87790000), size: 978944 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 12.0.40660.0
+C:\Windows\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFAA6800000), size: 1089536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Windows\SYSTEM32\WINMM.dll:WINMM.dll (00007FFA9EF10000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\RadeonImageFilters.dll:RadeonImageFilters.dll (00007FFA5A6F0000), size: 2535424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.1.0
+C:\Windows\SYSTEM32\HID.DLL:HID.DLL (00007FFAAA720000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\SketchUpAPI.dll:SketchUpAPI.dll (00007FFA582D0000), size: 8978432 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 19.0.753.0
+C:\Windows\SYSTEM32\VERSION.dll:VERSION.dll (00007FFAA5AC0000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\WSOCK32.dll:WSOCK32.dll (00007FFAA60F0000), size: 36864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1
+C:\Windows\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFAA5980000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.29.30037.0
+C:\Windows\SYSTEM32\Secur32.dll:Secur32.dll (00007FFA7EF90000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\SketchUpCommonPreferences.dll:SketchUpCommonPreferences.dll (00007FFAA4FB0000), size: 483328 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 19.0.753.20342
+C:\Windows\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFAABD60000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\OpenRL.dll:OpenRL.dll (00000225EBD80000), size: 12779520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.0.2907
+C:\Windows\SYSTEM32\MSVCR100.dll:MSVCR100.dll (00000000596F0000), size: 860160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\Windows\SYSTEM32\MSVCP100.dll:MSVCP100.dll (0000000058470000), size: 622592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\embree.dll:embree.dll (00007FFA519C0000), size: 16711680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.14.0.0
+C:\Windows\SYSTEM32\MSWSOCK.DLL:MSWSOCK.DLL (00007FFAAB640000), size: 434176 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\OpenRL_pthread.dll:OpenRL_pthread.dll (00000225EC9D0000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.9.0.0
+C:\Windows\SYSTEM32\MSASN1.dll:MSASN1.dll (00007FFAABA60000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFAAA730000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (00007FFAAC160000), size: 536576 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\system32\uxtheme.dll:uxtheme.dll (00007FFAA8870000), size: 647168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\System32\shcore.dll:shcore.dll (00007FFAAD290000), size: 712704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\SYSTEM32\windows.storage.dll:windows.storage.dll (00007FFAA9F80000), size: 7933952 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\SYSTEM32\Wldp.dll:Wldp.dll (00007FFAAB8E0000), size: 180224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.662
+C:\Windows\SYSTEM32\profapi.dll:profapi.dll (00007FFAABDB0000), size: 126976 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\Windows\System32\clbcatq.dll:clbcatq.dll (00007FFAAC860000), size: 692224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2001.12.10941.16384
+C:\Windows\System32\netprofm.dll:netprofm.dll (00007FFAA6CF0000), size: 253952 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\System32\npmproxy.dll:npmproxy.dll (00007FFAA37D0000), size: 65536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\System32\NSI.dll:NSI.dll (00007FFAAC850000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.610
+C:\Windows\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFAA4BE0000), size: 94208 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFAA5800000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFAAB320000), size: 835584 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFAA42B0000), size: 520192 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFAA4BB0000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\d3d11.dll:d3d11.dll (00007FFAA7410000), size: 2506752 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\SYSTEM32\dxgi.dll:dxgi.dll (00007FFAAA7D0000), size: 999424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.964
+C:\Windows\System32\DriverStore\FileRepository\nvdm.inf_amd64_9b7ce9dc1daff8e1\nvldumdx.dll:nvldumdx.dll (00007FFA8AC90000), size: 1069056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 27.21.14.6231
+C:\Windows\SYSTEM32\cryptnet.dll:cryptnet.dll (00007FFAA3480000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\SYSTEM32\cryptbase.dll:cryptbase.dll (00007FFAAB820000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\imagehlp.dll:imagehlp.dll (00007FFAAE670000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFAAB830000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\system32\rsaenh.dll:rsaenh.dll (00007FFAAAF70000), size: 212992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1052
+C:\Windows\System32\DriverStore\FileRepository\nvdm.inf_amd64_9b7ce9dc1daff8e1\nvwgf2umx.dll:nvwgf2umx.dll (00007FFA2EBC0000), size: 77426688 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 27.21.14.6231
+C:\Windows\SYSTEM32\dxcore.dll:dxcore.dll (00007FFA83850000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFAA3420000), size: 69632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFAA1720000), size: 598016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFAA0C00000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\system32\wbem\fastprox.dll:fastprox.dll (00007FFAA0C20000), size: 1093632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\amsi.dll:amsi.dll (00007FFAA0B20000), size: 102400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\SYSTEM32\USERENV.dll:USERENV.dll (00007FFAABD30000), size: 188416 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.572
+C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2106.6-0\MpOav.dll:MpOav.dll (00007FFAA0AA0000), size: 495616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 4.18.2106.6
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\cudart64_90.dll:cudart64_90.dll (00007FFAA5060000), size: 397312 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.14.11.9000
+C:\Windows\SYSTEM32\opencl.dll:opencl.dll (00007FFA7B540000), size: 512000 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.2.8.0
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\radeonrays.dll:radeonrays.dll (00007FFA5D5A0000), size: 552960 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Program Files\Unity\Hub\Editor\2020.3.10f1\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FFA50F80000), size: 7790592 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\System32\PSAPI.DLL:PSAPI.DLL (00007FFAAE220000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\ProgramData\Microsoft\VisualStudio\Setup\x64\Microsoft.VisualStudio.Setup.Configuration.Native.dll:Microsoft.VisualStudio.Setup.Configuration.Native.dll (00007FFAA5260000), size: 327680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.7.3111.17308
+C:\Windows\SYSTEM32\PROPSYS.dll:PROPSYS.dll (00007FFAA9280000), size: 1007616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.19041.1023
+C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll:comctl32.dll (00007FFA9CBC0000), size: 2727936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.10.19041.1110
+C:\Windows\SYSTEM32\WindowsCodecs.dll:WindowsCodecs.dll (00007FFA8A500000), size: 1785856 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\System32\thumbcache.dll:thumbcache.dll (00007FFA81640000), size: 417792 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\System32\MrmCoreR.dll:MrmCoreR.dll (00007FFA916E0000), size: 1003520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\System32\iertutil.dll:iertutil.dll (00007FFAA2CD0000), size: 2818048 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 11.0.19041.1081
+C:\Windows\SYSTEM32\windows.staterepositorycore.dll:windows.staterepositorycore.dll (00007FFAA2FD0000), size: 69632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\Windows\System32\bcp47mrm.dll:bcp47mrm.dll (00007FFA8B9D0000), size: 184320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.867
+C:\Windows\System32\Windows.UI.dll:Windows.UI.dll (00007FFA8BEE0000), size: 1314816 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\System32\WindowManagementAPI.dll:WindowManagementAPI.dll (00007FFA8BE30000), size: 659456 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Windows\System32\InputHost.dll:InputHost.dll (00007FFA8BCD0000), size: 1384448 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Windows\System32\TextInputFramework.dll:TextInputFramework.dll (00007FFA8C550000), size: 1019904 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\SYSTEM32\wintypes.dll:wintypes.dll (00007FFAA8BD0000), size: 1392640 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\System32\CoreMessaging.dll:CoreMessaging.dll (00007FFAA8190000), size: 991232 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\Windows\System32\CoreUIComponents.dll:CoreUIComponents.dll (00007FFAA7E30000), size: 3530752 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\twinapi.appcore.dll:twinapi.appcore.dll (00007FFAA4830000), size: 2101248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.964
+C:\Windows\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFAAACC0000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.19041.1110_none_91a01826cc8bca4c\gdiplus.dll:gdiplus.dll (00007FFA9ED60000), size: 1740800 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Windows\System32\MSCTF.dll:MSCTF.dll (00007FFAAE290000), size: 1134592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\SYSTEM32\edputil.dll:edputil.dll (00007FFA83980000), size: 147456 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\System32\Windows.StateRepositoryPS.dll:Windows.StateRepositoryPS.dll (00007FFA8D0F0000), size: 1335296 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\Windows\SYSTEM32\policymanager.dll:policymanager.dll (00007FFAA56D0000), size: 655360 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\SYSTEM32\msvcp110_win.dll:msvcp110_win.dll (00007FFAAB000000), size: 565248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Windows\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFAA9B00000), size: 1982464 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.867
+
+========== OUTPUTTING STACK TRACE ==================
+
+0x00007FFAAC344ED9 (KERNELBASE) RaiseException
+0x00007FFA50F96025 (mono-2.0-bdwgc) [c:\build\output\unity-technologies\mono\mono\utils\mono-log-common.c:142] mono_log_write_logfile 
+0x00007FFA50F84D41 (mono-2.0-bdwgc) [c:\build\output\unity-technologies\mono\mono\eglib\goutput.c:131] monoeg_g_log 
+0x00007FFA50F9A28A (mono-2.0-bdwgc) [c:\build\output\unity-technologies\mono\mono\utils\mono-error.c:178] mono_error_assert_ok_pos 
+0x00007FFA5109037A (mono-2.0-bdwgc) [c:\build\output\unity-technologies\mono\mono\metadata\custom-attrs.c:1275] mono_custom_attrs_construct 
+0x00007FF680F8FFD5 (Unity) scripting_custom_attrs_construct
+0x00007FF680F5FE8E (Unity) AttributeCollectionInfo::AllocAttributesArrayIfNeeded
+0x00007FF680F68238 (Unity) ManagedAttributeManager::GetRequiredComponents
+0x00007FF680F58548 (Unity) MonoManager::SetupTypeCache
+0x00007FF680F4EF4D (Unity) MonoManager::EndReloadAssembly
+0x00007FF680F56189 (Unity) MonoManager::ReloadAssembly
+0x00007FF68230A561 (Unity) LoadDomainAndUserAssemblies
+0x00007FF68230AA0E (Unity) LoadUserAssemblies
+0x00007FF682773308 (Unity) <lambda_32ff519d5c36f44c8f28c9876d6db935>::operator()
+0x00007FF682817022 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007FF682819180 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007FF68281C90E (Unity) asio::io_service::run
+0x00007FF68279FFBB (Unity) RunAssetImportWorkerClientV2
+0x00007FF6827A0010 (Unity) RunAssetImporterV2
+0x00007FF681C91126 (Unity) Application::InitializeProject
+0x00007FF682614A92 (Unity) WinMain
+0x00007FF6844662B6 (Unity) __scrt_common_main_seh
+0x00007FFAAE467034 (KERNEL32) BaseThreadInitThunk
+0x00007FFAAE782651 (ntdll) RtlUserThreadStart
+
+========== END OF STACKTRACE ===========
+
+A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
+ * C:/Users/shepe/AppData/Local/Temp/Unity/Editor/Crashes
