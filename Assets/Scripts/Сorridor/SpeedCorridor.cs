@@ -10,8 +10,6 @@ class SpeedCorridor : Ñorridor
     {
         if (other.TryGetComponent(out PlayerMover playerMover))
         {
-            playerMover.ChangeToFastRun();
-
             _speedEffect.Play();
         }
     }

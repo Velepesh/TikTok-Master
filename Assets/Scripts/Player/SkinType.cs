@@ -1,6 +1,8 @@
 enum SkinType
 {
-    Green = 25,
-    Blue= 50,
-    Red = 100,
+    First = 0,
+    Second = 25,
+    Third = 50,
+    Fourth = 75,
+    Fifth = 100,
 }

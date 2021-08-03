@@ -1,59 +1,72 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class ProgressBar : MonoBehaviour
 {
+    [SerializeField] private Wallet _wallet;
     [SerializeField] private Player _player;
+    [SerializeField] private SkinChangerStage _stage;
     [SerializeField] private Slider _slider;
+    [SerializeField] private Image _fill;
     [SerializeField] private float _fillingTime;
+    [SerializeField] private Color _firstStage;
+    [SerializeField] private Color _secondStage;
+    [SerializeField] private Color _thirdStage;
+    [SerializeField] private Color _fourthStage;
+    [SerializeField] private Color _fifthStage;
 
     private float _currentValue;
+
+    private void OnEnable()
+    {
+        _wallet.RespectChanged += OnRespectChanged;
+        _player.FinishLineCrossed += OnFinishLineCrossed;
+
+        _slider.value = Convert.ToSingle(_wallet.Respect) / _wallet.MaxRespect;
+    }
+
+    private void OnDisable()
+    {
+        _wallet.RespectChanged -= OnRespectChanged;
+        _player.FinishLineCrossed -= OnFinishLineCrossed;
+    }
 
     private void Update()
     {
         if (_slider.value != _currentValue)
             _slider.value = Mathf.Lerp(_slider.value, _currentValue, _fillingTime * Time.deltaTime);
     }
-    private void OnValueChanged(int value, int maxValue)
+
+    private void OnRespectChanged(int value, int maxValue)
     {
-        _currentValue = (float)value / maxValue;
+        _currentValue = Convert.ToSingle(value) / maxValue;
+
+        ChangeSliderColor(value);
     }
 
-    private IEnumerator ChangeSliderValue(float currentValue)
+    private void ChangeSliderColor(float currentValue)
     {
-        //while (_slider.value != currentValue)
-        //{
-        //   // float progress = Mathf.Clamp01()
-        //   elapsedTime += Time.deltaTime / _fillingTime;
-
-        //   _slider.value = Mathf.Lerp(_slider.value, currentValue, _fillingTime * Time.deltaTime);
-
-        //   yield return null;
-        //   Debug.Log("sd");
-        //}
-        float time = 0;
-        float tempAmount = currentValue;
-        float diff = tempAmount - tempAmount;
-
-        currentValue = tempAmount;
-        while (time < _fillingTime)
-        {
-            time += Time.deltaTime;
-            float percent = time / _fillingTime;
-            _slider.value = tempAmount + diff * percent;
-            yield return null;
-        }
-    }
-    private void OnEnable()
-    {
-        _player.TikTokValueChanged += OnValueChanged;
-
-        _slider.value = 0;
+        if (currentValue >= _stage.FifthValue)
+            AssignColor(_fifthStage);
+        else if (currentValue >= _stage.FourthValue)
+            AssignColor(_fourthStage);
+        else if (currentValue >= _stage.ThirdValue)
+            AssignColor(_thirdStage);
+        else if (currentValue >= _stage.SecondValue)
+            AssignColor(_secondStage);
+        else if (currentValue >= _stage.FirstStage)
+            AssignColor(_firstStage);
     }
 
-    private void OnDisable()
+    private void AssignColor(Color color)
     {
-        _player.TikTokValueChanged -= OnValueChanged;
+        _fill.color = color;
+    }
+    
+    private void OnFinishLineCrossed()
+    {
+        this.gameObject.SetActive(false);
     }
 }

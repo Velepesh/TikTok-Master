@@ -10,19 +10,10 @@ public class Enemy : MonoBehaviour
 
     public event UnityAction EnemyHit;
 
-    private void Start()
-    {
-      //  _rigidbody = GetComponent<Rigidbody>();
-        //ToggleRigidbodyState(true)
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Player player))
         {
-            player.Hit();
-
             Hit();
         }
     }
@@ -31,9 +22,4 @@ public class Enemy : MonoBehaviour
     {
         EnemyHit?.Invoke();
     }
-
-    //private void ToggleRigidbodyState(bool isKinematic)
-    //{
-    //    _rigidbody.isKinematic = isKinematic;
-    //}
 }

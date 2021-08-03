@@ -8,14 +8,14 @@ class BlueCorridor : Ñorridor
     {
         if (other.TryGetComponent(out Player player))
         {
-            if (player.HalfTikTokValue > player.CurrentTikTokValue)
-            {
-                player.SelectedWrongCorridor();
-            }
-            else if (other.TryGetComponent(out PlayerMover playerMover))
-            {
-                ChangePlayerRunningType(playerMover, true);
-            }
+            //if (player.HalfTikTokValue > player.CurrentTikTokValue)
+            //{
+            //    player.SelectedWrongCorridor();
+            //}
+            //else if (other.TryGetComponent(out PlayerMover playerMover))
+            //{
+            //    ChangePlayerRunningType(playerMover, true);
+            //}
         }
     }
 
@@ -23,12 +23,12 @@ class BlueCorridor : Ñorridor
     {
         if (other.TryGetComponent(out PlayerMover playerMover))
         {
-            ChangePlayerRunningType(playerMover, false);
+           // ChangePlayerRunningType(playerMover, false);
         }
     }
 
     private void ChangePlayerRunningType(PlayerMover playerMover, bool isSlidingRun)
     {
-        playerMover.ChangeToSlidingRun(isSlidingRun);
+       // playerMover.ChangeToSlidingRun(isSlidingRun);
     }
 }
