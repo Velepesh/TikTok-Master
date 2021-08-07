@@ -10,5 +10,6 @@ public static class AnimatorPlayerController
         public const string Dance = nameof(Dance);
         public const string Stumble = nameof(Stumble);
         public const string Defeat = nameof(Defeat);
+        public const string Rejoice = nameof(Rejoice);
     }
 }

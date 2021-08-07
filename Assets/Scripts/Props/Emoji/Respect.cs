@@ -11,6 +11,7 @@ class Respect : Item
             wallet.IncreaseRespect(Value);
 
             PlayEffect();
+            DisableObject();
         }
     }
 }

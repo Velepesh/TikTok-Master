@@ -1,8 +1,8 @@
 enum SkinType
 {
-    First = 0,
-    Second = 25,
-    Third = 50,
-    Fourth = 75,
-    Fifth = 100,
+    Nerd = 0,
+    Clerk = 25,
+    Ordinary = 50,
+    Stylish = 75,
+    Tiktoker = 100,
 }

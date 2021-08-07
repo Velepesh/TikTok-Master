@@ -24,6 +24,10 @@ abstract class Item : MonoBehaviour
         GameObject go = Instantiate(DestroyEffect.gameObject, gameObject.transform.position + Offset, Quaternion.identity) as GameObject;
 
         Destroy(go, Time);
+    }
+
+    protected void DisableObject()
+    {
         gameObject.SetActive(false);
     }
 }

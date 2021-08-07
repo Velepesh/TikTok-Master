@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
+using System.Linq;
 
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
@@ -37,6 +37,13 @@ public class Player : MonoBehaviour
         PlayerStumbled?.Invoke();
 
         _animator.SetTrigger(AnimatorPlayerController.States.Stumble);
+    }
+
+    public void Rejoice()
+    {
+        PlayerStumbled?.Invoke();
+
+        _animator.SetTrigger(AnimatorPlayerController.States.Rejoice);
     }
 
     public void CrossedFinishLine()

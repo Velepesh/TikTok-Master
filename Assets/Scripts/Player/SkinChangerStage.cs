@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SkinChangerStage : MonoBehaviour
 {
-    readonly private int _fifthValue = 100;
-    readonly private int _fourthValue = 75;
-    readonly private int _thirdValue = 50;
-    readonly private int _secondValue = 25;
-    readonly private int _firstStage = 0;
+    readonly private int _nerdValue = 0;
+    readonly private int _clerkValue = 25;
+    readonly private int _ordinaryValue = 50;
+    readonly private int _stylishValue = 75;
+    readonly private int _tiktokerValue = 100;
 
-    public int FifthValue => _fifthValue;
-    public int FourthValue => _fourthValue;
-    public int ThirdValue => _thirdValue;
-    public int SecondValue => _secondValue;
-    public int FirstStage => _firstStage;
+    public int NerdValue => _nerdValue;
+    public int ClerkValue => _clerkValue;
+    public int OrdinaryValue => _ordinaryValue;
+    public int StylishValue => _stylishValue;
+    public int TiktokerValue => _tiktokerValue;
 }

@@ -21,9 +21,9 @@ public class Wallet : MonoBehaviour
 
     private void Awake()
     {
-        _player = GetComponent<Player>();
-
         _respect = _startRespect;
+        
+        _player = GetComponent<Player>();
     }
 
     public void IncreaseRespect(int respect)

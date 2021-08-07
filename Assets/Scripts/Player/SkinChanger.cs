@@ -53,51 +53,51 @@ class SkinChanger : MonoBehaviour
     {
         if (vector > 0)
         {
-            if (currentValue >= _stage.FifthValue && _previousValue < _stage.FifthValue)
+            if (currentValue >= _stage.TiktokerValue && _previousValue < _stage.TiktokerValue)
             {
-                ChangeSkin(SkinType.Fifth);
+                ChangeSkin(SkinType.Tiktoker);
             }
 
-            if (currentValue >= _stage.FourthValue && _previousValue < _stage.FourthValue)
+            if (currentValue >= _stage.StylishValue && _previousValue < _stage.StylishValue)
             {
-                ChangeSkin(SkinType.Fourth);
+                ChangeSkin(SkinType.Stylish);
             }
 
-            if (currentValue >= _stage.ThirdValue && _previousValue < _stage.ThirdValue)
+            if (currentValue >= _stage.OrdinaryValue && _previousValue < _stage.OrdinaryValue)
             {
-                ChangeSkin(SkinType.Third);
+                ChangeSkin(SkinType.Ordinary);
             }
 
-            if (currentValue >= _stage.SecondValue && _previousValue < _stage.SecondValue)
+            if (currentValue >= _stage.ClerkValue && _previousValue < _stage.ClerkValue)
             {
-                ChangeSkin(SkinType.Second);
+                ChangeSkin(SkinType.Clerk);
             }
 
-            if (currentValue >= _stage.FirstStage && _previousValue < _stage.FirstStage)
+            if (currentValue >= _stage.NerdValue && _previousValue < _stage.NerdValue)
             {
-                ChangeSkin(SkinType.First);
+                ChangeSkin(SkinType.Nerd);
             }
         }
         else 
         { 
-            if (currentValue < _stage.FifthValue && _previousValue >= _stage.FourthValue)
+            if (currentValue < _stage.TiktokerValue && _previousValue >= _stage.StylishValue)
             {
-                ChangeSkin(SkinType.Fourth);
+                ChangeSkin(SkinType.Stylish);
             }
 
-            if (currentValue < _stage.FourthValue && _previousValue >= _stage.ThirdValue)
+            if (currentValue < _stage.StylishValue && _previousValue >= _stage.OrdinaryValue)
             {
-                ChangeSkin(SkinType.Third);
+                ChangeSkin(SkinType.Ordinary);
             }
 
-            if (currentValue < _stage.ThirdValue && _previousValue >= _stage.SecondValue)
+            if (currentValue < _stage.OrdinaryValue && _previousValue >= _stage.ClerkValue)
             {
-                ChangeSkin(SkinType.Second);
+                ChangeSkin(SkinType.Clerk);
             }
 
-            if (currentValue < _stage.SecondValue && _previousValue >= _stage.FirstStage)
+            if (currentValue < _stage.ClerkValue && _previousValue >= _stage.NerdValue)
             {
-                ChangeSkin(SkinType.First);
+                ChangeSkin(SkinType.Nerd);
             }
 
         }

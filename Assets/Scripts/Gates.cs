@@ -28,4 +28,11 @@ public class Gates : MonoBehaviour
                 player.Win();
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out Player player))
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
 }

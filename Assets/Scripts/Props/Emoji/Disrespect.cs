@@ -12,6 +12,7 @@ class Disrespect : Item
             wallet.DecreaseRespect(Value);
 
             PlayEffect();
+            DisableObject();
         }
     }
 }
