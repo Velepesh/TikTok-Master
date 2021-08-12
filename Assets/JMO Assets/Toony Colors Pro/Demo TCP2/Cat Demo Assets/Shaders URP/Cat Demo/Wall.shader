@@ -40,7 +40,7 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 
 		#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 		#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
-		
+
 		// Uniforms
 
 		// Shader Properties
@@ -56,7 +56,7 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 			fixed4 _SColor;
 			fixed4 _HColor;
 		CBUFFER_END
-		
+
 		// Built-in renderer (CG) to SRP (HLSL) bindings
 		#define UnityObjectToClipPos TransformObjectToHClip
 		#define _WorldSpaceLightPos0 _MainLightPosition
@@ -66,7 +66,10 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 		Pass
 		{
 			Name "Main"
-			Tags { "LightMode"="UniversalForward" }
+			Tags
+			{
+				"LightMode"="UniversalForward"
+			}
 
 			HLSLPROGRAM
 			// Required to compile gles 2.0 with standard SRP library
@@ -90,6 +93,7 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 			#pragma multi_compile _ _MIXED_LIGHTING_SUBTRACTIVE
 
 			// -------------------------------------
+			#pragma multi_compile_fog
 
 			//--------------------------------------
 			// GPU Instancing
@@ -121,6 +125,7 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 				half3 vertexLights : TEXCOORD2;
 			#endif
 				float2 pack0 : TEXCOORD3; /* pack0.xy = texcoord0 */
+				float pack1 : TEXCOORD4; /* pack1.x = fogFactor */
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
@@ -149,6 +154,9 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 
 				// world position
 				output.worldPosAndFog = float4(vertexInput.positionWS.xyz, 0);
+
+				// Computes fog factor per-vertex
+				output.worldPosAndFog.w = ComputeFogFactor(vertexInput.positionCS.z);
 
 				// normal
 				output.normal = NormalizeNormalPerVertex(vertexNormalInput.normalWS);
@@ -261,6 +269,10 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 
 				color += emission;
 
+				// Mix the pixel color with fogColor. You can optionally use MixFogColor to override the fogColor with a custom one.
+				float fogFactor = input.worldPosAndFog.w;
+				color = MixFog(color, fogFactor);
+
 				return half4(color, alpha);
 			}
 			ENDHLSL
@@ -268,6 +280,7 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 
 		// Depth & Shadow Caster Passes
 		HLSLINCLUDE
+
 		#if defined(SHADOW_CASTER_PASS) || defined(DEPTH_ONLY_PASS)
 
 			#define fixed half
@@ -347,6 +360,7 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 				half3 albedo = __albedo.rgb;
 				half alpha = __alpha;
 				half3 emission = half3(0,0,0);
+
 				return 0;
 			}
 
@@ -356,7 +370,10 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 		Pass
 		{
 			Name "ShadowCaster"
-			Tags{"LightMode" = "ShadowCaster"}
+			Tags
+			{
+				"LightMode" = "ShadowCaster"
+			}
 
 			ZWrite On
 			ZTest LEqual
@@ -381,7 +398,7 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 
 			#pragma vertex ShadowDepthPassVertex
 			#pragma fragment ShadowDepthPassFragment
-			
+
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Shadows.hlsl"
 
@@ -391,7 +408,10 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 		Pass
 		{
 			Name "DepthOnly"
-			Tags{"LightMode" = "DepthOnly"}
+			Tags
+			{
+				"LightMode" = "DepthOnly"
+			}
 
 			ZWrite On
 			ColorMask 0
@@ -417,12 +437,9 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 
 			#pragma vertex ShadowDepthPassVertex
 			#pragma fragment ShadowDepthPassFragment
-			
+
 			ENDHLSL
 		}
-
-		// Depth prepass
-		// UsePass "Universal Render Pipeline/Lit/DepthOnly"
 
 	}
 
@@ -430,5 +447,5 @@ Shader "Toony Colors Pro 2/Examples URP/Cat Demo/Wall"
 	CustomEditor "ToonyColorsPro.ShaderGenerator.MaterialInspector_SG2"
 }
 
-/* TCP_DATA u config(unity:"2019.4.0f1";ver:"2.4.0";tmplt:"SG2_Template_URP";features:list["UNITY_5_4","UNITY_5_5","UNITY_5_6","UNITY_2017_1","UNITY_2018_1","UNITY_2018_2","UNITY_2018_3","UNITY_2019_1","SHADOW_COLOR_MAIN_DIR","UNITY_2019_2","UNITY_2019_3","TEMPLATE_LWRP"];flags:list[];flags_extra:dict[];keywords:dict[RampTextureDrawer="[TCP2Gradient]",RampTextureLabel="Ramp Texture",SHADER_TARGET="3.0",RENDER_TYPE="Opaque"];shaderProperties:list[];customTextures:list[];codeInjection:codeInjection(injectedFiles:list[];mark:False)) */
-/* TCP_HASH ebdbc97d6d06719ab2173b851219f386 */
+/* TCP_DATA u config(unity:"2020.3.10f1";ver:"2.4.0";tmplt:"SG2_Template_URP";features:list["UNITY_5_4","UNITY_5_5","UNITY_5_6","UNITY_2017_1","UNITY_2018_1","UNITY_2018_2","UNITY_2018_3","UNITY_2019_1","SHADOW_COLOR_MAIN_DIR","UNITY_2019_2","UNITY_2019_3","TEMPLATE_LWRP","FOG"];flags:list[];flags_extra:dict[];keywords:dict[RampTextureDrawer="[TCP2Gradient]",RampTextureLabel="Ramp Texture",SHADER_TARGET="3.0",RENDER_TYPE="Opaque"];shaderProperties:list[];customTextures:list[];codeInjection:codeInjection(injectedFiles:list[];mark:False)) */
+/* TCP_HASH 2634153827518b763a718e5684dbfb41 */

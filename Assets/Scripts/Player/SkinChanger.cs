@@ -30,6 +30,11 @@ class SkinChanger : MonoBehaviour
         _wallet.RespectChanged += OnRespectChanged;
     }
 
+    private void Start()
+    {
+        _previousValue = _wallet.Respect;
+    }
+
     private void OnDisable()
     {
         _wallet.RespectChanged -= OnRespectChanged;
@@ -39,7 +44,7 @@ class SkinChanger : MonoBehaviour
     {
         int vector = 0;
 
-        if (currentTikTokValue > _previousValue)
+        if (currentTikTokValue >= _previousValue)
             vector = 1;
         else
             vector = -1;
@@ -57,23 +62,19 @@ class SkinChanger : MonoBehaviour
             {
                 ChangeSkin(SkinType.Tiktoker);
             }
-
-            if (currentValue >= _stage.StylishValue && _previousValue < _stage.StylishValue)
+            else if (currentValue >= _stage.StylishValue && _previousValue < _stage.StylishValue)
             {
                 ChangeSkin(SkinType.Stylish);
             }
-
-            if (currentValue >= _stage.OrdinaryValue && _previousValue < _stage.OrdinaryValue)
+            else if(currentValue >= _stage.OrdinaryValue && _previousValue < _stage.OrdinaryValue)
             {
                 ChangeSkin(SkinType.Ordinary);
             }
-
-            if (currentValue >= _stage.ClerkValue && _previousValue < _stage.ClerkValue)
+            else if(currentValue >= _stage.ClerkValue && _previousValue < _stage.ClerkValue)
             {
                 ChangeSkin(SkinType.Clerk);
             }
-
-            if (currentValue >= _stage.NerdValue && _previousValue < _stage.NerdValue)
+            else if(currentValue >= _stage.NerdValue && _previousValue < _stage.NerdValue)
             {
                 ChangeSkin(SkinType.Nerd);
             }
@@ -84,24 +85,25 @@ class SkinChanger : MonoBehaviour
             {
                 ChangeSkin(SkinType.Stylish);
             }
-
+            
             if (currentValue < _stage.StylishValue && _previousValue >= _stage.OrdinaryValue)
             {
                 ChangeSkin(SkinType.Ordinary);
             }
-
-            if (currentValue < _stage.OrdinaryValue && _previousValue >= _stage.ClerkValue)
+            
+            if(currentValue < _stage.OrdinaryValue && _previousValue >= _stage.ClerkValue)
             {
                 ChangeSkin(SkinType.Clerk);
             }
-
-            if (currentValue < _stage.ClerkValue && _previousValue >= _stage.NerdValue)
+            
+            if(currentValue < _stage.ClerkValue && _previousValue >= _stage.NerdValue)
             {
                 ChangeSkin(SkinType.Nerd);
             }
 
         }
     }
+
     private void ChangeSkin(SkinType newSkinType)
     {
         var newSkin = GetSkin(newSkinType);

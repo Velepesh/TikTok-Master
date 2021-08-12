@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Player), typeof(Rigidbody), typeof(Animator))]
-[RequireComponent(typeof(SurfaceSlider))]
+[RequireComponent(typeof(Player), typeof(Rigidbody), typeof(SurfaceSlider))]
+
 class PlayerMover : MonoBehaviour
 {
+    [SerializeField] private GameObject _skin;
     [SerializeField] private float _speed;
     [SerializeField] private float _turningSpeed;
     [SerializeField] private float _rotationSpeed;
@@ -20,15 +21,14 @@ class PlayerMover : MonoBehaviour
 
     readonly private float _gravity = -9.81f;
     readonly private float _angleStep = 90f;
+    readonly private float _rotationAngle = 45f;
     private float _targetRotationY;
 
     private Player _player;
     private Rigidbody _rigidbody;
-    private Animator _animator;
     private SurfaceSlider _surfaceSlider;
     private Transform _centerPoint;
     private float _previousRotationY;
-    private Quaternion _currentRotation;
     private float _lastMousePositionX;
     private Vector3 _direction;
     private bool _canMove;
@@ -48,11 +48,11 @@ class PlayerMover : MonoBehaviour
     {
         _player = GetComponent<Player>();
         _rigidbody = GetComponent<Rigidbody>();
-        _animator = GetComponent<Animator>();
         _surfaceSlider = GetComponent<SurfaceSlider>();
 
         CanMove(true);
         _previousRotationY = transform.rotation.eulerAngles.y;
+        _targetRotationY = _previousRotationY;
         _direction = GetMovingDirection();
     }
 
@@ -92,7 +92,7 @@ class PlayerMover : MonoBehaviour
     {
         Vector3 direction = Vector3.zero;
 
-        var currentRotationY = transform.rotation.eulerAngles.y;
+        var currentRotationY = _skin.transform.rotation.eulerAngles.y;
 
         if (currentRotationY == 0f)
             direction = Vector3.forward;
@@ -122,7 +122,6 @@ class PlayerMover : MonoBehaviour
 
         StopMoving();
         _isTurning = true;
-
     }
 
     public void StopTurning()
@@ -130,7 +129,7 @@ class PlayerMover : MonoBehaviour
         _isTurning = false;
         ContinueMoving();
 
-        transform.rotation = Quaternion.Euler(new Vector3(0f, _targetRotationY, 0f));
+        transform.rotation = Quaternion.Euler(new Vector3(0f, _targetRotationY, 0f));///////////
         _previousRotationY = transform.rotation.eulerAngles.y;
 
         _direction = GetMovingDirection();
@@ -148,12 +147,19 @@ class PlayerMover : MonoBehaviour
 
     private void Move()
     {
-        Vector3 directionAlongSurface = _surfaceSlider.Project(_direction.normalized);
+        //Vector3 direction = transform.InverseTransformDirection(new Vector3(0f, 0f, 1f));
+        //Debug.Log(direction);
+        Vector3 directionAlongSurface = _surfaceSlider.Project(transform.TransformDirection(new Vector3(0f, 0f, 1f)));
+        //Vector3 directionAlongSurface = transform.TransformDirection(new Vector3(0f, 0f, 1f));
+        Debug.Log(directionAlongSurface);
         Vector3 offset = directionAlongSurface * (_speed * Time.deltaTime);
+        //Vector3 offset = transform.TransformDirection(new Vector3(_direction.x * _swipeSpeed, directionAlongSurface.y, directionAlongSurface.z * _speed) * Time.deltaTime);
+       // Debug.Log(offset);
+        //
 
-        _rigidbody.MovePosition(_rigidbody.position + offset);
+        _rigidbody.MovePosition(_rigidbody.position + offset);///////////////////////////////////////////
+        //transform.Translate(_direction * _speed * Time.deltaTime);
     }
-
 
     private void Swipe()
     {
@@ -175,19 +181,24 @@ class PlayerMover : MonoBehaviour
 
             _lastMousePositionX = currentX;
 
-            var currRotation = transform.rotation;
-
-            var targetRotation = Quaternion.Euler(new Vector3(0, Mathf.Atan2(difference, _previousRotationY) * 90 / Mathf.PI, 0));
-
-            transform.rotation = Quaternion.Lerp(currRotation, targetRotation, _rotationSpeed * Time.deltaTime);
+            Rotate(difference);
         }
         else
         {
-           // transform.rotation = Quaternion.Euler(new Vector3(0f, _previousRotationY, 0f));
-            //_direction.x = 0f;
+            //_direction.x = 0;
+            _skin.transform.rotation = Quaternion.Lerp(_skin.transform.rotation, Quaternion.Euler(new Vector3(0f, _targetRotationY, 0f)), _rotationSpeed * Time.deltaTime);//////////
             _lastMousePositionX = Input.mousePosition.x;
         }
+    }
 
+    private void Rotate(float direction)
+    {
+        direction = Mathf.Clamp(direction, -1f, 1f);
+
+        var currentRotation = _skin.transform.rotation;
+        var targetRotation = Quaternion.Euler(new Vector3(0, direction * _rotationAngle + _targetRotationY, 0));
+
+        _skin.transform.rotation = Quaternion.Lerp(currentRotation, targetRotation, _rotationSpeed * Time.deltaTime);//////////////////////////////
     }
 
     private void TryMoveLeft(float difference)
@@ -210,19 +221,20 @@ class PlayerMover : MonoBehaviour
     private void SetSwipePosition(float difference)
     {
         Vector3 position = transform.InverseTransformDirection(transform.position);
+        //Vector3 position = _rigidbody.transform.InverseTransformDirection(new Vector3(_rigidbody.position.x, 0f, 0f));
+        //Vector3 position = transform.position;
 
         position.x += difference * _swipeSpeed * Time.deltaTime;
-        //_velocity.x = difference;
+        //position.x = difference * _swipeSpeed * Time.deltaTime;
+        //_direction.x = Mathf.Clamp(difference, -1, 1);
 
+        //Vector3 directionAlongSurface = _surfaceSlider.Project(_direction.normalized);
+        //Vector3 offset = directionAlongSurface * (_speed * Time.deltaTime);
 
-        
-
-        //var targetRotation = Quaternion.Euler(new Vector3(0, Mathf.Atan2(position.x, transform.TransformDirection(_direction).z) * 90 / Mathf.PI, 0));
-       
-       // Debug.Log(difference + " difference");
-        Debug.Log(Mathf.Atan2(difference, _direction.y));
-
-        transform.position = transform.TransformDirection(position);
+        position = transform.TransformDirection(position);
+        Debug.Log(position + " position");
+        //_rigidbody.MovePosition(position);
+        transform.position = position;
     }
 
     //private void OnDragged(Vector2 direction)
@@ -254,8 +266,8 @@ class PlayerMover : MonoBehaviour
     private void Turn()
     {
         transform.RotateAround(_centerPoint.position, Vector3.up, _turningSpeed * Time.fixedDeltaTime);
-        
-        if(_previousRotationY == 90f && _targetRotationY == 0)
+
+        if (_previousRotationY == 90f && _targetRotationY == 0)
         {
             if (transform.rotation.eulerAngles.y > _targetRotationY && transform.rotation.eulerAngles.y > 180f)
             {
@@ -269,14 +281,14 @@ class PlayerMover : MonoBehaviour
                 StopTurning();
             }
         }
-        else if(_previousRotationY == 0f && _targetRotationY == 270f)
+        else if (_previousRotationY == 0f && _targetRotationY == 270f)
         {
             if (transform.rotation.eulerAngles.y < _targetRotationY)
             {
                 StopTurning();
             }
         }
-        else if(_previousRotationY < _targetRotationY)
+        else if (_previousRotationY < _targetRotationY)
         {
             if (transform.rotation.eulerAngles.y > _targetRotationY)
             {
@@ -290,8 +302,8 @@ class PlayerMover : MonoBehaviour
         if (TurnType.Left == type)
         {
             _targetRotationY = previousRotationY - _angleStep;
-           
-            if(turningSpeed >= 0f)
+
+            if (turningSpeed >= 0f)
                 turningSpeed *= -1;
             else
                 return turningSpeed;
