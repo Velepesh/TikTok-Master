@@ -1,0 +1,5 @@
+enum CornerType
+{
+    Right,
+    Left
+}

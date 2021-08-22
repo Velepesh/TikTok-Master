@@ -13,6 +13,7 @@ class Dancer : Item
             if (other.TryGetComponent(out Player player))
             {
                 player.Rejoice();
+                player.Increase();
             }
 
             PlayEffect();

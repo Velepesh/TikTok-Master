@@ -1,5 +1,0 @@
-enum TurnType
-{
-    Right,
-    Left
-}

@@ -10,8 +10,8 @@ class Obstacle : Item
         {
             wallet.DecreaseRespect(Value);
 
-            if (wallet.Respect > 0)
-                if (other.TryGetComponent(out Player player))
+            if (other.TryGetComponent(out Player player))
+                if (player.IsLose == false)
                     player.Stumble();
 
             PlayEffect();
