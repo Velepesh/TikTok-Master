@@ -6,6 +6,7 @@ public class LostScreen : MonoBehaviour
 {
     [SerializeField] private GameObject _lostScreen;
     [SerializeField] private Player _player;
+    [SerializeField] private float _waitingTime;
 
     private void Start()
     {
@@ -29,5 +30,10 @@ public class LostScreen : MonoBehaviour
     private void ToggleLostScreenState(bool isLose)
     {
         _lostScreen.SetActive(isLose);
+    }
+
+    private IEnumerator d()
+    {
+        yield return new WaitForSeconds(_waitingTime);
     }
 }
