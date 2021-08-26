@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Corner : Ñorridor
+public class Corner : Ñorridor
 {
     [SerializeField] private Transform _center;
     [SerializeField] private CornerType _type;

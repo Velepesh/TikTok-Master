@@ -31,11 +31,11 @@ public class PlayerChoiceDisplay : MonoBehaviour
 
     private void PlayBadText()
     {
-        _animator.SetTrigger(AnimatorPlayerChoiceController.States.Bad);
+        _animator.SetTrigger(AnimatorEmojiController.States.Bad);
     }
 
     private void PlayGoodText()
     {
-        _animator.SetTrigger(AnimatorPlayerChoiceController.States.Good);
+        _animator.SetTrigger(AnimatorEmojiController.States.Good);
     }
 }

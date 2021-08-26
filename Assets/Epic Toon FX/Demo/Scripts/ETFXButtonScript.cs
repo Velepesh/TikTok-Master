@@ -43,18 +43,18 @@ public class ETFXButtonScript : MonoBehaviour
 		projectileParticleName = projectileScript.projectileParticle.name;	// Assign the name of the currently selected projectile to projectileParticleName
 	}
 
-	public bool overButton()		// This function will return either true or false
-	{
-		Rect button1 = new Rect(buttonsX, buttonsY, buttonsSizeX, buttonsSizeY);
-		Rect button2 = new Rect(buttonsX + buttonsDistance, buttonsY, buttonsSizeX, buttonsSizeY);
+	//public bool overButton()		// This function will return either true or false
+	//{
+	//	Rect button1 = new Rect(buttonsX, buttonsY, buttonsSizeX, buttonsSizeY);
+	//	Rect button2 = new Rect(buttonsX + buttonsDistance, buttonsY, buttonsSizeX, buttonsSizeY);
 		
-		if(button1.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y)) ||
-		   button2.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y)))
-		{
-			return true;
-		}
-		else
-			return false;
-	}
+	////	if(button1.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y)) ||
+	////	   button2.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y)))
+	////	{
+	////		return true;
+	////	}
+	////	else
+	////		return false;
+	//}
 }
 }

@@ -43,21 +43,23 @@ class PlayerMover : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _surfaceSlider = GetComponent<SurfaceSlider>();
 
-        CanMove(true);
+        CanMove(false);
         _previousRotationY = transform.rotation.eulerAngles.y;
         _targetRotationY = _previousRotationY;
     }
 
     private void OnEnable()
     {
-        _player.PlayerStoped += OnPlayerStoped;
-        _player.PlayerStumbled += OnPlayerStumbled;
+        _player.StartedMoving += OnStartedMoving;
+        _player.Stoped += OnStoped;
+        _player.Stumbled += OnStumbled;
     }
 
     private void OnDisable()
     {
-        _player.PlayerStoped -= OnPlayerStoped;
-        _player.PlayerStumbled -= OnPlayerStumbled;
+        _player.StartedMoving -= OnStartedMoving;
+        _player.Stoped -= OnStoped;
+        _player.Stumbled -= OnStumbled;
     }
 
     private void FixedUpdate()
@@ -76,17 +78,17 @@ class PlayerMover : MonoBehaviour
         }
     }
 
-    private void OnPlayerStumbled()
+    private void OnStumbled()
     {
         StopMoving();
-        StartCoroutine(StopAfterStumble());
+        StartCoroutine(Stumble());
     }
 
-    private IEnumerator StopAfterStumble()
+    private IEnumerator Stumble()
     {
         yield return new WaitForSeconds(_shockTime);
 
-        ContinueMoving();
+        StartMoving();
     }
 
     public void StartTurning(Transform centerPoint, CornerType type)
@@ -107,7 +109,7 @@ class PlayerMover : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0f, _targetRotationY, 0f));
         _previousRotationY = transform.rotation.eulerAngles.y;
         
-        ContinueMoving();
+        StartMoving();
     }
 
     private Vector3 GetMovingDirection()
@@ -127,9 +129,15 @@ class PlayerMover : MonoBehaviour
 
         return direction;
     }
-    private void OnPlayerStoped()
+
+    private void OnStoped()
     {
         StopMoving();
+    }
+    
+    private void OnStartedMoving()
+    {
+        StartMoving();
     }
 
     private void CanMove(bool canSwipe)
@@ -163,7 +171,7 @@ class PlayerMover : MonoBehaviour
             //Debug.Log(_surfaceSlider.GetMaxBorder() + "  MAX");
             //Debug.Log(_surfaceSlider.GetMinBorder() + "  MIN");
             direction = Mathf.Clamp(difference, -1f, 1f);
-            difference = Mathf.Clamp(difference, -80f, 80f);
+            difference = Mathf.Clamp(difference, -100f, 100f);
 
             if (direction > 0f)
                 TryMoveRight(difference, position);
@@ -217,26 +225,18 @@ class PlayerMover : MonoBehaviour
             rightBorder = _surfaceSlider.GetMinBorder();
           
             if (-positionX > rightBorder)
-            {
                 SetSwipePosition(direction, position);
-            }
             else
-            {
                 WentOutOfBounds(-rightBorder, position);
-            }
         }
         else
         {
             rightBorder = _surfaceSlider.GetMaxBorder();
 
             if (positionX < rightBorder)
-            {
                 SetSwipePosition(direction, position);
-            }
             else
-            {
                 WentOutOfBounds(rightBorder, position);
-            }
         }
     }
 
@@ -281,22 +281,12 @@ class PlayerMover : MonoBehaviour
         _skin.transform.rotation = Quaternion.Lerp(currentRotation, targetRotation, _rotationSpeed * Time.deltaTime);
     }
 
-    //private void OnDragged(Vector2 direction)
-    //{
-    //    _direction = direction;
-    //    // var direction = new Vector3(_direction.x * speed, 0, speed);
-    //}
-
-    //private void Released()
-    //{
-    //    _direction.x = 0f;
-    //}
     private void StopMoving()
     {
         CanMove(false);
     }
 
-    private void ContinueMoving()
+    private void StartMoving()
     {
         CanMove(true);
     }

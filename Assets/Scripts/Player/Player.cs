@@ -8,16 +8,16 @@ public class Player : MonoBehaviour
     private Animator _animator;
     private bool _isLose;
 
-    public event UnityAction PlayerStumbled;
-    public event UnityAction PlayerStoped;
-    public event UnityAction PlayerRotated;
+    public event UnityAction StartedMoving;
+    public event UnityAction Stumbled;
+    public event UnityAction Stoped;
     public event UnityAction RightChoice;
     public event UnityAction WrongChoice;
     public event UnityAction FinishLineCrossed;
     public event UnityAction Increased;
     public event UnityAction Decreased;
     public event UnityAction Missed;
-    public event UnityAction Lost;
+    public event UnityAction GameOver;
 
     public bool IsLose => _isLose;
 
@@ -28,10 +28,16 @@ public class Player : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    public void StartMoving()
+    {
+        StartedMoving?.Invoke();
+
+        _animator.SetTrigger(AnimatorPlayerController.States.Move);
+    }
+
     public void Win()
     {
-        PlayerRotated?.Invoke();
-        PlayerStoped?.Invoke();
+        Stoped?.Invoke();
 
         _animator.SetTrigger(AnimatorPlayerController.States.Dance);
     }
@@ -40,8 +46,8 @@ public class Player : MonoBehaviour
     {
         _isLose = true;
 
-        PlayerStoped?.Invoke();
-        Lost?.Invoke();
+        Stoped?.Invoke();
+        GameOver?.Invoke();
         Decrease();
 
         _animator.SetTrigger(AnimatorPlayerController.States.Defeat);
@@ -49,14 +55,14 @@ public class Player : MonoBehaviour
 
     public void Stumble()
     {
-        PlayerStumbled?.Invoke();
+        Stumbled?.Invoke();
 
         _animator.SetTrigger(AnimatorPlayerController.States.Stumble);
     }
 
     public void Rejoice()
     {
-        PlayerStumbled?.Invoke();
+        Stumbled?.Invoke();
 
         _animator.SetTrigger(AnimatorPlayerController.States.Rejoice);
     }

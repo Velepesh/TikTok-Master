@@ -6,6 +6,7 @@ public static class AnimatorPlayerController
 {
     public static class States
     {
+        public const string Move = nameof(Move);
         public const string Turn = nameof(Turn);
         public const string Dance = nameof(Dance);
         public const string Stumble = nameof(Stumble);
