@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class RespectDisplay : WalletDisplay
+public class RespectDisplay : OnLevelCollisionDisplay
 {
     readonly char sign = '+';
 

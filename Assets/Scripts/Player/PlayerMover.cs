@@ -51,15 +51,17 @@ class PlayerMover : MonoBehaviour
     private void OnEnable()
     {
         _player.StartedMoving += OnStartedMoving;
-        _player.Stoped += OnStoped;
         _player.Stumbled += OnStumbled;
+        _player.Won += OnWon;
+        _player.GameOver += OnGameOver;
     }
 
     private void OnDisable()
     {
         _player.StartedMoving -= OnStartedMoving;
-        _player.Stoped -= OnStoped;
         _player.Stumbled -= OnStumbled;
+        _player.Won -= OnWon;
+        _player.GameOver -= OnGameOver;
     }
 
     private void FixedUpdate()
@@ -325,5 +327,15 @@ class PlayerMover : MonoBehaviour
         }
 
         return turningSpeed;
+    }
+
+    private void OnWon()
+    {
+        CanMove(false);
+    }
+
+    private void OnGameOver()
+    {
+        CanMove(false);
     }
 }

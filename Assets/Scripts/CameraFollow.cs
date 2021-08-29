@@ -7,64 +7,134 @@ using System;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Player _target;
-    [SerializeField] private float _smoothedSpeed;
-    [SerializeField] private float _time;
+    [SerializeField] private Transform _followTransform;
+    [SerializeField] private Animator _animator;
+    // [SerializeField] private Transform _finishTransform;//мб удалить
+    [SerializeField] private float _speed;
+    [SerializeField] private float _startHeight;
+    [SerializeField] private float _followHeight;
+    [SerializeField] private float _startDistance;
+    [SerializeField] private float _followDistance;
 
+    private Quaternion _rotation;
     private Vector3 _offset;
+    private Vector3 _startOffset;
+    private Vector3 _height;
+    private Quaternion _startRotation;
+    private Vector3 _finishOffset;
+    private Quaternion _finishRotation;
+    private Vector3 _followOffset;
+    private Quaternion _followRotation;
+    private float _targetDistance;
+    private float _targetHeight;
+    private bool _isFollowing;
+
+    private void OnEnable()
+    {
+        _target.StartedMoving += OnStartedMoving;
+        _target.Won += OnWon;
+    }
+
+    private void OnDisable()
+    {
+        _target.StartedMoving -= OnStartedMoving;
+        _target.Won -= OnWon;
+    }
 
     private void Start()
     {
-        _offset = transform.position - _target.transform.position;
+        _isFollowing = true;
+
+        _startOffset = transform.position - _target.transform.position;
+        _startRotation = transform.rotation;
+
+        //_finishOffset = _finishTransform.position - _target.transform.position;
+        //_finishRotation = _finishTransform.rotation;
+
+        _followOffset = _followTransform.position - _target.transform.position;
+        _followRotation = _followTransform.rotation;//vможно передать ротатион
+
+        _offset = _startOffset;
+        _rotation = _startRotation;
+
+        _targetDistance = _startDistance;
+        _targetHeight = _startHeight;
+
+        _height = new Vector3(0f, _targetHeight, 0f);
     }
+
     private void LateUpdate()
     {
-        Vector3 desiredPosition = _target.transform.position + _offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, _smoothedSpeed);
-        transform.position = smoothedPosition;
+        if (_isFollowing)
+        {
+            float xAngle = _target.transform.eulerAngles.x + _rotation.eulerAngles.x;
+            float yAngle = _target.transform.eulerAngles.y;
+
+            transform.eulerAngles = new Vector3(xAngle, yAngle, 0.0f);
+
+            var direction = transform.rotation * -Vector3.forward;
+
+            transform.position = _target.transform.position + _height + direction * _targetDistance;
+        }
+    }
+
+    private void OnStartedMoving()
+    {
+        StartCoroutine(MoveToPosition(_followOffset, _followRotation, 0.5f));
+    }
+
+    private void OnWon()
+    {
+        
+        StartCoroutine(MoveToPositionWin(_followOffset, _followRotation, 0.5f));
+
+        _animator.SetTrigger(AnimatorCameraController.States.Rotate);
+    }
+
+    private IEnumerator MoveToPosition(Vector3 offset, Quaternion rotation, float duration)
+    {
+        float time = 0;
+        Vector3 startOffset = _offset;
+        Quaternion startRotation = _rotation;
+        while (time < duration)
+        {
+            float value = EaseInEaseOut(time / duration);
+            _offset = Vector3.Lerp(startOffset, offset, value);
+            _rotation = Quaternion.Lerp(startRotation, rotation, value);
+            _targetDistance = Mathf.Lerp(_startDistance, _followDistance, value);
+            _targetHeight = Mathf.Lerp(_startHeight, _followHeight, value);
+            yield return null;
+            time += Time.deltaTime;
+        }
+
+        _offset = offset;
+        _rotation = rotation;
+    }
+
+    private IEnumerator MoveToPositionWin(Vector3 offset, Quaternion rotation, float duration)
+    {
+        float time = 0;
+        Vector3 startOffset = _offset;
+        Quaternion startRotation = _rotation;
+        while (time < duration)
+        {
+            float value = EaseInEaseOut(time / duration);
+            _offset = Vector3.Lerp(startOffset, offset, value);
+            _rotation = Quaternion.Lerp(startRotation, rotation, value);
+            _targetDistance = Mathf.Lerp(_followDistance, _startDistance, value);
+            _targetHeight = Mathf.Lerp(_followHeight, _startHeight, value);
+            yield return null;
+            time += Time.deltaTime;
+        }
+
+        _offset = offset;
+        _rotation = rotation;
+
+        _isFollowing = false;
+    }
+
+    private float EaseInEaseOut(float t)
+    {
+        return (Mathf.Sin((2 * t - 1) * Mathf.PI / 2) / 2) + 0.5f;
     }
 }
-//public class CameraFollow : MonoBehaviour
-//{
-//    public Transform target;
-//    public float smooth = 0.3f;
-//    public float distance = 5.0f;
-//    public float height = 1.0f;
-//    public float Angle = 20;
-
-//    public LayerMask lineOfSightMask = 0;
-
-//    private float yVelocity = 0.0f;
-//    private float xVelocity = 0.0f;
-//    private float restTime = 0.0f;
-
-//    private void LateUpdate()
-//    {
-//        if (!target) return;
-
-//        if (restTime != 0.0f)
-//            restTime = Mathf.MoveTowards(restTime, 0.0f, Time.deltaTime);
-
-//        // Damp angle from current y-angle towards target y-angle
-
-//        float xAngle = Mathf.SmoothDampAngle(transform.eulerAngles.x, target.eulerAngles.x + Angle, ref xVelocity, smooth);
-
-//        float yAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, target.eulerAngles.y, ref yVelocity, smooth);
-
-//        // Look at the target
-//        transform.eulerAngles = new Vector3(xAngle, yAngle, 0.0f);
-
-//        var direction = transform.rotation * -Vector3.forward;
-//        var targetDistance = AdjustLineOfSight(target.position + new Vector3(0, height, 0), direction);
-
-//        transform.position = target.position + new Vector3(0, height, 0) + direction * targetDistance;
-//    }
-//    private float AdjustLineOfSight(Vector3 target, Vector3 direction)
-//    {
-//        RaycastHit hit;
-
-//        if (Physics.Raycast(target, direction, out hit, distance, lineOfSightMask.value))
-//            return hit.distance;
-//        else
-//            return distance;
-//    }
-//}

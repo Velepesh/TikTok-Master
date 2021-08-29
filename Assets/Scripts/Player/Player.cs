@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
 
     public event UnityAction StartedMoving;
     public event UnityAction Stumbled;
-    public event UnityAction Stoped;
     public event UnityAction RightChoice;
     public event UnityAction WrongChoice;
     public event UnityAction FinishLineCrossed;
@@ -18,6 +17,7 @@ public class Player : MonoBehaviour
     public event UnityAction Decreased;
     public event UnityAction Missed;
     public event UnityAction GameOver;
+    public event UnityAction Won;
 
     public bool IsLose => _isLose;
 
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     public void Win()
     {
-        Stoped?.Invoke();
+        Won?.Invoke();
 
         _animator.SetTrigger(AnimatorPlayerController.States.Dance);
     }
@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
     {
         _isLose = true;
 
-        Stoped?.Invoke();
         GameOver?.Invoke();
         Decrease();
 

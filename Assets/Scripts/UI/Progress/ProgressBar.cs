@@ -25,18 +25,22 @@ public class ProgressBar : MonoBehaviour
         _currentValue = Convert.ToSingle(_wallet.Respect) / _wallet.MaxRespect;
         _slider.value = _currentValue;
 
-        ChangeSliderColor(_wallet.Respect);
+        ChangeStage(_wallet.Respect);
+        ToggleActive(false);
     }
 
     private void OnEnable()
     {
         _wallet.RespectChanged += OnRespectChanged;
+        _player.StartedMoving += OnStartedMoving;
+        _player.GameOver += OnGameOver;
         _player.FinishLineCrossed += OnFinishLineCrossed;
     }
 
     private void OnDisable()
     {
         _wallet.RespectChanged -= OnRespectChanged;
+        _player.StartedMoving -= OnStartedMoving;
         _player.FinishLineCrossed -= OnFinishLineCrossed;
     }
 
@@ -46,54 +50,66 @@ public class ProgressBar : MonoBehaviour
             _slider.value = Mathf.Lerp(_slider.value, _currentValue, _fillingTime * Time.deltaTime);
     }
 
+    private void OnStartedMoving()
+    {
+        ToggleActive(true);
+    }
+
     private void OnRespectChanged(int value, int maxValue)
     {
         _currentValue = Convert.ToSingle(value) / maxValue;
 
-        ChangeSliderColor(value);
+        ChangeStage(value);
     }
 
-    private void ChangeSliderColor(float currentValue)
+    private void ChangeStage(float currentValue)
     {
         if (currentValue >= _stage.TiktokerValue)
         {
             AssignColor(_tiktokerStage);
             _progressText.AssignName(SkinType.Tiktoker);
-            _progressText.AssignTextColor(_tiktokerStage);
         }
         else if (currentValue >= _stage.StylishValue)
         {
             AssignColor(_stylishStage);
             _progressText.AssignName(SkinType.Stylish);
-            _progressText.AssignTextColor(_stylishStage);
         }
         else if (currentValue >= _stage.OrdinaryValue)
         {
             AssignColor(_ordinaryStage);
             _progressText.AssignName(SkinType.Ordinary);
-            _progressText.AssignTextColor(_ordinaryStage);
         }
         else if (currentValue >= _stage.ClerkValue)
         {
             AssignColor(_clerkStage);
             _progressText.AssignName(SkinType.Clerk);
-            _progressText.AssignTextColor(_clerkStage);
         }
         else if (currentValue >= _stage.NerdValue)
         {
             AssignColor(_nerdStage);
             _progressText.AssignName(SkinType.Nerd);
-            _progressText.AssignTextColor(_nerdStage);
         }
     }
 
     private void AssignColor(Color color)
     {
         _fill.color = color;
+
+        _progressText.AssignTextColor(color);
     }
-    
+
     private void OnFinishLineCrossed()
     {
-        gameObject.SetActive(false);
+        ToggleActive(false);
+    }
+
+    private void OnGameOver()
+    {
+        ToggleActive(false);
+    }
+
+    private void ToggleActive(bool isActive)
+    {
+        _slider.gameObject.SetActive(isActive);
     }
 }

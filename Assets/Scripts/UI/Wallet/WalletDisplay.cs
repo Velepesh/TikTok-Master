@@ -1,50 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public abstract class WalletDisplay : MonoBehaviour
+public class WalletDisplay : MonoBehaviour
 {
-    [SerializeField] protected TMP_Text Text;
-    [SerializeField] protected Wallet Wallet;
-    [SerializeField] protected Animator Animator;
-    [SerializeField] protected float DelayTime;
+    [SerializeField] private Wallet _wallet;
 
-    protected int CurentValue;
-    protected float StartTime;
-    protected bool IsChanged;
-    private void Awake()
+    private void OnEnable()
     {
-        StartTime = DelayTime;
+        _wallet.RespectChanged += OnRespectChanged;
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        Timer();
+        _wallet.RespectChanged -= OnRespectChanged;
     }
 
-    protected void ChangeValue(int respect, char sign)
+    private void OnRespectChanged(int respect, int maxRespect)
     {
-        CurentValue += respect;
-        IsChanged = true;
-        DelayTime = StartTime;
 
-        Text.text = sign + CurentValue.ToString();
-
-        Animator.SetTrigger(AnimatorWalletDisplayController.States.Play);
-    }
-
-    private void Timer()
-    {
-        if (IsChanged)
-        {
-            DelayTime -= Time.deltaTime;
-
-            if (DelayTime <= 0f)
-            {
-                CurentValue = 0;
-                IsChanged = false;
-            }
-        }
     }
 }

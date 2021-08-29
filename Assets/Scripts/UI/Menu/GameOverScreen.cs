@@ -30,40 +30,4 @@ public class GameOverScreen : Screen
 
         ScreenHolder.SetActive(true);
     }
-
-    //[SerializeField] private GameObject _lostScreen;
-    //[SerializeField] private Player _player;
-    //[SerializeField] private float _delayTime;
-
-    //private void Start()
-    //{
-    //    ToggleLostScreenState(false);
-    //}
-
-    //private void OnEnable()
-    //{
-    //    _player.Losed += OnLosed;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    _player.Losed -= OnLosed;
-    //}
-
-    //private void OnLosed()
-    //{
-    //    StartCoroutine(EnableGameOverScreen());
-    //}
-
-    //private void ToggleLostScreenState(bool isLose)
-    //{
-    //    _lostScreen.SetActive(isLose);
-    //}
-
-    //private IEnumerator EnableGameOverScreen()
-    //{
-    //    yield return new WaitForSeconds(_delayTime);
-
-    //    ToggleLostScreenState(true);
-    //}
 }
