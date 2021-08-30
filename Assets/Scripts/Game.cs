@@ -9,6 +9,9 @@ public class Game : MonoBehaviour
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private GameOverScreen _gameOverScreen;
     [SerializeField] private WinScreen _winScreen;
+    [SerializeField] private GameScreen _gameScreen;
+    [SerializeField] private BackToMenuScreen _backToMenuScreen;
+    [SerializeField] private RestartGame _restartGame;
     //[SerializeField] private PrizeScreen _prizeScreen;
 
     private void OnEnable()
@@ -16,6 +19,8 @@ public class Game : MonoBehaviour
         _startScreen.PlayButtonClick += OnPlayButtonClick;
         _gameOverScreen.RestartButtonClick += OnRestartButtonClick;
         _winScreen.NextButtonClick += OnNextButtonClick;
+        _gameScreen.HomeButtonClick += OnHomeButtonClick;
+        _backToMenuScreen.ExitButtonClick += OnExitButtonClick;
         _player.GameOver += OnGameOver;
         _player.Won += OnWon;
     }
@@ -25,6 +30,8 @@ public class Game : MonoBehaviour
         _startScreen.PlayButtonClick -= OnPlayButtonClick;
         _gameOverScreen.RestartButtonClick -= OnRestartButtonClick;
         _winScreen.NextButtonClick -= OnNextButtonClick;
+        _gameScreen.HomeButtonClick -= OnHomeButtonClick;
+        _backToMenuScreen.ExitButtonClick -= OnExitButtonClick;
         _player.GameOver -= OnGameOver;
         _player.Won -= OnWon;
     }
@@ -36,11 +43,13 @@ public class Game : MonoBehaviour
 
     private void OnGameOver()
     {
+        CloseGameScreen();
         _gameOverScreen.Open();
     }
 
     private void OnWon()
     {
+        CloseGameScreen();
         _winScreen.Open();
     }
 
@@ -49,14 +58,26 @@ public class Game : MonoBehaviour
         _startScreen.Close();
         StartGame();
     }
+
+    private void OnHomeButtonClick()
+    {
+        _backToMenuScreen.Open();
+    }
+    
+    private void OnExitButtonClick()
+    {
+        _restartGame.Restart();
+    }
+
     private void StartGame()
     {
         _player.StartMoving();
+        _gameScreen.Open();
     }
 
     private void OnRestartButtonClick()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _restartGame.Restart();
     }
     
     private void OnNextButtonClick()
@@ -64,8 +85,13 @@ public class Game : MonoBehaviour
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
         if(nextSceneIndex >= SceneManager.sceneCount)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _restartGame.Restart();
         else
             SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    private void CloseGameScreen()
+    {
+        _gameScreen.Close();
     }
 }

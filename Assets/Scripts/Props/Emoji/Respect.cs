@@ -8,7 +8,7 @@ class Respect : Item
     {
         if (other.TryGetComponent(out Wallet wallet))
         {
-            wallet.IncreaseRespect(Value);
+            wallet.AddRespect(Value);
 
             PlayEffect();
             DisableObject();

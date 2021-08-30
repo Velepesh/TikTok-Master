@@ -5,7 +5,7 @@ using System;
 
 public class ProgressBar : MonoBehaviour
 {
-    [SerializeField] private Wallet _wallet;
+    [SerializeField] private Wallet _progression;
     [SerializeField] private Player _player;
     [SerializeField] private SkinChangerStage _stage;
     [SerializeField] private Slider _slider;
@@ -22,16 +22,16 @@ public class ProgressBar : MonoBehaviour
 
     private void Start()
     {
-        _currentValue = Convert.ToSingle(_wallet.Respect) / _wallet.MaxRespect;
+        _currentValue = Convert.ToSingle(_progression.Progression) / _progression.MaxProgression;
         _slider.value = _currentValue;
 
-        ChangeStage(_wallet.Respect);
+        ChangeStage(_progression.Progression);
         ToggleActive(false);
     }
 
     private void OnEnable()
     {
-        _wallet.RespectChanged += OnRespectChanged;
+        _progression.ProgressionChanged += OnProgressionChanged;
         _player.StartedMoving += OnStartedMoving;
         _player.GameOver += OnGameOver;
         _player.FinishLineCrossed += OnFinishLineCrossed;
@@ -39,7 +39,7 @@ public class ProgressBar : MonoBehaviour
 
     private void OnDisable()
     {
-        _wallet.RespectChanged -= OnRespectChanged;
+        _progression.ProgressionChanged -= OnProgressionChanged;
         _player.StartedMoving -= OnStartedMoving;
         _player.FinishLineCrossed -= OnFinishLineCrossed;
     }
@@ -55,7 +55,7 @@ public class ProgressBar : MonoBehaviour
         ToggleActive(true);
     }
 
-    private void OnRespectChanged(int value, int maxValue)
+    private void OnProgressionChanged(int value, int maxValue)
     {
         _currentValue = Convert.ToSingle(value) / maxValue;
 

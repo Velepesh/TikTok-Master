@@ -12,7 +12,7 @@ class WrongChoice : Item
         {
             _bonusDoor.PutAwayBonus();
 
-            wallet.DecreaseRespect(Value);
+            wallet.RemoveRespect(Value);
 
             if (other.TryGetComponent(out Player player))
                 player.MadeWrongChoice();

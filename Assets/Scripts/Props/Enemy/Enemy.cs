@@ -10,7 +10,7 @@ class Enemy : Item
         {
             PlayEffect();
 
-            wallet.DecreaseRespect(Value);
+            wallet.RemoveRespect(Value);
 
             if (other.TryGetComponent(out Player player))
             {

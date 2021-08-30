@@ -8,7 +8,7 @@ class Obstacle : Item
     {
         if (other.TryGetComponent(out Wallet wallet))
         {
-            wallet.DecreaseRespect(Value);
+            wallet.RemoveRespect(Value);
 
             if (other.TryGetComponent(out Player player))
                 if (player.IsLose == false)

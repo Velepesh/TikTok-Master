@@ -10,7 +10,7 @@ class RightChoice : Item
     {
         if (other.TryGetComponent(out Wallet wallet))
         {
-            wallet.IncreaseRespect(Value);
+            wallet.AddRespect(Value);
 
             if (other.TryGetComponent(out Player player))
                 player.MadeRightChoice();

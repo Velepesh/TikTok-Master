@@ -12,14 +12,14 @@ class SkinChanger : MonoBehaviour
 
     private Skin _currentSkin;
     private SkinChangerStage _stage;
-    private Wallet _wallet;
+    private Wallet _respect;
     private float _previousValue;
 
     public event UnityAction SkinChanged;
 
     private void Awake()
     {
-        _wallet = GetComponent<Wallet>();
+        _respect = GetComponent<Wallet>();
         _stage = GetComponent<SkinChangerStage>();
 
         TryWear();
@@ -27,20 +27,20 @@ class SkinChanger : MonoBehaviour
 
     private void OnEnable()
     {
-        _wallet.RespectChanged += OnRespectChanged;
+        _respect.ProgressionChanged += OnProgressionChanged;
     }
 
     private void Start()
     {
-        _previousValue = _wallet.Respect;
+        _previousValue = _respect.Progression;
     }
 
     private void OnDisable()
     {
-        _wallet.RespectChanged -= OnRespectChanged;
+        _respect.ProgressionChanged -= OnProgressionChanged;
     }
 
-    private void OnRespectChanged(int currentTikTokValue, int maxValue)
+    private void OnProgressionChanged(int currentTikTokValue, int maxValue)
     {
         int vector = 0;
 
@@ -59,48 +59,29 @@ class SkinChanger : MonoBehaviour
         if (vector > 0)
         {
             if (currentValue >= _stage.TiktokerValue && _previousValue < _stage.TiktokerValue)
-            {
                 ChangeSkin(SkinType.Tiktoker);
-            }
             else if (currentValue >= _stage.StylishValue && _previousValue < _stage.StylishValue)
-            {
                 ChangeSkin(SkinType.Stylish);
-            }
             else if(currentValue >= _stage.OrdinaryValue && _previousValue < _stage.OrdinaryValue)
-            {
                 ChangeSkin(SkinType.Ordinary);
-            }
             else if(currentValue >= _stage.ClerkValue && _previousValue < _stage.ClerkValue)
-            {
                 ChangeSkin(SkinType.Clerk);
-            }
             else if(currentValue >= _stage.NerdValue && _previousValue < _stage.NerdValue)
-            {
                 ChangeSkin(SkinType.Nerd);
-            }
         }
         else 
         { 
             if (currentValue < _stage.TiktokerValue && _previousValue >= _stage.StylishValue)
-            {
                 ChangeSkin(SkinType.Stylish);
-            }
             
             if (currentValue < _stage.StylishValue && _previousValue >= _stage.OrdinaryValue)
-            {
                 ChangeSkin(SkinType.Ordinary);
-            }
             
             if(currentValue < _stage.OrdinaryValue && _previousValue >= _stage.ClerkValue)
-            {
                 ChangeSkin(SkinType.Clerk);
-            }
             
             if(currentValue < _stage.ClerkValue && _previousValue >= _stage.NerdValue)
-            {
                 ChangeSkin(SkinType.Nerd);
-            }
-
         }
     }
 

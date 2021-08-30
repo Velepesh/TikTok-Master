@@ -9,7 +9,7 @@ class Disrespect : Item
     {
         if (other.TryGetComponent(out Wallet wallet))
         {
-            wallet.DecreaseRespect(Value);
+            wallet.RemoveRespect(Value);
 
             PlayEffect();
             DisableObject();

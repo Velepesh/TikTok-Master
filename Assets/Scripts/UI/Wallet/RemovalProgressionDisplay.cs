@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DisrespectDisplay : OnLevelCollisionDisplay
+public class RemovalProgressionDisplay : ProgressionDisplay
 {
     readonly char sign = '-';
 
     private void OnEnable()
     {
-        Wallet.DisrespectMatched += OnDisrespectMatched;
+        Wallet.RemovedProgression += OnRemovedProgression;
     }
 
     private void OnDisable()
     {
-        Wallet.DisrespectMatched -= OnDisrespectMatched;
+        Wallet.RemovedProgression -= OnRemovedProgression;
     }
 
-    private void OnDisrespectMatched(int respect)
+    private void OnRemovedProgression(int respect)
     {
         ChangeValue(respect, sign);
     }

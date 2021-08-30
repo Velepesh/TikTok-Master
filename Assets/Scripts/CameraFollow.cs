@@ -9,7 +9,6 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Player _target;
     [SerializeField] private Transform _followTransform;
     [SerializeField] private Animator _animator;
-    // [SerializeField] private Transform _finishTransform;//мб удалить
     [SerializeField] private float _speed;
     [SerializeField] private float _startHeight;
     [SerializeField] private float _followHeight;
@@ -21,8 +20,6 @@ public class CameraFollow : MonoBehaviour
     private Vector3 _startOffset;
     private Vector3 _height;
     private Quaternion _startRotation;
-    private Vector3 _finishOffset;
-    private Quaternion _finishRotation;
     private Vector3 _followOffset;
     private Quaternion _followRotation;
     private float _targetDistance;
@@ -47,9 +44,6 @@ public class CameraFollow : MonoBehaviour
 
         _startOffset = transform.position - _target.transform.position;
         _startRotation = transform.rotation;
-
-        //_finishOffset = _finishTransform.position - _target.transform.position;
-        //_finishRotation = _finishTransform.rotation;
 
         _followOffset = _followTransform.position - _target.transform.position;
         _followRotation = _followTransform.rotation;//vможно передать ротатион
