@@ -10,8 +10,9 @@ public class Game : MonoBehaviour
     [SerializeField] private GameOverScreen _gameOverScreen;
     [SerializeField] private WinScreen _winScreen;
     [SerializeField] private GameScreen _gameScreen;
-    [SerializeField] private BackToMenuScreen _backToMenuScreen;
+    [SerializeField] private PauseScreen _backToMenuScreen;
     [SerializeField] private RestartGame _restartGame;
+    [SerializeField] private ShopScreen _shopScreen;
     //[SerializeField] private PrizeScreen _prizeScreen;
 
     private void OnEnable()
@@ -21,6 +22,8 @@ public class Game : MonoBehaviour
         _winScreen.NextButtonClick += OnNextButtonClick;
         _gameScreen.HomeButtonClick += OnHomeButtonClick;
         _backToMenuScreen.ExitButtonClick += OnExitButtonClick;
+        _shopScreen.CustomizeButtonClick += OnCustomizeButtonClick;
+        _shopScreen.CloseButtonClick += OnCloseButtonClick;
         _player.GameOver += OnGameOver;
         _player.Won += OnWon;
     }
@@ -32,6 +35,8 @@ public class Game : MonoBehaviour
         _winScreen.NextButtonClick -= OnNextButtonClick;
         _gameScreen.HomeButtonClick -= OnHomeButtonClick;
         _backToMenuScreen.ExitButtonClick -= OnExitButtonClick;
+        _shopScreen.CustomizeButtonClick -= OnCustomizeButtonClick;
+        _shopScreen.CloseButtonClick -= OnCloseButtonClick;
         _player.GameOver -= OnGameOver;
         _player.Won -= OnWon;
     }
@@ -67,6 +72,17 @@ public class Game : MonoBehaviour
     private void OnExitButtonClick()
     {
         _restartGame.Restart();
+    }
+    
+    private void OnCustomizeButtonClick()
+    {
+        _startScreen.Close();
+        _shopScreen.Open();
+    }
+
+    private void OnCloseButtonClick()
+    {
+        _startScreen.Open();
     }
 
     private void StartGame()

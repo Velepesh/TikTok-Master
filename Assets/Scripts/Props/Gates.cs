@@ -11,7 +11,7 @@ public class Gates : MonoBehaviour
 
     private void OnValidate()
     {
-        _progressToSkip = Mathf.Clamp(_progressToSkip, 0, 100);
+        _progressToSkip = Mathf.Clamp(_progressToSkip, 0, 200);
         _multiplier = Mathf.Clamp(_multiplier, 2, 5);
     }
 

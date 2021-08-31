@@ -16,7 +16,7 @@ public class GameOverScreen : Screen
 
     public override void Open()
     {
-        StartCoroutine(EnableGameOverScreen());
+        StartCoroutine(OpenGameOverScreen());
     }
 
     protected override void OnButtonClick()
@@ -24,7 +24,7 @@ public class GameOverScreen : Screen
         RestartButtonClick?.Invoke();
     }
 
-    private IEnumerator EnableGameOverScreen()
+    private IEnumerator OpenGameOverScreen()
     {
         yield return new WaitForSeconds(_delayTime);
 
