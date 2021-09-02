@@ -25,18 +25,22 @@ public class SkinView : MonoBehaviour
     private void OnEnable()
     {
         _selectedButton.onClick.AddListener(OnButtonClick);
-        //_sellButton.onClick.AddListener(TryLockItem);
     }
 
     private void OnDisable()
     {
         _selectedButton.onClick.RemoveListener(OnButtonClick);
-        //_sellButton.onClick.RemoveListener(TryLockItem);
     }
 
     public void SelecteBackground(Sprite background)
     {
         _currentBackground.sprite = background;
+    }
+
+    public void UnlockeView(Customize customize)
+    {
+        _selectedButton.interactable = true;
+        _icon.sprite = customize.Icon;
     }
 
     public void Render(Customize customize)
@@ -58,12 +62,11 @@ public class SkinView : MonoBehaviour
             _selectedButton.interactable = false;
     }
 
-
     private void OnButtonClick()
     {
         if (_customise.IsBuyed)
         {
-           SelectedButtonClick?.Invoke(_customise, this);
+            SelectedButtonClick?.Invoke(_customise, this);
         }
     }
 }

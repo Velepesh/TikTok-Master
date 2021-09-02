@@ -5,9 +5,6 @@ using System.Linq;
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Inventory _inventory;
-    [SerializeField] private GameObject _inventoryContainer;
-
     private Animator _animator;
     private bool _isLose;
 
@@ -101,20 +98,5 @@ public class Player : MonoBehaviour
     public void Miss()
     {
         Missed?.Invoke();
-    }
-
-    private void GetPlayerSkins()
-    {
-        //for (int i = 0; i < _inventory.GetCountOfWeapon(); i++)
-        //{
-        //    Gun gun = _inventory.GetGun(i);
-
-        //    if (gun.IsBuyed)
-        //    {
-        //        Instantiate(gun.Weapon, _inventoryContainer.transform).TryGetComponent(out Weapon weapon);
-        //        _weapons.Add(weapon);
-        //        weapon.gameObject.SetActive(false);
-        //    }
-        //}
     }
 }

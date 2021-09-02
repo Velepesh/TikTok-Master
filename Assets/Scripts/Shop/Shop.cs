@@ -42,9 +42,9 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < _shopInventory.GetCountOfSkins(); i++)
+        for (int i = 0; i < _shopInventory.GetCountOfHolders(); i++)
         {
-            AddItem(_shopInventory.GetSkin(i));
+            AddItem(_shopInventory.GetSkinsHolder(i));
         }
 
         ChangeSelecteView();
@@ -56,7 +56,7 @@ public class Shop : MonoBehaviour
     {
         _customizes.Add(customize);
 
-        var view = Instantiate(_template, _itemContainer.transform);  
+        var view = Instantiate(_template, _itemContainer.transform);
         _skinViews.Add(view);
 
         view.SelectedButtonClick += OnSelectedButtonClick;
@@ -66,8 +66,8 @@ public class Shop : MonoBehaviour
     private void OnButtonClick()
     {
         TrySellSkin();
-    } 
-    
+    }
+
     private void OnSelectedButtonClick(Customize customize, SkinView view)
     {
         DisableSelecteView();
@@ -89,13 +89,13 @@ public class Shop : MonoBehaviour
 
             for (int i = 0; i < _skinViews.Count; i++)
             {
-                if(_customizes[i].IsBuyed == false)
+                if (_customizes[i].IsBuyed == false)
                 {
                     indexOfLockSkins.Add(i);
                 }
             }
 
-            if(indexOfLockSkins.Count != 0)
+            if (indexOfLockSkins.Count != 0)
             {
                 int index = Random.Range(0, indexOfLockSkins.Count - 1);
 
@@ -103,6 +103,7 @@ public class Shop : MonoBehaviour
 
                 _wallet.BuySkin(_customizes[skinIndex], _unlockPrice);
                 _customizes[skinIndex].Buy();
+                _skinViews[skinIndex].UnlockeView(_customizes[skinIndex]);
             }
         }
     }

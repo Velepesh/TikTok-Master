@@ -11,7 +11,7 @@ public class Customize : ScriptableObject
 
     readonly private string CustomizeData = "CustomizeData";
 
-    private int _isBuyedInt => PlayerPrefs.GetInt(CustomizeData, 0);
+    private int IsBuyedInt => PlayerPrefs.GetInt(CustomizeData, 0);
 
     public GameObject Skin => _skin;
     public Sprite Icon => _icon;

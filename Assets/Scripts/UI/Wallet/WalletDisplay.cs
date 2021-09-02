@@ -37,11 +37,15 @@ public class WalletDisplay : MonoBehaviour
     {
         while (true)
         {
-            if (_currentRespect != _targetRespect)
-            {
-                _currentRespect++;
-                _walletText.text = _currentRespect.ToString();
-            }
+            if (_targetRespect < _currentRespect)
+                if (_currentRespect != _targetRespect)
+                    _currentRespect--;
+
+            if (_targetRespect > _currentRespect)
+                if (_currentRespect != _targetRespect)
+                    _currentRespect++;
+
+            _walletText.text = _currentRespect.ToString();
 
             yield return new WaitForSeconds(_waitTime);
         }

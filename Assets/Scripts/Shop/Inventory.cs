@@ -5,20 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Inventory", menuName = "Inventory/Inventory", order = 51)]
 public class Inventory : ScriptableObject
 {
-    [SerializeField] private List<Customize> _customizeSkins;
+    [SerializeField] private List<Customize> _skinsHolders;
 
-    public void AddSkin(Customize customize)
+    public void AddSkinHolder(Customize customize)
     {
-        _customizeSkins.Add(customize);
+        _skinsHolders.Add(customize);
     }
 
-    public Customize GetSkin(int skinNumber)
+    public Customize GetSkinsHolder(int skinNumber)
     {
-        return _customizeSkins[skinNumber];
+        return _skinsHolders[skinNumber];
     }
 
-    public int GetCountOfSkins()
+    public int GetCountOfHolders()
     {
-        return _customizeSkins.Count;
+        return _skinsHolders.Count;
     }
 }
