@@ -5,16 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Customize", menuName = "Customize/Skin", order = 51)]
 public class Customize : ScriptableObject
 {
-    [SerializeField] private GameObject _skin;
+    [SerializeField] private GameObject _skinsHolder;
     [SerializeField] private Sprite _icon;
+    [SerializeField] private HolderType _type;
     [SerializeField] private bool _isBuyed;
 
     readonly private string CustomizeData = "CustomizeData";
 
     private int IsBuyedInt => PlayerPrefs.GetInt(CustomizeData, 0);
 
-    public GameObject Skin => _skin;
+    public GameObject SkinsHolder => _skinsHolder;
     public Sprite Icon => _icon;
+    public HolderType Type => _type;
     public bool IsBuyed => _isBuyed;
 
 

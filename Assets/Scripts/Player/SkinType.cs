@@ -1,4 +1,4 @@
-enum SkinType
+public enum SkinType
 {
     Nerd = 0,
     Clerk = 25,

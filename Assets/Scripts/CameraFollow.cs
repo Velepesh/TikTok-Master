@@ -63,9 +63,7 @@ public class CameraFollow : MonoBehaviour
         _rotation = _startRotation;
 
         _targetDistance = _startDistance;
-        _targetHeight = _startHeight;
-
-       
+        _targetHeight = _startHeight;      
     }
 
     private void LateUpdate()
@@ -75,13 +73,10 @@ public class CameraFollow : MonoBehaviour
             _height = new Vector3(0f, _targetHeight, 0f);
 
             float xAngle = _target.transform.eulerAngles.x + _rotation.eulerAngles.x;
-            float yAngle = _target.transform.eulerAngles.y;
 
-            transform.eulerAngles = new Vector3(xAngle, yAngle, 0.0f);
+            transform.eulerAngles = new Vector3(xAngle, 0f, 0f);
 
-            var direction = transform.rotation * -Vector3.forward;
-
-            transform.position = _target.transform.position + _height + direction * _targetDistance;
+            transform.position = _target.transform.position + _height + (-Vector3.forward * _targetDistance);
         }
     }
 
@@ -91,8 +86,7 @@ public class CameraFollow : MonoBehaviour
     }
 
     private void OnWon()
-    {
-        
+    { 
         StartCoroutine(MoveToPositionWin(_followOffset, _followRotation, 0.5f));
 
         _animator.SetTrigger(AnimatorCameraController.States.Rotate);
@@ -100,15 +94,12 @@ public class CameraFollow : MonoBehaviour
     
     private void OnCustomizeButtonClick()
     {
-       // _animator.SetBool(AnimatorCameraController.States.IsShop, true);
-        StartCoroutine(MoveToShop(_shopOffset, _shopRotation, 0.5f));
+        StartCoroutine(MoveToShop(_startOffset, _shopRotation, 0.5f));
     }
 
     private void OnCloseButtonClick()
     {
-        StartCoroutine(MoveToPositionWin(_startOffset, _startRotation, 0.5f));
-
-       // _animator.SetBool(AnimatorCameraController.States.IsShop, false);
+        StartCoroutine(MoveToShop(_startOffset, _startRotation, 0.5f));
     }
 
     private IEnumerator MoveToPosition(Vector3 offset, Quaternion rotation, float duration)
@@ -134,10 +125,10 @@ public class CameraFollow : MonoBehaviour
 
     private IEnumerator MoveToPositionWin(Vector3 offset, Quaternion rotation, float duration)
     {
-        Debug.Log("sdsss");
         float time = 0;
         Vector3 startOffset = _offset;
         Quaternion startRotation = _rotation;
+
         while (time < duration)
         {
             float value = EaseInEaseOut(time / duration);
@@ -157,17 +148,17 @@ public class CameraFollow : MonoBehaviour
 
     private IEnumerator MoveToShop(Vector3 offset, Quaternion rotation, float duration)
     {
-        Debug.Log("sdsss");
         float time = 0;
         Vector3 startOffset = _offset;
         Quaternion startRotation = _rotation;
+
         while (time < duration)
         {
             float value = EaseInEaseOut(time / duration);
             _offset = Vector3.Lerp(startOffset, offset, value);
             _rotation = Quaternion.Lerp(startRotation, rotation, value);
-            _targetDistance = Mathf.Lerp(0, _startDistance/2, value);
-            _targetHeight = Mathf.Lerp(0, _startHeight, value);
+            _targetDistance = Mathf.Lerp(_startDistance, _startDistance, value);
+            _targetHeight = Mathf.Lerp(_startHeight, _startHeight, value);
             yield return null;
             time += Time.deltaTime;
         }

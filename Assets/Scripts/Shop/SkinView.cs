@@ -17,11 +17,6 @@ public class SkinView : MonoBehaviour
 
     public event UnityAction<Customize, SkinView> SelectedButtonClick;
 
-    private void Awake()
-    {
-        _currentBackground = GetComponent<Image>();
-    }
-
     private void OnEnable()
     {
         _selectedButton.onClick.AddListener(OnButtonClick);
@@ -34,6 +29,8 @@ public class SkinView : MonoBehaviour
 
     public void SelecteBackground(Sprite background)
     {
+        _currentBackground = GetComponent<Image>();
+
         _currentBackground.sprite = background;
     }
 
@@ -51,7 +48,6 @@ public class SkinView : MonoBehaviour
             _icon.sprite = customize.Icon;
         else
             _icon.sprite = _lockIcon;
-
 
         TryLockItem();
     }

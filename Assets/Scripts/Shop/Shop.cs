@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -15,19 +16,28 @@ public class Shop : MonoBehaviour
     [SerializeField] private Sprite _backgroundIcon;
     [SerializeField] private Sprite _selectedIcon;
     [SerializeField] private TMP_Text _unlockPriceText;
+    [SerializeField] private ShopScreen _shopScreen;
+    [SerializeField] private List<SkinsHolder> _skinsHolders;
 
     readonly private string ShopData = "ShopData";
 
-    private int CurrentTemplate => PlayerPrefs.GetInt(ShopData, 0);
+    private int CurrentTemplateIndex => PlayerPrefs.GetInt(ShopData, 0);
     private int _templateIndex = 0;
     private List<SkinView> _skinViews = new List<SkinView>();
     private List<Customize> _customizes = new List<Customize>();
+    private SkinsHolder _currentHolder;
 
     readonly private int _unlockPrice = 1;
+
+    public event UnityAction<SkinsHolder> SelectedHolder;
+    public event UnityAction ChoosedSkin;
+    public event UnityAction Closed;
 
     private void OnEnable()
     {
         _sellButton.onClick.AddListener(OnButtonClick);
+        _shopScreen.CustomizeButtonClick += OnCustomizeButtonClick;
+        _shopScreen.CloseButtonClick += OnCloseButtonClick;
     }
 
     private void OnDisable()
@@ -38,18 +48,47 @@ public class Shop : MonoBehaviour
         {
             _skinViews[i].SelectedButtonClick -= OnSelectedButtonClick;
         }
+
+        _shopScreen.CustomizeButtonClick -= OnCustomizeButtonClick;
+        _shopScreen.CloseButtonClick -= OnCloseButtonClick;
     }
 
-    private void Start()
+    private void Awake()
     {
+        int boughtSkins = 0;
+
         for (int i = 0; i < _shopInventory.GetCountOfHolders(); i++)
         {
-            AddItem(_shopInventory.GetSkinsHolder(i));
+            var holder = _shopInventory.GetSkinsHolder(i);
+            AddItem(holder);
+
+            if (holder.IsBuyed)
+                boughtSkins++;
+            _skinsHolders[i].gameObject.SetActive(false);
         }
 
-        ChangeSelecteView();
+        if (boughtSkins <= 1)
+            SaveCurrentTemplateIndex(0);
+
+        EnableSelecteView();
+        ApplyNewSkinsHolder(CurrentTemplateIndex);
 
         _unlockPriceText.text = _unlockPrice.ToString();
+    }
+
+    public SkinsHolder GetCurrentHolder()
+    {
+        return _currentHolder;
+    }
+
+    private void OnCustomizeButtonClick()
+    {
+        ChoosedSkin?.Invoke();
+    }
+
+    private void OnCloseButtonClick()
+    {
+        Closed?.Invoke();
     }
 
     private void AddItem(Customize customize)
@@ -76,8 +115,10 @@ public class Shop : MonoBehaviour
             if (_customizes[i] == customize)
                 _templateIndex = i;
 
-        SaveCurrentTemplate(_templateIndex);
-        ChangeSelecteView();
+        ApplyNewSkinsHolder(_templateIndex);
+        SaveCurrentTemplateIndex(_templateIndex);
+        EnableSelecteView();
+        ChoosedSkin?.Invoke();
     }
 
     private void TrySellSkin()
@@ -108,18 +149,28 @@ public class Shop : MonoBehaviour
         }
     }
 
-    private void SaveCurrentTemplate(int index)
+    private void SaveCurrentTemplateIndex(int index)
     {
         PlayerPrefs.SetInt(ShopData, index);
     }
 
-    private void ChangeSelecteView()
+    private void ApplyNewSkinsHolder(int index)
     {
-        _skinViews[CurrentTemplate].SelecteBackground(_selectedIcon);
+        if (_currentHolder != null)
+            _currentHolder.gameObject.SetActive(false);
+
+        _currentHolder = _skinsHolders[index];
+        _currentHolder.gameObject.SetActive(true);
+        SelectedHolder?.Invoke(_currentHolder);
+    }
+
+    private void EnableSelecteView()
+    {
+        _skinViews[CurrentTemplateIndex].SelecteBackground(_selectedIcon);
     }
 
     private void DisableSelecteView()
     {
-        _skinViews[CurrentTemplate].SelecteBackground(_backgroundIcon);
+        _skinViews[CurrentTemplateIndex].SelecteBackground(_backgroundIcon);
     }
 }

@@ -16,9 +16,8 @@ class Dancer : Item
                 player.Increase();
             }
 
-            PlayEffect();
-
             this.enabled = false;
+            PlayEffect();   
         }
     }
 }

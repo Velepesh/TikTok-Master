@@ -1,22 +1,27 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Linq;
+
 
 [RequireComponent(typeof(Wallet), typeof(SkinChangerStage))]
 class SkinChanger : MonoBehaviour
 {
-    [SerializeField] private Inventory _inventory;
-    [SerializeField] private GameObject _inventoryContainer;
-    [SerializeField] private List<Skin> _skins;
-    [SerializeField] private SkinType _startSkin;
-
-    private List<SkinHolder> _skinHolders = new List<SkinHolder>();
+    [SerializeField] private SkinType _startSkinType;
+    [SerializeField] private List<SkinsHolder> _holders;
+    [SerializeField] private Shop _shop;
+    [SerializeField] private float _inShopTime;
+   
     private Skin _currentSkin;
     private SkinChangerStage _stage;
     private Wallet _respect;
     private float _previousValue;
+    private List<Skin> _skins = new List<Skin>();
+    private SkinsHolder _currentHolder;
+    private bool _isShopOpen;
+    private float _elapsedTime;
+    private int _shopValue;
 
     public event UnityAction SkinChanged;
 
@@ -24,62 +29,144 @@ class SkinChanger : MonoBehaviour
     {
         _respect = GetComponent<Wallet>();
         _stage = GetComponent<SkinChangerStage>();
-
-        GetPlayerSkins();
-        TryWear();
     }
 
+    private void Update()
+    {
+        if (_isShopOpen)
+        {
+            if(_elapsedTime <= 0f)
+            {
+                s();
+                _elapsedTime = _inShopTime;
+            }
+
+            _elapsedTime -= Time.deltaTime;
+        }
+    }
     private void OnEnable()
     {
         _respect.ProgressionChanged += OnProgressionChanged;
-    }
-
-    private void Start()
-    {
-        _previousValue = _respect.Progression;
+        _shop.SelectedHolder += OnSelectedHolder;
+        _shop.ChoosedSkin += OnChoosedSkin;
+        _shop.Closed += OnClosed;
     }
 
     private void OnDisable()
     {
         _respect.ProgressionChanged -= OnProgressionChanged;
+        _shop.SelectedHolder -= OnSelectedHolder;
+        _shop.ChoosedSkin -= OnChoosedSkin;
+        _shop.Closed -= OnClosed;
     }
 
-    private void GetPlayerSkins()
+    private void Start()
     {
-        for (int i = 0; i < _inventory.GetCountOfHolders(); i++)
-        {
-            Customize customize = _inventory.GetSkinsHolder(i);
+        _previousValue = _respect.Progression;
 
-            if (customize.IsBuyed)
+        _currentHolder = _shop.GetCurrentHolder();
+
+        _currentSkin = GetStartSkin();
+    }
+
+    private void s()
+    {
+        if (_shopValue == _stage.NerdValue)
+        {
+            ChangeSkin(SkinType.Nerd);
+            _shopValue = _stage.ClerkValue;
+        }
+        else if (_shopValue == _stage.ClerkValue)
+        {
+            ChangeSkin(SkinType.Clerk);
+            _shopValue = _stage.OrdinaryValue;
+        }
+        else if (_shopValue == _stage.OrdinaryValue)
+        {
+            ChangeSkin(SkinType.Ordinary);
+            _shopValue = _stage.StylishValue;
+        }
+        else if (_shopValue == _stage.StylishValue)
+        {
+            ChangeSkin(SkinType.Stylish);
+            _shopValue = _stage.TiktokerValue;
+        }
+        else if (_shopValue == _stage.TiktokerValue)
+        {
+            ChangeSkin(SkinType.Tiktoker);
+            _shopValue = _stage.NerdValue;
+        }
+
+        SkinChanged?.Invoke();
+    }
+    private IEnumerator UpdateSkin()
+    {
+        int currentValue = _stage.NerdValue;
+
+        while (true)
+        {
+            if (currentValue == _stage.NerdValue)
             {
-                Instantiate(customize.Skin, _inventoryContainer.transform).TryGetComponent(out SkinHolder skinHolder);
-                Debug.Log(skinHolder.gameObject.name);
-                _skinHolders.Add(skinHolder);
-                skinHolder.gameObject.SetActive(false);
+                ChangeSkin(SkinType.Nerd);
+                currentValue = _stage.ClerkValue;
             }
+            else if(currentValue == _stage.ClerkValue)
+            {
+                ChangeSkin(SkinType.Clerk);
+                currentValue = _stage.OrdinaryValue;
+            }
+            else if (currentValue == _stage.OrdinaryValue)
+            {
+                ChangeSkin(SkinType.Ordinary);
+                currentValue = _stage.StylishValue;
+            }
+            else if (currentValue == _stage.StylishValue)
+            {
+                ChangeSkin(SkinType.Stylish);
+                currentValue = _stage.TiktokerValue;
+            }
+            else if (currentValue == _stage.TiktokerValue)
+            {
+                ChangeSkin(SkinType.Tiktoker);
+                currentValue = _stage.NerdValue;
+            }
+
+            SkinChanged?.Invoke();
+
+            yield return new WaitForSeconds(_inShopTime);
         }
     }
 
-    public void NextWeapon()
+    private void OnChoosedSkin()
     {
-        //if (_currentWeaponNumber == _weapons.Count - 1)
-        //    _currentWeaponNumber = 0;
-        //else
-        //    _currentWeaponNumber++;
-
-        //_currentWeapon.gameObject.SetActive(false);
-        //ChangeWeapon(_weapons[_currentWeaponNumber]);
+        // StopCoroutine(UpdateSkin());
+        _elapsedTime = 0f;
+        _isShopOpen = true;
+        _shopValue = _stage.NerdValue;
+        //StartCoroutine(UpdateSkin());
     }
 
-    public void PreviousWeapon()
+    private void OnClosed()
     {
-        //if (_currentWeaponNumber == 0)
-        //    _currentWeaponNumber = _weapons.Count - 1;
-        //else
-        //    _currentWeaponNumber--;
+        _isShopOpen = false;
 
-        //_currentWeapon.gameObject.SetActive(false);
-        //ChangeWeapon(_weapons[_currentWeaponNumber]);
+        //StopCoroutine(UpdateSkin());
+        ChangeSkin(_startSkinType);
+       // SkinChanged?.Invoke();
+    }
+
+    private Skin GetStartSkin()
+    {
+        return _currentHolder.GetSkin(_startSkinType);
+    }
+    
+    private void OnSelectedHolder(SkinsHolder skinsHolder)
+    {
+        _currentHolder = skinsHolder;
+
+        _skins = _currentHolder.GetSkins();
+
+        TryWear();
     }
 
     private void OnProgressionChanged(int currentTikTokValue, int maxValue)
@@ -129,7 +216,7 @@ class SkinChanger : MonoBehaviour
 
     private void ChangeSkin(SkinType newSkinType)
     {
-        var newSkin = GetSkin(newSkinType);
+        var newSkin = _currentHolder.GetSkin(newSkinType);
         _currentSkin.gameObject.SetActive(false);
 
         _currentSkin = newSkin;
@@ -138,21 +225,16 @@ class SkinChanger : MonoBehaviour
         SkinChanged?.Invoke();
     }
 
-    private Skin GetSkin(SkinType type)
-    {
-        var variants = _skins.Where(skin => skin.SkinType == type);
-
-        if (variants.Count() == 0)
-            throw new ArgumentOutOfRangeException(nameof(type));
-
-        return variants.First();
-    }
-
     private void TryWear()
     {
         if (_skins.Count == 0)
             throw new ArgumentOutOfRangeException(nameof(_skins));
+       
+        _currentSkin = _currentHolder.GetSkin(_startSkinType);
+    }
 
-        _currentSkin = GetSkin(_startSkin);
+    private void SaveSkinChangereData(int index)
+    {
+       // PlayerPrefs.SetInt(SkinChangereData, index);
     }
 }
