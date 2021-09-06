@@ -9,12 +9,12 @@ public class RemovalProgressionDisplay : ProgressionDisplay
 
     private void OnEnable()
     {
-        Wallet.RemovedProgression += OnRemovedProgression;
+        Progress.RemovedProgression += OnRemovedProgression;
     }
 
     private void OnDisable()
     {
-        Wallet.RemovedProgression -= OnRemovedProgression;
+        Progress.RemovedProgression -= OnRemovedProgression;
     }
 
     private void OnRemovedProgression(int respect)

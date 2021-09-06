@@ -6,9 +6,11 @@ using UnityEngine.Events;
 
 public class WinScreen : Screen
 {
-    [SerializeField] private Wallet _wallet;
+    [SerializeField] private Progress _progress;
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private float _delayTime;
+    [SerializeField] private KeyCounter _keyCounter;
+    [SerializeField] private PrizeScreen _prizeScreen;
 
     public event UnityAction NextButtonClick;
 
@@ -19,19 +21,27 @@ public class WinScreen : Screen
 
     public override void Open()
     {
+        _keyCounter.SaveKeysNumber();
+
         StartCoroutine(EnableWinScreen());
     }
 
     protected override void OnButtonClick()
     {
-        NextButtonClick?.Invoke();
+        if (_keyCounter.IsKeysCollected())
+        {
+            _prizeScreen.Open();
+            ScreenHolder.SetActive(false);
+        }
+        else
+            NextButtonClick?.Invoke();
     }
 
     private IEnumerator EnableWinScreen()
     {
         yield return new WaitForSeconds(_delayTime);
 
-        _scoreText.text = _wallet.LevelRespect.ToString();
+        _scoreText.text = _progress.LevelRespect.ToString();
         ScreenHolder.SetActive(true);
     }
 }

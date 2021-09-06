@@ -15,7 +15,7 @@ class SkinChanger : MonoBehaviour
    
     private Skin _currentSkin;
     private SkinChangerStage _stage;
-    private Wallet _respect;
+    private Progress _progress;
     private float _previousValue;
     private List<Skin> _skins = new List<Skin>();
     private SkinsHolder _currentHolder;
@@ -27,7 +27,7 @@ class SkinChanger : MonoBehaviour
 
     private void Awake()
     {
-        _respect = GetComponent<Wallet>();
+        _progress = GetComponent<Progress>();
         _stage = GetComponent<SkinChangerStage>();
     }
 
@@ -37,7 +37,7 @@ class SkinChanger : MonoBehaviour
         {
             if(_elapsedTime <= 0f)
             {
-                s();
+                UpdateSkin();
                 _elapsedTime = _inShopTime;
             }
 
@@ -46,7 +46,7 @@ class SkinChanger : MonoBehaviour
     }
     private void OnEnable()
     {
-        _respect.ProgressionChanged += OnProgressionChanged;
+        _progress.ProgressionChanged += OnProgressionChanged;
         _shop.SelectedHolder += OnSelectedHolder;
         _shop.ChoosedSkin += OnChoosedSkin;
         _shop.Closed += OnClosed;
@@ -54,7 +54,7 @@ class SkinChanger : MonoBehaviour
 
     private void OnDisable()
     {
-        _respect.ProgressionChanged -= OnProgressionChanged;
+        _progress.ProgressionChanged -= OnProgressionChanged;
         _shop.SelectedHolder -= OnSelectedHolder;
         _shop.ChoosedSkin -= OnChoosedSkin;
         _shop.Closed -= OnClosed;
@@ -62,14 +62,14 @@ class SkinChanger : MonoBehaviour
 
     private void Start()
     {
-        _previousValue = _respect.Progression;
+        _previousValue = _progress.Progression;
 
         _currentHolder = _shop.GetCurrentHolder();
 
         _currentSkin = GetStartSkin();
     }
 
-    private void s()
+    private void UpdateSkin()
     {
         if (_shopValue == _stage.NerdValue)
         {
@@ -99,60 +99,19 @@ class SkinChanger : MonoBehaviour
 
         SkinChanged?.Invoke();
     }
-    private IEnumerator UpdateSkin()
-    {
-        int currentValue = _stage.NerdValue;
-
-        while (true)
-        {
-            if (currentValue == _stage.NerdValue)
-            {
-                ChangeSkin(SkinType.Nerd);
-                currentValue = _stage.ClerkValue;
-            }
-            else if(currentValue == _stage.ClerkValue)
-            {
-                ChangeSkin(SkinType.Clerk);
-                currentValue = _stage.OrdinaryValue;
-            }
-            else if (currentValue == _stage.OrdinaryValue)
-            {
-                ChangeSkin(SkinType.Ordinary);
-                currentValue = _stage.StylishValue;
-            }
-            else if (currentValue == _stage.StylishValue)
-            {
-                ChangeSkin(SkinType.Stylish);
-                currentValue = _stage.TiktokerValue;
-            }
-            else if (currentValue == _stage.TiktokerValue)
-            {
-                ChangeSkin(SkinType.Tiktoker);
-                currentValue = _stage.NerdValue;
-            }
-
-            SkinChanged?.Invoke();
-
-            yield return new WaitForSeconds(_inShopTime);
-        }
-    }
 
     private void OnChoosedSkin()
     {
-        // StopCoroutine(UpdateSkin());
         _elapsedTime = 0f;
         _isShopOpen = true;
         _shopValue = _stage.NerdValue;
-        //StartCoroutine(UpdateSkin());
     }
 
     private void OnClosed()
     {
         _isShopOpen = false;
 
-        //StopCoroutine(UpdateSkin());
         ChangeSkin(_startSkinType);
-       // SkinChanged?.Invoke();
     }
 
     private Skin GetStartSkin()
@@ -231,10 +190,5 @@ class SkinChanger : MonoBehaviour
             throw new ArgumentOutOfRangeException(nameof(_skins));
        
         _currentSkin = _currentHolder.GetSkin(_startSkinType);
-    }
-
-    private void SaveSkinChangereData(int index)
-    {
-       // PlayerPrefs.SetInt(SkinChangereData, index);
     }
 }

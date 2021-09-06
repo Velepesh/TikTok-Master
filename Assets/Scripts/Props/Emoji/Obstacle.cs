@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Obstacle : Item
+public class Obstacle : Item
 {
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Wallet wallet))
+        if (other.TryGetComponent(out Progress progress))
         {
-            wallet.RemoveRespect(Value);
+            progress.RemoveProgress(Value);
 
             if (other.TryGetComponent(out Player player))
                 if (player.IsLose == false)

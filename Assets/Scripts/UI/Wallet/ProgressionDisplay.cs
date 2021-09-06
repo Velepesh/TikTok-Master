@@ -6,7 +6,7 @@ using TMPro;
 public abstract class ProgressionDisplay : MonoBehaviour
 {
     [SerializeField] protected TMP_Text Text;
-    [SerializeField] protected Wallet Wallet;
+    [SerializeField] protected Progress Progress;
     [SerializeField] protected Animator Animator;
     [SerializeField] protected float DelayTime;
 

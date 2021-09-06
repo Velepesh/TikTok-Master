@@ -10,18 +10,19 @@ public class Game : MonoBehaviour
     [SerializeField] private GameOverScreen _gameOverScreen;
     [SerializeField] private WinScreen _winScreen;
     [SerializeField] private GameScreen _gameScreen;
-    [SerializeField] private PauseScreen _backToMenuScreen;
+    [SerializeField] private PauseScreen _pauseScreen;
     [SerializeField] private RestartGame _restartGame;
     [SerializeField] private ShopScreen _shopScreen;
-    //[SerializeField] private PrizeScreen _prizeScreen;
+    [SerializeField] private PrizeScreen _prizeScreen;
 
     private void OnEnable()
     {
         _startScreen.PlayButtonClick += OnPlayButtonClick;
         _gameOverScreen.RestartButtonClick += OnRestartButtonClick;
         _winScreen.NextButtonClick += OnNextButtonClick;
+        _prizeScreen.NextButtonClick += OnNextButtonClick;
         _gameScreen.HomeButtonClick += OnHomeButtonClick;
-        _backToMenuScreen.ExitButtonClick += OnExitButtonClick;
+        _pauseScreen.ExitButtonClick += OnExitButtonClick;
         _shopScreen.CustomizeButtonClick += OnCustomizeButtonClick;
         _shopScreen.CloseButtonClick += OnCloseButtonClick;
         _player.GameOver += OnGameOver;
@@ -33,8 +34,9 @@ public class Game : MonoBehaviour
         _startScreen.PlayButtonClick -= OnPlayButtonClick;
         _gameOverScreen.RestartButtonClick -= OnRestartButtonClick;
         _winScreen.NextButtonClick -= OnNextButtonClick;
+        _prizeScreen.NextButtonClick -= OnNextButtonClick;
         _gameScreen.HomeButtonClick -= OnHomeButtonClick;
-        _backToMenuScreen.ExitButtonClick -= OnExitButtonClick;
+        _pauseScreen.ExitButtonClick -= OnExitButtonClick;
         _shopScreen.CustomizeButtonClick -= OnCustomizeButtonClick;
         _shopScreen.CloseButtonClick -= OnCloseButtonClick;
         _player.GameOver -= OnGameOver;
@@ -55,7 +57,8 @@ public class Game : MonoBehaviour
     private void OnWon()
     {
         CloseGameScreen();
-        _winScreen.Open();
+        
+         _winScreen.Open();
     }
 
     private void OnPlayButtonClick()
@@ -66,7 +69,7 @@ public class Game : MonoBehaviour
 
     private void OnHomeButtonClick()
     {
-        _backToMenuScreen.Open();
+        _pauseScreen.Open();
     }
     
     private void OnExitButtonClick()

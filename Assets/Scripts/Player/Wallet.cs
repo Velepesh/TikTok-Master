@@ -3,111 +3,59 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Player))]
 public class Wallet : MonoBehaviour
 {
-    readonly private int _maxProgression = 200;
-    readonly private int _startRespect = 40;
-    readonly private string WalletData = "WalletData";
+    readonly private string RespectData = "RespectData";
+    readonly private string SubscriberData = "SubscriberData";
 
-    private Player _player;
-    private int _progression;
-    private int _levelRespect;
-    private int _multiplier = 1;
-    private int _finalRespect;
+    private int _respect;
+    private int _subscriber;
 
-    public int Progression => _progression;
-    public int MaxProgression => _maxProgression;
-    public int LevelRespect => _levelRespect;
-    public int CurrentRespect => PlayerPrefs.GetInt(WalletData, 0);
+    public int Respect => PlayerPrefs.GetInt(RespectData, 0);
+    public int Subscriber => PlayerPrefs.GetInt(SubscriberData, 0);
 
-    public event UnityAction<int, int> ProgressionChanged;
-    public event UnityAction<int> AddedProgression;
-    public event UnityAction<int> RemovedProgression;
     public event UnityAction<int> RespectChanged;
+    public event UnityAction<int> SubscriberChanged;
     public event UnityAction<Customize> SkinBought;
 
     private void Awake()
     {
-        AssignStartValue(_startRespect);
-
-        _player = GetComponent<Player>();
-
-        _finalRespect = CurrentRespect;
-    }
-
-    private void OnEnable()
-    {
-        _player.Won += OnWon;
-    }
-
-    private void OnDisable()
-    {
-        _player.Won -= OnWon;
+        _respect = Respect;
+        _subscriber = Subscriber;
     }
 
     public void BuySkin(Customize customize, int price)
     {
-        _finalRespect -= price;
-        SaveWalletData(_finalRespect);
+        _respect -= price;
+        SaveRespectData(_respect);
 
-        RespectChanged?.Invoke(CurrentRespect);
+        RespectChanged?.Invoke(_respect);
         SkinBought?.Invoke(customize);
     }
 
     public void AddRespect(int respect)
     {
-        _progression += respect;
-        _levelRespect += respect;
+        _respect += respect;
+        SaveRespectData(_respect);
 
-        if (_progression > _maxProgression)
-        {
-            _progression = _maxProgression;
-        }
-
-        AddedProgression?.Invoke(respect);
-        ProgressionChanged?.Invoke(_progression, _maxProgression);
+        RespectChanged?.Invoke(_respect);
     }
 
-    public void RemoveRespect(int respect)
+    public void AddSubscriber(int subscriber)
     {
-        _progression -= respect;
-        _levelRespect -= respect;
+        _subscriber += subscriber;
+        SaveSubscriberData(_subscriber);
 
-        if (_progression < 0)
-        {
-            _progression = 0;
-            _player.Lose();
-        }
-
-        RemovedProgression?.Invoke(respect);
-        ProgressionChanged?.Invoke(_progression, _maxProgression);
+        SubscriberChanged?.Invoke(_subscriber);
     }
 
-    public void ApplyMultiplier(int multiplier)
+    private void SaveRespectData(int respect)
     {
-        _multiplier = multiplier;
+        PlayerPrefs.SetInt(RespectData, respect);
     }
 
-    private void AssignStartValue(int startValue)
+    private void SaveSubscriberData(int subscriber)
     {
-        _progression = startValue;
-        _levelRespect = startValue;
-    }
-
-    private void OnWon()
-    {
-        int finalRespect = CurrentRespect + _levelRespect * _multiplier;
-
-        if (finalRespect <= 0)
-            finalRespect = 0;
-
-        RespectChanged?.Invoke(finalRespect);
-        SaveWalletData(finalRespect);
-    }
-
-    private void SaveWalletData(int respect)
-    {
-        PlayerPrefs.SetInt(WalletData, respect);
+        PlayerPrefs.SetInt(SubscriberData, subscriber);
     }
 }

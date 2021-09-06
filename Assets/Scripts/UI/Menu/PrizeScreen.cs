@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PrizeScreen : Screen
 {
+    public event UnityAction NextButtonClick;
+    
     public override void Close()
     {
         ScreenHolder.SetActive(false);
@@ -16,6 +19,6 @@ public class PrizeScreen : Screen
 
     protected override void OnButtonClick()
     {
-        throw new System.NotImplementedException();
+        NextButtonClick?.Invoke();
     }
 }

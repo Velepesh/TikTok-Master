@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-class Disrespect : Item
+public class Disrespect : Item
 {
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Wallet wallet))
+        if (other.TryGetComponent(out Progress progress))
         {
-            wallet.RemoveRespect(Value);
+            progress.RemoveProgress(Value);
 
             PlayEffect();
             DisableObject();

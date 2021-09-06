@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
     [SerializeField] protected int Value;
     [SerializeField] protected float Time;

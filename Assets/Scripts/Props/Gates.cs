@@ -22,11 +22,11 @@ public class Gates : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Wallet wallet))
+        if (other.TryGetComponent(out Progress progress))
         {
-            if (wallet.Progression >= _progressToSkip)
+            if (progress.Progression >= _progressToSkip)
             {
-                wallet.ApplyMultiplier(_multiplier);
+                progress.ApplyMultiplier(_multiplier);
 
                 _animator.SetTrigger(AnimatorGatesController.States.Open);
             }
@@ -36,11 +36,13 @@ public class Gates : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out Progress progress))
         {
-            this.gameObject.SetActive(false);
+            if (progress.Progression >= _progressToSkip)
+                gameObject.SetActive(false);
         }
     }
 }

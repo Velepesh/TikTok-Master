@@ -8,11 +8,11 @@ class WrongChoice : Item
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Wallet wallet))
+        if (other.TryGetComponent(out Progress progress))
         {
             _bonusDoor.PutAwayBonus();
 
-            wallet.RemoveRespect(Value);
+            progress.RemoveProgress(Value);
 
             if (other.TryGetComponent(out Player player))
                 player.MadeWrongChoice();

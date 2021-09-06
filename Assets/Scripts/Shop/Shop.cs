@@ -57,13 +57,14 @@ public class Shop : MonoBehaviour
     {
         int boughtSkins = 0;
 
-        for (int i = 0; i < _shopInventory.GetCountOfHolders(); i++)
+        for (int i = 0; i < _shopInventory.GetCount(); i++)
         {
-            var holder = _shopInventory.GetSkinsHolder(i);
+            var holder = _shopInventory.GetByIndex(i);
             AddItem(holder);
 
             if (holder.IsBuyed)
                 boughtSkins++;
+
             _skinsHolders[i].gameObject.SetActive(false);
         }
 
@@ -123,18 +124,14 @@ public class Shop : MonoBehaviour
 
     private void TrySellSkin()
     {
-        if (_unlockPrice <= _wallet.CurrentRespect)
+        if (_unlockPrice <= _wallet.Respect)
         {
             List<int> indexOfLockSkins = new List<int>();
             int skinIndex = 0;
 
             for (int i = 0; i < _skinViews.Count; i++)
-            {
                 if (_customizes[i].IsBuyed == false)
-                {
                     indexOfLockSkins.Add(i);
-                }
-            }
 
             if (indexOfLockSkins.Count != 0)
             {

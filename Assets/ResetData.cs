@@ -8,7 +8,18 @@ public class ResetData : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            PlayerPrefs.SetInt("WalletData", 0);
+            PlayerPrefs.SetInt("RespectData", 0);
+            PlayerPrefs.SetInt("SubscriberData", 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            PlayerPrefs.SetInt("KeyCounter", 0);
+        } 
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlayerPrefs.SetInt("KeyCounter", 3);
         }
     }
 }

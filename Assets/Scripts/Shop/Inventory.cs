@@ -7,17 +7,17 @@ public class Inventory : ScriptableObject
 {
     [SerializeField] private List<Customize> _skinsHolders;
 
-    public void AddSkinHolder(Customize customize)
+    public void Add(Customize customize)
     {
         _skinsHolders.Add(customize);
     }
 
-    public Customize GetSkinsHolder(int skinNumber)
+    public Customize GetByIndex(int skinNumber)
     {
         return _skinsHolders[skinNumber];
     }
 
-    public int GetCountOfHolders()
+    public int GetCount()
     {
         return _skinsHolders.Count;
     }
