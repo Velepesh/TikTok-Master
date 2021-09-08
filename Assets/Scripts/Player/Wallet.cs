@@ -41,9 +41,25 @@ public class Wallet : MonoBehaviour
         RespectChanged?.Invoke(_respect);
     }
 
+    public void RemoveRespect(int respect)
+    {
+        _respect -= respect;
+        SaveRespectData(_respect);
+
+        RespectChanged?.Invoke(_respect);
+    }
+
     public void AddSubscriber(int subscriber)
     {
         _subscriber += subscriber;
+        SaveSubscriberData(_subscriber);
+
+        SubscriberChanged?.Invoke(_subscriber);
+    }
+
+    public void RemoveSubscriber(int subscriber)
+    {
+        _subscriber -= subscriber;
         SaveSubscriberData(_subscriber);
 
         SubscriberChanged?.Invoke(_subscriber);

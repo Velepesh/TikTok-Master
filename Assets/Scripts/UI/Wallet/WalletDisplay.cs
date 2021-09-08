@@ -9,7 +9,7 @@ public class WalletDisplay : MonoBehaviour
     [SerializeField] private TMP_Text _subscriberText;
     [SerializeField] private Wallet _wallet;
 
-    readonly private float _waitTime = 0f;
+    readonly private float _waitTime = 0.05f;
 
     private int _targetRespect;
     private int _currentRespect;
@@ -52,13 +52,22 @@ public class WalletDisplay : MonoBehaviour
     {
         while (true)
         {
-            if (_targetRespect < _currentRespect)
-                if (_currentRespect != _targetRespect)
+            if (_currentRespect != _targetRespect)
+            {
+
+                if (_targetRespect < _currentRespect)
                     _currentRespect--;
 
-            if (_targetRespect > _currentRespect)
-                if (_currentRespect != _targetRespect)
-                    _currentRespect++;
+                if (_targetRespect > _currentRespect)
+                {
+                    int plus = (_targetRespect - _currentRespect) / 2;
+                    _currentRespect += plus;
+
+                    if (_targetRespect - _currentRespect == 1)
+                        _currentRespect += 1;
+                }
+                    //_currentRespect++;
+            }
 
             _respectText.text = _currentRespect.ToString();
 
@@ -70,13 +79,14 @@ public class WalletDisplay : MonoBehaviour
     {
         while (true)
         {
-            if (_targetSubscriber < _currentSubscriber)
-                if (_currentSubscriber != _targetSubscriber)
+            if (_currentSubscriber != _targetSubscriber)
+            {
+                if (_targetSubscriber < _currentSubscriber)
                     _currentSubscriber--;
 
-            if (_targetSubscriber > _currentSubscriber)
-                if (_currentSubscriber != _targetSubscriber)
+                if (_targetSubscriber > _currentSubscriber)
                     _currentSubscriber++;
+            }
 
             _subscriberText.text = _currentSubscriber.ToString();
 

@@ -44,6 +44,14 @@ public class KeyCounter : ScriptableObject
         KeysNumberChanged?.Invoke(_currentKeysNumber);
     }
 
+    public void AddKeys(int number)
+    {
+        _currentKeysNumber = number;
+        SaveKeysNumber();
+
+        KeysNumberChanged?.Invoke(_currentKeysNumber);
+    }
+
     public bool IsKeysCollected()
     {
         bool isCollected = false;
