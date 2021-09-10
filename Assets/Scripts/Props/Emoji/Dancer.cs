@@ -8,7 +8,9 @@ public class Dancer : Item
     {
         if (other.TryGetComponent(out Progress progress))
         {
-            progress.AddProgress(Value);
+            int progressValue = Value * 3;
+            progress.AddRespectProgress(progressValue);
+            progress.AddSubscribersProgress(Value);//.......
 
             if (other.TryGetComponent(out Player player))
             {

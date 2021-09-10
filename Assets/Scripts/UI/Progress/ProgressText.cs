@@ -3,15 +3,18 @@ using TMPro;
 
 class ProgressText : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _text;
+    [SerializeField] private TMP_Text _overbarText;
+    [SerializeField] private TMP_Text _walletScreenText;
 
     public void AssignName(SkinType type)
     {
-        _text.text = type.ToString();
+        _overbarText.text = type.ToString();
+        _walletScreenText.text = type.ToString();
     }
 
     public void AssignTextColor(Color color)
     {
-        _text.color = color;
+        _overbarText.color = color;
+        _walletScreenText.color = color;
     }
 }

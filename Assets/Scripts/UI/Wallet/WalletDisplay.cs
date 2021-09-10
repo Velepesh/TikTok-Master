@@ -9,7 +9,7 @@ public class WalletDisplay : MonoBehaviour
     [SerializeField] private TMP_Text _subscriberText;
     [SerializeField] private Wallet _wallet;
 
-    readonly private float _waitTime = 0.05f;
+    readonly private float _waitTime = 0.08f;
 
     private int _targetRespect;
     private int _currentRespect;
@@ -85,12 +85,18 @@ public class WalletDisplay : MonoBehaviour
                     _currentSubscriber--;
 
                 if (_targetSubscriber > _currentSubscriber)
-                    _currentSubscriber++;
+                {
+                    int plus = (_targetSubscriber - _currentSubscriber) / 2;
+                    _targetSubscriber += plus;
+
+                    if (_targetSubscriber - _currentSubscriber == 1)
+                        _targetSubscriber += 1;
+                }
             }
 
             _subscriberText.text = _currentSubscriber.ToString();
 
-            yield return new WaitForSeconds(_waitTime);
+            yield return new WaitForSeconds(0.15f);
         }
     }
 

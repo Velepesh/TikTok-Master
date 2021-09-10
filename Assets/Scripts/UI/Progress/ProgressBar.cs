@@ -5,6 +5,8 @@ using System;
 
 public class ProgressBar : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
+    [SerializeField] private SkinChanger _skinChanger;
     [SerializeField] private Progress _progress;
     [SerializeField] private Player _player;
     [SerializeField] private SkinChangerStage _stage;
@@ -19,13 +21,14 @@ public class ProgressBar : MonoBehaviour
     [SerializeField] private Color _tiktokerStage;
 
     private float _currentValue;
+    private SkinType _previousType;
 
     private void Start()
     {
         _currentValue = Convert.ToSingle(_progress.Progression) / _progress.MaxProgression;
         _slider.value = _currentValue;
 
-        ChangeStage(_progress.Progression);
+        ChangeStage(_skinChanger.StartSkinType, true);
         ToggleActive(false);
     }
 
@@ -35,6 +38,8 @@ public class ProgressBar : MonoBehaviour
         _player.StartedMoving += OnStartedMoving;
         _player.GameOver += OnGameOver;
         _player.FinishLineCrossed += OnFinishLineCrossed;
+
+        _skinChanger.StageChanged += OnStageChanged;
     }
 
     private void OnDisable()
@@ -42,6 +47,8 @@ public class ProgressBar : MonoBehaviour
         _progress.ProgressionChanged -= OnProgressionChanged;
         _player.StartedMoving -= OnStartedMoving;
         _player.FinishLineCrossed -= OnFinishLineCrossed;
+
+        _skinChanger.StageChanged -= OnStageChanged;
     }
 
     private void Update()
@@ -58,37 +65,46 @@ public class ProgressBar : MonoBehaviour
     private void OnProgressionChanged(int value, int maxValue)
     {
         _currentValue = Convert.ToSingle(value) / maxValue;
-
-        ChangeStage(value);
     }
 
-    private void ChangeStage(float currentValue)
+    private void OnStageChanged(SkinType type)
     {
-        if (currentValue >= _stage.TiktokerValue)
+        ChangeStage(type);
+    }
+
+    private void ChangeStage(SkinType type, bool isStart = false)
+    {
+        if(type == SkinType.Tiktoker)
         {
             AssignColor(_tiktokerStage);
             _progressText.AssignName(SkinType.Tiktoker);
         }
-        else if (currentValue >= _stage.StylishValue)
+        else if(type == SkinType.Stylish)
         {
             AssignColor(_stylishStage);
             _progressText.AssignName(SkinType.Stylish);
         }
-        else if (currentValue >= _stage.OrdinaryValue)
+        else if(type == SkinType.Ordinary)
         {
             AssignColor(_ordinaryStage);
             _progressText.AssignName(SkinType.Ordinary);
         }
-        else if (currentValue >= _stage.ClerkValue)
+        else if(type == SkinType.Clerk)
         {
             AssignColor(_clerkStage);
             _progressText.AssignName(SkinType.Clerk);
         }
-        else if (currentValue >= _stage.NerdValue)
+        else if(type == SkinType.Nerd)
         {
             AssignColor(_nerdStage);
             _progressText.AssignName(SkinType.Nerd);
         }
+
+        if(isStart == false)
+            if(type != _previousType)
+                _animator.SetTrigger(AnimatorWalletScreenController.States.Progress);
+
+        _previousType = type;
     }
 
     private void AssignColor(Color color)

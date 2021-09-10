@@ -23,7 +23,10 @@ class SkinChanger : MonoBehaviour
     private float _elapsedTime;
     private int _shopValue;
 
+    public SkinType StartSkinType => _startSkinType;
+
     public event UnityAction SkinChanged;
+    public event UnityAction<SkinType> StageChanged;
 
     private void Awake()
     {
@@ -182,6 +185,7 @@ class SkinChanger : MonoBehaviour
         _currentSkin.gameObject.SetActive(true);
 
         SkinChanged?.Invoke();
+        StageChanged?.Invoke(newSkinType);
     }
 
     private void TryWear()

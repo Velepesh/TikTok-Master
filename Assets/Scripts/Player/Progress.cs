@@ -12,6 +12,7 @@ public class Progress : MonoBehaviour
     private Player _player;
     private Wallet _wallet;
     private int _progression;
+    private int _subscribes;
     private int _multiplier = 1;
     private int _levelRespect;
 
@@ -21,8 +22,8 @@ public class Progress : MonoBehaviour
 
     public event UnityAction<int, int> ProgressionChanged;
     public event UnityAction<int> AddedProgression;
+    public event UnityAction<int> AddedSubscriber;
     public event UnityAction<int> RemovedProgression;
-
 
     private void Awake()
     {
@@ -42,7 +43,7 @@ public class Progress : MonoBehaviour
         _player.Won -= OnWon;
     }
 
-    public void AddProgress(int respect)
+    public void AddRespectProgress(int respect)
     {
         _progression += respect;
 
@@ -53,6 +54,15 @@ public class Progress : MonoBehaviour
 
         AddedProgression?.Invoke(respect);
         ProgressionChanged?.Invoke(_progression, _maxProgression);
+    }
+
+    public void AddSubscribersProgress(int subscribes)
+    {
+        _subscribes += subscribes;
+
+        AddedSubscriber?.Invoke(subscribes);
+
+        AddRespectProgress(subscribes);//2 ðàçà ïðèáàâëÿåò
     }
 
 
@@ -87,6 +97,7 @@ public class Progress : MonoBehaviour
         if (_levelRespect <= 0)
             _levelRespect = 0;
 
-        _wallet.AddRespect(_levelRespect);//ÄÎÁÀÂÈÒÜ ÐÅÑÏÅÊÒ
+        _wallet.AddRespect(_levelRespect);
+        _wallet.AddSubscriber(_subscribes);
     }
 }
