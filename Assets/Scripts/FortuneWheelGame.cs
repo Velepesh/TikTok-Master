@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 using UnityEngine.UI;
 
@@ -8,7 +9,8 @@ public class FortuneWheelGame : MonoBehaviour
 {
     [SerializeField] private PickerWheel _pickerWheel;
     [SerializeField] private Button _spinButton;
-    [SerializeField] private TMP_Text _speenButtonText;
+    [SerializeField] private TMP_Text _priceText;
+    [SerializeField] private int _price;
     [SerializeField] private Wallet _wallet;
     [SerializeField] private KeyCounter _keyCounter;
     [SerializeField] private Animator _animator;
@@ -25,11 +27,22 @@ public class FortuneWheelGame : MonoBehaviour
         _pickerWheel.SpinEnded -= OnSpinEnded;
     }
 
+    private void Start()
+    {
+        _priceText.text = _price.ToString();
+    }
+
     private void OnButtonClick()
     {
-        _spinButton.interactable = false;
-        _speenButtonText.text = "Spining";
-        _pickerWheel.Spin();
+        if (_wallet.Subscriber >= _price)
+        {
+            _pickerWheel.Spin();
+
+            _wallet.RemoveSubscriber(_price);
+
+            _spinButton.interactable = false;
+            _animator.SetBool(AnimatorFortuneController.States.IsSpinning, true);
+        }
     } 
     
     private void OnSpinEnded(WheelPiece wheelPiece)
@@ -44,6 +57,7 @@ public class FortuneWheelGame : MonoBehaviour
         else if (type == WheelPieceType.Key)
             _keyCounter.AddKeys(amount);
 
-        _animator.SetTrigger(AnimatorFortuneController.States.SpinButton);
+        _spinButton.interactable = true;
+        _animator.SetBool(AnimatorFortuneController.States.IsSpinning, false);
     }
 }

@@ -14,8 +14,8 @@ public class Wallet : MonoBehaviour
     public int Respect => PlayerPrefs.GetInt(RespectData, 0);
     public int Subscriber => PlayerPrefs.GetInt(SubscriberData, 0);
 
-    public event UnityAction<int> RespectChanged;
-    public event UnityAction<int> SubscriberChanged;
+    public event UnityAction<int, int> RespectChanged;
+    public event UnityAction<int, int> SubscriberChanged;
     public event UnityAction<Customize> SkinBought;
 
     private void Awake()
@@ -27,51 +27,53 @@ public class Wallet : MonoBehaviour
     public void BuySkin(Customize customize, int price)
     {
         _respect -= price;
-        SaveRespectData(_respect);
+        SaveRespectData();
 
-        RespectChanged?.Invoke(_respect);
+        RespectChanged?.Invoke(price, _respect);
         SkinBought?.Invoke(customize);
     }
 
     public void AddRespect(int respect)
     {
         _respect += respect;
-        SaveRespectData(_respect);
+        SaveRespectData();
 
-        RespectChanged?.Invoke(_respect);
+        RespectChanged?.Invoke(respect, _respect);
     }
 
     public void RemoveRespect(int respect)
     {
         _respect -= respect;
-        SaveRespectData(_respect);
+        SaveRespectData();
 
-        RespectChanged?.Invoke(_respect);
+        RespectChanged?.Invoke(respect, _respect);
     }
 
-    public void AddSubscriber(int subscriber)
+    public void AddSubscriber(int subscriber, bool isSave = true)
     {
         _subscriber += subscriber;
-        SaveSubscriberData(_subscriber);
+ 
+        SubscriberChanged?.Invoke(subscriber, _subscriber);
 
-        SubscriberChanged?.Invoke(_subscriber);
+        if(isSave)
+            SaveSubscriberData();
     }
 
     public void RemoveSubscriber(int subscriber)
     {
         _subscriber -= subscriber;
-        SaveSubscriberData(_subscriber);
 
-        SubscriberChanged?.Invoke(_subscriber);
+        SubscriberChanged?.Invoke(subscriber, _subscriber);
+        SaveSubscriberData();
     }
 
-    private void SaveRespectData(int respect)
+    private void SaveRespectData()
     {
-        PlayerPrefs.SetInt(RespectData, respect);
+        PlayerPrefs.SetInt(RespectData, _respect);
     }
 
-    private void SaveSubscriberData(int subscriber)
+    public void SaveSubscriberData()
     {
-        PlayerPrefs.SetInt(SubscriberData, subscriber);
+        PlayerPrefs.SetInt(SubscriberData, _subscriber);
     }
 }

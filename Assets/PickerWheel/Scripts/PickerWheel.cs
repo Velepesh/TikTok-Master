@@ -11,6 +11,7 @@ public class PickerWheel : MonoBehaviour
     [Header("References :")]
     [SerializeField] private GameObject _linePrefab;
     [SerializeField] private Transform _linesParent;
+    [SerializeField] private Transform _tranferPoint;
 
     [Space]
     [SerializeField] private Transform _pickerWheelTransform;
@@ -45,8 +46,9 @@ public class PickerWheel : MonoBehaviour
     private List<int> _nonZeroChancesIndices = new List<int>();
 
     public event UnityAction<WheelPiece> SpinEnded;
+    public event UnityAction<Vector3> PrizeReceived;
 
-     public bool IsSpinning => _isSpinning;
+    public bool IsSpinning => _isSpinning;
 
     private void Start()
     {
@@ -155,7 +157,8 @@ public class PickerWheel : MonoBehaviour
             .OnComplete(() =>
             {
                 _isSpinning = false;
-                
+
+                PrizeReceived?.Invoke(_tranferPoint.position);
                 SpinEnded?.Invoke(piece);
             });
         }
@@ -164,7 +167,6 @@ public class PickerWheel : MonoBehaviour
     private int GetRandomPieceIndex() 
     {
          double r = _rand.NextDouble() * _accumulatedWeight;
-        Debug.Log(r + "  rr");
 
         for (int i = 0; i < _wheelPieces.Count; i++)
             if (_wheelPieces[i].Weight >= r)
@@ -186,8 +188,6 @@ public class PickerWheel : MonoBehaviour
             //save non zero chance indices:
             if (piece.Chance > 0)
                 _nonZeroChancesIndices.Add(i);
-
-            Debug.Log(piece.Chance + "  piece.Chance");
         }
     }
 }

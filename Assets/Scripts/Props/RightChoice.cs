@@ -10,7 +10,7 @@ class RightChoice : Item
     {
         if (other.TryGetComponent(out Progress progress))
         {
-            progress.AddRespectProgress(Value);
+            progress.AddProgress(Value);
 
             if (other.TryGetComponent(out Player player))
                 player.MadeRightChoice();

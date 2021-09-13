@@ -6,6 +6,6 @@ public static class AnimatorFortuneController
 {
     public static class States
     {
-        public const string SpinButton = nameof(SpinButton);
+        public const string IsSpinning = nameof(IsSpinning);
     }
 }

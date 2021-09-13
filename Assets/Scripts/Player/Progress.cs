@@ -8,11 +8,11 @@ public class Progress : MonoBehaviour
 {
     readonly private int _maxProgression = 200;
     readonly private int _startRespect = 40;
+    readonly private int _subscribersMultiplayer = 3;
 
     private Player _player;
     private Wallet _wallet;
     private int _progression;
-    private int _subscribes;
     private int _multiplier = 1;
     private int _levelRespect;
 
@@ -22,7 +22,6 @@ public class Progress : MonoBehaviour
 
     public event UnityAction<int, int> ProgressionChanged;
     public event UnityAction<int> AddedProgression;
-    public event UnityAction<int> AddedSubscriber;
     public event UnityAction<int> RemovedProgression;
 
     private void Awake()
@@ -43,26 +42,26 @@ public class Progress : MonoBehaviour
         _player.Won -= OnWon;
     }
 
-    public void AddRespectProgress(int respect)
+    public void AddProgress(int value)
     {
-        _progression += respect;
+        _progression += value;
 
         if (_progression > _maxProgression)
         {
             _progression = _maxProgression;
         }
 
-        AddedProgression?.Invoke(respect);
+        AddedProgression?.Invoke(value);
         ProgressionChanged?.Invoke(_progression, _maxProgression);
     }
 
-    public void AddSubscribersProgress(int subscribes)
+    public void AddSubscribers(int subscribers)
     {
-        _subscribes += subscribes;
+        int progressValue = subscribers * _subscribersMultiplayer;
 
-        AddedSubscriber?.Invoke(subscribes);
+        AddProgress(progressValue);
 
-        AddRespectProgress(subscribes);//2 раза прибавляет
+        _wallet.AddSubscriber(subscribers, false);
     }
 
 
@@ -98,6 +97,6 @@ public class Progress : MonoBehaviour
             _levelRespect = 0;
 
         _wallet.AddRespect(_levelRespect);
-        _wallet.AddSubscriber(_subscribes);
+        _wallet.SaveSubscriberData();
     }
 }

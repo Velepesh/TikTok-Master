@@ -8,7 +8,7 @@ public class Respect : Item
     {
         if (other.TryGetComponent(out Progress progress))
         {
-            progress.AddRespectProgress(Value);
+            progress.AddProgress(Value);
 
             PlayEffect();
             DisableObject();

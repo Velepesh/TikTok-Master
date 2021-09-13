@@ -8,6 +8,7 @@ public class SkinsHolder : MonoBehaviour
 {
     [SerializeField] private List<Skin> _skins;
     [SerializeField] private HolderType _type;
+
     public List<Skin> GetSkins()
     {
         return _skins;

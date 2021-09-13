@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
     [SerializeField] private Player _player;
+    [SerializeField] private Level _level;
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private GameOverScreen _gameOverScreen;
     [SerializeField] private WinScreen _winScreen;
     [SerializeField] private GameScreen _gameScreen;
     [SerializeField] private PauseScreen _pauseScreen;
-    [SerializeField] private RestartGame _restartGame;
     [SerializeField] private ShopScreen _shopScreen;
     [SerializeField] private PrizeScreen _prizeScreen;
 
@@ -74,7 +73,7 @@ public class Game : MonoBehaviour
     
     private void OnExitButtonClick()
     {
-        _restartGame.Restart();
+        _level.Restart();
     }
     
     private void OnCustomizeButtonClick()
@@ -96,17 +95,15 @@ public class Game : MonoBehaviour
 
     private void OnRestartButtonClick()
     {
-        _restartGame.Restart();
+        _level.Restart();
     }
     
     private void OnNextButtonClick()
     {
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-
-        if(nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
-            _restartGame.Restart();
+        if (_level.NextSceneIndex >= _level.NumberOfScenes)
+            _level.Restart();
         else
-            SceneManager.LoadScene(nextSceneIndex);
+            _level.LoadNextLevel();
     }
 
     private void CloseGameScreen()

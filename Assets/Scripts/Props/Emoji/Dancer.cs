@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dancer : Item
 {
+    [SerializeField] private Image _subsvriberImage;
+
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Progress progress))
         {
-            int progressValue = Value * 3;
-            progress.AddRespectProgress(progressValue);
-            progress.AddSubscribersProgress(Value);//.......
+            progress.AddSubscribers(Value);
 
             if (other.TryGetComponent(out Player player))
             {
@@ -18,8 +19,14 @@ public class Dancer : Item
                 player.Increase();
             }
 
-            this.enabled = false;
-            PlayEffect();   
+            _subsvriberImage.gameObject.SetActive(false);
+          
+            PlayEffect();
         }
+    }
+
+    private void OnTriggerExit()
+    {
+        GetComponent<Collider>().enabled = false;
     }
 }

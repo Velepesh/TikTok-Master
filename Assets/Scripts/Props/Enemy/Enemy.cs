@@ -20,8 +20,11 @@ class Enemy : Item
                     player.Miss();
                 }
             }
-
-            this.enabled = false;
         }
+    }
+
+    private void OnTriggerExit()
+    {
+        GetComponent<Collider>().enabled = false;
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -26,6 +27,8 @@ public class PrizeGame : MonoBehaviour
 
     private bool _isThreeMoreGame = false;
     private List<PrizeView> _prizeViews = new List<PrizeView>();
+
+    public event UnityAction<Vector3> PrizeReceived;
 
     private void Awake()
     {
@@ -94,6 +97,7 @@ public class PrizeGame : MonoBehaviour
     private void OnPrizeButtonClick(Prize prize, PrizeView view)
     {
         int keysNumber = _keyCounter.KeysNumber;
+        PrizeReceived?.Invoke(view.transform.position);
 
         if (prize.Type == PrizeType.Respect)
             _wallet.AddRespect(prize.Award);
@@ -116,9 +120,7 @@ public class PrizeGame : MonoBehaviour
     private void EnableAllKeys()
     {
         for (int i = 0; i < _keysNumber; i++)
-        {
-            _keyImages[i].sprite = _goldKeyIcon;
-        }     
+            _keyImages[i].sprite = _goldKeyIcon; 
     }
 
     private void DisableKey(int keysNumber)

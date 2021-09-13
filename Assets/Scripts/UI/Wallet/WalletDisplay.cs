@@ -34,16 +34,16 @@ public class WalletDisplay : MonoBehaviour
         _wallet.SubscriberChanged -= OnSubscriberChanged;
     }
 
-    private void OnRespectChanged(int respect)
+    private void OnRespectChanged(int addRespect, int targetRespect)
     {
-        _targetRespect = respect;
+        _targetRespect = targetRespect;
 
         StartCoroutine(UpdateRespectScore());
     } 
     
-    private void OnSubscriberChanged(int subscriber)
+    private void OnSubscriberChanged(int addedSubscriber, int _targetSubscriber)
     {
-        _targetSubscriber = subscriber;
+        this._targetSubscriber = _targetSubscriber;
 
         StartCoroutine(UpdateSubscriberScore());
     }
@@ -54,9 +54,14 @@ public class WalletDisplay : MonoBehaviour
         {
             if (_currentRespect != _targetRespect)
             {
-
                 if (_targetRespect < _currentRespect)
-                    _currentRespect--;
+                {
+                    int minus = (_currentRespect - _targetRespect) / 2;
+                    _currentRespect -= minus;
+
+                    if (_currentRespect - _targetRespect == 1)
+                        _currentRespect--;
+                }
 
                 if (_targetRespect > _currentRespect)
                 {
@@ -64,9 +69,8 @@ public class WalletDisplay : MonoBehaviour
                     _currentRespect += plus;
 
                     if (_targetRespect - _currentRespect == 1)
-                        _currentRespect += 1;
+                        _currentRespect++;
                 }
-                    //_currentRespect++;
             }
 
             _respectText.text = _currentRespect.ToString();
@@ -82,15 +86,21 @@ public class WalletDisplay : MonoBehaviour
             if (_currentSubscriber != _targetSubscriber)
             {
                 if (_targetSubscriber < _currentSubscriber)
-                    _currentSubscriber--;
+                {
+                    int minus = (_currentSubscriber - _targetSubscriber) / 2;
+                    _currentSubscriber -= minus;
+
+                    if (_currentSubscriber - _targetSubscriber == 1)
+                        _currentSubscriber--;
+                }
 
                 if (_targetSubscriber > _currentSubscriber)
                 {
                     int plus = (_targetSubscriber - _currentSubscriber) / 2;
-                    _targetSubscriber += plus;
+                    _currentSubscriber += plus;
 
                     if (_targetSubscriber - _currentSubscriber == 1)
-                        _targetSubscriber += 1;
+                        _currentSubscriber += 1;
                 }
             }
 
@@ -101,11 +111,29 @@ public class WalletDisplay : MonoBehaviour
     }
 
 
-    //private void OnRespectChanged(int respect)
+    //private IEnumerator UpdateScore(int currentValue, int targetValue, float waitingTime)
     //{
-    //    _targetRespect = respect;
+    //    while (true)
+    //    {
+    //        if (currentValue != _targetSubscriber)
+    //        {
+    //            if (_targetSubscriber < currentValue)
+    //                currentValue--;
 
-    //    StartCoroutine(UpdateRespectScore(_targetRespect, _currentRespect));
+    //            if (_targetSubscriber > currentValue)
+    //            {
+    //                int plus = (_targetSubscriber - currentValue) / 2;
+    //                _targetSubscriber += plus;
+
+    //                if (_targetSubscriber - currentValue == 1)
+    //                    _targetSubscriber += 1;
+    //            }
+    //        }
+
+    //        _subscriberText.text = _currentSubscriber.ToString();
+
+    //        yield return new WaitForSeconds(waitingTime);
+    //    }
     //}
 
     //private void OnSubscriberChanged(int subscriber)

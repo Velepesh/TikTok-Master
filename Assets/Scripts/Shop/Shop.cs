@@ -10,6 +10,7 @@ public class Shop : MonoBehaviour
 {
     [SerializeField] private Wallet _wallet;
     [SerializeField] private SkinView _template;
+    [SerializeField] private int _price;
     [SerializeField] private GameObject _itemContainer;
     [SerializeField] private Inventory _shopInventory;
     [SerializeField] private Button _sellButton;
@@ -26,8 +27,6 @@ public class Shop : MonoBehaviour
     private List<SkinView> _skinViews = new List<SkinView>();
     private List<Customize> _customizes = new List<Customize>();
     private SkinsHolder _currentHolder;
-
-    readonly private int _unlockPrice = 1;
 
     public event UnityAction<SkinsHolder> SelectedHolder;
     public event UnityAction ChoosedSkin;
@@ -74,7 +73,7 @@ public class Shop : MonoBehaviour
         EnableSelecteView();
         ApplyNewSkinsHolder(CurrentTemplateIndex);
 
-        _unlockPriceText.text = _unlockPrice.ToString();
+        _unlockPriceText.text = _price.ToString();
     }
 
     public SkinsHolder GetCurrentHolder()
@@ -124,7 +123,7 @@ public class Shop : MonoBehaviour
 
     private void TrySellSkin()
     {
-        if (_unlockPrice <= _wallet.Respect)
+        if (_price <= _wallet.Respect)
         {
             List<int> indexOfLockSkins = new List<int>();
             int skinIndex = 0;
@@ -139,7 +138,7 @@ public class Shop : MonoBehaviour
 
                 skinIndex = indexOfLockSkins[index];
 
-                _wallet.BuySkin(_customizes[skinIndex], _unlockPrice);
+                _wallet.BuySkin(_customizes[skinIndex], _price);
                 _customizes[skinIndex].Buy();
                 _skinViews[skinIndex].UnlockeView(_customizes[skinIndex]);
             }
