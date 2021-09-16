@@ -73,10 +73,13 @@ public class CameraFollow : MonoBehaviour
             _height = new Vector3(0f, _targetHeight, 0f);
 
             float xAngle = _target.transform.eulerAngles.x + _rotation.eulerAngles.x;
+            float yAngle = _target.transform.eulerAngles.y;
 
-            transform.eulerAngles = new Vector3(xAngle, 0f, 0f);
+            transform.eulerAngles = new Vector3(xAngle, yAngle, 0.0f);
 
-            transform.position = _target.transform.position + _height + (-Vector3.forward * _targetDistance);
+            var direction = transform.rotation * -Vector3.forward;
+
+            transform.position = _target.transform.position + _height + new Vector3(direction.x, 0f, direction.z) * _targetDistance;
         }
     }
 

@@ -22,7 +22,7 @@ public class Shop : MonoBehaviour
 
     readonly private string ShopData = "ShopData";
 
-    private int CurrentTemplateIndex => PlayerPrefs.GetInt(ShopData, 0);
+    private int _currentTemplateIndex => PlayerPrefs.GetInt(ShopData, 0);
     private int _templateIndex = 0;
     private List<SkinView> _skinViews = new List<SkinView>();
     private List<Customize> _customizes = new List<Customize>();
@@ -71,7 +71,7 @@ public class Shop : MonoBehaviour
             SaveCurrentTemplateIndex(0);
 
         EnableSelecteView();
-        ApplyNewSkinsHolder(CurrentTemplateIndex);
+        ApplyNewSkinsHolder(_currentTemplateIndex);
 
         _unlockPriceText.text = _price.ToString();
     }
@@ -118,6 +118,7 @@ public class Shop : MonoBehaviour
         ApplyNewSkinsHolder(_templateIndex);
         SaveCurrentTemplateIndex(_templateIndex);
         EnableSelecteView();
+
         ChoosedSkin?.Invoke();
     }
 
@@ -157,16 +158,17 @@ public class Shop : MonoBehaviour
 
         _currentHolder = _skinsHolders[index];
         _currentHolder.gameObject.SetActive(true);
+
         SelectedHolder?.Invoke(_currentHolder);
     }
 
     private void EnableSelecteView()
     {
-        _skinViews[CurrentTemplateIndex].SelecteBackground(_selectedIcon);
+        _skinViews[_currentTemplateIndex].SelecteBackground(_selectedIcon);
     }
 
     private void DisableSelecteView()
     {
-        _skinViews[CurrentTemplateIndex].SelecteBackground(_backgroundIcon);
+        _skinViews[_currentTemplateIndex].SelecteBackground(_backgroundIcon);
     }
 }

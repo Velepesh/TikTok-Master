@@ -14,7 +14,6 @@ public class KeyCounter : ScriptableObject
     public int KeysNumber => PlayerPrefs.GetInt(KeysCounter, 0);
 
     public event UnityAction<int> KeysNumberChanged;
-    public event UnityAction Keys—ollected;
 
     private void OnEnable()
     {

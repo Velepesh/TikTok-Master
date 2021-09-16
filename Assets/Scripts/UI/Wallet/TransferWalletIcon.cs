@@ -54,7 +54,7 @@ public class TransferWalletIcon : MonoBehaviour
     private void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed);
-        Debug.Log("MOVE");
+
         if (transform.position == _target.position)
             StopFollowing();
     }

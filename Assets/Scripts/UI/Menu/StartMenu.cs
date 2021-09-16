@@ -6,33 +6,25 @@ using TMPro;
 
 public class StartMenu : MonoBehaviour
 {
-    [SerializeField] private Wallet _wallet;
     [SerializeField] private Button _fortuneWheelButton;
-    [SerializeField] private Button _passiveIncomeButton;
+    [SerializeField] private Button _hourBonusButton;
     [SerializeField] private Button _increaseRespectButton;
-    [SerializeField] private TMP_Text _priceText;
-    [SerializeField] private int _incomePrice = 500;
     [SerializeField] private FortuneWheelScreen _fortuneScreen;
-
-    readonly private int _increaseRespect = 10000;
-
-    private void Awake()
-    {
-        _priceText.text = _incomePrice.ToString();
-    }
+    [SerializeField] private Income _income;
+    [SerializeField] private HourBonus _hourBonus;
 
     private void OnEnable()
     {
         _fortuneWheelButton.onClick.AddListener(OnFortuneWheelButton);
-        _passiveIncomeButton.onClick.AddListener(OnPassiveIncomeButton);
-        _increaseRespectButton.onClick.AddListener(OnIncreaseRespectButton);
+        _hourBonusButton.onClick.AddListener(OnHourBonusButton);
+        _increaseRespectButton.onClick.AddListener(OnIncomeButton);
     }
 
     private void OnDisable()
     {
         _fortuneWheelButton.onClick.RemoveListener(OnFortuneWheelButton);
-        _passiveIncomeButton.onClick.RemoveListener(OnPassiveIncomeButton);
-        _increaseRespectButton.onClick.RemoveListener(OnIncreaseRespectButton);
+        _hourBonusButton.onClick.RemoveListener(OnHourBonusButton);
+        _increaseRespectButton.onClick.RemoveListener(OnIncomeButton);
     }
 
     private void OnFortuneWheelButton()
@@ -40,17 +32,13 @@ public class StartMenu : MonoBehaviour
         _fortuneScreen.Open();
     }
 
-    private void OnPassiveIncomeButton()
+    private void OnHourBonusButton()
     {
-
+        _hourBonus.IncreaseBonus();
     }
 
-    private void OnIncreaseRespectButton()
+    private void OnIncomeButton()
     {
-        if(_wallet.Subscriber >= _incomePrice)
-        {
-            _wallet.RemoveSubscriber(_incomePrice);
-            _wallet.AddRespect(_increaseRespect);
-        }
+        _income.EarnIncome();
     }
 }

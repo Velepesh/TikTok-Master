@@ -61,7 +61,7 @@ public class PickerWheel : MonoBehaviour
         CalculateWeightsAndIndices();
 
         if (_nonZeroChancesIndices.Count == 0)
-            Debug.LogError("You can't set all pieces chance to zero");
+            throw new ArgumentOutOfRangeException();
 
         SetupAudio();
     }
@@ -72,7 +72,7 @@ public class PickerWheel : MonoBehaviour
             _pickerWheelTransform.localScale = new Vector3(_wheelSize, _wheelSize, 1f);
 
         if (_wheelPieces.Count > _piecesMax || _wheelPieces.Count < _piecesMin)
-            Debug.LogError("[ PickerWheelwheel ]  pieces length must be between " + _piecesMin + " and " + _piecesMax);
+            throw new Exception("[ PickerWheelwheel ]  pieces length must be between " + _piecesMin + " and " + _piecesMax);
     }
 
     private void SetupAudio()
@@ -122,7 +122,7 @@ public class PickerWheel : MonoBehaviour
                 piece = _wheelPieces[index];
             }
 
-            float angle = -1 *(_pieceAngle * index);
+            float angle = -1 * (_pieceAngle * index);
 
             float rightOffset = (angle - _halfPieceAngleWithPaddings) % 360;
             float leftOffset = (angle + _halfPieceAngleWithPaddings) % 360;
@@ -144,9 +144,7 @@ public class PickerWheel : MonoBehaviour
                 if (diff >= _halfPieceAngle)
                 {
                     if (isIndicatorOnTheLine)
-                    {
                         _audioSource.PlayOneShot(_audioSource.clip);
-                    }
 
                     prevAngle = currentAngle;
                     isIndicatorOnTheLine = !isIndicatorOnTheLine;
@@ -181,11 +179,9 @@ public class PickerWheel : MonoBehaviour
         {
             WheelPiece piece = _wheelPieces[i];
 
-            //add weights:
             _accumulatedWeight += piece.Chance;
             piece.AddWeight(_accumulatedWeight);
 
-            //save non zero chance indices:
             if (piece.Chance > 0)
                 _nonZeroChancesIndices.Add(i);
         }

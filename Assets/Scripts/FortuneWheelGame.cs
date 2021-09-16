@@ -15,6 +15,9 @@ public class FortuneWheelGame : MonoBehaviour
     [SerializeField] private KeyCounter _keyCounter;
     [SerializeField] private Animator _animator;
 
+    public event UnityAction SpinStarted;
+    public event UnityAction SpinEnded;
+
     private void OnEnable()
     {
         _spinButton.onClick.AddListener(OnButtonClick);
@@ -42,6 +45,8 @@ public class FortuneWheelGame : MonoBehaviour
 
             _spinButton.interactable = false;
             _animator.SetBool(AnimatorFortuneController.States.IsSpinning, true);
+
+            SpinStarted?.Invoke();
         }
     } 
     
@@ -59,5 +64,7 @@ public class FortuneWheelGame : MonoBehaviour
 
         _spinButton.interactable = true;
         _animator.SetBool(AnimatorFortuneController.States.IsSpinning, false);
+
+        SpinEnded?.Invoke();
     }
 }
