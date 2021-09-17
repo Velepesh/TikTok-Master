@@ -10,16 +10,6 @@ public class Corner : Ñorridor
     protected override void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent(out PlayerMover playerMover))
-        {
             playerMover.StartTurning(_center, _type);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent(out PlayerMover playerMover))
-        {
-            playerMover.StopTurning();
-        }
     }
 }

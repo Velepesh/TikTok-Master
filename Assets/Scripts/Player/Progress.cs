@@ -6,6 +6,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Player), typeof(Wallet))]
 public class Progress : MonoBehaviour
 {
+    [SerializeField] private Income _income;
+
     readonly private int _maxProgression = 200;
     readonly private int _startRespect = 40;
     readonly private int _subscribersMultiplayer = 3;
@@ -64,7 +66,6 @@ public class Progress : MonoBehaviour
         _wallet.AddSubscriber(subscribers, false);
     }
 
-
     public void RemoveProgress(int respect)
     {
         _progression -= respect;
@@ -91,7 +92,7 @@ public class Progress : MonoBehaviour
 
     private void OnWon()
     {
-        _levelRespect = _progression * _multiplier;
+        _levelRespect = _progression * _multiplier + _income.Award;
 
         if (_levelRespect <= 0)
             _levelRespect = 0;

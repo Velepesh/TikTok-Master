@@ -8,23 +8,23 @@ public class StartMenu : MonoBehaviour
 {
     [SerializeField] private Button _fortuneWheelButton;
     [SerializeField] private Button _hourBonusButton;
-    [SerializeField] private Button _increaseRespectButton;
+    [SerializeField] private Button _incomeButton;
     [SerializeField] private FortuneWheelScreen _fortuneScreen;
     [SerializeField] private Income _income;
-    [SerializeField] private HourBonus _hourBonus;
+    [SerializeField] private Bonus _hourBonus;
 
     private void OnEnable()
     {
         _fortuneWheelButton.onClick.AddListener(OnFortuneWheelButton);
         _hourBonusButton.onClick.AddListener(OnHourBonusButton);
-        _increaseRespectButton.onClick.AddListener(OnIncomeButton);
+        _incomeButton.onClick.AddListener(OnIncomeButton);
     }
 
     private void OnDisable()
     {
         _fortuneWheelButton.onClick.RemoveListener(OnFortuneWheelButton);
         _hourBonusButton.onClick.RemoveListener(OnHourBonusButton);
-        _increaseRespectButton.onClick.RemoveListener(OnIncomeButton);
+        _incomeButton.onClick.RemoveListener(OnIncomeButton);
     }
 
     private void OnFortuneWheelButton()

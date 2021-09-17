@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-[RequireComponent(typeof(Image))]
 public class Sound : MonoBehaviour
 {
     [SerializeField] private Sprite _turnOnIcon;
     [SerializeField] private Sprite _turnOffIcon;
     [SerializeField] private Button _button;
+    [SerializeField] private Image _icon;
 
     readonly private string SoundData = "VibrationData";
 
-    private Image _icon;
     private bool _isOn;
 
     public int IsOnInt => PlayerPrefs.GetInt(SoundData, 1);
@@ -30,7 +28,6 @@ public class Sound : MonoBehaviour
 
     private void Start()
     {
-        _icon = GetComponent<Image>();
         _isOn = ÑonvertIntToBool(IsOnInt);
 
         OnButtonClick();

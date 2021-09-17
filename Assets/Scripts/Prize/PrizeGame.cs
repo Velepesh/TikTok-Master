@@ -20,10 +20,10 @@ public class PrizeGame : MonoBehaviour
     [SerializeField] private Sprite _goldKeyIcon;
     [SerializeField] private Button _threeMoreButton;
     [SerializeField] private TMP_Text _priceText;
+    [SerializeField] private int _keysPrice;
 
     readonly private int _prizesNumber = 9;
     readonly private int _keysNumber = 3;
-    readonly private int _threeKeysPrice = 1;
 
     private bool _isThreeMoreGame = false;
     private List<PrizeView> _prizeViews = new List<PrizeView>();
@@ -81,11 +81,11 @@ public class PrizeGame : MonoBehaviour
 
     private void OnThreeMoreButtonClick()
     {
-        if(_wallet.Subscriber >= _threeKeysPrice)
+        if(_wallet.Subscriber >= _keysPrice)
         {
             _isThreeMoreGame = true;
 
-            _wallet.RemoveSubscriber(_threeKeysPrice);
+            _wallet.RemoveSubscriber(_keysPrice);
             EnableAllKeys();
 
             _keyCounter.AddKeys(_keysNumber);
@@ -108,7 +108,7 @@ public class PrizeGame : MonoBehaviour
 
         if (keysNumber <= 0)
         {
-            _priceText.text = _threeKeysPrice.ToString();
+            _priceText.text = _keysPrice.ToString();
 
             if(_isThreeMoreGame)
                 _animator.SetTrigger(AnimatorPrizeGameController.States.ContinueButton);

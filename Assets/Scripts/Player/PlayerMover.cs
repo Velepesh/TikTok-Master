@@ -80,6 +80,73 @@ class PlayerMover : MonoBehaviour
         }
     }
 
+    public void StartTurning(Transform centerPoint, CornerType type)
+    {
+        _previousRotationY = Mathf.Floor(transform.rotation.eulerAngles.y);
+
+        _turningSpeed *= GetTurningDirection(_previousRotationY, _turningSpeed, type);
+        _centerPoint = centerPoint;
+
+        StopMoving();
+        _isTurning = true;
+    }
+
+    private void StopTurning()
+    { 
+        transform.rotation = Quaternion.Euler(new Vector3(0f, _targetRotationY, 0f));
+        _previousRotationY = transform.rotation.eulerAngles.y;
+        
+        StartMoving();
+        _isTurning = false;
+    }
+    private void Turn()
+    {
+        transform.RotateAround(_centerPoint.position, Vector3.up, _turningSpeed * Time.deltaTime);
+        
+        if(_previousRotationY <= _targetRotationY)
+        {
+            if (transform.rotation.eulerAngles.y >= _targetRotationY)
+                StopTurning();
+        }
+        else
+        {
+            if (transform.rotation.eulerAngles.y <= _targetRotationY)
+                StopTurning();
+        }   
+    }
+
+    private float GetTurningDirection(float previousRotationY, float turningSpeed, CornerType type)
+    {
+        float direction = Mathf.Clamp(turningSpeed, -1, 1);
+        if (CornerType.Left == type)
+        {
+            _targetRotationY = previousRotationY - _angleStep;
+
+            if (direction >= 0f)
+                direction *= -1;
+            else
+                return direction;
+
+            //if (_targetRotationY < 0f)
+            //{
+            //    _targetRotationY += 360f;
+            //}
+        }
+        else if (CornerType.Right == type)
+        {
+            _targetRotationY = previousRotationY + _angleStep;
+
+            direction = Mathf.Abs(direction);
+
+            //if (_targetRotationY >= 360f)
+            //{
+            //    _targetRotationY += -360f;
+            //}
+        }
+
+        return direction;
+    }
+
     private void OnStumbled()
     {
         StopMoving();
@@ -91,45 +158,6 @@ class PlayerMover : MonoBehaviour
         yield return new WaitForSeconds(_shockTime);
 
         StartMoving();
-    }
-
-    public void StartTurning(Transform centerPoint, CornerType type)
-    {
-        _previousRotationY = Mathf.Floor(transform.rotation.eulerAngles.y);
-
-        _turningSpeed = GetRotationSpeed(_previousRotationY, _turningSpeed, type);
-        _centerPoint = centerPoint;
-
-        StopMoving();
-        _isTurning = true;
-    }
-
-    public void StopTurning()
-    {
-        _isTurning = false;
-        
-        transform.rotation = Quaternion.Euler(new Vector3(0f, _targetRotationY, 0f));
-        _previousRotationY = transform.rotation.eulerAngles.y;
-        
-        StartMoving();
-    }
-
-    private Vector3 GetMovingDirection()
-    {
-        Vector3 direction = Vector3.zero;
-
-        var currentRotationY = _skin.transform.rotation.eulerAngles.y;
-
-        if (currentRotationY == 0f)
-            direction = Vector3.forward;
-        else if (currentRotationY == 90f)
-            direction = Vector3.right;
-        else if (currentRotationY == 180f)
-            direction = Vector3.back;
-        else if (currentRotationY == 270f)
-            direction = Vector3.left;
-
-        return direction;
     }
 
     private void OnStoped()
@@ -169,11 +197,9 @@ class PlayerMover : MonoBehaviour
 
             float currentX = Input.mousePosition.x;
             float difference = currentX - _lastMousePositionX;
-            //Debug.Log(_surfaceSlider.GetGroundCenter() + "  GetGroundCenter");
-            //Debug.Log(_surfaceSlider.GetMaxBorder() + "  MAX");
-            //Debug.Log(_surfaceSlider.GetMinBorder() + "  MIN");
+
             direction = Mathf.Clamp(difference, -1f, 1f);
-            difference = Mathf.Clamp(difference, -100f, 100f);
+            difference = Mathf.Clamp(difference, -150f, 150f);
 
             if (direction > 0f)
                 TryMoveRight(difference, position);
@@ -242,24 +268,6 @@ class PlayerMover : MonoBehaviour
         }
     }
 
-    private float GetRightBorder()
-    {
-        float rightBorder = 0f;
-
-        var currentRotationY = _skin.transform.rotation.eulerAngles.y;
-
-        if (currentRotationY == 0f)
-            rightBorder = _surfaceSlider.GetGroundCenter() + _distanceToBorder;
-        else if (currentRotationY == 90f)
-            rightBorder = _surfaceSlider.GetGroundCenter() - _distanceToBorder;
-        else if (currentRotationY == 180f)
-            rightBorder = _surfaceSlider.GetGroundCenter() - _distanceToBorder;
-        else if (currentRotationY == 270f)
-            rightBorder = _surfaceSlider.GetGroundCenter() - _distanceToBorder;
-
-        return rightBorder;
-    }
-
     private void WentOutOfBounds(float border, Vector3 position)
     {
         position.x = border;
@@ -292,43 +300,6 @@ class PlayerMover : MonoBehaviour
     {
         CanMove(true);
     }
-
-    private void Turn()
-    {
-        transform.RotateAround(_centerPoint.position, Vector3.up, _turningSpeed * Time.deltaTime);
-    }
-
-    private float GetRotationSpeed(float previousRotationY, float turningSpeed, CornerType type)
-    {
-        if (CornerType.Left == type)
-        {
-            _targetRotationY = previousRotationY - _angleStep;
-
-            if (turningSpeed >= 0f)
-                turningSpeed *= -1;
-            else
-                return turningSpeed;
-
-            if (_targetRotationY < 0f)
-            {
-                _targetRotationY += 360f;
-            }
-        }
-        else if (CornerType.Right == type)
-        {
-            _targetRotationY = previousRotationY + _angleStep;
-
-            turningSpeed = Mathf.Abs(turningSpeed);
-        
-            if (_targetRotationY >= 360f)
-            {
-                _targetRotationY += -360f;
-            }
-        }
-
-        return turningSpeed;
-    }
-
     private void OnWon()
     {
         CanMove(false);
