@@ -34,7 +34,9 @@ public class WinScreen : Screen
             ScreenHolder.SetActive(false);
         }
         else
+        {
             NextButtonClick?.Invoke();
+        }
     }
 
     private IEnumerator EnableWinScreen()

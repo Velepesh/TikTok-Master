@@ -9,7 +9,7 @@ public class Sound : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private Image _icon;
 
-    readonly private string SoundData = "VibrationData";
+    readonly private string SoundData = "SoundData";
 
     private bool _isOn;
 
@@ -30,9 +30,16 @@ public class Sound : MonoBehaviour
     {
         _isOn = ÑonvertIntToBool(IsOnInt);
 
-        OnButtonClick();
+        LoadState(_isOn);
     }
 
+    private void LoadState(bool state)
+    {
+        if (_isOn)
+            TurnOn();
+        else
+            TurnOff();
+    }
     private void OnButtonClick()
     {
         if (_isOn)

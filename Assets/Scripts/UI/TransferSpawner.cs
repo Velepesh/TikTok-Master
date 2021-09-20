@@ -17,12 +17,16 @@ public class TransferSpawner : MonoBehaviour
     [SerializeField] private GameObject _container;
 
     private float _keysNumber;
+    private int _respect;
+    private int _subscriber;
     private Vector3 _startPosition;
 
     private void Awake()
     {
         _keysNumber = _keyCounter.KeysNumber;
         _startPosition = _container.transform.position;
+        _respect = _wallet.Respect;
+        _subscriber = _wallet.Subscriber;
     }
 
     private void OnEnable()
@@ -63,14 +67,22 @@ public class TransferSpawner : MonoBehaviour
 
     private void OnRespectChanged(int addValue, int currentValue)
     {
-        if (_wallet.Respect <= currentValue)
+        if (_respect < currentValue)
+        {
             InstantiateTemplate(_respectTemplate, _respectTarget, addValue);
+
+            _respect = currentValue;
+        }
     }
 
     private void OnSubscriberChanged(int addValue, int currentValue)
     {
-        if (_wallet.Subscriber <= currentValue)
+        if (_subscriber < currentValue)
+        {
             InstantiateTemplate(_subscriberTemplate, _subscriberTarget, addValue);
+
+            _subscriber = currentValue;
+        }
     }
 
     private void OnPrizeReceived(Vector3 startPosition)

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -72,7 +71,7 @@ public class Shop : MonoBehaviour
 
         EnableSelecteView();
         ApplyNewSkinsHolder(_currentTemplateIndex);
-
+        //SelectedHolder?.Invoke(_currentHolder);
         _unlockPriceText.text = _price.ToString();
     }
 
@@ -116,6 +115,8 @@ public class Shop : MonoBehaviour
                 _templateIndex = i;
 
         ApplyNewSkinsHolder(_templateIndex);
+
+        SelectedHolder?.Invoke(_currentHolder);
         SaveCurrentTemplateIndex(_templateIndex);
         EnableSelecteView();
 
@@ -159,7 +160,7 @@ public class Shop : MonoBehaviour
         _currentHolder = _skinsHolders[index];
         _currentHolder.gameObject.SetActive(true);
 
-        SelectedHolder?.Invoke(_currentHolder);
+       // SelectedHolder?.Invoke(_currentHolder);
     }
 
     private void EnableSelecteView()

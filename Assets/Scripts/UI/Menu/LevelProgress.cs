@@ -11,25 +11,31 @@ public class LevelProgress : MonoBehaviour
     [SerializeField] private GameObject _container;
     [SerializeField] private Sprite _passedIcon;
     [SerializeField] private Sprite _lockedIcon;
-    [SerializeField] private Sprite _finalIcon;
+    [SerializeField] private Sprite _currentIcon;
 
     readonly private int _screenLevelNumber = 5;
     
-    private int _updateNumber = 5;
+    private int _visibleNumber = 5;
 
     private void Start()
     {
-        while(_level.CurrentSceneIndex > _updateNumber)
-            _updateNumber *= 2;
+        UpdateNumber();
 
-        int startIndex = _updateNumber - _screenLevelNumber;
+        int startIndex = _visibleNumber - _screenLevelNumber + 1;
         
-        UpdateLevelIndex(startIndex, _updateNumber);
+        UpdateLevelIndex(startIndex, _visibleNumber);
     }
 
+    private void UpdateNumber()
+    {
+        while (_level.CurrentSceneIndex > _visibleNumber)
+        {
+            _visibleNumber *= 2;
+        }
+    }
     private void UpdateLevelIndex(int startIndex, int levelNumber)
     {
-        for (int i = startIndex; i < levelNumber; i++)
+        for (int i = startIndex; i <= levelNumber; i++)
         {
             AddCell(i);
         }
@@ -37,22 +43,17 @@ public class LevelProgress : MonoBehaviour
 
     private void AddCell(int sceneIndex)
     {
-        int number = sceneIndex + 1;
+        int number = sceneIndex;
 
         var view = Instantiate(_levelView, _container.transform);
 
-        if (number % _updateNumber == 0)
-        {
-            view.ChangeIcon(_finalIcon);
-        }
-        else
-        {
-            if (sceneIndex <= _level.CurrentSceneIndex)
-                view.ChangeIcon(_passedIcon);
-            else
-                view.ChangeIcon(_lockedIcon);
+        if(number == _level.CurrentSceneIndex)
+            view.ChangeIcon(_currentIcon);
+        else if(number>  _level.CurrentSceneIndex)
+            view.ChangeIcon(_lockedIcon);
+        else if (number < _level.CurrentSceneIndex)
+            view.ChangeIcon(_passedIcon);
 
-            view.WriteLevelIndex(number);
-        }
+        view.WriteLevelIndex(number);
     }
 }

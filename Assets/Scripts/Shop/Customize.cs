@@ -17,7 +17,6 @@ public class Customize : ScriptableObject
     public HolderType Type => _type;
     public bool IsBuyed => _isBuyed;
 
-
     public void Buy()
     {
         _isBuyed = true;

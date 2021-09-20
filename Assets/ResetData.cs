@@ -6,6 +6,12 @@ public class ResetData : MonoBehaviour
 {
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            PlayerPrefs.SetInt("RespectData", 100000);
+            PlayerPrefs.SetInt("SubscriberData", 1000);
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             PlayerPrefs.SetInt("RespectData", 0);
@@ -20,6 +26,11 @@ public class ResetData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             PlayerPrefs.SetInt("KeyCounter", 3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            PlayerPrefs.SetInt("LastPlayedLevel", 1);
         }
     }
 }

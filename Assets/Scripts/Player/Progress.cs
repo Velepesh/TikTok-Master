@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Player), typeof(Wallet))]
+[RequireComponent(typeof(Player), typeof(Wallet), typeof(SkinChangerStage))]
 public class Progress : MonoBehaviour
 {
     [SerializeField] private Income _income;
 
-    readonly private int _maxProgression = 200;
-    readonly private int _startRespect = 40;
     readonly private int _subscribersMultiplayer = 3;
 
     private Player _player;
     private Wallet _wallet;
+    private SkinChangerStage _stage;
     private int _progression;
     private int _multiplier = 1;
     private int _levelRespect;
+    private int _maxProgression;
 
     public int LevelRespect => _levelRespect;
     public int Progression => _progression;
@@ -28,10 +28,11 @@ public class Progress : MonoBehaviour
 
     private void Awake()
     {
-        AssignStartValue(_startRespect);
-
         _player = GetComponent<Player>();
         _wallet = GetComponent<Wallet>();
+        _stage = GetComponent<SkinChangerStage>();
+
+        AssignStartValue();
     }
 
     private void OnEnable()
@@ -85,9 +86,10 @@ public class Progress : MonoBehaviour
         _multiplier = multiplier;
     }
 
-    private void AssignStartValue(int startValue)
+    private void AssignStartValue()
     {
-        _progression = startValue;
+        _progression = _stage.ClerkValue;
+        _maxProgression = _stage.TiktokerValue;
     }
 
     private void OnWon()

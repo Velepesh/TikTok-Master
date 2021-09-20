@@ -40,7 +40,7 @@ class SkinChanger : MonoBehaviour
         {
             if(_elapsedTime <= 0f)
             {
-                UpdateSkin();
+                UpdateInShopSkin();
                 _elapsedTime = _inShopTime;
             }
 
@@ -72,7 +72,7 @@ class SkinChanger : MonoBehaviour
         _currentSkin = GetStartSkin();
     }
 
-    private void UpdateSkin()
+    private void UpdateInShopSkin()
     {
         if (_shopValue == _stage.NerdValue)
         {
@@ -99,13 +99,12 @@ class SkinChanger : MonoBehaviour
             ChangeSkin(SkinType.Tiktoker);
             _shopValue = _stage.NerdValue;
         }
-
-        SkinChanged?.Invoke();
     }
 
     private void OnChoosedSkin()
     {
         _elapsedTime = 0f;
+
         _isShopOpen = true;
         _shopValue = _stage.NerdValue;
     }
@@ -124,6 +123,7 @@ class SkinChanger : MonoBehaviour
     
     private void OnSelectedHolder(SkinsHolder skinsHolder)
     {
+        Debug.Log("OnSelectedHolder");
         _currentHolder = skinsHolder;
 
         _skins = _currentHolder.GetSkins();
@@ -135,7 +135,7 @@ class SkinChanger : MonoBehaviour
     {
         int vector = 0;
 
-        if (currentTikTokValue >= _previousValue)
+        if (currentTikTokValue > _previousValue)
             vector = 1;
         else
             vector = -1;
@@ -162,16 +162,16 @@ class SkinChanger : MonoBehaviour
         }
         else
         {
-            if (currentValue < _stage.TiktokerValue && _previousValue >= _stage.StylishValue)
+            if (currentValue < _stage.TiktokerValue && _previousValue > _stage.TiktokerValue)
                 ChangeSkin(SkinType.Stylish);
 
-            if (currentValue < _stage.StylishValue && _previousValue >= _stage.OrdinaryValue)
+            if (currentValue < _stage.StylishValue && _previousValue > _stage.StylishValue)
                 ChangeSkin(SkinType.Ordinary);
 
-            if (currentValue < _stage.OrdinaryValue && _previousValue >= _stage.ClerkValue)
+            if (currentValue < _stage.OrdinaryValue && _previousValue > _stage.OrdinaryValue)
                 ChangeSkin(SkinType.Clerk);
 
-            if (currentValue < _stage.ClerkValue && _previousValue >= _stage.NerdValue)
+            if (currentValue < _stage.ClerkValue && _previousValue > _stage.ClerkValue)
                 ChangeSkin(SkinType.Nerd);
         }
     }
@@ -193,6 +193,6 @@ class SkinChanger : MonoBehaviour
         if (_skins.Count == 0)
             throw new ArgumentOutOfRangeException(nameof(_skins));
        
-        _currentSkin = _currentHolder.GetSkin(_startSkinType);
+        //_currentSkin = _currentHolder.GetSkin(_startSkinType);
     }
 }
