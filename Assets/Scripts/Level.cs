@@ -25,9 +25,10 @@ public class Level : MonoBehaviour
     {
         _player.FinishLineCrossed -= OnFinishLineCrossed;
     }
+
     public void Restart()
     {
-        SceneManager.LoadScene(CurrentSceneIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadNextLevel()

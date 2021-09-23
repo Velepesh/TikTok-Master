@@ -5,15 +5,16 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
-[RequireComponent(typeof(Image))]
 public class SkinView : MonoBehaviour
 {
-    [SerializeField] private Image _icon;
+    [SerializeField] private Image _background;
+    [SerializeField] private Image _avatarIcon;
     [SerializeField] private Button _selectedButton;
     [SerializeField] private Sprite _lockIcon;
+    [SerializeField] private Sprite _unlockIcon;
+    [SerializeField] private Sprite _selectedIcon;
 
     private Customize _customise;
-    private Image _currentBackground;
 
     public event UnityAction<Customize, SkinView> SelectedButtonClick;
 
@@ -27,17 +28,26 @@ public class SkinView : MonoBehaviour
         _selectedButton.onClick.RemoveListener(OnButtonClick);
     }
 
-    public void SelecteBackground(Sprite background)
+    private void Awake()
     {
-        _currentBackground = GetComponent<Image>();
+        _background = GetComponent<Image>();
+    }
 
-        _currentBackground.sprite = background;
+    public void SelecteView()
+    {
+        _background.sprite = _selectedIcon;
+    }
+    
+    public void DisableView()
+    {
+        _background.sprite = _unlockIcon;
     }
 
     public void UnlockeView(Customize customize)
     {
         _selectedButton.interactable = true;
-        _icon.sprite = customize.Icon;
+
+        _avatarIcon.sprite = customize.Icon;
     }
 
     public void Render(Customize customize)
@@ -45,9 +55,17 @@ public class SkinView : MonoBehaviour
         _customise = customize;
 
         if (customize.IsBuyed)
-            _icon.sprite = customize.Icon;
+        {
+            _avatarIcon.gameObject.SetActive(true);
+            _avatarIcon.sprite = customize.Icon;
+            _background.sprite = _unlockIcon;
+        }
         else
-            _icon.sprite = _lockIcon;
+        {
+            _background.sprite = _lockIcon;
+
+            _avatarIcon.gameObject.SetActive(false);
+        }
 
         TryLockItem();
     }

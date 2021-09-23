@@ -16,7 +16,6 @@ class PlayerMover : MonoBehaviour
 
     readonly private float _angleStep = 90f;
     readonly private float _rotationAngle = 45f;
-    readonly private float _distanceToBorder = 2f;
     
     private float _targetRotationY;
     private Player _player;
@@ -84,7 +83,8 @@ class PlayerMover : MonoBehaviour
     {
         _previousRotationY = Mathf.Floor(transform.rotation.eulerAngles.y);
 
-        _turningSpeed *= GetTurningDirection(_previousRotationY, _turningSpeed, type);
+        _turningSpeed = Mathf.Abs(_turningSpeed) * GetTurningVector(_turningSpeed, type);
+        _targetRotationY = GetTargetRotation(_previousRotationY, type);
         _centerPoint = centerPoint;
 
         StopMoving();
@@ -95,10 +95,11 @@ class PlayerMover : MonoBehaviour
     { 
         transform.rotation = Quaternion.Euler(new Vector3(0f, _targetRotationY, 0f));
         _previousRotationY = transform.rotation.eulerAngles.y;
-        
+
         StartMoving();
         _isTurning = false;
     }
+
     private void Turn()
     {
         transform.RotateAround(_centerPoint.position, Vector3.up, _turningSpeed * Time.deltaTime);
@@ -115,36 +116,33 @@ class PlayerMover : MonoBehaviour
         }   
     }
 
-    private float GetTurningDirection(float previousRotationY, float turningSpeed, CornerType type)
+    private float GetTurningVector(float turningSpeed, CornerType type)
     {
-        float direction = Mathf.Clamp(turningSpeed, -1, 1);
+        float vector = Mathf.Clamp(turningSpeed, -1, 1);
+
         if (CornerType.Left == type)
         {
-            _targetRotationY = previousRotationY - _angleStep;
-
-            if (direction >= 0f)
-                direction *= -1;
-            else
-                return direction;
-
-            //if (_targetRotationY < 0f)
-            //{
-            //    _targetRotationY += 360f;
-            //}
+            if (vector >= 0f)
+                vector = -vector;
         }
         else if (CornerType.Right == type)
         {
-            _targetRotationY = previousRotationY + _angleStep;
-
-            direction = Mathf.Abs(direction);
-
-            //if (_targetRotationY >= 360f)
-            //{
-            //    _targetRotationY += -360f;
-            //}
+            vector = Mathf.Abs(vector);
         }
 
-        return direction;
+        return vector;
+    }
+
+    private float GetTargetRotation(float previousRotationY, CornerType type)
+    {
+        float targetRotationY = 0f;
+
+        if (CornerType.Left == type)
+            targetRotationY = previousRotationY - _angleStep;
+        else if (CornerType.Right == type)
+            targetRotationY = previousRotationY + _angleStep;
+
+        return targetRotationY;
     }
 
     private void OnStumbled()
@@ -158,11 +156,6 @@ class PlayerMover : MonoBehaviour
         yield return new WaitForSeconds(_shockTime);
 
         StartMoving();
-    }
-
-    private void OnStoped()
-    {
-        StopMoving();
     }
     
     private void OnStartedMoving()

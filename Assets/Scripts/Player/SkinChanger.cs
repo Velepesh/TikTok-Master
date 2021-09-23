@@ -123,11 +123,15 @@ class SkinChanger : MonoBehaviour
     
     private void OnSelectedHolder(SkinsHolder skinsHolder)
     {
-        Debug.Log("OnSelectedHolder");
+       // Debug.Log("OnSelectedHolder");
         _currentHolder = skinsHolder;
 
         _skins = _currentHolder.GetSkins();
 
+        if (_skins.Count == 0)
+            throw new ArgumentOutOfRangeException(nameof(_skins));
+
+      
         TryWear();
     }
 
@@ -162,16 +166,16 @@ class SkinChanger : MonoBehaviour
         }
         else
         {
-            if (currentValue < _stage.TiktokerValue && _previousValue > _stage.TiktokerValue)
+            if (currentValue < _stage.TiktokerValue && _previousValue > _stage.StylishValue)
                 ChangeSkin(SkinType.Stylish);
 
-            if (currentValue < _stage.StylishValue && _previousValue > _stage.StylishValue)
+            if (currentValue < _stage.StylishValue && _previousValue > _stage.OrdinaryValue)
                 ChangeSkin(SkinType.Ordinary);
 
-            if (currentValue < _stage.OrdinaryValue && _previousValue > _stage.OrdinaryValue)
+            if (currentValue < _stage.OrdinaryValue && _previousValue > _stage.ClerkValue)
                 ChangeSkin(SkinType.Clerk);
 
-            if (currentValue < _stage.ClerkValue && _previousValue > _stage.ClerkValue)
+            if (currentValue < _stage.ClerkValue && _previousValue > _stage.NerdValue)
                 ChangeSkin(SkinType.Nerd);
         }
     }
@@ -190,9 +194,9 @@ class SkinChanger : MonoBehaviour
 
     private void TryWear()
     {
-        if (_skins.Count == 0)
-            throw new ArgumentOutOfRangeException(nameof(_skins));
-       
-        //_currentSkin = _currentHolder.GetSkin(_startSkinType);
+        if (_currentSkin != null)
+            _currentSkin.gameObject.SetActive(false);
+
+        _currentSkin = _currentHolder.GetSkin(_startSkinType);
     }
 }

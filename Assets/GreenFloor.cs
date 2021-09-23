@@ -32,6 +32,7 @@ public class GreenFloor : MonoBehaviour
         while (_isPlayer)
         {
             progress.AddProgress(_value);
+
             yield return new WaitForSeconds(_time);
         }
     }

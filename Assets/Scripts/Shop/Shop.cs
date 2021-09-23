@@ -13,8 +13,8 @@ public class Shop : MonoBehaviour
     [SerializeField] private GameObject _itemContainer;
     [SerializeField] private Inventory _shopInventory;
     [SerializeField] private Button _sellButton;
-    [SerializeField] private Sprite _backgroundIcon;
-    [SerializeField] private Sprite _selectedIcon;
+    //[SerializeField] private Sprite _backgroundIcon;
+    //[SerializeField] private Sprite _selectedIcon;
     [SerializeField] private TMP_Text _unlockPriceText;
     [SerializeField] private ShopScreen _shopScreen;
     [SerializeField] private List<SkinsHolder> _skinsHolders;
@@ -71,7 +71,7 @@ public class Shop : MonoBehaviour
 
         EnableSelecteView();
         ApplyNewSkinsHolder(_currentTemplateIndex);
-        //SelectedHolder?.Invoke(_currentHolder);
+
         _unlockPriceText.text = _price.ToString();
     }
 
@@ -116,7 +116,6 @@ public class Shop : MonoBehaviour
 
         ApplyNewSkinsHolder(_templateIndex);
 
-        SelectedHolder?.Invoke(_currentHolder);
         SaveCurrentTemplateIndex(_templateIndex);
         EnableSelecteView();
 
@@ -160,16 +159,16 @@ public class Shop : MonoBehaviour
         _currentHolder = _skinsHolders[index];
         _currentHolder.gameObject.SetActive(true);
 
-       // SelectedHolder?.Invoke(_currentHolder);
+        SelectedHolder?.Invoke(_currentHolder);
     }
 
     private void EnableSelecteView()
     {
-        _skinViews[_currentTemplateIndex].SelecteBackground(_selectedIcon);
+        _skinViews[_currentTemplateIndex].SelecteView();
     }
 
     private void DisableSelecteView()
     {
-        _skinViews[_currentTemplateIndex].SelecteBackground(_backgroundIcon);
+        _skinViews[_currentTemplateIndex].DisableView();
     }
 }
