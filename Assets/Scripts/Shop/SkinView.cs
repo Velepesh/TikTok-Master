@@ -47,7 +47,7 @@ public class SkinView : MonoBehaviour
     {
         _selectedButton.interactable = true;
 
-        _avatarIcon.sprite = customize.Icon;
+        Unlock(customize);
     }
 
     public void Render(Customize customize)
@@ -55,25 +55,27 @@ public class SkinView : MonoBehaviour
         _customise = customize;
 
         if (customize.IsBuyed)
-        {
-            _avatarIcon.gameObject.SetActive(true);
-            _avatarIcon.sprite = customize.Icon;
-            _background.sprite = _unlockIcon;
-        }
+            Unlock(customize);
         else
-        {
-            _background.sprite = _lockIcon;
+            TryLockItem();
+    }
 
-            _avatarIcon.gameObject.SetActive(false);
-        }
-
-        TryLockItem();
+    private void Unlock(Customize customize)
+    {
+        _avatarIcon.gameObject.SetActive(true);
+        _avatarIcon.sprite = customize.Icon;
+        _background.sprite = _unlockIcon;
     }
 
     private void TryLockItem()
     {
         if (_customise.IsBuyed == false)
+        {
             _selectedButton.interactable = false;
+
+            _background.sprite = _lockIcon;
+            _avatarIcon.gameObject.SetActive(false);
+        }
     }
 
     private void OnButtonClick()

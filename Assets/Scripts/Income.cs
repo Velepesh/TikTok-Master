@@ -39,7 +39,6 @@ public class Income : MonoBehaviour
         if (_wallet.Subscriber >= _price)
         {
             _wallet.RemoveSubscriber(_price);
-            // _wallet.AddRespect(_award);
             AddAward();
             AddPrice();
 

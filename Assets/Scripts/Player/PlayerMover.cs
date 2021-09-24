@@ -172,6 +172,7 @@ class PlayerMover : MonoBehaviour
     {
         Vector3 directionAlongSurface = _surfaceSlider.Project(transform.TransformDirection(Vector3.forward));
         Vector3 offset = directionAlongSurface * _speed * Time.deltaTime;
+        //Vector3 offset = transform.TransformDirection(Vector3.forward) * _speed * Time.deltaTime;
 
         _rigidbody.MovePosition(_rigidbody.position + offset);
     }
