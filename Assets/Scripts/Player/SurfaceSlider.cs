@@ -16,6 +16,8 @@ public class SurfaceSlider : MonoBehaviour
     private Vector3 _normal;
     private float _maxBorder;
     private float _minBorder;
+    private float _center;
+    private float _leftBorder;
 
     public Vector3 Project(Vector3 forward)
     {
@@ -32,6 +34,16 @@ public class SurfaceSlider : MonoBehaviour
         return RoundValue(_minBorder);
     }
 
+    public float GetRigtObstacleBorder()
+    {
+        return RoundValue(_center);
+    }
+
+    public float GetLeftObstacleBorder()
+    {
+        return RoundValue(_leftBorder);
+    }
+
     private float RoundValue(float value)
     {
         return Mathf.Round(value * 100f) / 100f;
@@ -39,28 +51,25 @@ public class SurfaceSlider : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (IsObstacle() == false)
+        if (IsGround())
         {
-            if (IsGround())
-            {
-                _normal = collision.contacts[0].normal;
+            _normal = collision.contacts[0].normal;
 
-                var bounds = collision.contacts[0].otherCollider.bounds;
-
-                _maxBorder = transform.TransformDirection(bounds.max).x - _distanceToBorder;
-                _minBorder = transform.TransformDirection(bounds.min).x + _distanceToBorder;
-            }
+            var bounds = collision.contacts[0].otherCollider.bounds;
+            
+            _maxBorder = transform.TransformDirection(bounds.max).x - _distanceToBorder;
+            _minBorder = transform.TransformDirection(bounds.min).x + _distanceToBorder;
         }
     }
 
-    private void Update()
+    public bool CheckRight()
     {
-        Debug.DrawRay(transform.position + transform.TransformDirection(new Vector3(0f, 0f, 0.2F)), Vector3.down, Color.blue, _checkGround);
+        return Physics.Raycast(_obstacleCheck.position, transform.TransformDirection(Vector3.right), _checkObstacle, _obstacleMask);
     }
 
-    private bool IsObstacle()
-    {      
-        return Physics.CheckSphere(_obstacleCheck.position, _checkObstacle, _obstacleMask);
+    public bool CheckLeft()
+    {
+        return Physics.Raycast(_obstacleCheck.position, transform.TransformDirection(Vector3.left), _checkObstacle, _obstacleMask);
     }
 
     private bool IsGround()

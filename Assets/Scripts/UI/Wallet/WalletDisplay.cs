@@ -41,9 +41,9 @@ public class WalletDisplay : MonoBehaviour
         StartCoroutine(UpdateRespectScore());
     } 
     
-    private void OnSubscriberChanged(int addedSubscriber, int _targetSubscriber)
+    private void OnSubscriberChanged(int addedSubscriber, int targetSubscriber)
     {
-        this._targetSubscriber = _targetSubscriber;
+        _targetSubscriber = targetSubscriber;
 
         StartCoroutine(UpdateSubscriberScore());
     }

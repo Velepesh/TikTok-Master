@@ -49,11 +49,6 @@ public class Progress : MonoBehaviour
     {
         _progression += value;
 
-        if (_progression > _maxProgression)
-        {
-            _progression = _maxProgression;
-        }
-
         AddedProgression?.Invoke(value);
         ProgressionChanged?.Invoke(_progression, _maxProgression);
     }
@@ -90,6 +85,8 @@ public class Progress : MonoBehaviour
     {
         _progression = _stage.ClerkValue;
         _maxProgression = _stage.TiktokerValue;
+
+        ProgressionChanged?.Invoke(_progression, _maxProgression);
     }
 
     private void OnWon()

@@ -32,6 +32,8 @@ class SkinChanger : MonoBehaviour
     {
         _progress = GetComponent<Progress>();
         _stage = GetComponent<SkinChangerStage>();
+
+        _previousValue = _stage.ClerkValue;
     }
 
     private void Update()
@@ -65,10 +67,7 @@ class SkinChanger : MonoBehaviour
 
     private void Start()
     {
-        _previousValue = _progress.Progression;
-
         _currentHolder = _shop.GetCurrentHolder();
-
         _currentSkin = GetStartSkin();
     }
 
@@ -123,7 +122,6 @@ class SkinChanger : MonoBehaviour
     
     private void OnSelectedHolder(SkinsHolder skinsHolder)
     {
-       // Debug.Log("OnSelectedHolder");
         _currentHolder = skinsHolder;
 
         _skins = _currentHolder.GetSkins();
@@ -141,12 +139,15 @@ class SkinChanger : MonoBehaviour
 
         if (currentTikTokValue > _previousValue)
             vector = 1;
-        else
+        else if (currentTikTokValue < _previousValue)
             vector = -1;
 
-        ChangePlayerSkin(currentTikTokValue, vector);
+        if(vector != 0)
+        {
+            ChangePlayerSkin(currentTikTokValue, vector);
 
-        _previousValue = currentTikTokValue;
+            _previousValue = currentTikTokValue;
+        }
     }
 
     private void ChangePlayerSkin(int currentValue, int vector)

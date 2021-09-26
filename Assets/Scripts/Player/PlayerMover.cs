@@ -102,7 +102,7 @@ class PlayerMover : MonoBehaviour
 
     private void Turn()
     {
-        transform.RotateAround(_centerPoint.position, Vector3.up, _turningSpeed * Time.deltaTime);
+        transform.RotateAround(_centerPoint.position, Vector3.up, _turningSpeed * Time.fixedDeltaTime);
         
         if(_previousRotationY <= _targetRotationY)
         {
@@ -171,8 +171,7 @@ class PlayerMover : MonoBehaviour
     private void Move()
     {
         Vector3 directionAlongSurface = _surfaceSlider.Project(transform.TransformDirection(Vector3.forward));
-        Vector3 offset = directionAlongSurface * _speed * Time.deltaTime;
-        //Vector3 offset = transform.TransformDirection(Vector3.forward) * _speed * Time.deltaTime;
+        Vector3 offset = directionAlongSurface * _speed * Time.fixedDeltaTime;
 
         _rigidbody.MovePosition(_rigidbody.position + offset);
     }
@@ -193,7 +192,7 @@ class PlayerMover : MonoBehaviour
             float difference = currentX - _lastMousePositionX;
 
             direction = Mathf.Clamp(difference, -1f, 1f);
-            difference = Mathf.Clamp(difference, -150f, 150f);
+            difference = Mathf.Clamp(difference, -100f, 100f);
 
             if (direction > 0f)
                 TryMoveRight(difference, position);
@@ -214,51 +213,57 @@ class PlayerMover : MonoBehaviour
 
     private void TryMoveLeft(float direction, Vector3 position)
     {
-        float leftBorder = 0f;
-        float positionX = Mathf.Round(position.x * 100f) / 100f;
-
-        if (_targetRotationY == 90f)
+        if (_surfaceSlider.CheckLeft() == false)
         {
-            leftBorder = _surfaceSlider.GetMaxBorder();
+            float leftBorder = 0f;
+            float positionX = Mathf.Round(position.x * 100f) / 100f;
+        
+            if (_targetRotationY == 90f)
+            {
+                leftBorder = _surfaceSlider.GetMaxBorder();
 
-            if (-positionX < leftBorder)
-                SetSwipePosition(direction, position);
+                if (-positionX < leftBorder)
+                    SetSwipePosition(direction, position);
+                else
+                    WentOutOfBounds(-leftBorder, position);
+            }
             else
-                WentOutOfBounds(-leftBorder, position);
-        }
-        else
-        {
-            leftBorder = _surfaceSlider.GetMinBorder();
+            {
+                leftBorder = _surfaceSlider.GetMinBorder();
 
-            if (positionX > leftBorder)
-                SetSwipePosition(direction, position);
-            else
-                WentOutOfBounds(leftBorder, position);
+                if (positionX > leftBorder)
+                    SetSwipePosition(direction, position);
+                else
+                    WentOutOfBounds(leftBorder, position);
+            }
         }
     }
 
     private void TryMoveRight(float direction, Vector3 position)
     {
-        float rightBorder = 0f;
-        float positionX = Mathf.Round(position.x * 100f) / 100f;
-
-        if (_targetRotationY == 90f)
+        if (_surfaceSlider.CheckRight() == false)
         {
-            rightBorder = _surfaceSlider.GetMinBorder();
-          
-            if (-positionX > rightBorder)
-                SetSwipePosition(direction, position);
-            else
-                WentOutOfBounds(-rightBorder, position);
-        }
-        else
-        {
-            rightBorder = _surfaceSlider.GetMaxBorder();
+            float rightBorder = 0f;
+            float positionX = Mathf.Round(position.x * 100f) / 100f;
 
-            if (positionX < rightBorder)
-                SetSwipePosition(direction, position);
+            if (_targetRotationY == 90f)
+            {
+                rightBorder = _surfaceSlider.GetMinBorder();
+
+                if (-positionX > rightBorder)
+                    SetSwipePosition(direction, position);
+                else
+                    WentOutOfBounds(-rightBorder, position);
+            }
             else
-                WentOutOfBounds(rightBorder, position);
+            {
+                rightBorder = _surfaceSlider.GetMaxBorder();
+
+                if (positionX < rightBorder)
+                    SetSwipePosition(direction, position);
+                else
+                    WentOutOfBounds(rightBorder, position);
+            }
         }
     }
 
@@ -272,9 +277,8 @@ class PlayerMover : MonoBehaviour
 
     private void SetSwipePosition(float direction, Vector3 position)
     {
-        position.x += direction * _swipeSpeed * Time.deltaTime;
-
-        transform.position = transform.TransformDirection(position);
+        Vector3 offset = transform.TransformDirection(new Vector3(direction, 0f, 0f)) * _swipeSpeed * Time.fixedDeltaTime;
+        _rigidbody.MovePosition(_rigidbody.position + offset);
     }
 
     private void Rotate(float direction)
@@ -282,7 +286,7 @@ class PlayerMover : MonoBehaviour
         var currentRotation = _skin.transform.rotation;
         var targetRotation = Quaternion.Euler(new Vector3(0, direction * _rotationAngle + _targetRotationY, 0));
 
-        _skin.transform.rotation = Quaternion.Lerp(currentRotation, targetRotation, _rotationSpeed * Time.deltaTime);
+        _skin.transform.rotation = Quaternion.Lerp(currentRotation, targetRotation, _rotationSpeed * Time.fixedDeltaTime);
     }
 
     private void StopMoving()
@@ -294,6 +298,7 @@ class PlayerMover : MonoBehaviour
     {
         CanMove(true);
     }
+
     private void OnWon()
     {
         CanMove(false);
