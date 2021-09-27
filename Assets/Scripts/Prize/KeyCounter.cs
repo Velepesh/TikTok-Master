@@ -45,7 +45,11 @@ public class KeyCounter : ScriptableObject
 
     public void AddKeys(int number)
     {
-        _currentKeysNumber = number;
+        _currentKeysNumber += number;
+
+        if (_currentKeysNumber > _maxKeyNumber)
+            _currentKeysNumber = _maxKeyNumber;
+
         SaveKeysNumber();
 
         KeysNumberChanged?.Invoke(_currentKeysNumber);
