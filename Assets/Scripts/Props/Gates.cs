@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof (Animator), typeof (Collider))]
 public class Gates : MonoBehaviour
 {
     [SerializeField] private int _multiplier;
@@ -9,6 +10,7 @@ public class Gates : MonoBehaviour
     [SerializeField] private SkinChangerStage _stage;
 
     private Animator _animator;
+    private Collider _collider;
     private int _progressToSkip;
 
     private void OnValidate()
@@ -19,6 +21,7 @@ public class Gates : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        _collider = GetComponent<Collider>();
 
         _progressToSkip = GetProgressToSkip(_skinType);
     }
@@ -51,6 +54,7 @@ public class Gates : MonoBehaviour
             }
             else if (other.TryGetComponent(out Player player))
             {
+                _collider.enabled = false;
                 player.Win();
             }
         }

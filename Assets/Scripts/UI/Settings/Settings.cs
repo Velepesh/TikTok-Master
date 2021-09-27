@@ -13,6 +13,8 @@ public class Settings : MonoBehaviour
     private void OnEnable()
     {
         _button.onClick.AddListener(OnButtonClick);
+
+        _isOpen = false;
     }
 
     private void OnDisable()

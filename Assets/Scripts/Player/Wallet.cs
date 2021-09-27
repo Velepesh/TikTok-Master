@@ -26,24 +26,14 @@ public class Wallet : MonoBehaviour
 
     public void BuySkin(Customize customize, int price)
     {
-        _respect -= price;
-        SaveRespectData();
+        RemoveRespect(price);
 
-        RespectChanged?.Invoke(price, _respect);
         SkinBought?.Invoke(customize);
     }
 
     public void AddRespect(int respect)
     {
         _respect += respect;
-        SaveRespectData();
-
-        RespectChanged?.Invoke(respect, _respect);
-    }
-
-    public void RemoveRespect(int respect)
-    {
-        _respect -= respect;
         SaveRespectData();
 
         RespectChanged?.Invoke(respect, _respect);
@@ -76,4 +66,13 @@ public class Wallet : MonoBehaviour
     {
         PlayerPrefs.SetInt(SubscriberData, _subscriber);
     }
+
+    private void RemoveRespect(int respect)
+    {
+        _respect -= respect;
+        SaveRespectData();
+
+        RespectChanged?.Invoke(respect, _respect);
+    }
+
 }

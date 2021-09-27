@@ -20,6 +20,11 @@ public class KeyCounter : ScriptableObject
         _currentKeysNumber = KeysNumber;
     }
 
+    public void StartLevelKeyNumber()
+    {
+        _currentKeysNumber = KeysNumber;
+    }
+
     public void IncreaseCounter()
     {
         _currentKeysNumber++;

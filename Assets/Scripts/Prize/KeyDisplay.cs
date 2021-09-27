@@ -10,6 +10,8 @@ public class KeyDisplay : MonoBehaviour
 
     private void OnEnable()
     {
+        _keyCounter.StartLevelKeyNumber();
+
         _keyCounter.KeysNumberChanged += OnKeysNumberChanged;
 
         ChangeText(_keyCounter.KeysNumber);

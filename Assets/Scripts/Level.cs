@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
     readonly private string LastPlayedLevel = "LastPlayedLevel";
 
     private int _currentSceneIndex;
+
     public int CurrentSceneIndex => PlayerPrefs.GetInt(LastPlayedLevel, 1);
     public int NextSceneIndex => SceneManager.GetActiveScene().buildIndex + 1;
     public int NumberOfScenes => SceneManager.sceneCountInBuildSettings;
@@ -34,6 +35,11 @@ public class Level : MonoBehaviour
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(NextSceneIndex);
+    }
+
+    public void EndLevel()
+    {
+        SceneManager.LoadScene("Level_1");
     }
 
     private void OnFinishLineCrossed()
