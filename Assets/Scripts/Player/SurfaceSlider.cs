@@ -11,7 +11,7 @@ public class SurfaceSlider : MonoBehaviour
     [SerializeField] private float _checkObstacle;
     [SerializeField] private float _checkGround;
 
-    readonly private float _distanceToBorder = 0.2f;
+    readonly private float _distanceToBorder = 0.3f;
 
     private Vector3 _normal;
     private float _maxBorder;
@@ -53,13 +53,21 @@ public class SurfaceSlider : MonoBehaviour
     {
         if (IsGround())
         {
-            _normal = collision.contacts[0].normal;
+            if (IsObstacle() == false)
+            {
+                _normal = collision.contacts[0].normal;
 
-            var bounds = collision.contacts[0].otherCollider.bounds;
-            
-            _maxBorder = transform.TransformDirection(bounds.max).x - _distanceToBorder;
-            _minBorder = transform.TransformDirection(bounds.min).x + _distanceToBorder;
+                var bounds = collision.contacts[0].otherCollider.bounds;
+
+                _maxBorder = transform.TransformDirection(bounds.max).x - _distanceToBorder;
+                _minBorder = transform.TransformDirection(bounds.min).x + _distanceToBorder;
+            }
         }
+    }
+
+    private bool IsObstacle()
+    {
+        return Physics.CheckSphere(_obstacleCheck.position, _checkObstacle, _obstacleMask);
     }
 
     public bool CheckRight()

@@ -15,7 +15,7 @@ public class LevelProgress : MonoBehaviour
 
     readonly private int _screenLevelNumber = 5;
     
-    private int _visibleNumber = 5;
+    private int _visibleNumber;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class LevelProgress : MonoBehaviour
     {
         while (_level.CurrentSceneIndex > _visibleNumber)
         {
-            _visibleNumber *= 2;
+            _visibleNumber += _screenLevelNumber;
         }
     }
     private void UpdateLevelIndex(int startIndex, int levelNumber)

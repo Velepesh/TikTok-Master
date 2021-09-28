@@ -37,11 +37,6 @@ public class Level : MonoBehaviour
         SceneManager.LoadScene(NextSceneIndex);
     }
 
-    public void EndLevel()
-    {
-        SceneManager.LoadScene("Level_1");
-    }
-
     private void OnFinishLineCrossed()
     {
         if (NextSceneIndex < NumberOfScenes)
