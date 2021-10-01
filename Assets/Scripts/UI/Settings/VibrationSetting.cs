@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Vibration : MonoBehaviour
+public class VibrationSetting : MonoBehaviour
 {
     [SerializeField] private Sprite _turnOnIcon;
     [SerializeField] private Sprite _turnOffIcon;

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Player), typeof(Rigidbody), typeof(SurfaceSlider))]
-
 class PlayerMover : MonoBehaviour
 {
     [SerializeField] private GameObject _skin;
