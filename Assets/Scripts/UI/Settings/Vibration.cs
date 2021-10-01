@@ -33,6 +33,11 @@ public class Vibration : MonoBehaviour
         LoadState(_isOn);
     }
 
+    public void Play()
+    {
+        if(_isOn)
+            Handheld.Vibrate();
+    }
     private void LoadState(bool state)
     {
         if (_isOn)

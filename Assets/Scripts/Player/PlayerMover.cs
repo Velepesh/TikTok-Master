@@ -25,6 +25,7 @@ class PlayerMover : MonoBehaviour
     private float _previousRotationY;
     private float _lastMousePositionX;
     private bool _canMove;
+    private bool _canSwipe;
     private bool _isTurning;
 
     private void OnValidate()
@@ -69,9 +70,11 @@ class PlayerMover : MonoBehaviour
             Turn();
 
         if (_canMove)
+            Move();
+
+        if (_canSwipe)
         {
             Swipe();
-            Move();
         }
         else
         {
@@ -91,29 +94,35 @@ class PlayerMover : MonoBehaviour
         _isTurning = true;
     }
 
-    private void StopTurning()
+    public void StopTurning()
     { 
         transform.rotation = Quaternion.Euler(new Vector3(0f, _targetRotationY, 0f));
         _previousRotationY = transform.rotation.eulerAngles.y;
 
-        StartMoving();
         _isTurning = false;
+        StartMoving();
     }
 
     private void Turn()
     {
         transform.RotateAround(_centerPoint.position, Vector3.up, _turningSpeed * Time.fixedDeltaTime);
-        
-        if(_previousRotationY <= _targetRotationY)
+
+        if (_previousRotationY <= _targetRotationY)
         {
-            if (transform.rotation.eulerAngles.y >= _targetRotationY)
-                StopTurning();
+            if (transform.rotation.eulerAngles.y >= _targetRotationY) 
+            { 
+                _isTurning = false;
+                CanMove(true);
+            }
         }
         else
         {
             if (transform.rotation.eulerAngles.y <= _targetRotationY)
-                StopTurning();
-        }   
+            {
+                _isTurning = false;
+                CanMove(true);
+            }
+        }
     }
 
     private float GetTurningVector(float turningSpeed, CornerType type)
@@ -163,9 +172,14 @@ class PlayerMover : MonoBehaviour
         StartMoving();
     }
 
-    private void CanMove(bool canSwipe)
+    private void CanMove(bool canMove)
     {
-        _canMove = canSwipe;
+        _canMove = canMove;
+    }
+
+    private void CanSwipe(bool canSwipe)
+    {
+        _canSwipe = canSwipe;
     }
 
     private void Move()
@@ -192,7 +206,6 @@ class PlayerMover : MonoBehaviour
             float difference = currentX - _lastMousePositionX;
 
             direction = Mathf.Clamp(difference, -1f, 1f);
-            difference = Mathf.Clamp(difference, -100f, 100f);
 
             if (direction > 0f)
             {
@@ -205,15 +218,15 @@ class PlayerMover : MonoBehaviour
                     TryMoveLeft(difference, position);
             }
            
-            _lastMousePositionX = currentX;
-
             Rotate(direction);
+            
+            _lastMousePositionX = currentX;
         }
         else
         {
-            _lastMousePositionX = Input.mousePosition.x;
-
             Rotate(direction);
+
+            _lastMousePositionX = Input.mousePosition.x;
         }
     }
 
@@ -279,7 +292,7 @@ class PlayerMover : MonoBehaviour
     {
         float swipeAmount = Time.fixedDeltaTime * _swipeSpeed * direction;
 
-        float clampedAmount = (Mathf.Clamp(swipeAmount, -10, 10));
+        float clampedAmount = (Mathf.Clamp(swipeAmount, -9, 9));
 
         Vector3 offset = transform.TransformDirection(new Vector3(clampedAmount, 0f, 0f)) * _swipeSpeed * Time.fixedDeltaTime;
         _rigidbody.MovePosition(_rigidbody.position + offset);
@@ -296,20 +309,22 @@ class PlayerMover : MonoBehaviour
     private void StopMoving()
     {
         CanMove(false);
+        CanSwipe(false);
     }
 
     private void StartMoving()
     {
         CanMove(true);
+        CanSwipe(true);
     }
 
     private void OnWon()
     {
-        CanMove(false);
+        StopMoving();
     }
 
     private void OnGameOver()
     {
-        CanMove(false);
+        StopMoving();
     }
 }

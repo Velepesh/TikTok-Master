@@ -11,7 +11,7 @@ public class SurfaceSlider : MonoBehaviour
     [SerializeField] private float _checkObstacle;
     [SerializeField] private float _checkGround;
 
-    readonly private float _distanceToBorder = 0.3f;
+    readonly private float _distanceToBorder = 0.25f;
 
     private Vector3 _normal;
     private float _maxBorder;
