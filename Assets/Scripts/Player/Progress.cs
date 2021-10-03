@@ -70,6 +70,8 @@ public class Progress : MonoBehaviour
         {
             _progression = 0;
             _player.Lose();
+
+            return;
         }
 
         RemovedProgression?.Invoke(respect);

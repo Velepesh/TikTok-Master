@@ -13,8 +13,9 @@ public class VibrationSetting : MonoBehaviour
     readonly private string VibrationData = "VibrationData";
 
     private bool _isOn;
+    private int IsOnInt => PlayerPrefs.GetInt(VibrationData, 1);
 
-    public int IsOnInt => PlayerPrefs.GetInt(VibrationData, 1);
+    public bool IsOn => _isOn;
 
     private void OnEnable()
     {
@@ -33,11 +34,6 @@ public class VibrationSetting : MonoBehaviour
         LoadState(_isOn);
     }
 
-    public void Play()
-    {
-        if(_isOn)
-            Handheld.Vibrate();
-    }
     private void LoadState(bool state)
     {
         if (_isOn)

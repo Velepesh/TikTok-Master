@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Dancer : Item
 {
     [SerializeField] private Image _subsvriberImage;
-    [SerializeField] private Vibration _vibration;
 
     protected override void OnTriggerEnter(Collider other)
     {
@@ -22,7 +21,6 @@ public class Dancer : Item
 
             _subsvriberImage.gameObject.SetActive(false);
 
-            _vibration.Vibrate();
             PlayEffect();
         }
     }

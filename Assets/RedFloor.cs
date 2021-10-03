@@ -6,7 +6,6 @@ public class RedFloor : MonoBehaviour
 {
     [SerializeField] private float _time;
     [SerializeField] private int _value;
-    [SerializeField] private Vibration _vibration;
 
     private bool _isPlayer;
 
@@ -33,7 +32,6 @@ public class RedFloor : MonoBehaviour
         while (_isPlayer)
         {
             progress.RemoveProgress(_value);
-            _vibration.Vibrate();
 
             if (progress.Progression <= 0)
                 _isPlayer = false;

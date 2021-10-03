@@ -5,7 +5,6 @@ using UnityEngine.Events;
 public class GameOverScreen : Screen
 {
     [SerializeField] private float _delayTime;
-    [SerializeField] private Vibration _vibration;
 
     public event UnityAction RestartButtonClick;
 
@@ -17,8 +16,6 @@ public class GameOverScreen : Screen
     public override void Open()
     {
         StartCoroutine(OpenGameOverScreen());
-
-        _vibration.Vibrate();
     }
 
     protected override void OnButtonClick()

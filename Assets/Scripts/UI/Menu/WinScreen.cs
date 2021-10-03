@@ -11,7 +11,6 @@ public class WinScreen : Screen
     [SerializeField] private float _delayTime;
     [SerializeField] private KeyCounter _keyCounter;
     [SerializeField] private PrizeScreen _prizeScreen;
-    [SerializeField] private Vibration _vibration;
 
     public event UnityAction NextButtonClick;
 
@@ -25,8 +24,6 @@ public class WinScreen : Screen
         _keyCounter.SaveKeysNumber();
 
         StartCoroutine(EnableWinScreen());
-
-        _vibration.Vibrate();
     }
 
     protected override void OnButtonClick()

@@ -4,12 +4,10 @@ using UnityEngine;
 
 class Enemy : Item
 {
-    [SerializeField] private Vibration _vibration;
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Progress progress))
         {
-            _vibration.Vibrate();
             PlayEffect();
 
             progress.RemoveProgress(Value);

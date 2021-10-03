@@ -6,7 +6,6 @@ public class GreenFloor : MonoBehaviour
 {
     [SerializeField] private float _time;
     [SerializeField] private int _value;
-    [SerializeField] private Vibration _vibration;
 
     private bool _isPlayer;
 
@@ -33,7 +32,6 @@ public class GreenFloor : MonoBehaviour
         while (_isPlayer)
         {
             progress.AddProgress(_value);
-            _vibration.Vibrate();
 
             yield return new WaitForSeconds(_time);
         }
