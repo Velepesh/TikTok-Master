@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class EnemyMover : MonoBehaviour
+public class LineMover : MonoBehaviour
 {
     [SerializeField] private Transform[] _points;
     [SerializeField] private float _speed;
