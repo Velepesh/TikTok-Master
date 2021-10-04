@@ -8,10 +8,14 @@ public class Level : MonoBehaviour
     [SerializeField] private Player _player;
 
     readonly private string LastPlayedLevel = "LastPlayedLevel";
+    readonly private string LevelProgressData = "LevelProgressData";
+    readonly private int _firstSceneIndex = 1;
 
     private int _currentSceneIndex;
+    private int _progressCounter;
 
     public int CurrentSceneIndex => PlayerPrefs.GetInt(LastPlayedLevel, 1);
+    public int ProgressCounter => PlayerPrefs.GetInt(LevelProgressData, 1);
     public int NextSceneIndex => SceneManager.GetActiveScene().buildIndex + 1;
     public int NumberOfScenes => SceneManager.sceneCountInBuildSettings;
 
@@ -20,6 +24,7 @@ public class Level : MonoBehaviour
         _player.FinishLineCrossed += OnFinishLineCrossed;
 
         _currentSceneIndex = CurrentSceneIndex;
+        _progressCounter = ProgressCounter;
     }
 
     private void OnDisable()
@@ -30,6 +35,13 @@ public class Level : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public void LoadFirstLevel()
+    {
+        _currentSceneIndex = _firstSceneIndex;
+
+        SceneManager.LoadScene(_currentSceneIndex);
     }
 
     public void LoadNextLevel()
@@ -44,11 +56,14 @@ public class Level : MonoBehaviour
             _currentSceneIndex = NextSceneIndex;
         }
 
+        _progressCounter++;
+
         SaveLevelData();
     }
 
     private void SaveLevelData()
     {
         PlayerPrefs.SetInt(LastPlayedLevel, _currentSceneIndex);
+        PlayerPrefs.SetInt(LevelProgressData, _progressCounter);
     }
 }

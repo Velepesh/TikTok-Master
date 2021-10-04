@@ -28,7 +28,7 @@ public class LevelProgress : MonoBehaviour
 
     private void UpdateNumber()
     {
-        while (_level.CurrentSceneIndex > _visibleNumber)
+        while (_level.ProgressCounter > _visibleNumber)
         {
             _visibleNumber += _screenLevelNumber;
         }
@@ -47,11 +47,11 @@ public class LevelProgress : MonoBehaviour
 
         var view = Instantiate(_levelView, _container.transform);
 
-        if(number == _level.CurrentSceneIndex)
+        if(number == _level.ProgressCounter)
             view.ChangeIcon(_currentIcon);
-        else if(number>  _level.CurrentSceneIndex)
+        else if(number>  _level.ProgressCounter)
             view.ChangeIcon(_lockedIcon);
-        else if (number < _level.CurrentSceneIndex)
+        else if (number < _level.ProgressCounter)
             view.ChangeIcon(_passedIcon);
 
         view.WriteLevelIndex(number);

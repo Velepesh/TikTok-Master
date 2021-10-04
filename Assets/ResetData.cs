@@ -31,6 +31,7 @@ public class ResetData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             PlayerPrefs.SetInt("LastPlayedLevel", 1);
+            PlayerPrefs.SetInt("LevelProgressData", 1);
         }
     }
 }

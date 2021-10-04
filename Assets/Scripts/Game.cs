@@ -102,7 +102,7 @@ public class Game : MonoBehaviour
     private void OnNextButtonClick()
     {
         if (_level.NextSceneIndex >= _level.NumberOfScenes)
-            _level.Restart();
+            _level.LoadFirstLevel();
         else
             _level.LoadNextLevel();
     }
