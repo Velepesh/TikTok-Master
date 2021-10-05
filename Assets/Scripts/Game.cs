@@ -15,6 +15,9 @@ public class Game : MonoBehaviour
     [SerializeField] private ShopScreen _shopScreen;
     [SerializeField] private PrizeScreen _prizeScreen;
 
+    private bool _isPlaying;
+    private float _spentTime;
+
     private void OnEnable()
     {
         _startScreen.PlayButtonClick += OnPlayButtonClick;
@@ -45,20 +48,43 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
+        Amplitude.Instance.logEvent("main_menu");
         _startScreen.Open();
+        _spentTime = 0f;
+    }
+
+    private void Update()
+    {
+        if(_isPlaying)
+            _spentTime += Time.deltaTime;
     }
 
     private void OnGameOver()
     {
         CloseGameScreen();
+        _isPlaying = false;
+      
         _gameOverScreen.Open();
+
+        Dictionary<string, object> eventProps = new Dictionary<string, object>();
+        eventProps.Add("level", _level.ProgressCounter);
+        eventProps.Add("time_spent", (int)_spentTime);
+
+        Amplitude.Instance.logEvent("fail", eventProps);
     }
 
     private void OnWon()
     {
         CloseGameScreen();
+        _isPlaying = false;
         
          _winScreen.Open();
+
+        Dictionary<string, object> eventProps = new Dictionary<string, object>();
+        eventProps.Add("level", _level.ProgressCounter);
+        eventProps.Add("time_spent", (int)_spentTime);
+
+        Amplitude.Instance.logEvent("level_complete", eventProps);
     }
 
     private void OnPlayButtonClick()
@@ -90,8 +116,14 @@ public class Game : MonoBehaviour
 
     private void StartGame()
     {
+        _isPlaying = true;
         _player.StartMoving();
         _gameScreen.Open();
+
+        Dictionary<string, object> eventProps = new Dictionary<string, object>();
+        eventProps.Add("level", _level.ProgressCounter);
+
+        Amplitude.Instance.logEvent("level_start", eventProps);
     }
 
     private void OnRestartButtonClick()

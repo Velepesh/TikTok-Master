@@ -10,10 +10,10 @@ public class VibrationSetting : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private Image _icon;
 
-    readonly private string VibrationData = "VibrationData";
+    readonly private string _vibrationData = "VibrationData";
 
     private bool _isOn;
-    private int IsOnInt => PlayerPrefs.GetInt(VibrationData, 1);
+    private int IsOnInt => PlayerPrefs.GetInt(_vibrationData, 1);
 
     public bool IsOn => _isOn;
 
@@ -84,6 +84,6 @@ public class VibrationSetting : MonoBehaviour
 
     private void SaveData()
     {
-        PlayerPrefs.SetInt(VibrationData, ÑonvertBoolToInt(_isOn));
+        PlayerPrefs.SetInt(_vibrationData, ÑonvertBoolToInt(_isOn));
     }
 }

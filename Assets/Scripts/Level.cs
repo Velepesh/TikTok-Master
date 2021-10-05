@@ -34,6 +34,11 @@ public class Level : MonoBehaviour
 
     public void Restart()
     {
+        Dictionary<string, object> eventProps = new Dictionary<string, object>();
+        eventProps.Add("level", _progressCounter);
+
+        Amplitude.Instance.logEvent("restart", eventProps);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     

@@ -11,6 +11,7 @@ class PlayerMover : MonoBehaviour
     [SerializeField] private float _turningSpeed;
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _swipeSpeed;
+    [SerializeField] private float _maxSwipeAmount;
     [SerializeField] private float _shockTime;
 
     readonly private float _angleStep = 90f;
@@ -123,7 +124,11 @@ class PlayerMover : MonoBehaviour
             }
         }
     }
-
+    bool _isObstacle = false;
+    public void IsObstacle()
+    {
+        _isObstacle = true;
+    }
     private float GetTurningVector(float turningSpeed, CornerType type)
     {
         float vector = Mathf.Clamp(turningSpeed, -1, 1);
@@ -224,7 +229,7 @@ class PlayerMover : MonoBehaviour
         else
         {
             Rotate(direction);
-
+            _isObstacle = false;
             _lastMousePositionX = Input.mousePosition.x;
         }
     }
@@ -256,27 +261,30 @@ class PlayerMover : MonoBehaviour
 
     private void TryMoveRight(float direction, Vector3 position)
     {
-        float rightBorder = 0f;
-        float positionX = Mathf.Round(position.x * 100f) / 100f;
+        //if (_isObstacle == false)
+        //{
+            float rightBorder = 0f;
+            float positionX = Mathf.Round(position.x * 100f) / 100f;
 
-        if (_targetRotationY == 90f)
-        {
-            rightBorder = _surfaceSlider.GetMinBorder();
+            if (_targetRotationY == 90f)
+            {
+                rightBorder = _surfaceSlider.GetMinBorder();
 
-            if (-positionX > rightBorder)
-                SetSwipePosition(direction, position);
+                if (-positionX > rightBorder)
+                    SetSwipePosition(direction, position);
+                else
+                    WentOutOfBounds(-rightBorder, position);
+            }
             else
-                WentOutOfBounds(-rightBorder, position);
-        }
-        else
-        {
-            rightBorder = _surfaceSlider.GetMaxBorder();
+            {
+                rightBorder = _surfaceSlider.GetMaxBorder();
 
-            if (positionX < rightBorder)
-                SetSwipePosition(direction, position);
-            else
-                WentOutOfBounds(rightBorder, position);
-        }
+                if (positionX < rightBorder)
+                    SetSwipePosition(direction, position);
+                else
+                    WentOutOfBounds(rightBorder, position);
+            }
+        //}
     }
 
     private void WentOutOfBounds(float border, Vector3 position)
@@ -284,7 +292,7 @@ class PlayerMover : MonoBehaviour
         position.x = border;
         Rotate(0f);
 
-        transform.position = transform.TransformDirection(position);
+        _rigidbody.position = transform.TransformDirection(position);
     }
 
     private void SetSwipePosition(float direction, Vector3 position)
@@ -295,6 +303,18 @@ class PlayerMover : MonoBehaviour
 
         Vector3 offset = transform.TransformDirection(new Vector3(clampedAmount, 0f, 0f)) * _swipeSpeed * Time.fixedDeltaTime;
         _rigidbody.MovePosition(_rigidbody.position + offset);
+        // float swipeAmount = Time.fixedDeltaTime * _swipeSpeed * direction;
+
+        //// float clampedAmount = swipeAmount * _swipeSpeed * Time.fixedDeltaTime;
+        // //Debug.Log(swipeAmount + " Before");
+        // swipeAmount = Mathf.Clamp(swipeAmount, -_maxSwipeAmount, _maxSwipeAmount);
+        // //Debug.Log(swipeAmount + " After");
+
+        // Vector3 offset = transform.TransformDirection(new Vector3(swipeAmount, 0f, 0f));
+
+        //// Debug.Log(clampedAmount * _swipeSpeed * Time.fixedDeltaTime + " Time.fixedDeltaTime");
+        // //_rigidbody.MovePosition(_rigidbody.position + offset);
+        // _rigidbody.MovePosition(_rigidbody.position + offset);
     }
 
     private void Rotate(float direction)
