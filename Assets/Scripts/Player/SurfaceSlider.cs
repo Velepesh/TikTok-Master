@@ -64,7 +64,11 @@ public class SurfaceSlider : MonoBehaviour
             }
         }
     }
-
+    private void Update()
+    {
+        Debug.DrawRay(_obstacleCheck.position, transform.TransformDirection(Vector3.right), Color.red, _checkObstacle);
+        Debug.DrawRay(_obstacleCheck.position, transform.TransformDirection(Vector3.left), Color.blue, _checkObstacle);
+    }
     private bool IsObstacle()
     {
         return Physics.CheckSphere(_obstacleCheck.position, _checkObstacle, _obstacleMask);

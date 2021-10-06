@@ -9,7 +9,7 @@ public class Obstacle : MonoBehaviour
         if(collision.gameObject.TryGetComponent(out PlayerMover playerMover))
         {
             Debug.Log("Collision");
-            playerMover.IsObstacle();
+           // playerMover.IsObstacle();
         }
     }
 }
