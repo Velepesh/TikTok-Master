@@ -22,6 +22,5 @@ public class AmplitudeAnalytics : MonoBehaviour
         Amplitude amplitude = Amplitude.Instance;
         amplitude.logging = true;
         amplitude.init("dfbf8c48de36208caa1ab19cf25c9097");
-        //amplitude.logEvent("AmplitudeAnalytics");
     }
 }
