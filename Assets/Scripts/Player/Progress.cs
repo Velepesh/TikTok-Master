@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Player), typeof(Wallet), typeof(SkinChangerStage))]
+//[RequireComponent(typeof(AudioSource))]
 public class Progress : MonoBehaviour
 {
     [SerializeField] private Income _income;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _addAudioClip;
+    [SerializeField] private AudioClip _removeAudioClip;
 
     readonly private int _subscribersMultiplayer = 3;
 
     private Player _player;
     private Wallet _wallet;
     private SkinChangerStage _stage;
+    //private AudioSource _audioSource;
     private int _progression;
     private int _multiplier = 1;
     private int _levelRespect;
@@ -31,6 +37,7 @@ public class Progress : MonoBehaviour
         _player = GetComponent<Player>();
         _wallet = GetComponent<Wallet>();
         _stage = GetComponent<SkinChangerStage>();
+        //_audioSource = GetComponent<AudioSource>();
 
         AssignStartValue();
     }
@@ -49,6 +56,7 @@ public class Progress : MonoBehaviour
     {
         _progression += value;
 
+        PlayAddClip();
         AddedProgression?.Invoke(value);
         ProgressionChanged?.Invoke(_progression, _maxProgression);
     }
@@ -74,6 +82,7 @@ public class Progress : MonoBehaviour
             return;
         }
 
+        PlayRemoveClip();
         RemovedProgression?.Invoke(respect);
         ProgressionChanged?.Invoke(_progression, _maxProgression);
     }
@@ -81,6 +90,16 @@ public class Progress : MonoBehaviour
     public void ApplyMultiplier(int multiplier)
     {
         _multiplier = multiplier;
+    }
+
+    private void PlayAddClip()
+    {
+        _audioSource.PlayOneShot(_addAudioClip);
+    }
+
+    private void PlayRemoveClip()
+    {
+        _audioSource.PlayOneShot(_removeAudioClip);
     }
 
     private void AssignStartValue()

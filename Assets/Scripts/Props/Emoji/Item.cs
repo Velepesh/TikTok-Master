@@ -27,6 +27,12 @@ public abstract class Item : MonoBehaviour
         Destroy(go, Time);
     }
 
+    protected void PlayAudio()
+    {
+       // _audioSource.clip = _audioClip;
+        //_audioSource.PlayOneShot(_audioSource.clip);
+    }
+
     protected void DisableObject()
     {
         gameObject.SetActive(false);

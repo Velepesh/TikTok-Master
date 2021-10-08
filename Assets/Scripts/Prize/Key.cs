@@ -6,6 +6,9 @@ using UnityEngine.Events;
 public class Key : MonoBehaviour
 {
     [SerializeField] private KeyCounter _keyCounter;
+    [SerializeField] private GameObject _keyModel;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioClip;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +16,8 @@ public class Key : MonoBehaviour
         {
             _keyCounter.IncreaseCounter();
 
-            gameObject.SetActive(false);
+            _audioSource.PlayOneShot(_audioClip);
+            _keyModel.SetActive(false);
         }
     }
 }

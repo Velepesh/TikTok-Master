@@ -11,22 +11,21 @@ public class Dancer : Item
     {
         if (other.TryGetComponent(out Progress progress))
         {
-            progress.AddSubscribers(Value);
+            
 
             if (other.TryGetComponent(out Player player))
             {
                 player.Rejoice();
                 player.Increase();
+                progress.AddSubscribers(Value);
             }
 
             _subsvriberImage.gameObject.SetActive(false);
 
+            //PlayAudio();
             PlayEffect();
-        }
-    }
 
-    private void OnTriggerExit()
-    {
-        GetComponent<Collider>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+        }
     }
 }

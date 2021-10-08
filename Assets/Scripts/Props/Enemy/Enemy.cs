@@ -8,9 +8,10 @@ class Enemy : Item
     {
         if (other.TryGetComponent(out Progress progress))
         {
+           // PlayAudio();
+            progress.RemoveProgress(Value);
             PlayEffect();
 
-            progress.RemoveProgress(Value);
 
             if (other.TryGetComponent(out Player player))
             {
@@ -20,11 +21,8 @@ class Enemy : Item
                     player.Miss();
                 }
             }
-        }
-    }
 
-    private void OnTriggerExit()
-    {
-        GetComponent<Collider>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+        }
     }
 }

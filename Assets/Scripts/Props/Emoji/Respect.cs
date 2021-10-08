@@ -10,6 +10,7 @@ public class Respect : Item
         {
             progress.AddProgress(Value);
 
+           // PlayAudio();
             PlayEffect();
             DisableObject();
         }

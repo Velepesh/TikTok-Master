@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Player), typeof(Rigidbody), typeof(SurfaceSlider))]
+//[RequireComponent(typeof(AudioSource))]
 class PlayerMover : MonoBehaviour
 {
     [SerializeField] private GameObject _skin;
@@ -13,6 +14,8 @@ class PlayerMover : MonoBehaviour
     [SerializeField] private float _swipeSpeed;
     [SerializeField] private float _maxSwipeAmount;
     [SerializeField] private float _shockTime;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _moveAudioClip;
 
     readonly private float _angleStep = 90f;
     readonly private float _rotationAngle = 45f;
@@ -21,6 +24,7 @@ class PlayerMover : MonoBehaviour
     private Player _player;
     private Rigidbody _rigidbody;
     private SurfaceSlider _surfaceSlider;
+    //private AudioSource _audioSource;
     private Transform _centerPoint;
     private float _previousRotationY;
     private float _lastMousePositionX;
@@ -42,6 +46,9 @@ class PlayerMover : MonoBehaviour
         _player = GetComponent<Player>();
         _rigidbody = GetComponent<Rigidbody>();
         _surfaceSlider = GetComponent<SurfaceSlider>();
+        //_audioSource = GetComponent<AudioSource>();
+
+        _audioSource.clip = _moveAudioClip;
 
         CanMove(false);
         _previousRotationY = transform.rotation.eulerAngles.y;
@@ -70,7 +77,14 @@ class PlayerMover : MonoBehaviour
             Turn();
 
         if (_canMove)
+        {
             Move();
+            // _audioSource.Play();
+           
+            Debug.Log("PLAY");
+        }
+        //else
+        //    _audioSource.Stop();
 
         if (_canSwipe)
         {
@@ -90,8 +104,8 @@ class PlayerMover : MonoBehaviour
         _targetRotationY = GetTargetRotation(_previousRotationY, type);
         _centerPoint = centerPoint;
 
-        StopMoving();
         _isTurning = true;
+        StopMoving();
     }
 
     public void StopTurning()
@@ -111,16 +125,16 @@ class PlayerMover : MonoBehaviour
         {
             if (transform.rotation.eulerAngles.y >= _targetRotationY) 
             { 
-                _isTurning = false;
                 CanMove(true);
+                _isTurning = false;
             }
         }
         else
         {
             if (transform.rotation.eulerAngles.y <= _targetRotationY)
             {
-                _isTurning = false;
                 CanMove(true);
+                _isTurning = false;
             }
         }
     }
@@ -173,7 +187,12 @@ class PlayerMover : MonoBehaviour
     }
 
     private void CanMove(bool canMove)
-    {
+    { 
+        if(canMove)
+            _audioSource.Play();
+        else if (_isTurning == false && canMove == false)
+            _audioSource.Stop();
+
         _canMove = canMove;
     }
 
