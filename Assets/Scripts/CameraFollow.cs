@@ -90,7 +90,7 @@ public class CameraFollow : MonoBehaviour
 
     private void OnWon()
     { 
-        StartCoroutine(MoveToPositionWin(_followOffset, _followRotation, 0.5f));
+        StartCoroutine(MoveToPositionWin(_startOffset, _startRotation, 0.5f));
 
         _animator.SetTrigger(AnimatorCameraController.States.Rotate);
     } 

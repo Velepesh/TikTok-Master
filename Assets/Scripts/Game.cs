@@ -78,7 +78,7 @@ public class Game : MonoBehaviour
         CloseGameScreen();
         _isPlaying = false;
         
-         _winScreen.Open();
+        _winScreen.Open();
 
         Dictionary<string, object> eventProps = new Dictionary<string, object>();
         eventProps.Add("level", _level.ProgressCounter);

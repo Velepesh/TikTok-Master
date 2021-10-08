@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using UnityEngine.Audio;
 
 [RequireComponent(typeof(Player), typeof(Wallet), typeof(SkinChangerStage))]
-//[RequireComponent(typeof(AudioSource))]
 public class Progress : MonoBehaviour
 {
     [SerializeField] private Income _income;
@@ -18,7 +17,6 @@ public class Progress : MonoBehaviour
     private Player _player;
     private Wallet _wallet;
     private SkinChangerStage _stage;
-    //private AudioSource _audioSource;
     private int _progression;
     private int _multiplier = 1;
     private int _levelRespect;
@@ -37,7 +35,6 @@ public class Progress : MonoBehaviour
         _player = GetComponent<Player>();
         _wallet = GetComponent<Wallet>();
         _stage = GetComponent<SkinChangerStage>();
-        //_audioSource = GetComponent<AudioSource>();
 
         AssignStartValue();
     }
@@ -92,6 +89,12 @@ public class Progress : MonoBehaviour
         _multiplier = multiplier;
     }
 
+    public void CollectedLevelRespects()
+    {
+        _wallet.AddRespect(_levelRespect);
+        _wallet.SaveSubscriberData();
+    }
+
     private void PlayAddClip()
     {
         _audioSource.PlayOneShot(_addAudioClip);
@@ -110,14 +113,11 @@ public class Progress : MonoBehaviour
         ProgressionChanged?.Invoke(_progression, _maxProgression);
     }
 
-    private void OnWon()
+    private void OnWon()//Сделать еще событие
     {
         _levelRespect = _progression * _multiplier + _income.Award;
 
         if (_levelRespect <= 0)
             _levelRespect = 0;
-
-        _wallet.AddRespect(_levelRespect);
-        _wallet.SaveSubscriberData();
     }
 }

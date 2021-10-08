@@ -74,5 +74,4 @@ public class Wallet : MonoBehaviour
 
         RespectChanged?.Invoke(respect, _respect);
     }
-
 }

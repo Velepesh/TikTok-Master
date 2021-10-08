@@ -77,23 +77,13 @@ class PlayerMover : MonoBehaviour
             Turn();
 
         if (_canMove)
-        {
             Move();
-            // _audioSource.Play();
-           
-            Debug.Log("PLAY");
-        }
-        //else
-        //    _audioSource.Stop();
+
 
         if (_canSwipe)
-        {
             Swipe();
-        }
         else
-        {
             _lastMousePositionX = Input.mousePosition.x;
-        }
     }
 
     public void StartTurning(Transform centerPoint, CornerType type)
