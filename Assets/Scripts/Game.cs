@@ -17,11 +17,11 @@ public class Game : MonoBehaviour
 
     readonly private string SessionCountData = "SessionCountData";
     readonly private string _respectData = "RespectData";
-    readonly private string _subscriberData = "SubscriberData";
 
     private bool _isPlaying;
     private float _spentTime;
     private int _sessionCount => PlayerPrefs.GetInt(SessionCountData, 0);
+
     private void OnEnable()
     {
         _startScreen.PlayButtonClick += OnPlayButtonClick;
@@ -130,8 +130,7 @@ public class Game : MonoBehaviour
         Dictionary<string, object> eventProps = new Dictionary<string, object>();
         eventProps.Add("level", _level.ProgressCounter);
         eventProps.Add("session_count", _sessionCount);
-        eventProps.Add("current_soft_respects", PlayerPrefs.GetInt(_respectData, 0));
-        eventProps.Add("current_soft_subscribers", PlayerPrefs.GetInt(_subscriberData, 0));
+        eventProps.Add("current_soft", PlayerPrefs.GetInt(_respectData, 0));
 
         Amplitude.Instance.logEvent("level_start", eventProps);
     }

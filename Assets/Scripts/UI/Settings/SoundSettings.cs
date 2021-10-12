@@ -20,6 +20,7 @@ public class SoundSettings : MonoBehaviour
     private bool _isOn;
 
     public int IsOnInt => PlayerPrefs.GetInt(_soundData, 1);
+    public string ExposedParametr => _exposedParametr;
 
 
     private void OnEnable()

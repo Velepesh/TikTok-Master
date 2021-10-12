@@ -9,18 +9,14 @@ public class AmplitudeAnalytics : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
-        {
             instance = this;
-        }
         else if (instance == this)
-        {
             Destroy(gameObject);
-        }
 
         DontDestroyOnLoad(gameObject);
 
         Amplitude amplitude = Amplitude.Instance;
         amplitude.logging = true;
-        amplitude.init("dfbf8c48de36208caa1ab19cf25c9097");
+        amplitude.init("dfbf8c48de36208caa1ab19cf25c9097");// f867d882ed16a21add8269fd3418fb4c
     }
 }
