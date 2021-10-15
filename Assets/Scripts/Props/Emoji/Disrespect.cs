@@ -13,7 +13,6 @@ public class Disrespect : Item
            
             progress.RemoveProgress(Value);
 
-            PlayAudio();
             PlayEffect();
         }
     }

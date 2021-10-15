@@ -8,8 +8,8 @@ public class ResetData : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            PlayerPrefs.SetInt("RespectData", 100000);
-            PlayerPrefs.SetInt("SubscriberData", 1000);
+            PlayerPrefs.SetInt("RespectData", 9550);
+            PlayerPrefs.SetInt("SubscriberData", 35);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -30,8 +30,8 @@ public class ResetData : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            PlayerPrefs.SetInt("LastPlayedLevel", 1);
-            PlayerPrefs.SetInt("LevelProgressData", 1);
+            PlayerPrefs.SetInt("LastPlayedLevel", 7);
+            PlayerPrefs.SetInt("LevelProgressData", 7);
         }
     }
 }

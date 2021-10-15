@@ -11,8 +11,6 @@ public class Dancer : Item
     {
         if (other.TryGetComponent(out Progress progress))
         {
-            
-
             if (other.TryGetComponent(out Player player))
             {
                 player.Rejoice();
@@ -22,7 +20,6 @@ public class Dancer : Item
 
             _subsvriberImage.gameObject.SetActive(false);
 
-            //PlayAudio();
             PlayEffect();
 
             GetComponent<Collider>().enabled = false;

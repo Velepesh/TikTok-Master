@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 [RequireComponent(typeof(Player), typeof(Rigidbody), typeof(SurfaceSlider))]
-//[RequireComponent(typeof(AudioSource))]
 class PlayerMover : MonoBehaviour
 {
     [SerializeField] private GameObject _skin;
@@ -24,13 +23,13 @@ class PlayerMover : MonoBehaviour
     private Player _player;
     private Rigidbody _rigidbody;
     private SurfaceSlider _surfaceSlider;
-    //private AudioSource _audioSource;
     private Transform _centerPoint;
     private float _previousRotationY;
     private float _lastMousePositionX;
     private bool _canMove;
     private bool _canSwipe;
     private bool _isTurning;
+    private bool _isStumble;
 
     private void OnValidate()
     {
@@ -46,7 +45,6 @@ class PlayerMover : MonoBehaviour
         _player = GetComponent<Player>();
         _rigidbody = GetComponent<Rigidbody>();
         _surfaceSlider = GetComponent<SurfaceSlider>();
-        //_audioSource = GetComponent<AudioSource>();
 
         _audioSource.clip = _moveAudioClip;
 
@@ -161,12 +159,16 @@ class PlayerMover : MonoBehaviour
     private void OnStumbled()
     {
         StopMoving();
-        StartCoroutine(Stumble());
+        if(_isStumble == false)
+            StartCoroutine(Stumble());
     }
 
     private IEnumerator Stumble()
     {
+        _isStumble = true;
+
         yield return new WaitForSeconds(_shockTime);
+        _isStumble = false;
 
         StartMoving();
     }

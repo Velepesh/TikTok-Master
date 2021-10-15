@@ -13,9 +13,7 @@ public abstract class Item : MonoBehaviour
     private void OnValidate()
     {
         if (Value < 0)
-        {
             Value = 0;
-        }
     }
 
     protected abstract void OnTriggerEnter(Collider other);
@@ -25,12 +23,6 @@ public abstract class Item : MonoBehaviour
         GameObject go = Instantiate(DestroyEffect.gameObject, gameObject.transform.position + Offset, Quaternion.identity) as GameObject;
 
         Destroy(go, Time);
-    }
-
-    protected void PlayAudio()
-    {
-       // _audioSource.clip = _audioClip;
-        //_audioSource.PlayOneShot(_audioSource.clip);
     }
 
     protected void DisableObject()

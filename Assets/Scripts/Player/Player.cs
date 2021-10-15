@@ -59,11 +59,6 @@ public class Player : MonoBehaviour
         _animator.SetTrigger(AnimatorPlayerController.States.Stumble);
     }
 
-    public void Trun()
-    {
-        _animator.SetTrigger(AnimatorPlayerController.States.Turn);
-    }
-
     public void Rejoice()
     {
         Stumbled?.Invoke();

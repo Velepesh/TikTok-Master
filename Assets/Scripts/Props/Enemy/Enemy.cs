@@ -8,7 +8,6 @@ class Enemy : Item
     {
         if (other.TryGetComponent(out Progress progress))
         {
-           // PlayAudio();
             progress.RemoveProgress(Value);
             PlayEffect();
 
