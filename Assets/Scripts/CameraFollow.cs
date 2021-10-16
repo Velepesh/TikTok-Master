@@ -11,7 +11,6 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Transform _shopTransform;
     [SerializeField] private Animator _animator;
     [SerializeField] private ShopScreen _shopScreen;
-    [SerializeField] private float _speed;
     [SerializeField] private float _startHeight;
     [SerializeField] private float _followHeight;
     [SerializeField] private float _startDistance;
@@ -24,7 +23,6 @@ public class CameraFollow : MonoBehaviour
     private Quaternion _startRotation;
     private Vector3 _followOffset;
     private Quaternion _followRotation;
-    private Vector3 _shopOffset;
     private Quaternion _shopRotation;
     private float _targetDistance;
     private float _targetHeight;
@@ -56,7 +54,6 @@ public class CameraFollow : MonoBehaviour
         _followOffset = _followTransform.position - _target.transform.position;
         _followRotation = _followTransform.rotation;
 
-        _shopOffset = _shopTransform.position - _target.transform.position;
         _shopRotation = _shopTransform.rotation;
 
         _offset = _startOffset;

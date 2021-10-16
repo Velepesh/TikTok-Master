@@ -34,6 +34,8 @@ public class WinScreen : Screen
         _audioSource.PlayOneShot(_audioClip);
         _progress.CollectedLevelRespects();
 
+        Button.interactable = false;
+
         StartCoroutine(WaitWihleCollected(_audioClip.length));
     }
 
