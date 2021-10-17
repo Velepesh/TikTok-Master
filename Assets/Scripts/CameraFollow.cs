@@ -16,6 +16,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float _startDistance;
     [SerializeField] private float _followDistance;
 
+    readonly private float _duration = 0.5f;
+
     private Quaternion _rotation;
     private Vector3 _offset;
     private Vector3 _startOffset;
@@ -25,12 +27,14 @@ public class CameraFollow : MonoBehaviour
     private Quaternion _followRotation;
     private Quaternion _shopRotation;
     private float _targetDistance;
+    private float _currentDistace;
     private float _targetHeight;
+    private float _currentHeight;
     private bool _isFollowing;
 
     private void OnEnable()
     {
-        _target.StartedMoving += OnStartedMoving; 
+        _target.StartedMoving += OnStartedMoving;
         _shopScreen.CustomizeButtonClick += OnCustomizeButtonClick;
         _shopScreen.CloseButtonClick += OnCloseButtonClick;
         _target.Won += OnWon;
@@ -59,8 +63,11 @@ public class CameraFollow : MonoBehaviour
         _offset = _startOffset;
         _rotation = _startRotation;
 
-        _targetDistance = _startDistance;
-        _targetHeight = _startHeight;      
+        _currentDistace = _startDistance;
+        _targetDistance = _currentDistace;
+
+        _currentHeight = _startHeight;
+        _targetHeight = _currentHeight;
     }
 
     private void LateUpdate()
@@ -82,89 +89,53 @@ public class CameraFollow : MonoBehaviour
 
     private void OnStartedMoving()
     {
-        StartCoroutine(MoveToPosition(_followOffset, _followRotation, 0.5f));
+        StartCoroutine(MoveToPosition(_followOffset, _followRotation, _followDistance, _followHeight));
     }
 
     private void OnWon()
-    { 
-        StartCoroutine(MoveToPositionWin(_startOffset, _startRotation, 0.5f));
+    {
+        StartCoroutine(StopFollowing());
 
         _animator.SetTrigger(AnimatorCameraController.States.Rotate);
-    } 
-    
+    }
+
     private void OnCustomizeButtonClick()
     {
-        StartCoroutine(MoveToShop(_startOffset, _shopRotation, 0.5f));
+        StartCoroutine(MoveToPosition(_startOffset, _shopRotation, _startDistance, _startHeight));
     }
 
     private void OnCloseButtonClick()
     {
-        StartCoroutine(MoveToShop(_startOffset, _startRotation, 0.5f));
+        StartCoroutine(MoveToPosition(_startOffset, _startRotation, _startDistance, _startHeight));
     }
 
-    private IEnumerator MoveToPosition(Vector3 offset, Quaternion rotation, float duration)
+    private IEnumerator MoveToPosition(Vector3 offset, Quaternion rotation, float targetDistance, float targetHeight)
     {
         float time = 0;
         Vector3 startOffset = _offset;
         Quaternion startRotation = _rotation;
 
-        while (time < duration)
+        while (time < _duration)
         {
-            float value = EaseInEaseOut(time / duration);
+            float value = EaseInEaseOut(time / _duration);
             _offset = Vector3.Lerp(startOffset, offset, value);
             _rotation = Quaternion.Lerp(startRotation, rotation, value);
-            _targetDistance = Mathf.Lerp(_startDistance, _followDistance, value);
-            _targetHeight = Mathf.Lerp(_startHeight, _followHeight, value);
+            _targetDistance = Mathf.Lerp(_currentDistace, targetDistance, value);
+            _targetHeight = Mathf.Lerp(_currentHeight, targetHeight, value);
             yield return null;
             time += Time.deltaTime;
         }
 
         _offset = offset;
         _rotation = rotation;
+        _currentDistace = _targetDistance;
+        _currentHeight = _targetHeight;
     }
 
-    private IEnumerator MoveToPositionWin(Vector3 offset, Quaternion rotation, float duration)
+    private IEnumerator StopFollowing()
     {
-        float time = 0;
-        Vector3 startOffset = _offset;
-        Quaternion startRotation = _rotation;
-
-        while (time < duration)
-        {
-            float value = EaseInEaseOut(time / duration);
-            _offset = Vector3.Lerp(startOffset, offset, value);
-            _rotation = Quaternion.Lerp(startRotation, rotation, value);
-            _targetDistance = Mathf.Lerp(_followDistance, _startDistance, value);
-            _targetHeight = Mathf.Lerp(_followHeight, _startHeight, value);
-            yield return null;
-            time += Time.deltaTime;
-        }
-
-        _offset = offset;
-        _rotation = rotation;
-
+        yield return StartCoroutine(MoveToPosition(_startOffset, _startRotation, _startDistance, _startHeight));
         _isFollowing = false;
-    }
-
-    private IEnumerator MoveToShop(Vector3 offset, Quaternion rotation, float duration)
-    {
-        float time = 0;
-        Vector3 startOffset = _offset;
-        Quaternion startRotation = _rotation;
-
-        while (time < duration)
-        {
-            float value = EaseInEaseOut(time / duration);
-            _offset = Vector3.Lerp(startOffset, offset, value);
-            _rotation = Quaternion.Lerp(startRotation, rotation, value);
-            _targetDistance = Mathf.Lerp(_startDistance, _startDistance, value);
-            _targetHeight = Mathf.Lerp(_startHeight, _startHeight, value);
-            yield return null;
-            time += Time.deltaTime;
-        }
-
-        _offset = offset;
-        _rotation = rotation;
     }
 
     private float EaseInEaseOut(float t)

@@ -9,7 +9,7 @@ public class ResetData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             PlayerPrefs.SetInt("RespectData", 9550);
-            PlayerPrefs.SetInt("SubscriberData", 35);
+            PlayerPrefs.SetInt("SubscriberData", 3533);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))

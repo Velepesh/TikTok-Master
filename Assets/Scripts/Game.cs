@@ -15,12 +15,12 @@ public class Game : MonoBehaviour
     [SerializeField] private ShopScreen _shopScreen;
     [SerializeField] private PrizeScreen _prizeScreen;
 
-    readonly private string SessionCountData = "SessionCountData";
+    readonly private string _sessionCountData = "SessionCountData";
     readonly private string _respectData = "RespectData";
 
     private bool _isPlaying;
     private float _spentTime;
-    private int _sessionCount => PlayerPrefs.GetInt(SessionCountData, 0);
+    private int _sessionCount => PlayerPrefs.GetInt(_sessionCountData, 0);
 
     private void OnEnable()
     {
@@ -129,7 +129,7 @@ public class Game : MonoBehaviour
 
         Dictionary<string, object> eventProps = new Dictionary<string, object>();
         eventProps.Add("level", _level.ProgressCounter);
-        eventProps.Add("session_count", _sessionCount);
+       
         eventProps.Add("current_soft", PlayerPrefs.GetInt(_respectData, 0));
 
         Amplitude.Instance.logEvent("level_start", eventProps);
@@ -139,8 +139,9 @@ public class Game : MonoBehaviour
     {
         int sessionCount = _sessionCount;
         sessionCount++;
-        PlayerPrefs.SetInt(SessionCountData, sessionCount);
+        PlayerPrefs.SetInt(_sessionCountData, sessionCount);
     }
+
     private void OnRestartButtonClick()
     {
         _level.Restart();

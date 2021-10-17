@@ -11,7 +11,6 @@ class Enemy : Item
             progress.RemoveProgress(Value);
             PlayEffect();
 
-
             if (other.TryGetComponent(out Player player))
             {
                 if (player.IsLose == false)

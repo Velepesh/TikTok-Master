@@ -29,7 +29,6 @@ class PlayerMover : MonoBehaviour
     private bool _canMove;
     private bool _canSwipe;
     private bool _isTurning;
-    private bool _isStumble;
 
     private void OnValidate()
     {
@@ -76,7 +75,6 @@ class PlayerMover : MonoBehaviour
 
         if (_canMove)
             Move();
-
 
         if (_canSwipe)
             Swipe();
@@ -159,18 +157,16 @@ class PlayerMover : MonoBehaviour
     private void OnStumbled()
     {
         StopMoving();
-        if(_isStumble == false)
-            StartCoroutine(Stumble());
+
+        StartCoroutine(Stumble());
     }
 
     private IEnumerator Stumble()
     {
-        _isStumble = true;
-
         yield return new WaitForSeconds(_shockTime);
-        _isStumble = false;
 
-        StartMoving();
+        if(_player.IsLose == false)
+            StartMoving();
     }
     
     private void OnStartedMoving()
