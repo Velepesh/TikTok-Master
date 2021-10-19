@@ -8,8 +8,7 @@ public class Bonus : MonoBehaviour
     [SerializeField] private Wallet _wallet;
     [SerializeField] private TMP_Text _priceText;
     [SerializeField] private int _price = 500;
-
-    readonly private int _award = 10000;
+    [SerializeField] private int _award = 10000;
 
     private void Awake()
     {

@@ -22,9 +22,7 @@ public class RedFloor : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out Progress progress))
-        {
             _isPlayer = false;
-        }
     }
 
     private IEnumerator RemoveProgress(Progress progress)

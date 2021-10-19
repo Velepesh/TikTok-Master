@@ -12,11 +12,11 @@ public class Income : MonoBehaviour
     [SerializeField] private int _additionPrice;
     [SerializeField] private Wallet _wallet;
 
-    readonly private string AwardData = "AwardtData";
-    readonly private string PriceData = "PriceData";
+    readonly private string _awardData = "AwardtData";
+    readonly private string _priceData = "PriceData";
 
-    public int Award => PlayerPrefs.GetInt(AwardData, _award);
-    public int Price => PlayerPrefs.GetInt(PriceData, _price);
+    public int Award => PlayerPrefs.GetInt(_awardData, _award);
+    public int Price => PlayerPrefs.GetInt(_priceData, _price);
 
     public event UnityAction<int> BonusIncreased;
 
@@ -62,11 +62,11 @@ public class Income : MonoBehaviour
 
     private void SaveAwardData()
     {
-        PlayerPrefs.SetInt(AwardData, _award);
+        PlayerPrefs.SetInt(_awardData, _award);
     }
 
     private void SavePriceData()
     {
-        PlayerPrefs.SetInt(PriceData, _price);
+        PlayerPrefs.SetInt(_priceData, _price);
     }
 }

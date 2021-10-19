@@ -9,7 +9,6 @@ using UnityEngine.Events;
 class SkinChanger : MonoBehaviour
 {
     [SerializeField] private SkinType _startSkinType;
-    [SerializeField] private List<SkinsHolder> _holders;
     [SerializeField] private Shop _shop;
     [SerializeField] private float _inShopTime;
    

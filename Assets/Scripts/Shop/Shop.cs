@@ -13,15 +13,12 @@ public class Shop : MonoBehaviour
     [SerializeField] private GameObject _itemContainer;
     [SerializeField] private Inventory _shopInventory;
     [SerializeField] private Button _sellButton;
-    //[SerializeField] private Sprite _backgroundIcon;
-    //[SerializeField] private Sprite _selectedIcon;
     [SerializeField] private TMP_Text _unlockPriceText;
     [SerializeField] private ShopScreen _shopScreen;
     [SerializeField] private List<SkinsHolder> _skinsHolders;
 
-    readonly private string ShopData = "ShopData";
-
-    private int _currentTemplateIndex => PlayerPrefs.GetInt(ShopData, 0);
+    readonly private string _shopData = "ShopData";
+    private int _currentTemplateIndex => PlayerPrefs.GetInt(_shopData, 0);
     private int _templateIndex = 0;
     private List<SkinView> _skinViews = new List<SkinView>();
     private List<Customize> _customizes = new List<Customize>();
@@ -67,7 +64,7 @@ public class Shop : MonoBehaviour
         }
 
         if (boughtSkins <= 1)
-            SaveCurrentTemplateIndex(0);
+            UnlockFirstSkin();
 
         EnableSelecteView();
         ApplyNewSkinsHolder(_currentTemplateIndex);
@@ -78,6 +75,15 @@ public class Shop : MonoBehaviour
     public SkinsHolder GetCurrentHolder()
     {
         return _currentHolder;
+    }
+
+    private void UnlockFirstSkin()
+    {
+        SaveCurrentTemplateIndex(_currentTemplateIndex);
+        Customize customize = _customizes[_currentTemplateIndex];
+
+        customize.Buy();
+        _skinViews[_currentTemplateIndex].Render(customize);
     }
 
     private void OnCustomizeButtonClick()
@@ -148,7 +154,7 @@ public class Shop : MonoBehaviour
 
     private void SaveCurrentTemplateIndex(int index)
     {
-        PlayerPrefs.SetInt(ShopData, index);
+        PlayerPrefs.SetInt(_shopData, index);
     }
 
     private void ApplyNewSkinsHolder(int index)

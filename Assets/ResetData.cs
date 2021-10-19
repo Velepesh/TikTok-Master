@@ -21,8 +21,8 @@ public class ResetData : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             PlayerPrefs.SetInt("KeyCounter", 0);
-        } 
-        
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             PlayerPrefs.SetInt("KeyCounter", 3);
@@ -30,8 +30,8 @@ public class ResetData : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            PlayerPrefs.SetInt("LastPlayedLevel", 7);
-            PlayerPrefs.SetInt("LevelProgressData", 7);
+            PlayerPrefs.SetInt("LastPlayedLevel", 5);
+            PlayerPrefs.SetInt("LevelProgressData", 5);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(fileName = "Customize", menuName = "Customize/Skin", order = 51)]
 public class Customize : ScriptableObject
@@ -9,19 +10,25 @@ public class Customize : ScriptableObject
     [SerializeField] private Sprite _icon;
     [SerializeField] private HolderType _type;
     [SerializeField] private bool _isBuyed;
+    [SerializeField] private string _label;
 
-    readonly private string CustomizeData = "CustomizeData";
+    private string _customizeData => _label;
 
     public GameObject SkinsHolder => _skinsHolder;
     public Sprite Icon => _icon;
     public HolderType Type => _type;
     public bool IsBuyed => _isBuyed;
 
+    private void OnEnable()
+    {
+        _isBuyed = Convert.ToBoolean(PlayerPrefs.GetInt(_customizeData, 0));
+    }
+
     public void Buy()
     {
         _isBuyed = true;
 
-        PlayerPrefs.SetInt(CustomizeData, 1);
+        PlayerPrefs.SetInt(_customizeData, 1);
         SaveCustomizeData(ÑonvertBoolToInt(_isBuyed));
     }
 
@@ -35,6 +42,6 @@ public class Customize : ScriptableObject
 
     private void SaveCustomizeData(int value)
     {
-        PlayerPrefs.SetInt(CustomizeData, value);
+        PlayerPrefs.SetInt(_customizeData, value);
     }
 }

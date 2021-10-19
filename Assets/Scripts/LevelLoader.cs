@@ -41,7 +41,7 @@ public class LevelLoader : MonoBehaviour
  
         eventProps.Add("count", _counter);
 
-        int lastLevel = _level.CurrentSceneIndex - 1;
+        int lastLevel = _level.ProgressCounter - 1;
 
         if(lastLevel > 0)
             eventProps.Add("last_level", lastLevel);

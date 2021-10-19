@@ -5,14 +5,14 @@ using UnityEngine.Events;
 
 public class Wallet : MonoBehaviour
 {
-    readonly private string RespectData = "RespectData";
-    readonly private string SubscriberData = "SubscriberData";
+    readonly private string _respectData = "RespectData";
+    readonly private string _subscriberData = "SubscriberData";
 
     private int _respect;
     private int _subscriber;
 
-    public int Respect => PlayerPrefs.GetInt(RespectData, 0);
-    public int Subscriber => PlayerPrefs.GetInt(SubscriberData, 0);
+    public int Respect => PlayerPrefs.GetInt(_respectData, 0);
+    public int Subscriber => PlayerPrefs.GetInt(_subscriberData, 0);
 
     public event UnityAction<int, int> RespectChanged;
     public event UnityAction<int, int> SubscriberChanged;
@@ -59,12 +59,12 @@ public class Wallet : MonoBehaviour
 
     private void SaveRespectData()
     {
-        PlayerPrefs.SetInt(RespectData, _respect);
+        PlayerPrefs.SetInt(_respectData, _respect);
     }
 
     public void SaveSubscriberData()
     {
-        PlayerPrefs.SetInt(SubscriberData, _subscriber);
+        PlayerPrefs.SetInt(_subscriberData, _subscriber);
     }
 
     private void RemoveRespect(int respect)

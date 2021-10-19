@@ -6,12 +6,12 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "KeyCounter", menuName = "KeyCounter/KeyCounter", order = 51)]
 public class KeyCounter : ScriptableObject
 {
-    readonly private string KeysCounter = "KeyCounter";
+    readonly private string _keysCounter = "KeyCounter";
     readonly private int _maxKeyNumber = 3;
 
     private int _currentKeysNumber;
     
-    public int KeysNumber => PlayerPrefs.GetInt(KeysCounter, 0);
+    public int KeysNumber => PlayerPrefs.GetInt(_keysCounter, 0);
 
     public event UnityAction<int> KeysNumberChanged;
 
@@ -72,6 +72,6 @@ public class KeyCounter : ScriptableObject
 
     public void SaveKeysNumber()
     {
-        PlayerPrefs.SetInt(KeysCounter, _currentKeysNumber);
+        PlayerPrefs.SetInt(_keysCounter, _currentKeysNumber);
     }
 }
